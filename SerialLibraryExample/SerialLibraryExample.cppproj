@@ -1,0 +1,811 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.ARMGCC.CPP</ToolchainName>
+    <ProjectGuid>dce6c7e3-ee26-4d79-826b-08594b9ad897</ProjectGuid>
+    <avrdevice>ATSAMD21G18A</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>SerialLibraryExample</AssemblyName>
+    <Name>SerialLibraryExample</Name>
+    <RootNamespace>SerialLibraryExample</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.52.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <ArmGccCpp>
+        <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+        <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+        <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+        <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+        <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+        <armgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </armgcc.compiler.symbols.DefSymbols>
+        <armgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+          </ListValues>
+        </armgcc.compiler.directories.IncludePaths>
+        <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
+        <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+        <armgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </armgcccpp.compiler.symbols.DefSymbols>
+        <armgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+          </ListValues>
+        </armgcccpp.compiler.directories.IncludePaths>
+        <armgcccpp.compiler.optimization.level>Optimize for size (-Os)</armgcccpp.compiler.optimization.level>
+        <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcccpp.compiler.warnings.AllWarnings>True</armgcccpp.compiler.warnings.AllWarnings>
+        <armgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.Libraries>
+        <armgcccpp.linker.libraries.LibrarySearchPaths>
+          <ListValues>
+            <Value>%24(ProjectDir)\Device_Startup</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.LibrarySearchPaths>
+        <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+        <armgcccpp.linker.miscellaneous.LinkerFlags>-Tsamd21g18a_flash.ld</armgcccpp.linker.miscellaneous.LinkerFlags>
+        <armgcccpp.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+          </ListValues>
+        </armgcccpp.assembler.general.IncludePaths>
+        <armgcccpp.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+          </ListValues>
+        </armgcccpp.preprocessingassembler.general.IncludePaths>
+      </ArmGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <ArmGccCpp>
+        <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+        <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+        <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+        <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+        <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+        <armgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </armgcc.compiler.symbols.DefSymbols>
+        <armgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+            <Value>../serial_controllers</Value>
+          </ListValues>
+        </armgcc.compiler.directories.IncludePaths>
+        <armgcc.compiler.optimization.level>Optimize debugging experience (-Og)</armgcc.compiler.optimization.level>
+        <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+        <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+        <armgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </armgcccpp.compiler.symbols.DefSymbols>
+        <armgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+            <Value>../serial_controllers</Value>
+          </ListValues>
+        </armgcccpp.compiler.directories.IncludePaths>
+        <armgcccpp.compiler.optimization.level>Optimize debugging experience (-Og)</armgcccpp.compiler.optimization.level>
+        <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
+        <armgcccpp.compiler.warnings.AllWarnings>True</armgcccpp.compiler.warnings.AllWarnings>
+        <armgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.Libraries>
+        <armgcccpp.linker.libraries.LibrarySearchPaths>
+          <ListValues>
+            <Value>%24(ProjectDir)\Device_Startup</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.LibrarySearchPaths>
+        <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+        <armgcccpp.linker.memorysettings.ExternalRAM />
+        <armgcccpp.linker.miscellaneous.LinkerFlags>-Tsamd21g18a_flash.ld</armgcccpp.linker.miscellaneous.LinkerFlags>
+        <armgcccpp.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+          </ListValues>
+        </armgcccpp.assembler.general.IncludePaths>
+        <armgcccpp.assembler.debugging.DebugLevel>Default (-g)</armgcccpp.assembler.debugging.DebugLevel>
+        <armgcccpp.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+          </ListValues>
+        </armgcccpp.preprocessingassembler.general.IncludePaths>
+        <armgcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.preprocessingassembler.debugging.DebugLevel>
+      </ArmGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Device_Startup\startup_samd21.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Device_Startup\system_samd21.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="example_state_machine.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="example_state_machine.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lora_controller.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lora_controller.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\audio\audio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\audio\audio_device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\audio\audio_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\bth\bth_device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\bth\bth_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\cdc\cdc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\cdc\cdc_device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\cdc\cdc_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\cdc\cdc_host.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\cdc\cdc_host.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\cdc\cdc_rndis.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\cdc\cdc_rndis_host.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\cdc\cdc_rndis_host.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\dfu\dfu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\dfu\dfu_device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\dfu\dfu_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\dfu\dfu_rt_device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\dfu\dfu_rt_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\hid\hid.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\hid\hid_device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\hid\hid_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\hid\hid_host.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\hid\hid_host.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\midi\midi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\midi\midi_device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\midi\midi_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\msc\msc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\msc\msc_device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\msc\msc_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\msc\msc_host.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\msc\msc_host.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\net\ecm_rndis_device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\net\ncm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\net\ncm_device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\net\net_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\usbtmc\usbtmc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\usbtmc\usbtmc_device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\usbtmc\usbtmc_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\vendor\vendor_device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\vendor\vendor_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\vendor\vendor_host.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\vendor\vendor_host.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\video\video.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\video\video_device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\class\video\video_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\common\tusb_common.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\common\tusb_compiler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\common\tusb_debug.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\common\tusb_fifo.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\common\tusb_fifo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\common\tusb_mcu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\common\tusb_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\common\tusb_timeout.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\common\tusb_types.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\common\tusb_verify.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\device\dcd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\device\usbd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\device\usbd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\device\usbd_control.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\device\usbd_pvt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\host\hcd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\host\hub.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\host\hub.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\host\usbh.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\host\usbh.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\host\usbh_classdriver.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\osal\osal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\osal\osal_freertos.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\osal\osal_mynewt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\osal\osal_none.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\osal\osal_pico.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\osal\osal_rtthread.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\osal\osal_rtx4.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\bridgetek\ft9xx\dcd_ft9xx.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\chipidea\ci_hs\ci_hs_imxrt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\chipidea\ci_hs\ci_hs_lpc18_43.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\chipidea\ci_hs\ci_hs_type.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\chipidea\ci_hs\dcd_ci_hs.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\chipidea\ci_hs\hcd_ci_hs.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\dialog\da146xx\dcd_da146xx.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\ehci\ehci.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\ehci\ehci.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\ehci\ehci_api.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\espressif\esp32sx\dcd_esp32sx.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\mentor\musb\dcd_musb.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\mentor\musb\hcd_musb.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\mentor\musb\musb_msp432e.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\mentor\musb\musb_tm4c.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\mentor\musb\musb_type.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\microchip\pic32mz\dcd_pic32mz.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\microchip\pic32mz\usbhs_registers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\microchip\samd\dcd_samd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\microchip\samg\dcd_samg.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\microchip\samx7x\common_usb_regs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\microchip\samx7x\dcd_samx7x.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\mindmotion\mm32\dcd_mm32f327x_otg.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\nordic\nrf5x\dcd_nrf5x.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\nuvoton\nuc120\dcd_nuc120.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\nuvoton\nuc121\dcd_nuc121.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\nuvoton\nuc505\dcd_nuc505.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\nxp\khci\dcd_khci.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\nxp\khci\hcd_khci.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\nxp\lpc17_40\dcd_lpc17_40.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\nxp\lpc17_40\dcd_lpc17_40.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\nxp\lpc17_40\hcd_lpc17_40.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\nxp\lpc_ip3511\dcd_lpc_ip3511.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\nxp\transdimension\common_transdimension.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\nxp\transdimension\dcd_transdimension.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\nxp\transdimension\hcd_transdimension.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\ohci\ohci.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\ohci\ohci.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\raspberrypi\pio_usb\dcd_pio_usb.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\raspberrypi\pio_usb\hcd_pio_usb.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\raspberrypi\rp2040\dcd_rp2040.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\raspberrypi\rp2040\hcd_rp2040.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\raspberrypi\rp2040\rp2040_usb.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\raspberrypi\rp2040\rp2040_usb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\renesas\usba\dcd_usba.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\renesas\usba\hcd_usba.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\sony\cxd56\dcd_cxd56.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\st\stm32_fsdev\dcd_stm32_fsdev.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\st\stm32_fsdev\dcd_stm32_fsdev_pvt_st.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\st\synopsys\dcd_synopsys.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\st\synopsys\synopsys_common.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\sunxi\dcd_sunxi_musb.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\sunxi\musb_def.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\synopsys\dwc2\dcd_dwc2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\synopsys\dwc2\dwc2_bcm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\synopsys\dwc2\dwc2_efm32.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\synopsys\dwc2\dwc2_esp32.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\synopsys\dwc2\dwc2_gd32.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\synopsys\dwc2\dwc2_stm32.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\synopsys\dwc2\dwc2_type.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\synopsys\dwc2\dwc2_xmc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\template\dcd_template.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\ti\msp430x5xx\dcd_msp430x5xx.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\valentyusb\eptri\dcd_eptri.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\portable\valentyusb\eptri\dcd_eptri.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_buffer\generic_buffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_buffer\serial_buffer.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_buffer\serial_buffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_common\common_hal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_common\hardware\common_none.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_common\hardware\common_samd21.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_common\hardware\common_samd21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_communication.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_comm_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_comm_options.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_spi\hardware\spi_none.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_spi\hardware\spi_samd21.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_spi\hardware\spi_samd21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_spi\serial_spi.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_spi\serial_spi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_spi\spi_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_spi\spi_hal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_uart\hardware\uart_none.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_uart\hardware\uart_samd21.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_uart\hardware\uart_samd21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_uart\serial_uart.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_uart\serial_uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_uart\uart_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_uart\uart_hal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_usb\serial_usb.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_usb\serial_usb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\tusb.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\tusb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\tusb_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\tusb_option.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\usb_descriptors.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="state_machine.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="state_machine.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="util.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="util.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Device_Startup\" />
+    <Folder Include="serial_controllers\" />
+    <Folder Include="serial_controllers\class\" />
+    <Folder Include="serial_controllers\class\audio\" />
+    <Folder Include="serial_controllers\class\bth\" />
+    <Folder Include="serial_controllers\class\cdc\" />
+    <Folder Include="serial_controllers\class\dfu\" />
+    <Folder Include="serial_controllers\class\hid\" />
+    <Folder Include="serial_controllers\class\midi\" />
+    <Folder Include="serial_controllers\class\msc\" />
+    <Folder Include="serial_controllers\class\net\" />
+    <Folder Include="serial_controllers\class\usbtmc\" />
+    <Folder Include="serial_controllers\class\vendor\" />
+    <Folder Include="serial_controllers\class\video\" />
+    <Folder Include="serial_controllers\common\" />
+    <Folder Include="serial_controllers\device\" />
+    <Folder Include="serial_controllers\host\" />
+    <Folder Include="serial_controllers\osal\" />
+    <Folder Include="serial_controllers\portable\" />
+    <Folder Include="serial_controllers\portable\bridgetek\" />
+    <Folder Include="serial_controllers\portable\bridgetek\ft9xx\" />
+    <Folder Include="serial_controllers\portable\chipidea\" />
+    <Folder Include="serial_controllers\portable\chipidea\ci_hs\" />
+    <Folder Include="serial_controllers\portable\dialog\" />
+    <Folder Include="serial_controllers\portable\dialog\da146xx\" />
+    <Folder Include="serial_controllers\portable\ehci\" />
+    <Folder Include="serial_controllers\portable\espressif\" />
+    <Folder Include="serial_controllers\portable\espressif\esp32sx\" />
+    <Folder Include="serial_controllers\portable\mentor\" />
+    <Folder Include="serial_controllers\portable\mentor\musb\" />
+    <Folder Include="serial_controllers\portable\microchip\" />
+    <Folder Include="serial_controllers\portable\microchip\pic32mz\" />
+    <Folder Include="serial_controllers\portable\microchip\samd\" />
+    <Folder Include="serial_controllers\portable\microchip\samg\" />
+    <Folder Include="serial_controllers\portable\microchip\samx7x\" />
+    <Folder Include="serial_controllers\portable\mindmotion\" />
+    <Folder Include="serial_controllers\portable\mindmotion\mm32\" />
+    <Folder Include="serial_controllers\portable\nordic\" />
+    <Folder Include="serial_controllers\portable\nordic\nrf5x\" />
+    <Folder Include="serial_controllers\portable\nuvoton\" />
+    <Folder Include="serial_controllers\portable\nuvoton\nuc120\" />
+    <Folder Include="serial_controllers\portable\nuvoton\nuc121\" />
+    <Folder Include="serial_controllers\portable\nuvoton\nuc505\" />
+    <Folder Include="serial_controllers\portable\nxp\" />
+    <Folder Include="serial_controllers\portable\nxp\khci\" />
+    <Folder Include="serial_controllers\portable\nxp\lpc17_40\" />
+    <Folder Include="serial_controllers\portable\nxp\lpc_ip3511\" />
+    <Folder Include="serial_controllers\portable\nxp\transdimension\" />
+    <Folder Include="serial_controllers\portable\ohci\" />
+    <Folder Include="serial_controllers\portable\raspberrypi\" />
+    <Folder Include="serial_controllers\portable\raspberrypi\pio_usb\" />
+    <Folder Include="serial_controllers\portable\raspberrypi\rp2040\" />
+    <Folder Include="serial_controllers\portable\renesas\" />
+    <Folder Include="serial_controllers\portable\renesas\usba\" />
+    <Folder Include="serial_controllers\portable\sony\" />
+    <Folder Include="serial_controllers\portable\sony\cxd56\" />
+    <Folder Include="serial_controllers\portable\st\" />
+    <Folder Include="serial_controllers\portable\st\stm32_fsdev\" />
+    <Folder Include="serial_controllers\portable\st\synopsys\" />
+    <Folder Include="serial_controllers\portable\sunxi\" />
+    <Folder Include="serial_controllers\portable\synopsys\" />
+    <Folder Include="serial_controllers\portable\synopsys\dwc2\" />
+    <Folder Include="serial_controllers\portable\template\" />
+    <Folder Include="serial_controllers\portable\ti\" />
+    <Folder Include="serial_controllers\portable\ti\msp430x5xx\" />
+    <Folder Include="serial_controllers\portable\valentyusb\" />
+    <Folder Include="serial_controllers\portable\valentyusb\eptri\" />
+    <Folder Include="serial_controllers\serial_buffer\" />
+    <Folder Include="serial_controllers\serial_common\" />
+    <Folder Include="serial_controllers\serial_common\hardware\" />
+    <Folder Include="serial_controllers\serial_spi\" />
+    <Folder Include="serial_controllers\serial_spi\hardware\" />
+    <Folder Include="serial_controllers\serial_uart\" />
+    <Folder Include="serial_controllers\serial_uart\hardware\" />
+    <Folder Include="serial_controllers\serial_usb\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Device_Startup\samd21g18a_flash.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Device_Startup\samd21g18a_sram.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="serial_controllers\portable\synopsys\dwc2\hwcfg_list.md">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="serial_controllers\README.txt">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
