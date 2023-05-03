@@ -135,7 +135,7 @@ example_state_machine.d example_state_machine.o: \
  ../serial_controllers/class/hid/hid.h \
  ../serial_controllers/device/usbd.h \
  ../serial_controllers/class/cdc/cdc_device.h \
- ../serial_controllers/class/cdc/cdc.h .././lora_controller.h .././util.h
+ ../serial_controllers/class/cdc/cdc.h .././util.h
 
 .././example_state_machine.h:
 
@@ -412,7 +412,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 ../serial_controllers/class/cdc/cdc_device.h:
 
 ../serial_controllers/class/cdc/cdc.h:
-
-.././lora_controller.h:
 
 .././util.h:

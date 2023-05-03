@@ -73,7 +73,7 @@ bool Serial::SerialBuffer::Get(void (* int_func)(uint8_t, bool), char * output)
 {
 	int_func(sercom_id, false);
 	bool result = buffer.Get(output);
-	if(index_shift) index_shift--;
+	if(result && index_shift) index_shift--;
 	int_func(sercom_id, true);
 	return result;
 }

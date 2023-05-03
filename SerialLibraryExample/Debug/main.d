@@ -134,7 +134,7 @@ main.d main.o: .././main.cpp \
  ../serial_controllers/class/hid/hid.h \
  ../serial_controllers/device/usbd.h \
  ../serial_controllers/class/cdc/cdc_device.h \
- ../serial_controllers/class/cdc/cdc.h .././lora_controller.h .././util.h
+ ../serial_controllers/class/cdc/cdc.h .././util.h
 
 C:\Program\ Files\ (x86)\Atmel\Studio\7.0\Packs\atmel\SAMD21_DFP\1.3.395\samd21a\include/sam.h:
 
@@ -411,7 +411,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 ../serial_controllers/class/cdc/cdc_device.h:
 
 ../serial_controllers/class/cdc/cdc.h:
-
-.././lora_controller.h:
 
 .././util.h:

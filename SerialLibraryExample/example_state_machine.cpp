@@ -1,6 +1,6 @@
 /*
  * Name			:	example_state_machine.cpp
- * Created		:	05/02/2023 14:55:51
+ * Created		:	05/03/2023 15:47:53
  * Author		:	aaron
  * Description	:	State, event, action, and function definitions for your state machine.
  */
@@ -8,15 +8,22 @@
 
 #include "example_state_machine.h"
 
+//#define USING_UART
+
 //Add your public vars----------------
+
+
 char RX_BUFFER[RX_BUFFER_SIZE];
+#ifdef USING_UART
+char TX_BUFFER[TX_BUFFER_SIZE];
+SerialUART::UARTController uart_controller;
+#else
 SerialUSB::USBController usb_controller;
+#endif
 
 uint32_t param;
 bool connected = false;
-
-char lora_rx[1];
-LoRa::LoRaController lora_controller;
+bool echo = false;
 
 
 //state machine struct getter
@@ -25,11 +32,9 @@ void ExampleStateMachine::GetExampleStateMachine(StateMachine::STT_MACHINE * sta
 	state_machine->current_state = STT_STATE::DISABLED;
 	state_machine->state_actions[STT_STATE::DISABLED] = &DisabledStateAction;
 	state_machine->state_actions[STT_STATE::INITIALIZING] = &InitializingStateAction;
-	state_machine->state_actions[STT_STATE::DISCONNECTED] = &DisconnectedStateAction;
+	state_machine->state_actions[STT_STATE::OFF] = &OffStateAction;
 	state_machine->state_actions[STT_STATE::PROMPT_USER] = &PromptUserStateAction;
-	state_machine->state_actions[STT_STATE::WAIT_FOR_RESPONSE] = &WaitForResponseStateAction;
-	state_machine->state_actions[STT_STATE::LORA_HW] = &LoraHwStateAction;
-	state_machine->state_actions[STT_STATE::LORA_INT] = &LoraIntStateAction;
+	state_machine->state_actions[STT_STATE::ON] = &OnStateAction;
 }
 
 //state action functions
@@ -59,32 +64,33 @@ StateMachine::STT_STATE ExampleStateMachine::InitializingStateAction(void)
 	while(GCLK->STATUS.bit.SYNCBUSY);                                  // Wait for write to complete
 	Util::exitCriticalSection();
 	
-	//init
-	#ifdef USING_LORA
-	SPISAMD21::SetGenClk((SERCOMSAMD21::GenericClock)STT_SPI_GENCLK);
-	LoRa::Config com3_lora_config;
-	LoRa::GetConfigDefaults(&com3_lora_config);
-	SPISAMD21::GetPeripheralDefaults(&(com3_lora_config.spi_sercom), SERCOMSAMD21::SercomID::Sercom3);
-	com3_lora_config.spi_sercom.ssl_pin = (SERCOMHAL::Pinout){0,0,7};
-	com3_lora_config.busy_pin = (SERCOMHAL::Pinout){0, 0, 17};
-	com3_lora_config.irq_pin = (SERCOMHAL::Pinout){0, 0, 4};
-	com3_lora_config.reset_pin = (SERCOMHAL::Pinout){0, 1, 2};
-	lora_controller.Init(&com3_lora_config, lora_rx, sizeof(lora_rx));
+	#ifdef USING_UART
+	UARTHAL::Peripheral uart_peripheral;
+	UARTHAL::GetPeripheralDefaults(&uart_peripheral);
+	uart_peripheral.baud_value = (uint32_t)BAUD_RATE;
+	uart_controller.Init(TX_BUFFER, sizeof(TX_BUFFER), RX_BUFFER, sizeof(RX_BUFFER));
+	#else
+	usb_controller.Init(RX_BUFFER, sizeof(RX_BUFFER));
+	usb_controller.Task(echo);
 	#endif
 	
-	usb_controller.Init(RX_BUFFER, sizeof(RX_BUFFER));
-	usb_controller.Task();
-	
-	return STT_STATE::DISCONNECTED;
+	return STT_STATE::OFF;
 }
 
-StateMachine::STT_STATE ExampleStateMachine::DisconnectedStateAction(void)
+StateMachine::STT_STATE ExampleStateMachine::OffStateAction(void)
 {
-	StateMachine::STT_STATE current_state = STT_STATE::DISCONNECTED;
-	usb_controller.Task();
+	StateMachine::STT_STATE current_state = STT_STATE::OFF;
+	#ifndef USING_UART
+	usb_controller.Task(echo);
+	#endif
+	echo = false;
 	if(TurnOn())
 	{
-		usb_controller.TransmitString("Received on command! Turning on...\n\n");
+		#ifdef USING_UART
+		uart_controller.TransmitString("On command received! Turning on...\n");
+		#else
+		usb_controller.TransmitString("On command received! Turning on...\n");
+		#endif
 		current_state = STT_STATE::PROMPT_USER;
 	}
 	StateMachine::ProcessSuperState(&current_state, STT_STATE::SUPER, &SuperStateAction);
@@ -93,90 +99,94 @@ StateMachine::STT_STATE ExampleStateMachine::DisconnectedStateAction(void)
 
 StateMachine::STT_STATE ExampleStateMachine::PromptUserStateAction(void)
 {
-	usb_controller.Task();
-	usb_controller.TransmitString("Send a command to test it out!\n\n");\
-	usb_controller.TransmitString("Command list:\n");
-	usb_controller.TransmitString("\"lora_hello_world\" -> sends hello world through LoRa radio.\n");
-	usb_controller.TransmitString("\"lora_integer_#\" -> sends an ASCII integer through LoRa radio (replace # with a valid integer.\n");
-	usb_controller.TransmitString("\"off\" -> turn off.\n");
-	return STT_STATE::WAIT_FOR_RESPONSE;
+	#ifdef USING_UART
+	uart_controller.TransmitString("Send strings through terminal to see responses!\n");
+	#else
+	usb_controller.Task(echo);
+	usb_controller.TransmitString("Send strings through terminal to see responses!\n");
+	#endif
+	return STT_STATE::ON;
 }
 
-StateMachine::STT_STATE ExampleStateMachine::WaitForResponseStateAction(void)
+StateMachine::STT_STATE ExampleStateMachine::OnStateAction(void)
 {
-	StateMachine::STT_STATE current_state = STT_STATE::WAIT_FOR_RESPONSE;
-	usb_controller.Task();
-	if(TxLoraHw())
+	StateMachine::STT_STATE current_state = STT_STATE::ON;
+	#ifdef USING_UART
+	if(uart_controller.ReceiveString("hello world"))
 	{
-		current_state = STT_STATE::LORA_HW;
+		uart_controller.TransmitString("World: hello!\n");
 	}
-	else if(TxLoraInt())
+	else if(uart_controller.ReceiveString("echo"))
 	{
-		current_state = STT_STATE::LORA_INT;
+		uart_controller.TransmitString("Received data will now be echoed!\n");
+		echo = true;
+		uart_controller.TransmitString("(Regular function will cease until unplugged)\n");
 	}
+	else if(uart_controller.ReceiveParam(&param, "integer_"))
+	{
+		uart_controller.TransmitString("Integer: ");
+		uart_controller.TransmitInt(param);
+		uart_controller.Transmit('\n');
+	}
+	else if(usb_controller.ReceiveParam(&param, "square_",'!'))
+	{
+		uart_controller.TransmitString("Square value: ");
+		uart_controller.TransmitInt(param * param);
+		uart_controller.Transmit('\n');
+	}
+	#else
+	usb_controller.Task(echo);
+	if(usb_controller.ReceiveString("hello world"))
+	{
+		usb_controller.TransmitString("World: hello!\n");
+	}
+	else if(usb_controller.ReceiveString("echo"))
+	{
+		usb_controller.TransmitString("Received data will now be echoed!\n");
+		echo = true;
+		usb_controller.Task(echo);
+		usb_controller.TransmitString("(Regular function will cease until unplugged)\n");
+	}
+	else if(usb_controller.ReceiveParam(&param, "integer_"))
+	{
+		usb_controller.TransmitString("Integer: ");
+		usb_controller.TransmitInt(param);
+		usb_controller.Transmit('\n');
+	}
+	else if(usb_controller.ReceiveParam(&param, "square_",'!'))
+	{
+		usb_controller.TransmitString("Square value: ");
+		usb_controller.TransmitInt(param * param);
+		usb_controller.Transmit('\n');
+	}
+	#endif
 	StateMachine::ProcessSuperState(&current_state, STT_STATE::SUPER, &SuperStateAction);
 	return current_state;
 }
 
-StateMachine::STT_STATE ExampleStateMachine::LoraHwStateAction(void)
-{
-	usb_controller.Task();
-	#ifdef USING_LORA
-	if(lora_controller.TransmitString("hello world",TIMEOUT))
-	{
-		usb_controller.Task();
-		usb_controller.TransmitString("Transmitted hello world through LoRa!\n");
-	}
-	else
-	{
-		usb_controller.Task();
-		usb_controller.TransmitString("LoRa timed out!\n");
-	}
-	#else
-	usb_controller.TransmitString("Not using LoRa!\n");
-	#endif
-	return STT_STATE::WAIT_FOR_RESPONSE;
-}
-
-StateMachine::STT_STATE ExampleStateMachine::LoraIntStateAction(void)
-{
-	usb_controller.Task();
-	#ifdef USING_LORA
-	if(lora_controller.TransmitInt(param,TIMEOUT))
-	{
-		usb_controller.Task();
-		usb_controller.TransmitString("Transmitted ");
-		usb_controller.TransmitInt(param);
-		usb_controller.TransmitString("through LoRa!\n");
-	}
-	else
-	{
-		usb_controller.Task();
-		usb_controller.TransmitString("LoRa timed out!\n");
-	}
-	#else
-	usb_controller.TransmitString("Not using LoRa! Integer param: ");
-	usb_controller.TransmitInt(param);
-	usb_controller.Transmit('\n');
-	#endif
-	return STT_STATE::WAIT_FOR_RESPONSE;
-}
-
 StateMachine::STT_STATE ExampleStateMachine::SuperStateAction(void)
 {
-	usb_controller.Task();
+	#ifndef USING_UART
+	usb_controller.Task(echo);
+	#endif
 	if(TurnOff())
 	{
-		usb_controller.TransmitString("Received off command! Turning off...\n");
-		return STT_STATE::DISCONNECTED;
+		#ifdef USING_UART
+		uart_controller.TransmitString("Off command received! Turning off...\n");
+		#else
+		usb_controller.TransmitString("Off command received! Turning off...\n");
+		#endif
+		return STT_STATE::OFF;
 	}
 	else if(Unplugged())
 	{
-		return STT_STATE::DISCONNECTED;
+		return STT_STATE::OFF;
 	}
 	else if(PluggedIn())
 	{
-		usb_controller.TransmitString("USB Plugged in!\n");
+		#ifndef USING_UART
+		usb_controller.TransmitString("USB plugged in!\n");
+		#endif
 		return STT_STATE::PROMPT_USER;
 	}
 	return STT_STATE::SUPER;
@@ -184,51 +194,62 @@ StateMachine::STT_STATE ExampleStateMachine::SuperStateAction(void)
 
 //common event functions
 
-bool ExampleStateMachine::TurnOn(void)
-{
-	return usb_controller.ReceiveString("on");
-}
-
 bool ExampleStateMachine::Unplugged(void)
 {
+	#ifdef USING_UART
+	return false;
+	#else
 	bool unplugged =  connected && !usb_controller.IsConnected();
 	if(unplugged)
 		connected = false;
 	return unplugged;
+	#endif
 }
 
-bool ExampleStateMachine::TxLoraHw(void)
+bool ExampleStateMachine::TurnOn(void)
 {
-	return usb_controller.ReceiveString("lora_hello_world");
-}
-
-bool ExampleStateMachine::TurnOff(void)
-{
-	return usb_controller.ReceiveString("off");
+	#ifdef USING_UART
+	return uart_controller.ReceiveString("on");
+	#else
+	return usb_controller.ReceiveString("on");
+	#endif
 }
 
 bool ExampleStateMachine::PluggedIn(void)
 {
+	#ifdef USING_UART
+	return false;
+	#else
 	bool plugged_in = !connected && usb_controller.IsConnected();
 	if(plugged_in)
 		connected = true;
 	return plugged_in;
+	#endif
 }
 
-bool ExampleStateMachine::TxLoraInt(void)
+bool ExampleStateMachine::TurnOff(void)
 {
-	return usb_controller.ReceiveParam(&param, "lora_integer_");
+	#ifdef USING_UART
+	return uart_controller.ReceiveString("off");
+	#else
+	return usb_controller.ReceiveString("off");
+	#endif
 }
 
 //common action functions
 
-void SERCOM3_Handler(void)
-{
-	lora_controller.ISR();
-}
-
 void USB_Handler(void)
 {
+	#ifndef USING_UART
 	usb_controller.ISR();
+	#endif
+}
+
+void SERCOM0_Handler(void)
+{
+	#ifdef USING_UART
+	uart_controller.ISR();
+	if(echo) uart_controller.EchoRx();
+	#endif
 }
 

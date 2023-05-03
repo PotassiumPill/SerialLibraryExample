@@ -8,8 +8,6 @@ Device_Startup\system_samd21.c
 
 example_state_machine.cpp
 
-lora_controller.cpp
-
 main.cpp
 
 serial_controllers\class\audio\audio_device.c

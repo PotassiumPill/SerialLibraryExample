@@ -1,6 +1,6 @@
 /*
  * Name			:	example_state_machine.h
- * Created		:	05/02/2023 14:55:51
+ * Created		:	05/03/2023 15:47:53
  * Author		:	aaron
  * Description	:	State, event, action, and function definitions for your state machine.
  */
@@ -12,18 +12,12 @@
 #include "state_machine.h"
 //Add your includes---------------------
 #include "serial_communication.h"
-#include "lora_controller.h"
 #include "util.h"
 
-
 //Add your macros-----------------------
-#define USING_LORA
-
-
-#define RX_BUFFER_SIZE		512
-#define STT_SPI_GENCLK		3	
-#define TIMEOUT				2000
-
+#define RX_BUFFER_SIZE	512
+#define TX_BUFFER_SIZE	512
+#define BAUD_RATE		115200
 
 /*!
  * \brief Namespace containing all function and structure definitions to implement your state machine.
@@ -38,14 +32,12 @@ namespace ExampleStateMachine
 	 * Enum of uint8_t for all implemented states.
 	 */
 	enum STT_STATE : uint8_t {
-		DISABLED,				//Entry point for state machine
-		INITIALIZING,			//Initializes clocks and controller objects
-		DISCONNECTED,			//Off state
-		PROMPT_USER,			//Prompts user with commands and intro
-		WAIT_FOR_RESPONSE,		//Waits for user response (usb rx)
-		LORA_HW,				//Sends hello world via LoRa
-		LORA_INT,				//Sends an integer via LoRa
-		SUPER					//Super state which checks for off command and connect/disconnect
+		DISABLED,
+		INITIALIZING,
+		OFF,
+		PROMPT_USER,
+		ON,
+		SUPER
 	};
 	/*!
 	 * \brief Populates state machine struct with values
@@ -58,7 +50,7 @@ namespace ExampleStateMachine
 	/*!
 	 * \brief Disabled State action function (DISABLED)
 	 *
-	 * Entry point for state machine, which does nothing
+	 * Your description for Disabled State action function
 	 *
 	 * \return state to transition to (INITIALIZING)
 	 */
@@ -66,99 +58,78 @@ namespace ExampleStateMachine
 	/*!
 	 * \brief Initializing State action function (INITIALIZING)
 	 *
-	 * Initializes clocks and controller objects
+	 * Your description for Initializing State action function
 	 *
-	 * \return state to transition to (DISCONNECTED)
+	 * \return state to transition to (OFF)
 	 */
 	StateMachine::STT_STATE InitializingStateAction(void);
 	/*!
-	 * \brief Disconnected State action function (DISCONNECTED)
+	 * \brief Off State action function (OFF)
 	 *
-	 * Off state, which loops idly except checking for on command
+	 * Your description for Off State action function
 	 *
-	 * \return state to transition to (DISCONNECTED, or PROMPT_USER, unless super state transitions out of sub-state)
+	 * \return state to transition to (OFF, or PROMPT_USER, unless super state transitions out of sub-state)
 	 */
-	StateMachine::STT_STATE DisconnectedStateAction(void);
+	StateMachine::STT_STATE OffStateAction(void);
 	/*!
 	 * \brief Prompt User State action function (PROMPT_USER)
 	 *
-	 * Prompts user with commands and intro
+	 * Your description for Prompt User State action function
 	 *
-	 * \return state to transition to (WAIT_FOR_RESPONSE)
+	 * \return state to transition to (ON)
 	 */
 	StateMachine::STT_STATE PromptUserStateAction(void);
 	/*!
-	 * \brief Wait For Response State action function (WAIT_FOR_RESPONSE)
+	 * \brief On State action function (ON)
 	 *
-	 * Waits for user response through a serial USB connection sent from a terminal
+	 * Your description for On State action function
 	 *
-	 * \return state to transition to (WAIT_FOR_RESPONSE, LORA_HW, or LORA_INT, unless super state transitions out of sub-state)
+	 * \return state to transition to (ON, unless super state transitions out of sub-state)
 	 */
-	StateMachine::STT_STATE WaitForResponseStateAction(void);
-	/*!
-	 * \brief Lora Hw State action function (LORA_HW)
-	 *
-	 * Sends hello world via LoRa
-	 *
-	 * \return state to transition to (WAIT_FOR_RESPONSE)
-	 */
-	StateMachine::STT_STATE LoraHwStateAction(void);
-	/*!
-	 * \brief Lora Int State action function (LORA_INT)
-	 *
-	 * Sends an ASCII integer given by user via LoRa
-	 *
-	 * \return state to transition to (WAIT_FOR_RESPONSE)
-	 */
-	StateMachine::STT_STATE LoraIntStateAction(void);
+	StateMachine::STT_STATE OnStateAction(void);
 	/*!
 	 * \brief Super State action function (SUPER)
 	 *
-	 * Super state which encompasses majority of the other sub-states.\n
-	 * Checks for off command and connect/disconnect
+	 * Your description for Super State action function
 	 *
-	 * \return state to transition to (SUPER, DISCONNECTED, DISCONNECTED, or PROMPT_USER)
+	 * \return state to transition to (SUPER, OFF, OFF, or PROMPT_USER)
 	 */
 	StateMachine::STT_STATE SuperStateAction(void);
 
 	//common action functions and events----------------
-	
+
 	/*!
-	 * \brief received "on" via serial USB
+	 * \brief Your Unplugged event description
 	 *
-	 * \return true if on command received, false otherwise
-	 */
-	bool TurnOn(void);
-	/*!
-	 * \brief USB has transitioned from connected to disconnected
+	 * Your extended Unplugged event description
 	 *
-	 * \return true if USB has just been unplugged, false otherwise
+	 * \return true if [event true description], false otherwise
 	 */
 	bool Unplugged(void);
 	/*!
-	 * \brief "lora_hello_world" received via serial USB
+	 * \brief Your Turn On event description
 	 *
-	 * \return true if hello world LoRa command received, false otherwise
+	 * Your extended Turn On event description
+	 *
+	 * \return true if [event true description], false otherwise
 	 */
-	bool TxLoraHw(void);
+	bool TurnOn(void);
 	/*!
-	 * \brief received "off" via serial USB
+	 * \brief Your Plugged In event description
 	 *
-	 * \return true if off command received, false otherwise
-	 */
-	bool TurnOff(void);
-	/*!
-	 * \brief has transitioned from disconnected to connected
+	 * Your extended Plugged In event description
 	 *
-	 * \return true if USB has just been plugged in, false otherwise
+	 * \return true if [event true description], false otherwise
 	 */
 	bool PluggedIn(void);
 	/*!
-	 * \brief "lora_integer_#" received via serial USB
+	 * \brief Your Turn Off event description
 	 *
-	 * \return true if integer LoRa command received, false otherwise
+	 * Your extended Turn Off event description
+	 *
+	 * \return true if [event true description], false otherwise
 	 */
-	bool TxLoraInt(void);
+	bool TurnOff(void);
 }
 
 #endif //__EXAMPLE_STATE_MACHINE_H__
