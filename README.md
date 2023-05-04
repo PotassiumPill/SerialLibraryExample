@@ -81,4 +81,42 @@ void SerialUSB::ResetUSB(void)
 }
 ```
 where `"chip.h"` is the header file for your chip as noted earlier.
+
 6) Implement code to initialize the USB clock and the reset the USB registers in the respective functions.
+
+### Adding General Functionality for SPI and UART Stacks
+1) SPI and UART stacks require some common functions to run. 
+2) Navigate to the [hardware](/SerialLibraryExample/serial_controllers/serial_common/hardware) directory under the [serial_common](/SerialLibraryExample/serial_controllers/serial_common) directory.
+3) Add a new header to this directory for your chip, ie `common_chipname.h`.
+4) Define a namespace for your hardware specific functions, any hardware specific enums, and an enum of type uint8_t `SercomID`, if applicable. For example:
+```
+#ifndef __COMMON_CHIPNAME_H__
+#define __COMMON_CHIPNAME_H__
+
+#include "chip.h"
+
+namespace SERCOMCHIPNAME
+{
+	enum SercomID : uint8_t {
+		Sercom0,
+		Sercom1,
+		Sercom2,
+		Sercom3,
+		Sercom4,
+		Sercom5
+	};
+	void ExampleFunction(void);
+	void AnotherExampleFunction(SERCOMHAL::SercomID sercom_id);
+}; 
+
+#endif //__COMMON_CHIPNAME_H__
+```
+5) Add a new cpp to this directory for your chip, ie `common_chipname.cpp`.
+6) At the top, include this code block:
+```
+#include "serial_common/common_hal.h"
+
+#if (SERCOM_MCU_OPT == OPT_SERCOM_CHIP_NAME)
+```
+7) Here, you will define all functions in [common_hal.h](/SerialLibraryExample/serial_controllers/serial_common/common_hal.h) and any functions you defined in `common_chipname.h`.
+8) Make sure that the last line in this file is `#endif`!
