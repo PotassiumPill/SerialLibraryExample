@@ -1,7 +1,7 @@
 /*
  * Name			:	example_state_machine.h
  * Created		:	05/03/2023 15:47:53
- * Author		:	aaron
+ * Author		:	Aaron Reilman
  * Description	:	State, event, action, and function definitions for your state machine.
  */
 
@@ -32,12 +32,12 @@ namespace ExampleStateMachine
 	 * Enum of uint8_t for all implemented states.
 	 */
 	enum STT_STATE : uint8_t {
-		DISABLED,
-		INITIALIZING,
-		OFF,
-		PROMPT_USER,
-		ON,
-		SUPER
+		DISABLED,				//!< Entry point state
+		INITIALIZING,			//!< Initializes clocks and serial controllers
+		OFF,					//!< Command don't work, just waits to turn on
+		PROMPT_USER,			//!< Prints out a prompt when turned on
+		ON,						//!< Primary command processing
+		SUPER					//!< Checks for off command and USB connect/disconnect
 	};
 	/*!
 	 * \brief Populates state machine struct with values
@@ -50,7 +50,7 @@ namespace ExampleStateMachine
 	/*!
 	 * \brief Disabled State action function (DISABLED)
 	 *
-	 * Your description for Disabled State action function
+	 * Entry point for state machine, does nothing
 	 *
 	 * \return state to transition to (INITIALIZING)
 	 */
@@ -58,7 +58,7 @@ namespace ExampleStateMachine
 	/*!
 	 * \brief Initializing State action function (INITIALIZING)
 	 *
-	 * Your description for Initializing State action function
+	 * Initializes clocks and serial controllers
 	 *
 	 * \return state to transition to (OFF)
 	 */
@@ -66,7 +66,7 @@ namespace ExampleStateMachine
 	/*!
 	 * \brief Off State action function (OFF)
 	 *
-	 * Your description for Off State action function
+	 * Sits in an idle off state, only checking for the on ("on") command
 	 *
 	 * \return state to transition to (OFF, or PROMPT_USER, unless super state transitions out of sub-state)
 	 */
@@ -74,7 +74,7 @@ namespace ExampleStateMachine
 	/*!
 	 * \brief Prompt User State action function (PROMPT_USER)
 	 *
-	 * Your description for Prompt User State action function
+	 * Sends a message through serial port when on moving to on state
 	 *
 	 * \return state to transition to (ON)
 	 */
@@ -82,52 +82,57 @@ namespace ExampleStateMachine
 	/*!
 	 * \brief On State action function (ON)
 	 *
-	 * Your description for On State action function
+	 * Checks for various commands sent through serial port:\n 
+	 * "hello world" 
+	 * "integer_#" (replace # with a desired ASCII integer)
+	 * "square_#!" (replace # with a desired ASCII integer)
+	 * "echo" this will echo the received data onto the terminal and regular function will cease
+	 * "off" turns off machine
 	 *
-	 * \return state to transition to (ON, unless super state transitions out of sub-state)
+	 * \return state to transition to (ON, or OFF, unless super state transitions out of sub-state)
 	 */
 	StateMachine::STT_STATE OnStateAction(void);
 	/*!
 	 * \brief Super State action function (SUPER)
 	 *
-	 * Your description for Super State action function
+	 * Super state which checks for USB connection and disconnection
 	 *
-	 * \return state to transition to (SUPER, OFF, OFF, or PROMPT_USER)
+	 * \return state to transition to (SUPER, OFF, or PROMPT_USER)
 	 */
 	StateMachine::STT_STATE SuperStateAction(void);
 
 	//common action functions and events----------------
 
 	/*!
-	 * \brief Your Unplugged event description
+	 * \brief Checks if USB has been disconnected
 	 *
-	 * Your extended Unplugged event description
+	 * Checks if an established USB connection has disconnected
 	 *
-	 * \return true if [event true description], false otherwise
+	 * \return true if USB has been unplugged, false otherwise
 	 */
 	bool Unplugged(void);
 	/*!
-	 * \brief Your Turn On event description
+	 * \brief Checks if on command has been received
 	 *
-	 * Your extended Turn On event description
+	 * Checks if "on" has been received in serial port
 	 *
-	 * \return true if [event true description], false otherwise
+	 * \return true if on command received, false otherwise
 	 */
 	bool TurnOn(void);
 	/*!
-	 * \brief Your Plugged In event description
+	 * \brief Checks if USB has been connected
 	 *
-	 * Your extended Plugged In event description
+	 * Checks if a USB has just been connected to device
 	 *
-	 * \return true if [event true description], false otherwise
+	 * \return true if USB has been plugged in, false otherwise
 	 */
 	bool PluggedIn(void);
 	/*!
-	 * \brief Your Turn Off event description
+	 * \brief Checks if off command has been received
 	 *
-	 * Your extended Turn Off event description
+	 * Checks if "off" has been received in serial port
 	 *
-	 * \return true if [event true description], false otherwise
+	 * \return true if off command received, false otherwise
 	 */
 	bool TurnOff(void);
 }

@@ -1,7 +1,7 @@
 /*
  * Name			:	example_state_machine.cpp
  * Created		:	05/03/2023 15:47:53
- * Author		:	aaron
+ * Author		:	Aaron Reilman
  * Description	:	State, event, action, and function definitions for your state machine.
  */
 
@@ -68,7 +68,7 @@ StateMachine::STT_STATE ExampleStateMachine::InitializingStateAction(void)
 	UARTHAL::Peripheral uart_peripheral;
 	UARTHAL::GetPeripheralDefaults(&uart_peripheral);
 	uart_peripheral.baud_value = (uint32_t)BAUD_RATE;
-	uart_controller.Init(TX_BUFFER, sizeof(TX_BUFFER), RX_BUFFER, sizeof(RX_BUFFER));
+	uart_controller.Init(&uart_peripheral, TX_BUFFER, sizeof(TX_BUFFER), RX_BUFFER, sizeof(RX_BUFFER));
 	#else
 	usb_controller.Init(RX_BUFFER, sizeof(RX_BUFFER));
 	usb_controller.Task(echo);
@@ -128,7 +128,7 @@ StateMachine::STT_STATE ExampleStateMachine::OnStateAction(void)
 		uart_controller.TransmitInt(param);
 		uart_controller.Transmit('\n');
 	}
-	else if(usb_controller.ReceiveParam(&param, "square_",'!'))
+	else if(uart_controller.ReceiveParam(&param, "square_",'!'))
 	{
 		uart_controller.TransmitString("Square value: ");
 		uart_controller.TransmitInt(param * param);
@@ -160,6 +160,15 @@ StateMachine::STT_STATE ExampleStateMachine::OnStateAction(void)
 		usb_controller.Transmit('\n');
 	}
 	#endif
+	if(TurnOff())
+	{
+		#ifdef USING_UART
+		uart_controller.TransmitString("Off command received! Turning off...\n");
+		#else
+		usb_controller.TransmitString("Off command received! Turning off...\n");
+		#endif
+		current_state = STT_STATE::OFF;
+	}
 	StateMachine::ProcessSuperState(&current_state, STT_STATE::SUPER, &SuperStateAction);
 	return current_state;
 }
@@ -169,16 +178,7 @@ StateMachine::STT_STATE ExampleStateMachine::SuperStateAction(void)
 	#ifndef USING_UART
 	usb_controller.Task(echo);
 	#endif
-	if(TurnOff())
-	{
-		#ifdef USING_UART
-		uart_controller.TransmitString("Off command received! Turning off...\n");
-		#else
-		usb_controller.TransmitString("Off command received! Turning off...\n");
-		#endif
-		return STT_STATE::OFF;
-	}
-	else if(Unplugged())
+	if(Unplugged())
 	{
 		return STT_STATE::OFF;
 	}

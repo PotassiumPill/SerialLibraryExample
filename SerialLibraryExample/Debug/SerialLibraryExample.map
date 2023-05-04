@@ -5749,7 +5749,7 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtn.o
                 0x00002000                STACK_SIZE = DEFINED (STACK_SIZE)?STACK_SIZE:DEFINED (__stack_size__)?__stack_size__:0x2000
 
-.text           0x00000000     0x3750
+.text           0x00000000     0x3754
                 0x00000000                . = ALIGN (0x4)
                 0x00000000                _sfixed = .
  *(.vectors .vectors.*)
@@ -5802,528 +5802,528 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin
  .text._ZN19ExampleStateMachine21PromptUserStateActionEv
                 0x00000278       0x2c example_state_machine.o
                 0x00000278                ExampleStateMachine::PromptUserStateAction()
- .text._ZN19ExampleStateMachine13OnStateActionEv
-                0x000002a4      0x124 example_state_machine.o
-                0x000002a4                ExampleStateMachine::OnStateAction()
  .text._Z41__static_initialization_and_destruction_0ii
-                0x000003c8       0x3c example_state_machine.o
+                0x000002a4       0x3c example_state_machine.o
  .text._ZN19ExampleStateMachine22GetExampleStateMachineEPN12StateMachine11STT_MACHINEE
-                0x00000404       0x30 example_state_machine.o
-                0x00000404                ExampleStateMachine::GetExampleStateMachine(StateMachine::STT_MACHINE*)
+                0x000002e0       0x30 example_state_machine.o
+                0x000002e0                ExampleStateMachine::GetExampleStateMachine(StateMachine::STT_MACHINE*)
  .text._ZN19ExampleStateMachine9UnpluggedEv
-                0x00000434       0x34 example_state_machine.o
-                0x00000434                ExampleStateMachine::Unplugged()
+                0x00000310       0x34 example_state_machine.o
+                0x00000310                ExampleStateMachine::Unplugged()
  .text._ZN19ExampleStateMachine6TurnOnEv
-                0x00000468       0x1c example_state_machine.o
-                0x00000468                ExampleStateMachine::TurnOn()
+                0x00000344       0x1c example_state_machine.o
+                0x00000344                ExampleStateMachine::TurnOn()
  .text._ZN19ExampleStateMachine14OffStateActionEv
-                0x00000484       0x64 example_state_machine.o
-                0x00000484                ExampleStateMachine::OffStateAction()
+                0x00000360       0x64 example_state_machine.o
+                0x00000360                ExampleStateMachine::OffStateAction()
  .text._ZN19ExampleStateMachine9PluggedInEv
-                0x000004e8       0x2c example_state_machine.o
-                0x000004e8                ExampleStateMachine::PluggedIn()
- .text._ZN19ExampleStateMachine7TurnOffEv
-                0x00000514       0x1c example_state_machine.o
-                0x00000514                ExampleStateMachine::TurnOff()
+                0x000003c4       0x2c example_state_machine.o
+                0x000003c4                ExampleStateMachine::PluggedIn()
  .text._ZN19ExampleStateMachine16SuperStateActionEv
-                0x00000530       0x64 example_state_machine.o
-                0x00000530                ExampleStateMachine::SuperStateAction()
+                0x000003f0       0x48 example_state_machine.o
+                0x000003f0                ExampleStateMachine::SuperStateAction()
+ .text._ZN19ExampleStateMachine7TurnOffEv
+                0x00000438       0x1c example_state_machine.o
+                0x00000438                ExampleStateMachine::TurnOff()
+ .text._ZN19ExampleStateMachine13OnStateActionEv
+                0x00000454      0x144 example_state_machine.o
+                0x00000454                ExampleStateMachine::OnStateAction()
  .text.USB_Handler
-                0x00000594       0x14 example_state_machine.o
-                0x00000594                USB_Handler
+                0x00000598       0x14 example_state_machine.o
+                0x00000598                USB_Handler
  .text.SERCOM0_Handler
-                0x000005a8        0x2 example_state_machine.o
-                0x000005a8                SERCOM0_Handler
- *fill*         0x000005aa        0x2 
+                0x000005ac        0x2 example_state_machine.o
+                0x000005ac                SERCOM0_Handler
+ *fill*         0x000005ae        0x2 
  .text._GLOBAL__sub_I_RX_BUFFER
-                0x000005ac       0x14 example_state_machine.o
- .text.main     0x000005c0       0x1c main.o
-                0x000005c0                main
+                0x000005b0       0x14 example_state_machine.o
+ .text.main     0x000005c4       0x1c main.o
+                0x000005c4                main
  .text._prep_out_transaction
-                0x000005dc       0x58 serial_controllers/class/cdc/cdc_device.o
+                0x000005e0       0x58 serial_controllers/class/cdc/cdc_device.o
  .text.tud_cdc_n_available
-                0x00000634       0x20 serial_controllers/class/cdc/cdc_device.o
-                0x00000634                tud_cdc_n_available
+                0x00000638       0x20 serial_controllers/class/cdc/cdc_device.o
+                0x00000638                tud_cdc_n_available
  .text.tud_cdc_n_read
-                0x00000654       0x30 serial_controllers/class/cdc/cdc_device.o
-                0x00000654                tud_cdc_n_read
+                0x00000658       0x30 serial_controllers/class/cdc/cdc_device.o
+                0x00000658                tud_cdc_n_read
  .text.tud_cdc_n_write_flush
-                0x00000684       0xd0 serial_controllers/class/cdc/cdc_device.o
-                0x00000684                tud_cdc_n_write_flush
+                0x00000688       0xd0 serial_controllers/class/cdc/cdc_device.o
+                0x00000688                tud_cdc_n_write_flush
  .text.tud_cdc_n_write
-                0x00000754       0x44 serial_controllers/class/cdc/cdc_device.o
-                0x00000754                tud_cdc_n_write
+                0x00000758       0x44 serial_controllers/class/cdc/cdc_device.o
+                0x00000758                tud_cdc_n_write
  .text.tud_cdc_n_write_clear
-                0x00000798       0x20 serial_controllers/class/cdc/cdc_device.o
-                0x00000798                tud_cdc_n_write_clear
+                0x0000079c       0x20 serial_controllers/class/cdc/cdc_device.o
+                0x0000079c                tud_cdc_n_write_clear
  .text.cdcd_init
-                0x000007b8       0x80 serial_controllers/class/cdc/cdc_device.o
-                0x000007b8                cdcd_init
+                0x000007bc       0x80 serial_controllers/class/cdc/cdc_device.o
+                0x000007bc                cdcd_init
  .text.cdcd_reset
-                0x00000838       0x50 serial_controllers/class/cdc/cdc_device.o
-                0x00000838                cdcd_reset
+                0x0000083c       0x50 serial_controllers/class/cdc/cdc_device.o
+                0x0000083c                cdcd_reset
  .text.cdcd_open
-                0x00000888       0xe0 serial_controllers/class/cdc/cdc_device.o
-                0x00000888                cdcd_open
+                0x0000088c       0xe0 serial_controllers/class/cdc/cdc_device.o
+                0x0000088c                cdcd_open
  .text.cdcd_control_xfer_cb
-                0x00000968      0x130 serial_controllers/class/cdc/cdc_device.o
-                0x00000968                cdcd_control_xfer_cb
+                0x0000096c      0x130 serial_controllers/class/cdc/cdc_device.o
+                0x0000096c                cdcd_control_xfer_cb
  .text.cdcd_xfer_cb
-                0x00000a98      0x140 serial_controllers/class/cdc/cdc_device.o
-                0x00000a98                cdcd_xfer_cb
+                0x00000a9c      0x140 serial_controllers/class/cdc/cdc_device.o
+                0x00000a9c                cdcd_xfer_cb
  .text.advance_pointer
-                0x00000bd8       0x18 serial_controllers/common/tusb_fifo.o
+                0x00000bdc       0x18 serial_controllers/common/tusb_fifo.o
  .text.backward_pointer
-                0x00000bf0       0x18 serial_controllers/common/tusb_fifo.o
+                0x00000bf4       0x18 serial_controllers/common/tusb_fifo.o
  .text.get_relative_pointer
-                0x00000c08       0x10 serial_controllers/common/tusb_fifo.o
+                0x00000c0c       0x10 serial_controllers/common/tusb_fifo.o
  .text._tu_fifo_peek
-                0x00000c18       0x58 serial_controllers/common/tusb_fifo.o
+                0x00000c1c       0x58 serial_controllers/common/tusb_fifo.o
  .text._ff_pull_const_addr
-                0x00000c70       0x4c serial_controllers/common/tusb_fifo.o
+                0x00000c74       0x4c serial_controllers/common/tusb_fifo.o
  .text._ff_pull_n
-                0x00000cbc      0x104 serial_controllers/common/tusb_fifo.o
+                0x00000cc0      0x104 serial_controllers/common/tusb_fifo.o
  .text._tu_fifo_peek_n
-                0x00000dc0       0x6c serial_controllers/common/tusb_fifo.o
+                0x00000dc4       0x6c serial_controllers/common/tusb_fifo.o
  .text._tu_fifo_read_n
-                0x00000e2c       0x38 serial_controllers/common/tusb_fifo.o
+                0x00000e30       0x38 serial_controllers/common/tusb_fifo.o
  .text._ff_push_const_addr
-                0x00000e64       0x40 serial_controllers/common/tusb_fifo.o
+                0x00000e68       0x40 serial_controllers/common/tusb_fifo.o
  .text._ff_push_n
-                0x00000ea4      0x100 serial_controllers/common/tusb_fifo.o
+                0x00000ea8      0x100 serial_controllers/common/tusb_fifo.o
  .text._tu_fifo_write_n
-                0x00000fa4       0x8c serial_controllers/common/tusb_fifo.o
+                0x00000fa8       0x8c serial_controllers/common/tusb_fifo.o
  .text.tu_fifo_config
-                0x00001030       0x32 serial_controllers/common/tusb_fifo.o
-                0x00001030                tu_fifo_config
+                0x00001034       0x32 serial_controllers/common/tusb_fifo.o
+                0x00001034                tu_fifo_config
  .text.tu_fifo_count
-                0x00001062       0x24 serial_controllers/common/tusb_fifo.o
-                0x00001062                tu_fifo_count
+                0x00001066       0x24 serial_controllers/common/tusb_fifo.o
+                0x00001066                tu_fifo_count
  .text.tu_fifo_empty
-                0x00001086        0xe serial_controllers/common/tusb_fifo.o
-                0x00001086                tu_fifo_empty
+                0x0000108a        0xe serial_controllers/common/tusb_fifo.o
+                0x0000108a                tu_fifo_empty
  .text.tu_fifo_remaining
-                0x00001094       0x20 serial_controllers/common/tusb_fifo.o
-                0x00001094                tu_fifo_remaining
+                0x00001098       0x20 serial_controllers/common/tusb_fifo.o
+                0x00001098                tu_fifo_remaining
  .text.tu_fifo_read
-                0x000010b4       0x2c serial_controllers/common/tusb_fifo.o
-                0x000010b4                tu_fifo_read
+                0x000010b8       0x2c serial_controllers/common/tusb_fifo.o
+                0x000010b8                tu_fifo_read
  .text.tu_fifo_read_n
-                0x000010e0       0x10 serial_controllers/common/tusb_fifo.o
-                0x000010e0                tu_fifo_read_n
+                0x000010e4       0x10 serial_controllers/common/tusb_fifo.o
+                0x000010e4                tu_fifo_read_n
  .text.tu_fifo_write
-                0x000010f0       0x60 serial_controllers/common/tusb_fifo.o
-                0x000010f0                tu_fifo_write
+                0x000010f4       0x60 serial_controllers/common/tusb_fifo.o
+                0x000010f4                tu_fifo_write
  .text.tu_fifo_write_n
-                0x00001150       0x10 serial_controllers/common/tusb_fifo.o
-                0x00001150                tu_fifo_write_n
+                0x00001154       0x10 serial_controllers/common/tusb_fifo.o
+                0x00001154                tu_fifo_write_n
  .text.tu_fifo_clear
-                0x00001160       0x1a serial_controllers/common/tusb_fifo.o
-                0x00001160                tu_fifo_clear
+                0x00001164       0x1a serial_controllers/common/tusb_fifo.o
+                0x00001164                tu_fifo_clear
  .text.tu_fifo_set_overwritable
-                0x0000117a        0x6 serial_controllers/common/tusb_fifo.o
-                0x0000117a                tu_fifo_set_overwritable
+                0x0000117e        0x6 serial_controllers/common/tusb_fifo.o
+                0x0000117e                tu_fifo_set_overwritable
  .text.configuration_reset
-                0x00001180       0x88 serial_controllers/device/usbd.o
+                0x00001184       0x88 serial_controllers/device/usbd.o
  .text.usbd_reset
-                0x00001208       0x14 serial_controllers/device/usbd.o
+                0x0000120c       0x14 serial_controllers/device/usbd.o
  .text.invoke_class_control
-                0x0000121c       0x20 serial_controllers/device/usbd.o
+                0x00001220       0x20 serial_controllers/device/usbd.o
  .text.process_set_config
-                0x0000123c      0x188 serial_controllers/device/usbd.o
+                0x00001240      0x188 serial_controllers/device/usbd.o
  .text.process_get_descriptor
-                0x000013c4       0xf4 serial_controllers/device/usbd.o
+                0x000013c8       0xf4 serial_controllers/device/usbd.o
  .text.usbd_int_set
-                0x000014b8       0x28 serial_controllers/device/usbd.o
-                0x000014b8                usbd_int_set
+                0x000014bc       0x28 serial_controllers/device/usbd.o
+                0x000014bc                usbd_int_set
  .text.tud_mounted
-                0x000014e0       0x10 serial_controllers/device/usbd.o
-                0x000014e0                tud_mounted
+                0x000014e4       0x10 serial_controllers/device/usbd.o
+                0x000014e4                tud_mounted
  .text.tud_suspended
-                0x000014f0       0x10 serial_controllers/device/usbd.o
-                0x000014f0                tud_suspended
+                0x000014f4       0x10 serial_controllers/device/usbd.o
+                0x000014f4                tud_suspended
  .text.tud_disconnect
-                0x00001500       0x20 serial_controllers/device/usbd.o
-                0x00001500                tud_disconnect
+                0x00001504       0x20 serial_controllers/device/usbd.o
+                0x00001504                tud_disconnect
  .text.tud_connect
-                0x00001520       0x20 serial_controllers/device/usbd.o
-                0x00001520                tud_connect
+                0x00001524       0x20 serial_controllers/device/usbd.o
+                0x00001524                tud_connect
  .text.tud_inited
-                0x00001540       0x14 serial_controllers/device/usbd.o
-                0x00001540                tud_inited
+                0x00001544       0x14 serial_controllers/device/usbd.o
+                0x00001544                tud_inited
  .text.tud_init
-                0x00001554       0xbc serial_controllers/device/usbd.o
-                0x00001554                tud_init
+                0x00001558       0xbc serial_controllers/device/usbd.o
+                0x00001558                tud_init
  .text.dcd_event_handler
-                0x00001610      0x1a8 serial_controllers/device/usbd.o
-                0x00001610                dcd_event_handler
+                0x00001614      0x1a8 serial_controllers/device/usbd.o
+                0x00001614                dcd_event_handler
  .text.usbd_edpt_open
-                0x000017b8       0x40 serial_controllers/device/usbd.o
-                0x000017b8                usbd_edpt_open
+                0x000017bc       0x40 serial_controllers/device/usbd.o
+                0x000017bc                usbd_edpt_open
  .text.usbd_open_edpt_pair
-                0x000017f8       0x68 serial_controllers/device/usbd.o
-                0x000017f8                usbd_open_edpt_pair
+                0x000017fc       0x68 serial_controllers/device/usbd.o
+                0x000017fc                usbd_open_edpt_pair
  .text.usbd_edpt_claim
-                0x00001860       0x28 serial_controllers/device/usbd.o
-                0x00001860                usbd_edpt_claim
+                0x00001864       0x28 serial_controllers/device/usbd.o
+                0x00001864                usbd_edpt_claim
  .text.usbd_edpt_release
-                0x00001888       0x28 serial_controllers/device/usbd.o
-                0x00001888                usbd_edpt_release
+                0x0000188c       0x28 serial_controllers/device/usbd.o
+                0x0000188c                usbd_edpt_release
  .text.usbd_edpt_xfer
-                0x000018b0       0x7c serial_controllers/device/usbd.o
-                0x000018b0                usbd_edpt_xfer
+                0x000018b4       0x7c serial_controllers/device/usbd.o
+                0x000018b4                usbd_edpt_xfer
  .text.usbd_edpt_stall
-                0x0000192c       0x4c serial_controllers/device/usbd.o
-                0x0000192c                usbd_edpt_stall
+                0x00001930       0x4c serial_controllers/device/usbd.o
+                0x00001930                usbd_edpt_stall
  .text.usbd_edpt_clear_stall
-                0x00001978       0x4c serial_controllers/device/usbd.o
-                0x00001978                usbd_edpt_clear_stall
+                0x0000197c       0x4c serial_controllers/device/usbd.o
+                0x0000197c                usbd_edpt_clear_stall
  .text.usbd_edpt_stalled
-                0x000019c4       0x1c serial_controllers/device/usbd.o
-                0x000019c4                usbd_edpt_stalled
+                0x000019c8       0x1c serial_controllers/device/usbd.o
+                0x000019c8                usbd_edpt_stalled
  .text.process_control_request
-                0x000019e0      0x3c0 serial_controllers/device/usbd.o
+                0x000019e4      0x3c0 serial_controllers/device/usbd.o
  .text.tud_task_ext
-                0x00001da0      0x1a8 serial_controllers/device/usbd.o
-                0x00001da0                tud_task_ext
+                0x00001da4      0x1a8 serial_controllers/device/usbd.o
+                0x00001da4                tud_task_ext
  .text._data_stage_xact
-                0x00001f48       0x5c serial_controllers/device/usbd_control.o
+                0x00001f4c       0x5c serial_controllers/device/usbd_control.o
  .text.tud_control_status
-                0x00001fa4       0x44 serial_controllers/device/usbd_control.o
-                0x00001fa4                tud_control_status
+                0x00001fa8       0x44 serial_controllers/device/usbd_control.o
+                0x00001fa8                tud_control_status
  .text.tud_control_xfer
-                0x00001fe8       0x84 serial_controllers/device/usbd_control.o
-                0x00001fe8                tud_control_xfer
+                0x00001fec       0x84 serial_controllers/device/usbd_control.o
+                0x00001fec                tud_control_xfer
  .text.usbd_control_reset
-                0x0000206c       0x18 serial_controllers/device/usbd_control.o
-                0x0000206c                usbd_control_reset
+                0x00002070       0x18 serial_controllers/device/usbd_control.o
+                0x00002070                usbd_control_reset
  .text.usbd_control_set_complete_callback
-                0x00002084        0xc serial_controllers/device/usbd_control.o
-                0x00002084                usbd_control_set_complete_callback
+                0x00002088        0xc serial_controllers/device/usbd_control.o
+                0x00002088                usbd_control_set_complete_callback
  .text.usbd_control_set_request
-                0x00002090       0x24 serial_controllers/device/usbd_control.o
-                0x00002090                usbd_control_set_request
+                0x00002094       0x24 serial_controllers/device/usbd_control.o
+                0x00002094                usbd_control_set_request
  .text.usbd_control_xfer_cb
-                0x000020b4       0xe8 serial_controllers/device/usbd_control.o
-                0x000020b4                usbd_control_xfer_cb
+                0x000020b8       0xe8 serial_controllers/device/usbd_control.o
+                0x000020b8                usbd_control_xfer_cb
  .text.bus_reset
-                0x0000219c       0x58 serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x000021a0       0x58 serial_controllers/portable/microchip/samd/dcd_samd.o
  .text.dcd_init
-                0x000021f4       0x9c serial_controllers/portable/microchip/samd/dcd_samd.o
-                0x000021f4                dcd_init
+                0x000021f8       0x9c serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x000021f8                dcd_init
  .text.dcd_int_enable
-                0x00002290        0xc serial_controllers/portable/microchip/samd/dcd_samd.o
-                0x00002290                dcd_int_enable
+                0x00002294        0xc serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x00002294                dcd_int_enable
  .text.dcd_int_disable
-                0x0000229c       0x14 serial_controllers/portable/microchip/samd/dcd_samd.o
-                0x0000229c                dcd_int_disable
+                0x000022a0       0x14 serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x000022a0                dcd_int_disable
  .text.dcd_disconnect
-                0x000022b0       0x14 serial_controllers/portable/microchip/samd/dcd_samd.o
-                0x000022b0                dcd_disconnect
+                0x000022b4       0x14 serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x000022b4                dcd_disconnect
  .text.dcd_connect
-                0x000022c4       0x10 serial_controllers/portable/microchip/samd/dcd_samd.o
-                0x000022c4                dcd_connect
+                0x000022c8       0x10 serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x000022c8                dcd_connect
  .text.dcd_edpt0_status_complete
-                0x000022d4       0x48 serial_controllers/portable/microchip/samd/dcd_samd.o
-                0x000022d4                dcd_edpt0_status_complete
+                0x000022d8       0x48 serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x000022d8                dcd_edpt0_status_complete
  .text.dcd_edpt_open
-                0x0000231c       0xd0 serial_controllers/portable/microchip/samd/dcd_samd.o
-                0x0000231c                dcd_edpt_open
+                0x00002320       0xd0 serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x00002320                dcd_edpt_open
  .text.dcd_edpt_close_all
-                0x000023ec        0x2 serial_controllers/portable/microchip/samd/dcd_samd.o
-                0x000023ec                dcd_edpt_close_all
- *fill*         0x000023ee        0x2 
+                0x000023f0        0x2 serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x000023f0                dcd_edpt_close_all
+ *fill*         0x000023f2        0x2 
  .text.dcd_edpt_xfer
-                0x000023f0       0xbc serial_controllers/portable/microchip/samd/dcd_samd.o
-                0x000023f0                dcd_edpt_xfer
+                0x000023f4       0xbc serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x000023f4                dcd_edpt_xfer
  .text.dcd_set_address
-                0x000024ac       0x20 serial_controllers/portable/microchip/samd/dcd_samd.o
-                0x000024ac                dcd_set_address
+                0x000024b0       0x20 serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x000024b0                dcd_set_address
  .text.dcd_edpt_stall
-                0x000024cc       0x24 serial_controllers/portable/microchip/samd/dcd_samd.o
-                0x000024cc                dcd_edpt_stall
+                0x000024d0       0x24 serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x000024d0                dcd_edpt_stall
  .text.dcd_edpt_clear_stall
-                0x000024f0       0x24 serial_controllers/portable/microchip/samd/dcd_samd.o
-                0x000024f0                dcd_edpt_clear_stall
+                0x000024f4       0x24 serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x000024f4                dcd_edpt_clear_stall
  .text.maybe_transfer_complete
-                0x00002514       0xd8 serial_controllers/portable/microchip/samd/dcd_samd.o
-                0x00002514                maybe_transfer_complete
+                0x00002518       0xd8 serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x00002518                maybe_transfer_complete
  .text.dcd_int_handler
-                0x000025ec      0x104 serial_controllers/portable/microchip/samd/dcd_samd.o
-                0x000025ec                dcd_int_handler
+                0x000025f0      0x104 serial_controllers/portable/microchip/samd/dcd_samd.o
+                0x000025f0                dcd_int_handler
  .text._ZN6Serial11NoIntEnableEhb
-                0x000026f0        0x2 serial_controllers/serial_buffer/serial_buffer.o
-                0x000026f0                Serial::NoIntEnable(unsigned char, bool)
- *fill*         0x000026f2        0x2 
+                0x000026f4        0x2 serial_controllers/serial_buffer/serial_buffer.o
+                0x000026f4                Serial::NoIntEnable(unsigned char, bool)
+ *fill*         0x000026f6        0x2 
  .text._ZN6Serial9Int2ASCIIEmPA10_c
-                0x000026f4       0x68 serial_controllers/serial_buffer/serial_buffer.o
-                0x000026f4                Serial::Int2ASCII(unsigned long, char (*) [10])
+                0x000026f8       0x68 serial_controllers/serial_buffer/serial_buffer.o
+                0x000026f8                Serial::Int2ASCII(unsigned long, char (*) [10])
  .text._ZN6Serial12SerialBuffer5ResetEPcm
-                0x0000275c       0x12 serial_controllers/serial_buffer/serial_buffer.o
-                0x0000275c                Serial::SerialBuffer::Reset(char*, unsigned long)
- *fill*         0x0000276e        0x2 
+                0x00002760       0x12 serial_controllers/serial_buffer/serial_buffer.o
+                0x00002760                Serial::SerialBuffer::Reset(char*, unsigned long)
+ *fill*         0x00002772        0x2 
  .text._ZN6Serial12SerialBufferC2EhPcm
-                0x00002770       0x28 serial_controllers/serial_buffer/serial_buffer.o
-                0x00002770                Serial::SerialBuffer::SerialBuffer(unsigned char, char*, unsigned long)
-                0x00002770                Serial::SerialBuffer::SerialBuffer(unsigned char, char*, unsigned long)
+                0x00002774       0x28 serial_controllers/serial_buffer/serial_buffer.o
+                0x00002774                Serial::SerialBuffer::SerialBuffer(unsigned char, char*, unsigned long)
+                0x00002774                Serial::SerialBuffer::SerialBuffer(unsigned char, char*, unsigned long)
  .text._ZN6Serial12SerialBuffer5ClearEv
-                0x00002798        0xa serial_controllers/serial_buffer/serial_buffer.o
-                0x00002798                Serial::SerialBuffer::Clear()
- *fill*         0x000027a2        0x2 
+                0x0000279c        0xa serial_controllers/serial_buffer/serial_buffer.o
+                0x0000279c                Serial::SerialBuffer::Clear()
+ *fill*         0x000027a6        0x2 
  .text._ZN6Serial12SerialBufferD2Ev
-                0x000027a4       0x10 serial_controllers/serial_buffer/serial_buffer.o
-                0x000027a4                Serial::SerialBuffer::~SerialBuffer()
-                0x000027a4                Serial::SerialBuffer::~SerialBuffer()
+                0x000027a8       0x10 serial_controllers/serial_buffer/serial_buffer.o
+                0x000027a8                Serial::SerialBuffer::~SerialBuffer()
+                0x000027a8                Serial::SerialBuffer::~SerialBuffer()
  .text._ZN6Serial12SerialBuffer3PutEcPFvhbE
-                0x000027b4       0x44 serial_controllers/serial_buffer/serial_buffer.o
-                0x000027b4                Serial::SerialBuffer::Put(char, void (*)(unsigned char, bool))
+                0x000027b8       0x44 serial_controllers/serial_buffer/serial_buffer.o
+                0x000027b8                Serial::SerialBuffer::Put(char, void (*)(unsigned char, bool))
  .text._ZN6Serial12SerialBuffer3GetEPFvhbEPc
-                0x000027f8       0x54 serial_controllers/serial_buffer/serial_buffer.o
-                0x000027f8                Serial::SerialBuffer::Get(void (*)(unsigned char, bool), char*)
+                0x000027fc       0x54 serial_controllers/serial_buffer/serial_buffer.o
+                0x000027fc                Serial::SerialBuffer::Get(void (*)(unsigned char, bool), char*)
  .text._ZN6Serial12SerialBuffer9GetStringEPKcmbPFvhbE
-                0x0000284c       0xd8 serial_controllers/serial_buffer/serial_buffer.o
-                0x0000284c                Serial::SerialBuffer::GetString(char const*, unsigned long, bool, void (*)(unsigned char, bool))
+                0x00002850       0xd8 serial_controllers/serial_buffer/serial_buffer.o
+                0x00002850                Serial::SerialBuffer::GetString(char const*, unsigned long, bool, void (*)(unsigned char, bool))
  .text._ZN6Serial12SerialBuffer13GetASCIIAsIntEPmPFvhbE
-                0x00002924       0x74 serial_controllers/serial_buffer/serial_buffer.o
-                0x00002924                Serial::SerialBuffer::GetASCIIAsInt(unsigned long*, void (*)(unsigned char, bool))
+                0x00002928       0x74 serial_controllers/serial_buffer/serial_buffer.o
+                0x00002928                Serial::SerialBuffer::GetASCIIAsInt(unsigned long*, void (*)(unsigned char, bool))
  .text._ZN6Serial12SerialBuffer11GetIntParamEPmPKcchPFvhbE
-                0x00002998       0xd8 serial_controllers/serial_buffer/serial_buffer.o
-                0x00002998                Serial::SerialBuffer::GetIntParam(unsigned long*, char const*, char, unsigned char, void (*)(unsigned char, bool))
+                0x0000299c       0xd8 serial_controllers/serial_buffer/serial_buffer.o
+                0x0000299c                Serial::SerialBuffer::GetIntParam(unsigned long*, char const*, char, unsigned char, void (*)(unsigned char, bool))
  .text._ZNK6Serial12SerialBuffer14GetBufferEmptyEv
-                0x00002a70        0x8 serial_controllers/serial_buffer/serial_buffer.o
-                0x00002a70                Serial::SerialBuffer::GetBufferEmpty() const
+                0x00002a74        0x8 serial_controllers/serial_buffer/serial_buffer.o
+                0x00002a74                Serial::SerialBuffer::GetBufferEmpty() const
  .text._ZNK6Serial12SerialBuffer14GetBufferStateEv
-                0x00002a78       0x18 serial_controllers/serial_buffer/serial_buffer.o
-                0x00002a78                Serial::SerialBuffer::GetBufferState() const
+                0x00002a7c       0x18 serial_controllers/serial_buffer/serial_buffer.o
+                0x00002a7c                Serial::SerialBuffer::GetBufferState() const
  .text._ZN9SerialUSB15USBFeedIOClocksEv
-                0x00002a90       0xf0 serial_controllers/serial_usb/serial_usb.o
-                0x00002a90                SerialUSB::USBFeedIOClocks()
+                0x00002a94       0xf0 serial_controllers/serial_usb/serial_usb.o
+                0x00002a94                SerialUSB::USBFeedIOClocks()
  .text._ZN9SerialUSB13USBControllerC2Ev
-                0x00002b80       0x20 serial_controllers/serial_usb/serial_usb.o
-                0x00002b80                SerialUSB::USBController::USBController()
-                0x00002b80                SerialUSB::USBController::USBController()
+                0x00002b84       0x20 serial_controllers/serial_usb/serial_usb.o
+                0x00002b84                SerialUSB::USBController::USBController()
+                0x00002b84                SerialUSB::USBController::USBController()
  .text._ZN9SerialUSB13USBController11ResetBufferEPcm
-                0x00002ba0        0xc serial_controllers/serial_usb/serial_usb.o
-                0x00002ba0                SerialUSB::USBController::ResetBuffer(char*, unsigned long)
+                0x00002ba4        0xc serial_controllers/serial_usb/serial_usb.o
+                0x00002ba4                SerialUSB::USBController::ResetBuffer(char*, unsigned long)
  .text._ZN9SerialUSB13USBController12ClearBuffersEbb
-                0x00002bac       0x28 serial_controllers/serial_usb/serial_usb.o
-                0x00002bac                SerialUSB::USBController::ClearBuffers(bool, bool)
+                0x00002bb0       0x28 serial_controllers/serial_usb/serial_usb.o
+                0x00002bb0                SerialUSB::USBController::ClearBuffers(bool, bool)
  .text._ZN9SerialUSB13USBController3ISREv
-                0x00002bd4       0x10 serial_controllers/serial_usb/serial_usb.o
-                0x00002bd4                SerialUSB::USBController::ISR()
+                0x00002bd8       0x10 serial_controllers/serial_usb/serial_usb.o
+                0x00002bd8                SerialUSB::USBController::ISR()
  .text._ZN9SerialUSB13USBController8TransmitEc
-                0x00002be4       0x2c serial_controllers/serial_usb/serial_usb.o
-                0x00002be4                SerialUSB::USBController::Transmit(char)
+                0x00002be8       0x2c serial_controllers/serial_usb/serial_usb.o
+                0x00002be8                SerialUSB::USBController::Transmit(char)
  .text._ZN9SerialUSB13USBController14TransmitPacketEPKcm
-                0x00002c10       0x2c serial_controllers/serial_usb/serial_usb.o
-                0x00002c10                SerialUSB::USBController::TransmitPacket(char const*, unsigned long)
+                0x00002c14       0x2c serial_controllers/serial_usb/serial_usb.o
+                0x00002c14                SerialUSB::USBController::TransmitPacket(char const*, unsigned long)
  .text._ZN9SerialUSB13USBController14TransmitStringEPKc
-                0x00002c3c       0x38 serial_controllers/serial_usb/serial_usb.o
-                0x00002c3c                SerialUSB::USBController::TransmitString(char const*)
+                0x00002c40       0x38 serial_controllers/serial_usb/serial_usb.o
+                0x00002c40                SerialUSB::USBController::TransmitString(char const*)
  .text._ZN9SerialUSB13USBController13ReceiveStringEPKcmb
-                0x00002c74       0x18 serial_controllers/serial_usb/serial_usb.o
-                0x00002c74                SerialUSB::USBController::ReceiveString(char const*, unsigned long, bool)
+                0x00002c78       0x18 serial_controllers/serial_usb/serial_usb.o
+                0x00002c78                SerialUSB::USBController::ReceiveString(char const*, unsigned long, bool)
  .text._ZN9SerialUSB13USBController11TransmitIntEm
-                0x00002c8c       0x24 serial_controllers/serial_usb/serial_usb.o
-                0x00002c8c                SerialUSB::USBController::TransmitInt(unsigned long)
+                0x00002c90       0x24 serial_controllers/serial_usb/serial_usb.o
+                0x00002c90                SerialUSB::USBController::TransmitInt(unsigned long)
  .text._ZN9SerialUSB13USBController12ReceiveParamEPmPKcch
-                0x00002cb0       0x20 serial_controllers/serial_usb/serial_usb.o
-                0x00002cb0                SerialUSB::USBController::ReceiveParam(unsigned long*, char const*, char, unsigned char)
+                0x00002cb4       0x20 serial_controllers/serial_usb/serial_usb.o
+                0x00002cb4                SerialUSB::USBController::ReceiveParam(unsigned long*, char const*, char, unsigned char)
  .text._ZN9SerialUSB13USBController9PutBufferEc
-                0x00002cd0       0x14 serial_controllers/serial_usb/serial_usb.o
-                0x00002cd0                SerialUSB::USBController::PutBuffer(char)
+                0x00002cd4       0x14 serial_controllers/serial_usb/serial_usb.o
+                0x00002cd4                SerialUSB::USBController::PutBuffer(char)
  .text._ZN9SerialUSB13USBController4TaskEb
-                0x00002ce4       0xc0 serial_controllers/serial_usb/serial_usb.o
-                0x00002ce4                SerialUSB::USBController::Task(bool)
+                0x00002ce8       0xc0 serial_controllers/serial_usb/serial_usb.o
+                0x00002ce8                SerialUSB::USBController::Task(bool)
  .text._ZNK9SerialUSB13USBController11IsConnectedEv
-                0x00002da4       0x14 serial_controllers/serial_usb/serial_usb.o
-                0x00002da4                SerialUSB::USBController::IsConnected() const
+                0x00002da8       0x14 serial_controllers/serial_usb/serial_usb.o
+                0x00002da8                SerialUSB::USBController::IsConnected() const
  .text._ZN9SerialUSB13USBController6DetachEv
-                0x00002db8       0x20 serial_controllers/serial_usb/serial_usb.o
-                0x00002db8                SerialUSB::USBController::Detach()
+                0x00002dbc       0x20 serial_controllers/serial_usb/serial_usb.o
+                0x00002dbc                SerialUSB::USBController::Detach()
  .text._ZN9SerialUSB13USBController6DeinitEv
-                0x00002dd8       0x28 serial_controllers/serial_usb/serial_usb.o
-                0x00002dd8                SerialUSB::USBController::Deinit()
+                0x00002ddc       0x28 serial_controllers/serial_usb/serial_usb.o
+                0x00002ddc                SerialUSB::USBController::Deinit()
  .text._ZN9SerialUSB13USBControllerD2Ev
-                0x00002e00       0x1c serial_controllers/serial_usb/serial_usb.o
-                0x00002e00                SerialUSB::USBController::~USBController()
-                0x00002e00                SerialUSB::USBController::~USBController()
+                0x00002e04       0x1c serial_controllers/serial_usb/serial_usb.o
+                0x00002e04                SerialUSB::USBController::~USBController()
+                0x00002e04                SerialUSB::USBController::~USBController()
  .text._ZN9SerialUSB13USBController8ReattachEv
-                0x00002e1c       0x20 serial_controllers/serial_usb/serial_usb.o
-                0x00002e1c                SerialUSB::USBController::Reattach()
+                0x00002e20       0x20 serial_controllers/serial_usb/serial_usb.o
+                0x00002e20                SerialUSB::USBController::Reattach()
  .text._ZN9SerialUSB13USBController4InitEPcm
-                0x00002e3c       0x44 serial_controllers/serial_usb/serial_usb.o
-                0x00002e3c                SerialUSB::USBController::Init(char*, unsigned long)
+                0x00002e40       0x44 serial_controllers/serial_usb/serial_usb.o
+                0x00002e40                SerialUSB::USBController::Init(char*, unsigned long)
  .text.tusb_init
-                0x00002e80       0x10 serial_controllers/tusb.o
-                0x00002e80                tusb_init
+                0x00002e84       0x10 serial_controllers/tusb.o
+                0x00002e84                tusb_init
  .text.tusb_inited
-                0x00002e90       0x14 serial_controllers/tusb.o
-                0x00002e90                tusb_inited
+                0x00002e94       0x14 serial_controllers/tusb.o
+                0x00002e94                tusb_inited
  .text.tu_edpt_claim
-                0x00002ea4       0x26 serial_controllers/tusb.o
-                0x00002ea4                tu_edpt_claim
+                0x00002ea8       0x26 serial_controllers/tusb.o
+                0x00002ea8                tu_edpt_claim
  .text.tu_edpt_release
-                0x00002eca       0x26 serial_controllers/tusb.o
-                0x00002eca                tu_edpt_release
+                0x00002ece       0x26 serial_controllers/tusb.o
+                0x00002ece                tu_edpt_release
  .text.tu_edpt_validate
-                0x00002ef0       0x74 serial_controllers/tusb.o
-                0x00002ef0                tu_edpt_validate
+                0x00002ef4       0x74 serial_controllers/tusb.o
+                0x00002ef4                tu_edpt_validate
  .text.tu_edpt_bind_driver
-                0x00002f64       0x26 serial_controllers/tusb.o
-                0x00002f64                tu_edpt_bind_driver
- *fill*         0x00002f8a        0x2 
+                0x00002f68       0x26 serial_controllers/tusb.o
+                0x00002f68                tu_edpt_bind_driver
+ *fill*         0x00002f8e        0x2 
  .text.tud_descriptor_device_cb
-                0x00002f8c        0x8 serial_controllers/usb_descriptors.o
-                0x00002f8c                tud_descriptor_device_cb
+                0x00002f90        0x8 serial_controllers/usb_descriptors.o
+                0x00002f90                tud_descriptor_device_cb
  .text.tud_descriptor_configuration_cb
-                0x00002f94        0xc serial_controllers/usb_descriptors.o
-                0x00002f94                tud_descriptor_configuration_cb
+                0x00002f98        0xc serial_controllers/usb_descriptors.o
+                0x00002f98                tud_descriptor_configuration_cb
  .text.tud_descriptor_string_cb
-                0x00002fa0       0x68 serial_controllers/usb_descriptors.o
-                0x00002fa0                tud_descriptor_string_cb
+                0x00002fa4       0x68 serial_controllers/usb_descriptors.o
+                0x00002fa4                tud_descriptor_string_cb
  .text._ZN12StateMachine13ExecuteActionEPNS_11STT_MACHINEE
-                0x00003008       0x12 state_machine.o
-                0x00003008                StateMachine::ExecuteAction(StateMachine::STT_MACHINE*)
+                0x0000300c       0x12 state_machine.o
+                0x0000300c                StateMachine::ExecuteAction(StateMachine::STT_MACHINE*)
  .text._ZN12StateMachine17ProcessSuperStateEPhhPFhvE
-                0x0000301a       0x10 state_machine.o
-                0x0000301a                StateMachine::ProcessSuperState(unsigned char*, unsigned char, unsigned char (*)())
- *fill*         0x0000302a        0x2 
+                0x0000301e       0x10 state_machine.o
+                0x0000301e                StateMachine::ProcessSuperState(unsigned char*, unsigned char, unsigned char (*)())
+ *fill*         0x0000302e        0x2 
  .text._ZN4Util20enterCriticalSectionEv
-                0x0000302c       0x18 util.o
-                0x0000302c                Util::enterCriticalSection()
+                0x00003030       0x18 util.o
+                0x00003030                Util::enterCriticalSection()
  .text._ZN4Util19exitCriticalSectionEv
-                0x00003044       0x14 util.o
-                0x00003044                Util::exitCriticalSection()
+                0x00003048       0x14 util.o
+                0x00003048                Util::exitCriticalSection()
  .text.__aeabi_atexit
-                0x00003058       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libstdc++.a(atexit_arm.o)
-                0x00003058                __aeabi_atexit
- .text          0x00003068      0x114 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_udivsi3.o)
-                0x00003068                __aeabi_uidiv
-                0x00003068                __udivsi3
-                0x00003174                __aeabi_uidivmod
- .text          0x0000317c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_dvmd_tls.o)
-                0x0000317c                __aeabi_idiv0
-                0x0000317c                __aeabi_ldiv0
+                0x0000305c       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libstdc++.a(atexit_arm.o)
+                0x0000305c                __aeabi_atexit
+ .text          0x0000306c      0x114 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_udivsi3.o)
+                0x0000306c                __aeabi_uidiv
+                0x0000306c                __udivsi3
+                0x00003178                __aeabi_uidivmod
+ .text          0x00003180        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m\libgcc.a(_dvmd_tls.o)
+                0x00003180                __aeabi_idiv0
+                0x00003180                __aeabi_ldiv0
  .text.__cxa_atexit
-                0x00003180       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-cxa_atexit.o)
-                0x00003180                __cxa_atexit
+                0x00003184       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-cxa_atexit.o)
+                0x00003184                __cxa_atexit
  .text.__libc_init_array
-                0x00003190       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-init.o)
-                0x00003190                __libc_init_array
- .text.memcpy   0x000031d8       0x84 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-memcpy-stub.o)
-                0x000031d8                memcpy
- .text.memset   0x0000325c       0x94 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-memset.o)
-                0x0000325c                memset
- .text.strlen   0x000032f0       0x64 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strlen-stub.o)
-                0x000032f0                strlen
+                0x00003194       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-init.o)
+                0x00003194                __libc_init_array
+ .text.memcpy   0x000031dc       0x84 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-memcpy-stub.o)
+                0x000031dc                memcpy
+ .text.memset   0x00003260       0x94 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-memset.o)
+                0x00003260                memset
+ .text.strlen   0x000032f4       0x64 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-strlen-stub.o)
+                0x000032f4                strlen
  .text.__register_exitproc
-                0x00003354       0xf4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-__atexit.o)
-                0x00003354                __register_exitproc
+                0x00003358       0xf4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-__atexit.o)
+                0x00003358                __register_exitproc
  .text.startup.register_fini
-                0x00003448       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-__call_atexit.o)
- .text.atexit   0x00003460       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-atexit.o)
-                0x00003460                atexit
+                0x0000344c       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-__call_atexit.o)
+ .text.atexit   0x00003464       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-atexit.o)
+                0x00003464                atexit
  .text.__libc_fini_array
-                0x00003470       0x34 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-fini.o)
-                0x00003470                __libc_fini_array
+                0x00003474       0x34 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-fini.o)
+                0x00003474                __libc_fini_array
  .text.__retarget_lock_acquire_recursive
-                0x000034a4        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
-                0x000034a4                __retarget_lock_acquire_recursive
- .text.__retarget_lock_release_recursive
                 0x000034a8        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
-                0x000034a8                __retarget_lock_release_recursive
+                0x000034a8                __retarget_lock_acquire_recursive
+ .text.__retarget_lock_release_recursive
+                0x000034ac        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+                0x000034ac                __retarget_lock_release_recursive
  *(.glue_7t)
- .glue_7t       0x000034ac        0x0 linker stubs
+ .glue_7t       0x000034b0        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x000034ac        0x0 linker stubs
+ .glue_7        0x000034b0        0x0 linker stubs
  *(.rodata .rodata* .gnu.linkonce.r.*)
  .rodata.str1.4
-                0x000034ac      0x141 example_state_machine.o
- *fill*         0x000035ed        0x3 
- .rodata        0x000035f0       0xa4 serial_controllers/device/usbd.o
- .rodata        0x00003694       0x62 serial_controllers/usb_descriptors.o
-                0x00003694                desc_device
-                0x000036a8                desc_fs_configuration
- *fill*         0x000036f6        0x2 
+                0x000034b0      0x142 example_state_machine.o
+ *fill*         0x000035f2        0x2 
+ .rodata        0x000035f4       0xa4 serial_controllers/device/usbd.o
+ .rodata        0x00003698       0x62 serial_controllers/usb_descriptors.o
+                0x00003698                desc_device
+                0x000036ac                desc_fs_configuration
+ *fill*         0x000036fa        0x2 
  .rodata.str1.4
-                0x000036f8       0x2c serial_controllers/usb_descriptors.o
+                0x000036fc       0x2c serial_controllers/usb_descriptors.o
  .rodata._global_impure_ptr
-                0x00003724        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-impure.o)
-                0x00003724                _global_impure_ptr
+                0x00003728        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-impure.o)
+                0x00003728                _global_impure_ptr
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00003728                . = ALIGN (0x4)
+                0x0000372c                . = ALIGN (0x4)
  *(.init)
- .init          0x00003728        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crti.o
-                0x00003728                _init
- .init          0x0000372c        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtn.o
-                0x00003734                . = ALIGN (0x4)
-                0x00003734                __preinit_array_start = .
+ .init          0x0000372c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crti.o
+                0x0000372c                _init
+ .init          0x00003730        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtn.o
+                0x00003738                . = ALIGN (0x4)
+                0x00003738                __preinit_array_start = .
  *(.preinit_array)
-                0x00003734                __preinit_array_end = .
-                0x00003734                . = ALIGN (0x4)
-                0x00003734                __init_array_start = .
+                0x00003738                __preinit_array_end = .
+                0x00003738                . = ALIGN (0x4)
+                0x00003738                __init_array_start = .
  *(SORT(.init_array.*))
  .init_array.00000
-                0x00003734        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-__call_atexit.o)
+                0x00003738        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-__call_atexit.o)
  *(.init_array)
- .init_array    0x00003738        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
- .init_array    0x0000373c        0x4 example_state_machine.o
-                0x00003740                __init_array_end = .
-                0x00003740                . = ALIGN (0x4)
+ .init_array    0x0000373c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
+ .init_array    0x00003740        0x4 example_state_machine.o
+                0x00003744                __init_array_end = .
+                0x00003744                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x00003740                . = ALIGN (0x4)
+                0x00003744                . = ALIGN (0x4)
  *(.fini)
- .fini          0x00003740        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crti.o
-                0x00003740                _fini
- .fini          0x00003744        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtn.o
-                0x0000374c                . = ALIGN (0x4)
-                0x0000374c                __fini_array_start = .
+ .fini          0x00003744        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crti.o
+                0x00003744                _fini
+ .fini          0x00003748        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtn.o
+                0x00003750                . = ALIGN (0x4)
+                0x00003750                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x0000374c        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
+ .fini_array    0x00003750        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x00003750                __fini_array_end = .
+                0x00003754                __fini_array_end = .
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x00003750                . = ALIGN (0x4)
-                0x00003750                _efixed = .
+                0x00003754                . = ALIGN (0x4)
+                0x00003754                _efixed = .
                 [!provide]                PROVIDE (__exidx_start, .)
 
-.vfp11_veneer   0x00003750        0x0
- .vfp11_veneer  0x00003750        0x0 linker stubs
+.vfp11_veneer   0x00003754        0x0
+ .vfp11_veneer  0x00003754        0x0 linker stubs
 
-.v4_bx          0x00003750        0x0
- .v4_bx         0x00003750        0x0 linker stubs
+.v4_bx          0x00003754        0x0
+ .v4_bx         0x00003754        0x0 linker stubs
 
-.iplt           0x00003750        0x0
- .iplt          0x00003750        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
+.iplt           0x00003754        0x0
+ .iplt          0x00003754        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
 
-.ARM.exidx      0x00003750        0x8
+.ARM.exidx      0x00003754        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
  .ARM.exidx.text.__aeabi_atexit
-                0x00003750        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libstdc++.a(atexit_arm.o)
+                0x00003754        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libstdc++.a(atexit_arm.o)
                 [!provide]                PROVIDE (__exidx_end, .)
 
-.eh_frame       0x00003758        0x0
- .eh_frame      0x00003758        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
+.eh_frame       0x0000375c        0x0
+ .eh_frame      0x0000375c        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
 
-.rel.dyn        0x00003758        0x0
- .rel.iplt      0x00003758        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
+.rel.dyn        0x0000375c        0x0
+ .rel.iplt      0x0000375c        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
 
-.jcr            0x00003758        0x0
- .jcr           0x00003758        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
+.jcr            0x0000375c        0x0
+ .jcr           0x0000375c        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
 
-.igot.plt       0x00003758        0x0
- .igot.plt      0x00003758        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
-                0x00003758                . = ALIGN (0x4)
-                0x00003758                _etext = .
+.igot.plt       0x0000375c        0x0
+ .igot.plt      0x0000375c        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
+                0x0000375c                . = ALIGN (0x4)
+                0x0000375c                _etext = .
 
-.relocate       0x20000000      0x464 load address 0x00003758
+.relocate       0x20000000      0x464 load address 0x0000375c
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _srelocate = .
  *(.ramfunc .ramfunc.*)
@@ -6343,55 +6343,53 @@ LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin
                 0x20000464                . = ALIGN (0x4)
                 0x20000464                _erelocate = .
 
-.bss            0x20000464      0x648 load address 0x00003bbc
+.bss            0x20000464      0x644 load address 0x00003bc0
                 0x20000464                . = ALIGN (0x4)
                 0x20000464                _sbss = .
                 0x20000464                _szero = .
  *(.bss .bss.*)
  .bss           0x20000464       0x1c c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v6-m/crtbegin.o
- .bss           0x20000480      0x229 example_state_machine.o
+ .bss           0x20000480      0x228 example_state_machine.o
                 0x20000480                RX_BUFFER
                 0x20000680                usb_controller
                 0x200006a0                echo
+                0x200006a1                connected
                 0x200006a4                param
-                0x200006a8                connected
- *fill*         0x200006a9        0x3 
- .bss           0x200006ac      0x138 serial_controllers/class/cdc/cdc_device.o
- .bss           0x200007e4       0x40 serial_controllers/device/usbd.o
- .bss           0x20000824       0x54 serial_controllers/device/usbd_control.o
- .bss           0x20000878      0x10a serial_controllers/portable/microchip/samd/dcd_samd.o
- *fill*         0x20000982        0x2 
- .bss           0x20000984       0x40 serial_controllers/usb_descriptors.o
- .bss           0x200009c4        0x4 util.o
-                0x200009c4                Util::critical_section_count
+ .bss           0x200006a8      0x138 serial_controllers/class/cdc/cdc_device.o
+ .bss           0x200007e0       0x40 serial_controllers/device/usbd.o
+ .bss           0x20000820       0x54 serial_controllers/device/usbd_control.o
+ .bss           0x20000874      0x10a serial_controllers/portable/microchip/samd/dcd_samd.o
+ *fill*         0x2000097e        0x2 
+ .bss           0x20000980       0x40 serial_controllers/usb_descriptors.o
+ .bss           0x200009c0        0x4 util.o
+                0x200009c0                Util::critical_section_count
  *(COMMON)
- COMMON         0x200009c8       0xc0 serial_controllers/device/usbd.o
-                0x200009c8                _usbd_qdef_buf
- COMMON         0x20000a88       0x21 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
-                0x20000a88                __lock___atexit_recursive_mutex
-                0x20000a8c                __lock___arc4random_mutex
-                0x20000a90                __lock___env_recursive_mutex
-                0x20000a94                __lock___sinit_recursive_mutex
-                0x20000a98                __lock___malloc_recursive_mutex
-                0x20000a9c                __lock___at_quick_exit_mutex
-                0x20000aa0                __lock___dd_hash_mutex
-                0x20000aa4                __lock___tz_mutex
-                0x20000aa8                __lock___sfp_recursive_mutex
-                0x20000aac                . = ALIGN (0x4)
- *fill*         0x20000aa9        0x3 
-                0x20000aac                _ebss = .
-                0x20000aac                _ezero = .
+ COMMON         0x200009c4       0xc0 serial_controllers/device/usbd.o
+                0x200009c4                _usbd_qdef_buf
+ COMMON         0x20000a84       0x21 c:/program files (x86)/atmel/studio/7.0/toolchain/arm/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/6.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc.a(lib_a-lock.o)
+                0x20000a84                __lock___atexit_recursive_mutex
+                0x20000a88                __lock___arc4random_mutex
+                0x20000a8c                __lock___env_recursive_mutex
+                0x20000a90                __lock___sinit_recursive_mutex
+                0x20000a94                __lock___malloc_recursive_mutex
+                0x20000a98                __lock___at_quick_exit_mutex
+                0x20000a9c                __lock___dd_hash_mutex
+                0x20000aa0                __lock___tz_mutex
+                0x20000aa4                __lock___sfp_recursive_mutex
+                0x20000aa8                . = ALIGN (0x4)
+ *fill*         0x20000aa5        0x3 
+                0x20000aa8                _ebss = .
+                0x20000aa8                _ezero = .
 
-.stack          0x20000aac     0x2004 load address 0x00004204
-                0x20000ab0                . = ALIGN (0x8)
- *fill*         0x20000aac        0x4 
-                0x20000ab0                _sstack = .
-                0x20002ab0                . = (. + STACK_SIZE)
- *fill*         0x20000ab0     0x2000 
-                0x20002ab0                . = ALIGN (0x8)
-                0x20002ab0                _estack = .
-                0x20002ab0                . = ALIGN (0x4)
-                0x20002ab0                _end = .
+.stack          0x20000aa8     0x2000 load address 0x00004204
+                0x20000aa8                . = ALIGN (0x8)
+                0x20000aa8                _sstack = .
+                0x20002aa8                . = (. + STACK_SIZE)
+ *fill*         0x20000aa8     0x2000 
+                0x20002aa8                . = ALIGN (0x8)
+                0x20002aa8                _estack = .
+                0x20002aa8                . = ALIGN (0x4)
+                0x20002aa8                _end = .
 OUTPUT(SerialLibraryExample.elf elf32-littlearm)
 
 .ARM.attributes
@@ -6717,21 +6715,21 @@ OUTPUT(SerialLibraryExample.elf elf32-littlearm)
  .debug_macro   0x0001721c       0x78 state_machine.o
  .debug_macro   0x00017294      0x30b util.o
 
-.debug_line     0x00000000     0x7f06
+.debug_line     0x00000000     0x7f02
  .debug_line    0x00000000      0x6fa Device_Startup/startup_samd21.o
- .debug_line    0x000006fa      0xda6 example_state_machine.o
- .debug_line    0x000014a0      0xc34 main.o
- .debug_line    0x000020d4      0x8cc serial_controllers/class/cdc/cdc_device.o
- .debug_line    0x000029a0      0x8f1 serial_controllers/common/tusb_fifo.o
- .debug_line    0x00003291      0xcb9 serial_controllers/device/usbd.o
- .debug_line    0x00003f4a      0x673 serial_controllers/device/usbd_control.o
- .debug_line    0x000045bd      0xc4d serial_controllers/portable/microchip/samd/dcd_samd.o
- .debug_line    0x0000520a      0xa18 serial_controllers/serial_buffer/serial_buffer.o
- .debug_line    0x00005c22      0xd2e serial_controllers/serial_usb/serial_usb.o
- .debug_line    0x00006950      0x6b0 serial_controllers/tusb.o
- .debug_line    0x00007000      0x5b0 serial_controllers/usb_descriptors.o
- .debug_line    0x000075b0      0x269 state_machine.o
- .debug_line    0x00007819      0x6ed util.o
+ .debug_line    0x000006fa      0xda2 example_state_machine.o
+ .debug_line    0x0000149c      0xc34 main.o
+ .debug_line    0x000020d0      0x8cc serial_controllers/class/cdc/cdc_device.o
+ .debug_line    0x0000299c      0x8f1 serial_controllers/common/tusb_fifo.o
+ .debug_line    0x0000328d      0xcb9 serial_controllers/device/usbd.o
+ .debug_line    0x00003f46      0x673 serial_controllers/device/usbd_control.o
+ .debug_line    0x000045b9      0xc4d serial_controllers/portable/microchip/samd/dcd_samd.o
+ .debug_line    0x00005206      0xa18 serial_controllers/serial_buffer/serial_buffer.o
+ .debug_line    0x00005c1e      0xd2e serial_controllers/serial_usb/serial_usb.o
+ .debug_line    0x0000694c      0x6b0 serial_controllers/tusb.o
+ .debug_line    0x00006ffc      0x5b0 serial_controllers/usb_descriptors.o
+ .debug_line    0x000075ac      0x269 state_machine.o
+ .debug_line    0x00007815      0x6ed util.o
 
 .debug_str      0x00000000    0x82f8d
  .debug_str     0x00000000    0x6d97a Device_Startup/startup_samd21.o
