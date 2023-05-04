@@ -12,3 +12,17 @@ How to Use:
 10) To bind a state to a super state, add \SUPER to a cell and the name of the super state in the next cell. Super states can also be bound to a bigger super state.
 11) To generate files, open this folder in terminal and enter: "py -3 cpp_generator.py" OR "py -3 c_generator.py" (without quotation marks).
 12) You will find generated files in a new folder in this directory.
+13) Your state machine will be called in the main loop in a similar way as such:
+
+#include "my_state_machine.h"
+
+
+int main(void)
+{	
+	StateMachine::STT_MACHINE my_state_machine;
+	MyStateMachine::GetMyStateMachine(&emy_state_machine);
+	while (1) 
+	{
+		StateMachine::ExecuteAction(&my_state_machine);
+	}
+}
