@@ -144,9 +144,6 @@ namespace SERCOMCHIPNAME
 
 namespace UARTCHIPNAME
 {
-	/*!
-	 * \brief An enum type for over-sampling rate and sampling adjustment
-	 */
 	enum SampleAdjustment : uint8_t {
 		Over16x_7_8_9,
 		Over16x_9_10_11,
@@ -166,8 +163,8 @@ namespace UARTCHIPNAME
 		Tx2_Rx3
 	};
 	
-	void GetPeripheralDefaults(UARTHAL::Peripheral * peripheral, SERCOMHAL::SercomID sercom_id = SERCOMCHIPNAME::SercomID::Sercom0);
-	void ExampleFunction(void);
+	void ExampleGetPeripheralDefaults(UARTHAL::Peripheral * peripheral, SERCOMHAL::SercomID sercom_id = SERCOMCHIPNAME::SercomID::Sercom0);
+	void AnotherExampleFunction(void);
 }
 
 #endif //__UART_CHIPNAME_H__
@@ -177,7 +174,7 @@ namespace UARTCHIPNAME
 ```
 #include "serial_uart/uart_hal.h"
 
-#if (UART_MCU_OPT == OPT_UART_CHIP_NAME)
+#if (UART_MCU_OPT == OPT_SERCOM_CHIP_NAME)
 ```
 6) Here, you will define all functions in [uart_hal.h](/SerialLibraryExample/serial_controllers/serial_uart/uart_hal.h) and any functions you defined in `uart_chipname.h`.
 7) Make sure that the last line in this file is `#endif`!
@@ -207,4 +204,70 @@ namespace UARTCHIPNAME
 ```
 #elif (UART_MCU_OPT == OPT_SERCOM_CHIP_NAME)
 #include "serial_uart/hardware/uart_chipname.h"
+```
+
+### Add Functionality to SPI Stack
+1) Navigate to the [hardware](/SerialLibraryExample/serial_controllers/serial_spi/hardware) directory under the [serial_spi](/SerialLibraryExample/serial_controllers/serial_spi) directory.
+2) Add a new header to this directory for your chip, ie `spi_chipname.h`.
+3) Define a namespace for your hardware specific functions, any hardware specific enums, and enum of type uint8_t `PadConfig`. For example:
+```
+#ifndef __SPI_CHIPNAME_H__
+#define __SPI_CHIPNAME_H__
+
+#include "chip.h"
+
+namespace SPICHIPNAME
+{
+	enum PadConfig : uint8_t {
+		DO0_DI2_SCK1_CSS2,
+		DO0_DI3_SCK1_CSS2,
+		DO0_DI1_SCK3_CSS1,
+		DO0_DI2_SCK3_CSS1,
+		DO2_DI0_SCK3_CSS1,
+		DO2_DI1_SCK3_CSS1,
+		DO3_DI0_SCK1_CSS2,
+		DO3_DI2_SCK1_CSS2
+	};
+	
+	void ExampleGetPeripheralDefaults(SPIHAL::Peripheral * peripheral, SERCOMHAL::SercomID sercom_id = SERCOMCHIPNAME::SercomID::Sercom3);
+	void AnotherExampleFunction(void);
+}
+
+#endif //__SPI_CHIPNAME_H__
+```
+4) Add a new cpp file to this directory for your chip, ie `spi_chipname.cpp`.
+5) At the top, include this code block:
+```
+#include "serial_spi/spi_hal.h"
+
+#if (SPI_MCU_OPT == OPT_SERCOM_CHIP_NAME)
+```
+6) Here, you will define all functions in [spi_hal.h](/SerialLibraryExample/serial_controllers/serial_spi/spi_hal.h) and any functions you defined in `spi_chipname.h`.
+7) Make sure that the last line in this file is `#endif`!
+8) Navigate to [spi_config.h](/SerialLibraryExample/serial_controllers/serial_spi/spi_config.h).
+9) Find the code block which looks similar to this:
+```
+#ifndef SPI_MCU_OPT
+	#if (SERCOM_MCU_OPT == OPT_SERCOM_SAMD21)
+		#define SPI_MCU_OPT		OPT_SERCOM_SAMD21
+	#else
+		#define SPI_MCU_OPT		OPT_SERCOM_NONE
+	#endif
+#endif
+```
+10) Before the `#else` line and after the `#define` line before it, add the following code for your new chip:
+```
+#elif (SERCOM_MCU_OPT == OPT_SERCOM_CHIP_NAME)
+	#define SPI_MCU_OPT		OPT_SERCOM_CHIP_NAME
+```
+11) Navigate to [spi_hal.h](/SerialLibraryExample/serial_controllers/serial_spi/spi_hal.h) and find the code block which looks similar to this:
+```
+#if (SPI_MCU_OPT == OPT_SERCOM_SAMD21)
+#include "serial_spi/hardware/spi_samd21.h"
+#endif
+```
+12) Before the last `#endif` line and before the last `#include` line, add the following code for your new chip:
+```
+#elif (SPI_MCU_OPT == OPT_SERCOM_CHIP_NAME)
+#include "serial_spi/hardware/uart_spi.h"
 ```
