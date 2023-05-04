@@ -45,7 +45,7 @@ void USB_Handler()		//use the proper ISR Handler according to your hardware!
 }
 
 NOTE: Call UsbController.Task() in every loop in your main program so USB communication works.
-UsbController.Task() can also be used to flash received data onto serial terminal by passing true into Task parameters.
+USBController.Task() can also be used to flash received data onto serial terminal by passing true into Task parameters.
 
 USB Descriptors for compatibility in host applications:
 VID: 0xCafe

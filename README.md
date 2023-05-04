@@ -9,7 +9,7 @@ Example project to showcase custom C++ serial communication library, configured 
 5) Generic ring buffer template and higher level serial buffer class which can be used directly for data storage or other serial functionality. 
 6) Refer to [README](/SerialLibraryExample/serial_controllers/README.txt) for more information about configuring and using the library.
 
-## Running the Example Project
+## Running the Example Project (SAMD21G18A)
 1) Refer to the necessary datasheets to set up the SAMD21 and your debugger of choice. 
 2) The regular example uses a serial CDC USB connection.
 3) Open a serial terminal with 115200 baud rate and ensure it is connected to the right port.
@@ -21,6 +21,11 @@ Example project to showcase custom C++ serial communication library, configured 
    - `off`          (moves into an "off" state)
    - `echo`         (echos all data sent to chip on terminal but ceases regular function in example)
 6) In the off state, command `on` can be sent to go back into "on" state.
+7) To use UART functionality instead of USB functionality, navigate to [example_state_machine.cpp](/SerialLibraryExample/example_state_machine.cpp) and uncomment the line: `//#define USING_UART`
+   - On the SAMD21 Feather M0, you should connect to the TX and RX pins. 
+   - The default baud rate is 115200. To change this, navigate to [example_state_machine.h](/SerialLibraryExample/example_state_machine.h)
+ and change the line `#define BAUD_RATE		115200` to the desired baud rate. 
+10) To try this project out a different chip, refer below to learn how add new chips to the library. You will also need to navigate to [example_state_machine.cpp](/SerialLibraryExample/example_state_machine.cpp) and change the code in the `ExampleStateMachine::InitializingStateAction(void)` function definition between the `Util::enterCriticalSection();` and `Util::exitCriticalSection();` calls to configure the clocks on your chip.
 
 ## Adding New Hardware
 1) Create a new c++ project in Microchip Studio configured for your new chip.
