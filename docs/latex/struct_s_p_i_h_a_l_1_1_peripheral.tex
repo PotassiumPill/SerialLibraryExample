@@ -1,0 +1,60 @@
+\hypertarget{struct_s_p_i_h_a_l_1_1_peripheral}{}\doxysection{SPIHAL\+::Peripheral Struct Reference}
+\label{struct_s_p_i_h_a_l_1_1_peripheral}\index{SPIHAL::Peripheral@{SPIHAL::Peripheral}}
+
+
+A peripheral struct containing peripheral setup information.  
+
+
+
+
+{\ttfamily \#include $<$spi\+\_\+hal.\+h$>$}
+
+
+
+Collaboration diagram for SPIHAL\+::Peripheral\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{struct_s_p_i_h_a_l_1_1_peripheral__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_s_p_i_h_a_l_1_1_peripheral_a6a7336159742a4715c59d9047e21aeda}\label{struct_s_p_i_h_a_l_1_1_peripheral_a6a7336159742a4715c59d9047e21aeda}} 
+\mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_aef085a7571bb4d9cae9821be7982e559}{SERCOMHAL\+::\+Sercom\+ID}} {\bfseries sercom\+\_\+id}
+\begin{DoxyCompactList}\small\item\em SERCOM\# used in communication. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_p_i_h_a_l_1_1_peripheral_a5bf95be7cb0a0c82e00ec6bcdb33573d}\label{struct_s_p_i_h_a_l_1_1_peripheral_a5bf95be7cb0a0c82e00ec6bcdb33573d}} 
+\mbox{\hyperlink{namespace_s_p_i_h_a_l_a415510f32a9ccf2ee813595f3c0b196b}{Pad\+Config}} {\bfseries pad\+\_\+config}
+\begin{DoxyCompactList}\small\item\em pad\+\_\+config\+: I/O pad configuration for MISO, MOSI, and SCK pins \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_p_i_h_a_l_1_1_peripheral_a7346ebcf210cab89fbbc9f2f22967738}\label{struct_s_p_i_h_a_l_1_1_peripheral_a7346ebcf210cab89fbbc9f2f22967738}} 
+\mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout}{SERCOMHAL\+::\+Pinout}} {\bfseries mosi\+\_\+pin}
+\begin{DoxyCompactList}\small\item\em MOSI (Master Out Slave In) I/O Pinout. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_p_i_h_a_l_1_1_peripheral_a380be51bd3a87051d8accc7aa6b5c776}\label{struct_s_p_i_h_a_l_1_1_peripheral_a380be51bd3a87051d8accc7aa6b5c776}} 
+\mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout}{SERCOMHAL\+::\+Pinout}} {\bfseries miso\+\_\+pin}
+\begin{DoxyCompactList}\small\item\em MISO (Master In Slave Out) I/O Pinout. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_p_i_h_a_l_1_1_peripheral_aeb7199cbab772c36b9b93e7ce6432d89}\label{struct_s_p_i_h_a_l_1_1_peripheral_aeb7199cbab772c36b9b93e7ce6432d89}} 
+\mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout}{SERCOMHAL\+::\+Pinout}} {\bfseries sck\+\_\+pin}
+\begin{DoxyCompactList}\small\item\em SCK (\mbox{\hyperlink{namespace_serial}{Serial}} Clock) I/O Pinout. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_p_i_h_a_l_1_1_peripheral_a0b2d51167d9902c7cafa2a64345445f0}\label{struct_s_p_i_h_a_l_1_1_peripheral_a0b2d51167d9902c7cafa2a64345445f0}} 
+\mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout}{SERCOMHAL\+::\+Pinout}} {\bfseries ssl\+\_\+pin}
+\begin{DoxyCompactList}\small\item\em SSL (Slave Select Line) I/O Pinout. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_p_i_h_a_l_1_1_peripheral_aafbbb070711c61564c345364cb9e4179}\label{struct_s_p_i_h_a_l_1_1_peripheral_aafbbb070711c61564c345364cb9e4179}} 
+uint32\+\_\+t {\bfseries baud\+\_\+value}
+\begin{DoxyCompactList}\small\item\em Baud rate of SPI transmission. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_p_i_h_a_l_1_1_peripheral_ad4e1086164ea196ac4997e37175b826b}\label{struct_s_p_i_h_a_l_1_1_peripheral_ad4e1086164ea196ac4997e37175b826b}} 
+\mbox{\hyperlink{namespace_s_p_i_h_a_l_a82ef6c9dcbd474db1011b2d952655315}{Clock\+Mode}} {\bfseries clock\+\_\+mode}
+\begin{DoxyCompactList}\small\item\em Clock mode of SPI transmission. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_s_p_i_h_a_l_1_1_peripheral_a06cb1262a5cea534b1d4857e7e8b542a}\label{struct_s_p_i_h_a_l_1_1_peripheral_a06cb1262a5cea534b1d4857e7e8b542a}} 
+\mbox{\hyperlink{namespace_s_p_i_h_a_l_a185a0957426b6ab25fe41ed3f8eb2ab8}{Endian}} {\bfseries endianess}
+\begin{DoxyCompactList}\small\item\em Order of data bit shifting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A peripheral struct containing peripheral setup information. 
+
+This struct contains all basic information needed to configure hardware for SPI serial communication. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Serial\+Library\+Example/serial\+\_\+controllers/serial\+\_\+spi/spi\+\_\+hal.\+h\end{DoxyCompactItemize}

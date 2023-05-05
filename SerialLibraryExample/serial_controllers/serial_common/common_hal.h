@@ -11,6 +11,11 @@
 #include "serial_comm_config.h"
 #include <stdint.h>
 
+/*!
+ * \brief %SERCOM HAL global namespace.
+ * 
+ * This namespace contains all global functions and definitions needed to implement low level drivers for common serial communication functions.
+ */
 namespace SERCOMHAL
 {
 	/*! 

@@ -1,0 +1,68 @@
+\hypertarget{serial__usb_8h_source}{}\doxysection{serial\+\_\+usb.\+h}
+\label{serial__usb_8h_source}\index{SerialLibraryExample/serial\_controllers/serial\_usb/serial\_usb.h@{SerialLibraryExample/serial\_controllers/serial\_usb/serial\_usb.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* }}
+\DoxyCodeLine{2 \textcolor{comment}{ * Name         :   serial\_usb.h}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Created      :   8/12/2022 10:53:43 AM}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Author       :   Aaron Reilman}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Description  :   A USB serial communication driver.}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_\_SERIAL\_USB\_H\_\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_\_SERIAL\_USB\_H\_\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}tusb.h"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}serial\_buffer/serial\_buffer.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define DEFAULT\_USB\_FIFO\_SIZE   512}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{22  \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_serial_u_s_b}{SerialUSB}}}
+\DoxyCodeLine{23  \{}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_serial_u_s_b_ae740bbae65f8f49b75efde592bb3a049}{USBFeedIOClocks}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_serial_u_s_b_a89794c279d29234bec907adfdf56281a}{ResetUSB}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{43     \textcolor{keyword}{class }\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller}{USBController}}}
+\DoxyCodeLine{44     \{}
+\DoxyCodeLine{45         \textcolor{comment}{//functions}}
+\DoxyCodeLine{46         \textcolor{keyword}{public}:}
+\DoxyCodeLine{55         \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_afe81951c2ec599df97a3e02a077c8b7d}{USBController}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{64         \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a818f91a71f7cac12cee2a8e9cb69634c}{\string~USBController}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{75         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a14b3b3f5b75c8409ac7c31ae99a9c86b}{Init}}(\textcolor{keywordtype}{char} * buf, uint32\_t buf\_size);}
+\DoxyCodeLine{84         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_afa4b8c8717abfbd6d92fcb72e11b093a}{Deinit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{94         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_aae7e36dd99bc47027609623f39ec467a}{ResetBuffer}}(\textcolor{keywordtype}{char} * buf, uint32\_t buf\_size);}
+\DoxyCodeLine{105         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a4c1cf32ce7de220c579415e496370bb9}{ClearBuffers}}(\textcolor{keywordtype}{bool} clear\_tx = \textcolor{keyword}{true}, \textcolor{keywordtype}{bool} clear\_rx = \textcolor{keyword}{true});}
+\DoxyCodeLine{113         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_af3721932b0112fe15c43a969a06d1144}{ISR}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{123         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a5802a3f2aebbf57800b613339a66f84b}{Task}}(\textcolor{keywordtype}{bool} echo = \textcolor{keyword}{false});}
+\DoxyCodeLine{133         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a016f4dfe9a3fd5185d1eb38330a3d950}{Transmit}}(\textcolor{keywordtype}{char} input);}
+\DoxyCodeLine{143         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_afa7345066fbeeecdfc6320af05c95838}{Receive}}(\textcolor{keywordtype}{char} * output = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{154         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a808ce3f51a820009b04e46cba483de4e}{TransmitPacket}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * input, uint32\_t num\_bytes);}
+\DoxyCodeLine{165         uint32\_t \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_aea4ae218bf10826e4943b542d782695c}{TransmitString}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *input);}
+\DoxyCodeLine{183         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a8e3331f2f23514b6980ef07623f3674b}{ReceiveString}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *input, uint32\_t shift = 0u, \textcolor{keywordtype}{bool} move\_pointer = \textcolor{keyword}{true});}
+\DoxyCodeLine{193         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a41534109837d3f7557049e6d67fdfac0}{TransmitInt}}(uint32\_t input);}
+\DoxyCodeLine{203         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_ab3e39a9bf73b5134ff0eb72b36b218f8}{ReceiveInt}}(uint32\_t * output);}
+\DoxyCodeLine{224         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a1f742c399f9ad7bcc5719b9aa8a24ff0}{ReceiveParam}}(uint32\_t * output, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *input, \textcolor{keywordtype}{char} delimiter = \textcolor{charliteral}{'\(\backslash\)0'}, uint8\_t max\_digits = 8u);}
+\DoxyCodeLine{225         }
+\DoxyCodeLine{226         uint32\_t \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a9f58aebc93cd2f34a581b2b9aaa34caf}{GetBufferAvailable}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};  }
+\DoxyCodeLine{227         }
+\DoxyCodeLine{228         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a7af52968c68586221f74d293b2cf5669}{IsConnected}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};    }
+\DoxyCodeLine{229         }
+\DoxyCodeLine{230         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_ace06a48c2154c6692f42630d2b35df4a}{Detach}}(\textcolor{keywordtype}{void});                }
+\DoxyCodeLine{231         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a4c2bad9d6fe85f10aa9288c9735ee68b}{Reattach}}(\textcolor{keywordtype}{void});            }
+\DoxyCodeLine{232         }
+\DoxyCodeLine{233         }
+\DoxyCodeLine{234         \textcolor{keyword}{private}:}
+\DoxyCodeLine{235         \textcolor{comment}{//private helper functions}}
+\DoxyCodeLine{236         \textcolor{keywordtype}{void} PutBuffer(\textcolor{keywordtype}{char} input);}
+\DoxyCodeLine{237         }
+\DoxyCodeLine{238         \textcolor{comment}{//private data members}}
+\DoxyCodeLine{239         \mbox{\hyperlink{class_serial_1_1_serial_buffer}{Serial::SerialBuffer}} usb\_buffer;}
+\DoxyCodeLine{240         \textcolor{keywordtype}{bool} usb\_on;}
+\DoxyCodeLine{241         \textcolor{keywordtype}{bool} detached;}
+\DoxyCodeLine{242     \}; \textcolor{comment}{//USBController}}
+\DoxyCodeLine{243 \}}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//\_\_SERIAL\_USB\_H\_\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,54 @@
+\hypertarget{serial__buffer_8h_source}{}\doxysection{serial\+\_\+buffer.\+h}
+\label{serial__buffer_8h_source}\index{SerialLibraryExample/serial\_controllers/serial\_buffer/serial\_buffer.h@{SerialLibraryExample/serial\_controllers/serial\_buffer/serial\_buffer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* }}
+\DoxyCodeLine{2 \textcolor{comment}{ * Name         :   serial\_buffer.h}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Created      :   8/18/2022 12:49:40 PM}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Author       :   Aaron Reilman}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Description  :   A generic FIFO-\/like buffer for high level serial communication.}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_\_SERIAL\_BUFFER\_H\_\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_\_SERIAL\_BUFFER\_H\_\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}serial\_common/common\_hal.h"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}serial\_buffer/generic\_buffer.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{20 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_serial}{Serial}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_serial_a765e3d30c8e412dd3eb1627312b3d4de}{NoIntEnable}}(\mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_aef085a7571bb4d9cae9821be7982e559}{SERCOMHAL::SercomID}} peripheral\_id = 0u, \textcolor{keywordtype}{bool} enable = \textcolor{keyword}{false});}
+\DoxyCodeLine{42     uint32\_t \mbox{\hyperlink{namespace_serial_af0ab7fa07a594bbdcd2ae081e4b1229e}{Int2ASCII}}(uint32\_t num, \textcolor{keywordtype}{char} (*result)[10]);}
+\DoxyCodeLine{48     \textcolor{keyword}{class }\mbox{\hyperlink{class_serial_1_1_serial_buffer}{SerialBuffer}}}
+\DoxyCodeLine{49     \{}
+\DoxyCodeLine{50         \textcolor{comment}{//functions}}
+\DoxyCodeLine{51         \textcolor{keyword}{public}:}
+\DoxyCodeLine{63         \mbox{\hyperlink{class_serial_1_1_serial_buffer_a128d4a36091bc15ec349ec4f7c315b9b}{SerialBuffer}}(\mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_aef085a7571bb4d9cae9821be7982e559}{SERCOMHAL::SercomID}} peripheral\_id = 0u, \textcolor{keywordtype}{char} * buf = \textcolor{keyword}{nullptr}, uint32\_t buf\_size = 0);}
+\DoxyCodeLine{71         \mbox{\hyperlink{class_serial_1_1_serial_buffer_a67b5730055fbb56e2f6076ca26aa9ad5}{\string~SerialBuffer}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{82         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_1_1_serial_buffer_a1fa46c142d6d9149605702f6f09879b6}{Reset}}(\textcolor{keywordtype}{char} * buf, uint32\_t buf\_size);}
+\DoxyCodeLine{91         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_1_1_serial_buffer_aa51f7b1164998c904bda5fc59c7c4875}{Clear}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{102         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_1_1_serial_buffer_a0faa8753054a86f4be1b6475630cdf6d}{Put}}(\textcolor{keywordtype}{char} input, \textcolor{keywordtype}{void} (* int\_func)(uint8\_t, \textcolor{keywordtype}{bool}));}
+\DoxyCodeLine{113         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_1_1_serial_buffer_a17c60486982a29a751c1999c4a93f7ce}{Get}}(\textcolor{keywordtype}{void} (* int\_func)(uint8\_t, \textcolor{keywordtype}{bool}), \textcolor{keywordtype}{char} * output = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{132         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_1_1_serial_buffer_a44b3f530e4a4f1ca2a3e5abd88dc9648}{GetString}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *input, uint32\_t shift, \textcolor{keywordtype}{bool} move\_pointer, \textcolor{keywordtype}{void} (* int\_func)(uint8\_t, \textcolor{keywordtype}{bool}));}
+\DoxyCodeLine{143         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_1_1_serial_buffer_a9a1d5ea89dc5cea1e273bf99e912542c}{GetASCIIAsInt}}(uint32\_t * output, \textcolor{keywordtype}{void} (* int\_func)(uint8\_t, \textcolor{keywordtype}{bool}));}
+\DoxyCodeLine{163         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_1_1_serial_buffer_a7247f26e32bb696563930eb5b7b3f1cc}{GetIntParam}}(uint32\_t * output, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *input, \textcolor{keywordtype}{char} delimiter, uint8\_t max\_digits, \textcolor{keywordtype}{void} (* int\_func)(uint8\_t, \textcolor{keywordtype}{bool}));}
+\DoxyCodeLine{164         }
+\DoxyCodeLine{165         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_1_1_serial_buffer_a0b8797c73d7ec507fe750aec68c37785}{SetSercomID}}(\mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_aef085a7571bb4d9cae9821be7982e559}{SERCOMHAL::SercomID}} peripheral\_id);  }
+\DoxyCodeLine{166         \mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_aef085a7571bb4d9cae9821be7982e559}{SERCOMHAL::SercomID}} \mbox{\hyperlink{class_serial_1_1_serial_buffer_aa42234fc037bcfb54842fccbc59c7edd}{GetSercomID}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};          }
+\DoxyCodeLine{167         uint32\_t \mbox{\hyperlink{class_serial_1_1_serial_buffer_adb172963d1286c48e1e7c6c1a4ed0c8e}{GetBufferEmpty}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};                  }
+\DoxyCodeLine{168         uint32\_t \mbox{\hyperlink{class_serial_1_1_serial_buffer_a396e536bd7fe087437626cde80d57d5f}{GetBufferAvailable}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};              }
+\DoxyCodeLine{169         \mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82}{GenericBuffer::BufferState}} \mbox{\hyperlink{class_serial_1_1_serial_buffer_a988f87596b1223a330fd0125f4ce8c2c}{GetBufferState}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};  }
+\DoxyCodeLine{170         }
+\DoxyCodeLine{171         \textcolor{keyword}{private}:}
+\DoxyCodeLine{172         \textcolor{comment}{//private data members}}
+\DoxyCodeLine{173         \mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_aef085a7571bb4d9cae9821be7982e559}{SERCOMHAL::SercomID}} sercom\_id;}
+\DoxyCodeLine{174         \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{GenericBuffer::GENERIC\_BUFFER<char>}} buffer;}
+\DoxyCodeLine{175         uint32\_t index\_shift;}
+\DoxyCodeLine{176         }
+\DoxyCodeLine{177     \}; \textcolor{comment}{//SerialBuffer}}
+\DoxyCodeLine{178 \}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//\_\_SERIAL\_BUFFER\_H\_\_}}
+
+\end{DoxyCode}

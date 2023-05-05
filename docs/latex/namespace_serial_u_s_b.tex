@@ -1,0 +1,50 @@
+\hypertarget{namespace_serial_u_s_b}{}\doxysection{Serial\+USB Namespace Reference}
+\label{namespace_serial_u_s_b}\index{SerialUSB@{SerialUSB}}
+
+
+USB Controller global namespace.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller}{USBController}}
+\begin{DoxyCompactList}\small\item\em USB serial communication controller object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_serial_u_s_b_ae740bbae65f8f49b75efde592bb3a049}{USBFeed\+IOClocks}} (void)
+\begin{DoxyCompactList}\small\item\em A helper function for initializing clocks and I/O pins on specific chip. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_serial_u_s_b_a89794c279d29234bec907adfdf56281a}\label{namespace_serial_u_s_b_a89794c279d29234bec907adfdf56281a}} 
+void {\bfseries Reset\+USB} (void)
+\begin{DoxyCompactList}\small\item\em Triggers USB reset operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+USB Controller global namespace. 
+
+This namespace contains all global classes, functions and definitions needed to implement controller for USB serial communication. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_serial_u_s_b_ae740bbae65f8f49b75efde592bb3a049}\label{namespace_serial_u_s_b_ae740bbae65f8f49b75efde592bb3a049}} 
+\index{SerialUSB@{SerialUSB}!USBFeedIOClocks@{USBFeedIOClocks}}
+\index{USBFeedIOClocks@{USBFeedIOClocks}!SerialUSB@{SerialUSB}}
+\doxysubsubsection{\texorpdfstring{USBFeedIOClocks()}{USBFeedIOClocks()}}
+{\footnotesize\ttfamily void Serial\+USB\+::\+USBFeed\+IOClocks (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+A helper function for initializing clocks and I/O pins on specific chip. 
+
+Sets up clocks and I/O pins before initializing tiny\+USB stack. Specific hardware implementation is determined by your specific tusb\+\_\+config.\+h file.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a14b3b3f5b75c8409ac7c31ae99a9c86b}{USBController.\+Init()}} 
+\end{DoxySeeAlso}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_serial_u_s_b_ae740bbae65f8f49b75efde592bb3a049_icgraph}
+\end{center}
+\end{figure}

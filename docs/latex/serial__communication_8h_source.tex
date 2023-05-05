@@ -1,0 +1,32 @@
+\hypertarget{serial__communication_8h_source}{}\doxysection{serial\+\_\+communication.\+h}
+\label{serial__communication_8h_source}\index{SerialLibraryExample/serial\_controllers/serial\_communication.h@{SerialLibraryExample/serial\_controllers/serial\_communication.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Name         :   serial\_communication.h}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Created      :   1/20/2023 12:05:36 PM}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Author       :   Aaron Reilman}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Description  :   Header for serial communication library. }}
+\DoxyCodeLine{6 \textcolor{comment}{ */} }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef \_\_SERIAL\_COMMUNICATION\_H\_\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define \_\_SERIAL\_COMMUNICATION\_H\_\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}serial\_comm\_config.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#if (SERCOM\_MCU\_OPT == OPT\_SERCOM\_NONE)}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{    \#warning "{}No MCU defined. Please define an MCU."{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#if (SERCOM\_MODULE\_OPT \& OPT\_SERCOM\_UART)}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{    \#include "{}serial\_uart/serial\_uart.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#if (SERCOM\_MODULE\_OPT \& OPT\_SERCOM\_SPI)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{    \#include "{}serial\_spi/serial\_spi.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#if (SERCOM\_MODULE\_OPT \& OPT\_SERCOM\_USB)}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{    \#include "{}serial\_usb/serial\_usb.h"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//\_\_SERIAL\_COMMUNICATION\_H\_\_}}
+
+\end{DoxyCode}

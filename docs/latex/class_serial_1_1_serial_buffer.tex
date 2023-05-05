@@ -1,0 +1,314 @@
+\hypertarget{class_serial_1_1_serial_buffer}{}\doxysection{Serial\+::Serial\+Buffer Class Reference}
+\label{class_serial_1_1_serial_buffer}\index{Serial::SerialBuffer@{Serial::SerialBuffer}}
+
+
+Serial Buffer object  
+
+
+
+
+{\ttfamily \#include $<$serial\+\_\+buffer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_serial_1_1_serial_buffer_a128d4a36091bc15ec349ec4f7c315b9b}{Serial\+Buffer}} (\mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_aef085a7571bb4d9cae9821be7982e559}{SERCOMHAL\+::\+Sercom\+ID}} peripheral\+\_\+id=0u, char $\ast$buf=nullptr, uint32\+\_\+t buf\+\_\+size=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_serial_1_1_serial_buffer_a67b5730055fbb56e2f6076ca26aa9ad5}{$\sim$\+Serial\+Buffer}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serial_1_1_serial_buffer_a1fa46c142d6d9149605702f6f09879b6}{Reset}} (char $\ast$buf, uint32\+\_\+t buf\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Resets \mbox{\hyperlink{class_serial_1_1_serial_buffer}{Serial\+Buffer}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serial_1_1_serial_buffer_aa51f7b1164998c904bda5fc59c7c4875}{Clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clears and resets buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_serial_1_1_serial_buffer_a0faa8753054a86f4be1b6475630cdf6d}{Put}} (char input, void($\ast$int\+\_\+func)(uint8\+\_\+t, bool))
+\begin{DoxyCompactList}\small\item\em Puts char into buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_serial_1_1_serial_buffer_a17c60486982a29a751c1999c4a93f7ce}{Get}} (void($\ast$int\+\_\+func)(uint8\+\_\+t, bool), char $\ast$output=nullptr)
+\begin{DoxyCompactList}\small\item\em Gets char from buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_serial_1_1_serial_buffer_a44b3f530e4a4f1ca2a3e5abd88dc9648}{Get\+String}} (const char $\ast$input, uint32\+\_\+t shift, bool move\+\_\+pointer, void($\ast$int\+\_\+func)(uint8\+\_\+t, bool))
+\begin{DoxyCompactList}\small\item\em Reads entire buffer and checks if it is equal to the input string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_serial_1_1_serial_buffer_a9a1d5ea89dc5cea1e273bf99e912542c}{Get\+ASCIIAs\+Int}} (uint32\+\_\+t $\ast$output, void($\ast$int\+\_\+func)(uint8\+\_\+t, bool))
+\begin{DoxyCompactList}\small\item\em Gets ASCII integers from front of buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_serial_1_1_serial_buffer_a7247f26e32bb696563930eb5b7b3f1cc}{Get\+Int\+Param}} (uint32\+\_\+t $\ast$output, const char $\ast$input, char delimiter, uint8\+\_\+t max\+\_\+digits, void($\ast$int\+\_\+func)(uint8\+\_\+t, bool))
+\begin{DoxyCompactList}\small\item\em Reads entire buffer and checks if it is equal to the input string + numeric parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_1_1_serial_buffer_a0b8797c73d7ec507fe750aec68c37785}\label{class_serial_1_1_serial_buffer_a0b8797c73d7ec507fe750aec68c37785}} 
+void {\bfseries Set\+Sercom\+ID} (\mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_aef085a7571bb4d9cae9821be7982e559}{SERCOMHAL\+::\+Sercom\+ID}} peripheral\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Setter for SERCOM ID used on hardware. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_1_1_serial_buffer_aa42234fc037bcfb54842fccbc59c7edd}\label{class_serial_1_1_serial_buffer_aa42234fc037bcfb54842fccbc59c7edd}} 
+\mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_aef085a7571bb4d9cae9821be7982e559}{SERCOMHAL\+::\+Sercom\+ID}} {\bfseries Get\+Sercom\+ID} (void) const
+\begin{DoxyCompactList}\small\item\em Getter for SERCOM ID used on hardware. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_1_1_serial_buffer_adb172963d1286c48e1e7c6c1a4ed0c8e}\label{class_serial_1_1_serial_buffer_adb172963d1286c48e1e7c6c1a4ed0c8e}} 
+uint32\+\_\+t {\bfseries Get\+Buffer\+Empty} (void) const
+\begin{DoxyCompactList}\small\item\em Getter for number of empty slots available in buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_1_1_serial_buffer_a396e536bd7fe087437626cde80d57d5f}\label{class_serial_1_1_serial_buffer_a396e536bd7fe087437626cde80d57d5f}} 
+uint32\+\_\+t {\bfseries Get\+Buffer\+Available} (void) const
+\begin{DoxyCompactList}\small\item\em Getter for number of chars available in buffer ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_1_1_serial_buffer_a988f87596b1223a330fd0125f4ce8c2c}\label{class_serial_1_1_serial_buffer_a988f87596b1223a330fd0125f4ce8c2c}} 
+\mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82}{Generic\+Buffer\+::\+Buffer\+State}} {\bfseries Get\+Buffer\+State} (void) const
+\begin{DoxyCompactList}\small\item\em Getter for buffer state (empty, full, neither) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serial Buffer object 
+
+This is a Serial Buffer object which acts as a generic high-\/level character array with FIFO functionality and basic string reading abilities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_serial_1_1_serial_buffer_a128d4a36091bc15ec349ec4f7c315b9b}\label{class_serial_1_1_serial_buffer_a128d4a36091bc15ec349ec4f7c315b9b}} 
+\index{Serial::SerialBuffer@{Serial::SerialBuffer}!SerialBuffer@{SerialBuffer}}
+\index{SerialBuffer@{SerialBuffer}!Serial::SerialBuffer@{Serial::SerialBuffer}}
+\doxysubsubsection{\texorpdfstring{SerialBuffer()}{SerialBuffer()}}
+{\footnotesize\ttfamily Serial\+::\+Serial\+Buffer\+::\+Serial\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_aef085a7571bb4d9cae9821be7982e559}{SERCOMHAL\+::\+Sercom\+ID}}}]{peripheral\+\_\+id = {\ttfamily 0u},  }\item[{char $\ast$}]{buf = {\ttfamily nullptr},  }\item[{uint32\+\_\+t}]{buf\+\_\+size = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Instantiates Serial Buffer object. You must call \mbox{\hyperlink{class_serial_1_1_serial_buffer_a1fa46c142d6d9149605702f6f09879b6}{Reset()}} before usage if no parameters are passed so character array can be initialized.
+
+
+\begin{DoxyParams}{Parameters}
+{\em peripheral\+\_\+id} & SERCOM peripheral ID used on hardware (default = 0) \\
+\hline
+{\em buf} & char array to be used for buffer (default = nullptr) \\
+\hline
+{\em buf\+\_\+size} & buffer size (default = 0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You must call \mbox{\hyperlink{class_serial_1_1_serial_buffer_a1fa46c142d6d9149605702f6f09879b6}{Reset()}} before usage if constructed without parameters. You must also called \mbox{\hyperlink{class_serial_1_1_serial_buffer_a0b8797c73d7ec507fe750aec68c37785}{Set\+Sercom\+ID()}} if you need to set a SERCOM\# besides 0. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_1_1_serial_buffer_a1fa46c142d6d9149605702f6f09879b6}{Reset()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_a0b8797c73d7ec507fe750aec68c37785}{Set\+Sercom\+ID()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_a67b5730055fbb56e2f6076ca26aa9ad5}{$\sim$\+Serial\+Buffer()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_serial_1_1_serial_buffer_a128d4a36091bc15ec349ec4f7c315b9b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_1_1_serial_buffer_a67b5730055fbb56e2f6076ca26aa9ad5}\label{class_serial_1_1_serial_buffer_a67b5730055fbb56e2f6076ca26aa9ad5}} 
+\index{Serial::SerialBuffer@{Serial::SerialBuffer}!````~SerialBuffer@{$\sim$SerialBuffer}}
+\index{````~SerialBuffer@{$\sim$SerialBuffer}!Serial::SerialBuffer@{Serial::SerialBuffer}}
+\doxysubsubsection{\texorpdfstring{$\sim$SerialBuffer()}{~SerialBuffer()}}
+{\footnotesize\ttfamily Serial\+::\+Serial\+Buffer\+::$\sim$\+Serial\+Buffer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Called when Serial Buffer object is destroyed. Immediately clears buffer and halts function.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_1_1_serial_buffer_a128d4a36091bc15ec349ec4f7c315b9b}{Serial\+Buffer()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_aa51f7b1164998c904bda5fc59c7c4875}{Clear()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_serial_1_1_serial_buffer_aa51f7b1164998c904bda5fc59c7c4875}\label{class_serial_1_1_serial_buffer_aa51f7b1164998c904bda5fc59c7c4875}} 
+\index{Serial::SerialBuffer@{Serial::SerialBuffer}!Clear@{Clear}}
+\index{Clear@{Clear}!Serial::SerialBuffer@{Serial::SerialBuffer}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void Serial\+::\+Serial\+Buffer\+::\+Clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Clears and resets buffer. 
+
+Clears the char array and resets pointers. This retains the same character array and size.~\newline
+ Useful for quick handling of full buffers and errors in serial communication.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_1_1_serial_buffer_a1fa46c142d6d9149605702f6f09879b6}{Reset()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_a67b5730055fbb56e2f6076ca26aa9ad5}{$\sim$\+Serial\+Buffer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_1_1_serial_buffer_a17c60486982a29a751c1999c4a93f7ce}\label{class_serial_1_1_serial_buffer_a17c60486982a29a751c1999c4a93f7ce}} 
+\index{Serial::SerialBuffer@{Serial::SerialBuffer}!Get@{Get}}
+\index{Get@{Get}!Serial::SerialBuffer@{Serial::SerialBuffer}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily bool Serial\+::\+Serial\+Buffer\+::\+Get (\begin{DoxyParamCaption}\item[{void($\ast$)(uint8\+\_\+t, bool)}]{int\+\_\+func,  }\item[{char $\ast$}]{output = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Gets char from buffer. 
+
+Removes char from front of buffer and sets output pointer parameter to the received char.
+
+
+\begin{DoxyParams}{Parameters}
+{\em int\+\_\+func} & interrupt function pointer to be invoked \\
+\hline
+{\em output} & pointer to received char (default = nullptr) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success of reception 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_1_1_serial_buffer_a0faa8753054a86f4be1b6475630cdf6d}{Put()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_a44b3f530e4a4f1ca2a3e5abd88dc9648}{Get\+String()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_a9a1d5ea89dc5cea1e273bf99e912542c}{Get\+ASCIIAs\+Int()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_a7247f26e32bb696563930eb5b7b3f1cc}{Get\+Int\+Param()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_1_1_serial_buffer_a9a1d5ea89dc5cea1e273bf99e912542c}\label{class_serial_1_1_serial_buffer_a9a1d5ea89dc5cea1e273bf99e912542c}} 
+\index{Serial::SerialBuffer@{Serial::SerialBuffer}!GetASCIIAsInt@{GetASCIIAsInt}}
+\index{GetASCIIAsInt@{GetASCIIAsInt}!Serial::SerialBuffer@{Serial::SerialBuffer}}
+\doxysubsubsection{\texorpdfstring{GetASCIIAsInt()}{GetASCIIAsInt()}}
+{\footnotesize\ttfamily bool Serial\+::\+Serial\+Buffer\+::\+Get\+ASCIIAs\+Int (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{output,  }\item[{void($\ast$)(uint8\+\_\+t, bool)}]{int\+\_\+func }\end{DoxyParamCaption})}
+
+
+
+Gets ASCII integers from front of buffer. 
+
+Removes ASCII numeric digits from front of buffer and sets output pointer parameter to unsigned int value of the ASCII digits.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & pointer to received int value \\
+\hline
+{\em int\+\_\+func} & interrupt function pointer to be invoked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success of reception (returns false if no integer was detected) 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_1_1_serial_buffer_a17c60486982a29a751c1999c4a93f7ce}{Get()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_a7247f26e32bb696563930eb5b7b3f1cc}{Get\+Int\+Param()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_a44b3f530e4a4f1ca2a3e5abd88dc9648}{Get\+String()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_1_1_serial_buffer_a7247f26e32bb696563930eb5b7b3f1cc}\label{class_serial_1_1_serial_buffer_a7247f26e32bb696563930eb5b7b3f1cc}} 
+\index{Serial::SerialBuffer@{Serial::SerialBuffer}!GetIntParam@{GetIntParam}}
+\index{GetIntParam@{GetIntParam}!Serial::SerialBuffer@{Serial::SerialBuffer}}
+\doxysubsubsection{\texorpdfstring{GetIntParam()}{GetIntParam()}}
+{\footnotesize\ttfamily bool Serial\+::\+Serial\+Buffer\+::\+Get\+Int\+Param (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{output,  }\item[{const char $\ast$}]{input,  }\item[{char}]{delimiter,  }\item[{uint8\+\_\+t}]{max\+\_\+digits,  }\item[{void($\ast$)(uint8\+\_\+t, bool)}]{int\+\_\+func }\end{DoxyParamCaption})}
+
+
+
+Reads entire buffer and checks if it is equal to the input string + numeric parameter. 
+
+Checks input string with front of buffer with offset \mbox{[}1, max\+\_\+digits\mbox{]}, and then returns the ASCII number characters following string as unsigned int.~\newline
+ Example\+: Get\+Int\+Param(\char`\"{}c\+\_\+\char`\"{}) will set output pointer value to unsigned int 12u if \char`\"{}c\+\_\+12\char`\"{} was in the front of the buffer.~\newline
+ Can also be used multiple times for different strings with parameters and in conjunction with \mbox{\hyperlink{class_serial_1_1_serial_buffer_a44b3f530e4a4f1ca2a3e5abd88dc9648}{Get\+String()}} calls.~\newline
+ If a string is detected, all calls will be disabled until a new data is added to buffer.~\newline
+ delimiter parameter will detect an end-\/character if set to nonzero to allow for more secure message reading.~\newline
+ max\+\_\+digits parameter will set a bound for the max amount of digits in the parameter. If max\+\_\+digits \texorpdfstring{$>$}{>} 9, the return value may not be what is expected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & pointer to received int value \\
+\hline
+{\em input} & input string to be detected \\
+\hline
+{\em max\+\_\+digits} & maximum number of digits in parameter, must not exceed 9 \\
+\hline
+{\em delimiter} & optional delimiting character after int parameter (default = \textquotesingle{}\textbackslash{}0\textquotesingle{}) \\
+\hline
+{\em int\+\_\+func} & interrupt function pointer to be invoked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success of reception (will return false if string value not detected, no integer detected, or no delimiter detected if set) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Input array must be null-\/character terminated. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_1_1_serial_buffer_a44b3f530e4a4f1ca2a3e5abd88dc9648}{Get\+String()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_a9a1d5ea89dc5cea1e273bf99e912542c}{Get\+ASCIIAs\+Int()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_a17c60486982a29a751c1999c4a93f7ce}{Get()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_1_1_serial_buffer_a44b3f530e4a4f1ca2a3e5abd88dc9648}\label{class_serial_1_1_serial_buffer_a44b3f530e4a4f1ca2a3e5abd88dc9648}} 
+\index{Serial::SerialBuffer@{Serial::SerialBuffer}!GetString@{GetString}}
+\index{GetString@{GetString}!Serial::SerialBuffer@{Serial::SerialBuffer}}
+\doxysubsubsection{\texorpdfstring{GetString()}{GetString()}}
+{\footnotesize\ttfamily bool Serial\+::\+Serial\+Buffer\+::\+Get\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{input,  }\item[{uint32\+\_\+t}]{shift,  }\item[{bool}]{move\+\_\+pointer,  }\item[{void($\ast$)(uint8\+\_\+t, bool)}]{int\+\_\+func }\end{DoxyParamCaption})}
+
+
+
+Reads entire buffer and checks if it is equal to the input string. 
+
+First removes all entries in buffer.~\newline
+ Checks input string with front of buffer, returning true if the input string has been detected.~\newline
+ Can be used multiple times for different strings.~\newline
+ If a string is detected, all calls will be disabled until a new character is received.~\newline
+ Shift parameter detects substring offset by shift places. Useful for detecting a command with parameter (i.\+e. \char`\"{}c\+\_\+25\char`\"{}).~\newline
+ Adds chars after found shifted string and moves the receive buffer pointer back to the end of the substring if move\+\_\+pointer is set to true.~\newline
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & char array to be detected \\
+\hline
+{\em shift} & offset of string from front of buffer \\
+\hline
+{\em move\+\_\+pointer} & moves rd\+\_\+index to end of detected string if shift is on \\
+\hline
+{\em int\+\_\+func} & interrupt function pointer to be invoked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if buffer was equal to string 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Input array must be null-\/character terminated. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_1_1_serial_buffer_a17c60486982a29a751c1999c4a93f7ce}{Get()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_a9a1d5ea89dc5cea1e273bf99e912542c}{Get\+ASCIIAs\+Int()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_a7247f26e32bb696563930eb5b7b3f1cc}{Get\+Int\+Param()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_1_1_serial_buffer_a0faa8753054a86f4be1b6475630cdf6d}\label{class_serial_1_1_serial_buffer_a0faa8753054a86f4be1b6475630cdf6d}} 
+\index{Serial::SerialBuffer@{Serial::SerialBuffer}!Put@{Put}}
+\index{Put@{Put}!Serial::SerialBuffer@{Serial::SerialBuffer}}
+\doxysubsubsection{\texorpdfstring{Put()}{Put()}}
+{\footnotesize\ttfamily bool Serial\+::\+Serial\+Buffer\+::\+Put (\begin{DoxyParamCaption}\item[{char}]{input,  }\item[{void($\ast$)(uint8\+\_\+t, bool)}]{int\+\_\+func }\end{DoxyParamCaption})}
+
+
+
+Puts char into buffer. 
+
+Adds char to end of buffer. Prevents addition to a full buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & char to be added to end of buffer \\
+\hline
+{\em int\+\_\+func} & interrupt function pointer to be invoked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true unless buffer is full and char was attempted to be added 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_1_1_serial_buffer_a17c60486982a29a751c1999c4a93f7ce}{Get()}}, Put\+String(), Put\+Int\+As\+ASCII() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_1_1_serial_buffer_a1fa46c142d6d9149605702f6f09879b6}\label{class_serial_1_1_serial_buffer_a1fa46c142d6d9149605702f6f09879b6}} 
+\index{Serial::SerialBuffer@{Serial::SerialBuffer}!Reset@{Reset}}
+\index{Reset@{Reset}!Serial::SerialBuffer@{Serial::SerialBuffer}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void Serial\+::\+Serial\+Buffer\+::\+Reset (\begin{DoxyParamCaption}\item[{char $\ast$}]{buf,  }\item[{uint32\+\_\+t}]{buf\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Resets \mbox{\hyperlink{class_serial_1_1_serial_buffer}{Serial\+Buffer}}. 
+
+Resets all data members and points to new buffer with new size. Must be called if instantiated without parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & char array to be used for buffer \\
+\hline
+{\em buf\+\_\+size} & buffer size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You must call this before use if constructed without parameters. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_1_1_serial_buffer_a128d4a36091bc15ec349ec4f7c315b9b}{Serial\+Buffer()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_aa51f7b1164998c904bda5fc59c7c4875}{Clear()}}, \mbox{\hyperlink{class_serial_1_1_serial_buffer_a0b8797c73d7ec507fe750aec68c37785}{Set\+Sercom\+ID()}} 
+\end{DoxySeeAlso}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_serial_1_1_serial_buffer_a1fa46c142d6d9149605702f6f09879b6_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Serial\+Library\+Example/serial\+\_\+controllers/serial\+\_\+buffer/serial\+\_\+buffer.\+h\item 
+Serial\+Library\+Example/serial\+\_\+controllers/serial\+\_\+buffer/serial\+\_\+buffer.\+cpp\end{DoxyCompactItemize}

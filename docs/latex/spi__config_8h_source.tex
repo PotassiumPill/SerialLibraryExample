@@ -1,0 +1,33 @@
+\hypertarget{spi__config_8h_source}{}\doxysection{spi\+\_\+config.\+h}
+\label{spi__config_8h_source}\index{SerialLibraryExample/serial\_controllers/serial\_spi/spi\_config.h@{SerialLibraryExample/serial\_controllers/serial\_spi/spi\_config.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* }}
+\DoxyCodeLine{2 \textcolor{comment}{ * Name         :   spi\_config.h}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Created      :   10/13/2022 4:58:47 PM}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Author       :   Aaron Reilman}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Description  :   A SPI serial communication configuration file.}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_\_SPI\_CONFIG\_H\_\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_\_SPI\_CONFIG\_H\_\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}serial\_comm\_config.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{//DEFINE ENVIRONMENT HERE}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define DEFAULT\_MOSI\_BUFFER\_SIZE    128}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define DEFAULT\_MISO\_BUFFER\_SIZE    128}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef SPI\_MCU\_OPT}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{    \#if (SERCOM\_MCU\_OPT == OPT\_SERCOM\_SAMD21)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{        \#define SPI\_MCU\_OPT     OPT\_SERCOM\_SAMD21}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{    \#else}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{        \#define SPI\_MCU\_OPT     OPT\_SERCOM\_NONE}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{25 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//\_\_SPI\_CONFIG\_H\_\_}}
+
+\end{DoxyCode}

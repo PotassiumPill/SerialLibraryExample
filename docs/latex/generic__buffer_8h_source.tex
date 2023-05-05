@@ -1,0 +1,124 @@
+\hypertarget{generic__buffer_8h_source}{}\doxysection{generic\+\_\+buffer.\+h}
+\label{generic__buffer_8h_source}\index{SerialLibraryExample/serial\_controllers/serial\_buffer/generic\_buffer.h@{SerialLibraryExample/serial\_controllers/serial\_buffer/generic\_buffer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Name         :   generic\_buffer.h}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Created      :   3/12/2023 3:35:16 PM}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Author       :   Aaron Reilman}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Description  :   A generic ring buffer with basic queue functionality.   }}
+\DoxyCodeLine{6 \textcolor{comment}{ */} }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef GENERIC\_BUFFER\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define GENERIC\_BUFFER\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{19 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_generic_buffer}{GenericBuffer}} \{}
+\DoxyCodeLine{20     }
+\DoxyCodeLine{24     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82}{BufferState}}}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         \mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82ace2c8aed9c2fa0cfbed56cbda4d8bf07}{Empty}},         }
+\DoxyCodeLine{27         \mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82abbd47109890259c0127154db1af26c75}{Full}},           }
+\DoxyCodeLine{28         \mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82a75dfaefbbfaf6c0918ee30c97fb76f8b}{NotEmptyNotFull}}  }
+\DoxyCodeLine{29     \};}
+\DoxyCodeLine{35     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T> \textcolor{keyword}{class }\mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{GENERIC\_BUFFER}}}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37         \textcolor{comment}{//functions}}
+\DoxyCodeLine{38         \textcolor{keyword}{public}:}
+\DoxyCodeLine{48         \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ad11c80de1f1fe99110cc7d51ae82f5bc}{GENERIC\_BUFFER}}(T* arr = \textcolor{keyword}{nullptr}, uint32\_t arr\_size = 0)}
+\DoxyCodeLine{49         \{}
+\DoxyCodeLine{50             \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ac94fdc99ed188c1b1814ed94e5f4656b}{ResetBuffer}}(arr, arr\_size);}
+\DoxyCodeLine{51         \}}
+\DoxyCodeLine{57         \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a6514264a0807de98df96470c4bb32593}{\string~GENERIC\_BUFFER}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{58         \{}
+\DoxyCodeLine{59             \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a994f81bcb17dbaa64a061f0e20283b70}{Clear}}();}
+\DoxyCodeLine{60         \}}
+\DoxyCodeLine{71         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ac94fdc99ed188c1b1814ed94e5f4656b}{ResetBuffer}}(T* arr, uint32\_t arr\_size)}
+\DoxyCodeLine{72         \{}
+\DoxyCodeLine{73             fifo\_buffer = arr;}
+\DoxyCodeLine{74             buffer\_size = arr\_size;}
+\DoxyCodeLine{75             buffer\_avail = 0;}
+\DoxyCodeLine{76             rd\_index = 0;}
+\DoxyCodeLine{77             wr\_index = 0;}
+\DoxyCodeLine{78         \}}
+\DoxyCodeLine{85         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a994f81bcb17dbaa64a061f0e20283b70}{Clear}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{86         \{}
+\DoxyCodeLine{87             \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ac94fdc99ed188c1b1814ed94e5f4656b}{ResetBuffer}}(fifo\_buffer, buffer\_size);}
+\DoxyCodeLine{88         \}}
+\DoxyCodeLine{100         T* \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a114a111046044cecda7aea2ccdf44fc6}{GetRawElements}}(uint32\_t * read\_index = \textcolor{keyword}{nullptr}, uint32\_t * write\_index = \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{101         \{}
+\DoxyCodeLine{102             \textcolor{keywordflow}{if}(read\_index != \textcolor{keyword}{nullptr}) *read\_index = rd\_index;}
+\DoxyCodeLine{103             \textcolor{keywordflow}{if}(write\_index != \textcolor{keyword}{nullptr}) *write\_index = wr\_index;}
+\DoxyCodeLine{104             \textcolor{keywordflow}{return} \&(fifo\_buffer[0]);}
+\DoxyCodeLine{105         \}}
+\DoxyCodeLine{116         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a6883b6cfb9349e3d5e4c0d6ab8ecf55f}{ShiftReadPointer}}(uint32\_t shift\_size, \textcolor{keywordtype}{bool} increase)}
+\DoxyCodeLine{117         \{}
+\DoxyCodeLine{118             \textcolor{keyword}{volatile} uint32\_t true\_shift = shift\_size;}
+\DoxyCodeLine{119             \textcolor{keywordflow}{if}(increase \&\& (shift\_size > buffer\_avail))}
+\DoxyCodeLine{120                 true\_shift = buffer\_avail;}
+\DoxyCodeLine{121             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(!increase \&\& (shift\_size > buffer\_size))}
+\DoxyCodeLine{122                 true\_shift = buffer\_size;}
+\DoxyCodeLine{123             \textcolor{keywordflow}{if}(increase)}
+\DoxyCodeLine{124             \{}
+\DoxyCodeLine{125                 rd\_index = (rd\_index + true\_shift) \% buffer\_size;}
+\DoxyCodeLine{126                 buffer\_avail -\/= true\_shift;}
+\DoxyCodeLine{127             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{128                 rd\_index = rd\_index + ((true\_shift > rd\_index) * buffer\_size) -\/ true\_shift; }
+\DoxyCodeLine{129                 buffer\_avail += true\_shift;}
+\DoxyCodeLine{130             \}}
+\DoxyCodeLine{131         \}}
+\DoxyCodeLine{141         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ad0ae5d89e13c7a2cedd76aeb0a153ae9}{Put}}(T element)}
+\DoxyCodeLine{142         \{}
+\DoxyCodeLine{143             \textcolor{keywordtype}{bool} success = \textcolor{keyword}{false};}
+\DoxyCodeLine{144             \textcolor{keywordflow}{if}(buffer\_avail < buffer\_size)}
+\DoxyCodeLine{145             \{}
+\DoxyCodeLine{146                 fifo\_buffer[wr\_index] = element;}
+\DoxyCodeLine{147                 buffer\_avail++;}
+\DoxyCodeLine{148                 wr\_index = (wr\_index+1) \% buffer\_size;}
+\DoxyCodeLine{149                 success = \textcolor{keyword}{true};}
+\DoxyCodeLine{150             \}}
+\DoxyCodeLine{151             \textcolor{keywordflow}{return} success;}
+\DoxyCodeLine{152         \}}
+\DoxyCodeLine{162         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_afd24afea2870290f233b746f1bcdb66d}{Get}}(T * output = \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{163         \{}
+\DoxyCodeLine{164             \textcolor{keywordtype}{bool} result = \textcolor{keyword}{false};}
+\DoxyCodeLine{165             \textcolor{keywordflow}{if}(buffer\_avail)}
+\DoxyCodeLine{166             \{}
+\DoxyCodeLine{167                 result = \textcolor{keyword}{true};}
+\DoxyCodeLine{168                 \textcolor{keywordflow}{if}(output != \textcolor{keyword}{nullptr}) *output = fifo\_buffer[rd\_index];}
+\DoxyCodeLine{169                 rd\_index = (rd\_index+1) \% buffer\_size;}
+\DoxyCodeLine{170                 buffer\_avail-\/-\/;}
+\DoxyCodeLine{171             \}}
+\DoxyCodeLine{172             \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{173         \}}
+\DoxyCodeLine{182         T \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ab937cc937d565b543b1d90ba990c0a27}{Peek}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{183         \{}
+\DoxyCodeLine{184             \textcolor{keyword}{volatile} T output = 0;}
+\DoxyCodeLine{185             \textcolor{keywordflow}{if}(buffer\_avail) output = fifo\_buffer[rd\_index];}
+\DoxyCodeLine{186             \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{187         \}}
+\DoxyCodeLine{188         uint32\_t \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a106ffc24d315e06c6260d12a904663ab}{GetSize}}(\textcolor{keywordtype}{void})\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} buffer\_size; \}             }
+\DoxyCodeLine{189         uint32\_t \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a03a729a135271004d8db3cdd35f5a8f7}{GetBufferAvailable}}(\textcolor{keywordtype}{void})\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} buffer\_avail; \}  }
+\DoxyCodeLine{191         \mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82}{BufferState}} \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_aa270d82f254ba5cbddc3b44635a6ff30}{GetBufferState}}(\textcolor{keywordtype}{void})\textcolor{keyword}{ const                             }}
+\DoxyCodeLine{192 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{193             \textcolor{keywordflow}{if}(!buffer\_avail)}
+\DoxyCodeLine{194                 \textcolor{keywordflow}{return} \mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82ace2c8aed9c2fa0cfbed56cbda4d8bf07}{BufferState::Empty}};}
+\DoxyCodeLine{195             \textcolor{keywordflow}{if}(buffer\_avail == buffer\_size)}
+\DoxyCodeLine{196                 \textcolor{keywordflow}{return} \mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82abbd47109890259c0127154db1af26c75}{BufferState::Full}};}
+\DoxyCodeLine{197             \textcolor{keywordflow}{return} \mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82a75dfaefbbfaf6c0918ee30c97fb76f8b}{BufferState::NotEmptyNotFull}};}
+\DoxyCodeLine{198         \}}
+\DoxyCodeLine{199         \textcolor{keyword}{private}:}
+\DoxyCodeLine{200         \textcolor{comment}{//private members}}
+\DoxyCodeLine{201         T * fifo\_buffer;}
+\DoxyCodeLine{202         uint32\_t buffer\_size;}
+\DoxyCodeLine{203         uint32\_t buffer\_avail;}
+\DoxyCodeLine{204         uint32\_t rd\_index;}
+\DoxyCodeLine{205         uint32\_t wr\_index;}
+\DoxyCodeLine{206     \};}
+\DoxyCodeLine{207 \}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GENERIC\_BUFFER\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

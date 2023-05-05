@@ -187,8 +187,8 @@ namespace GenericBuffer {
 		}
 		uint32_t GetSize(void) const { return buffer_size; }				//!< Getter for size of array.
 		uint32_t GetBufferAvailable(void) const { return buffer_avail; }	//!< Getter for length/number of elements available in buffer.
-			
-		BufferState GetBufferState(void) const								//!< Getter for buffer state (Empty, Full, NotEmptyNotFull)
+		//! Getter for buffer state (Empty, Full, NotEmptyNotFull)
+		BufferState GetBufferState(void) const								
 		{
 			if(!buffer_avail)
 				return BufferState::Empty;

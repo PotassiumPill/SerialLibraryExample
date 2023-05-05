@@ -1,0 +1,45 @@
+\hypertarget{common__samd21_8h_source}{}\doxysection{common\+\_\+samd21.\+h}
+\label{common__samd21_8h_source}\index{SerialLibraryExample/serial\_controllers/serial\_common/hardware/common\_samd21.h@{SerialLibraryExample/serial\_controllers/serial\_common/hardware/common\_samd21.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* }}
+\DoxyCodeLine{2 \textcolor{comment}{ * Name         :   common\_samd21.h}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Created      :   1/18/2023 4:40:56 PM}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Author       :   Aaron Reilman}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Description  :   Common generic hardware functionality for SAMD21.}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_\_COMMON\_SAMD21\_H\_\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_\_COMMON\_SAMD21\_H\_\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}sam.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{namespace }SERCOMSAMD21}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{19     \textcolor{keyword}{enum} GenericClock : uint8\_t \{}
+\DoxyCodeLine{20         GEN\_CLK\_0,}
+\DoxyCodeLine{21         GEN\_CLK\_1,}
+\DoxyCodeLine{22         GEN\_CLK\_2,}
+\DoxyCodeLine{23         GEN\_CLK\_3,}
+\DoxyCodeLine{24         GEN\_CLK\_4,}
+\DoxyCodeLine{25         GEN\_CLK\_5,}
+\DoxyCodeLine{26         GEN\_CLK\_6,}
+\DoxyCodeLine{27         GEN\_CLK\_7,}
+\DoxyCodeLine{28         GEN\_CLK\_8}
+\DoxyCodeLine{29     \};}
+\DoxyCodeLine{33     \textcolor{keyword}{enum} SercomID : uint8\_t \{}
+\DoxyCodeLine{34         Sercom0,}
+\DoxyCodeLine{35         Sercom1,}
+\DoxyCodeLine{36         Sercom2,}
+\DoxyCodeLine{37         Sercom3,}
+\DoxyCodeLine{38         Sercom4,}
+\DoxyCodeLine{39         Sercom5}
+\DoxyCodeLine{40     \};}
+\DoxyCodeLine{49     Sercom * GetSercom(\mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_aef085a7571bb4d9cae9821be7982e559}{SERCOMHAL::SercomID}} sercom\_id);}
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} EnableSercomClock(\mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_aef085a7571bb4d9cae9821be7982e559}{SERCOMHAL::SercomID}} sercom\_id, GenericClock gen\_clk\_num, uint16\_t clock\_divisor = 0, \textcolor{keywordtype}{bool} run\_standby = \textcolor{keyword}{false});}
+\DoxyCodeLine{61 \}; }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//\_\_COMMON\_SAMD21\_H\_\_}}
+
+\end{DoxyCode}

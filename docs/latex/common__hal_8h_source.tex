@@ -1,0 +1,43 @@
+\hypertarget{common__hal_8h_source}{}\doxysection{common\+\_\+hal.\+h}
+\label{common__hal_8h_source}\index{SerialLibraryExample/serial\_controllers/serial\_common/common\_hal.h@{SerialLibraryExample/serial\_controllers/serial\_common/common\_hal.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Name         :   common\_hal.h}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Created      :   1/18/2023 4:24:03 PM}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Author       :   Aaron Reilman}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Description  :   Common generic hardware functionality for implementing serial controllers.}}
+\DoxyCodeLine{6 \textcolor{comment}{ */} }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef \_\_COMMON\_HAL\_H\_\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define \_\_COMMON\_HAL\_H\_\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}serial\_comm\_config.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{19 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l}{SERCOMHAL}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{24     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_a94b005001590518e520ce60d407bf9da}{PullResistor}} \{}
+\DoxyCodeLine{25         \mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_a94b005001590518e520ce60d407bf9daa844e4187d1280b65b8bdbe291c02b18f}{NoPull}},                   }
+\DoxyCodeLine{26         \mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_a94b005001590518e520ce60d407bf9daabed47520978d78c53321706efec205af}{PinPullUp}},             }
+\DoxyCodeLine{27         \mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_a94b005001590518e520ce60d407bf9daaac9d40a86eaef0b573d120362ac75fa2}{PinPullDown}}              }
+\DoxyCodeLine{28     \};}
+\DoxyCodeLine{32     \textcolor{keyword}{typedef} uint8\_t \mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_aef085a7571bb4d9cae9821be7982e559}{SercomID}};}
+\DoxyCodeLine{38     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout}{Pinout}} \{}
+\DoxyCodeLine{39         uint8\_t \mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout_aba43af906d0b3a872202b1bebe026146}{peripheral\_function}}; }
+\DoxyCodeLine{40         uint8\_t \mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout_ab62e3102250030c522d9838a88a5064b}{port}};                   }
+\DoxyCodeLine{41         uint8\_t \mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout_a0bcbee55a371861027adadd983251ed0}{pin}};                 }
+\DoxyCodeLine{42     \};}
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_a3b8df24e80a333b5d5c0435fdbf91592}{ConfigPin}}(\mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout}{Pinout}} pin, \textcolor{keywordtype}{bool} output, \textcolor{keywordtype}{bool} multiplexed, \mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_a94b005001590518e520ce60d407bf9da}{PullResistor}} pull = \mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_a94b005001590518e520ce60d407bf9daa844e4187d1280b65b8bdbe291c02b18f}{PullResistor::NoPull}});}
+\DoxyCodeLine{62     \textcolor{keywordtype}{bool} \mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_ac06302c48b0008fe3466846eda984050}{GetPinState}}(\mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout}{Pinout}} pin);}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_a3cffb9e7c55ebb41e41f47c23714de47}{OutputHigh}}(\mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout}{Pinout}} output\_pin);}
+\DoxyCodeLine{78     \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_a68223dad75a54870562c4114eb36c38f}{OutputLow}}(\mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout}{Pinout}} output\_pin);}
+\DoxyCodeLine{79 \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#if (SERCOM\_MCU\_OPT == OPT\_SERCOM\_SAMD21)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#include "{}serial\_common/hardware/common\_samd21.h"{}}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//\_\_COMMON\_HAL\_H\_\_}}
+
+\end{DoxyCode}

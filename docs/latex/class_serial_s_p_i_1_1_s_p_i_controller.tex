@@ -1,0 +1,390 @@
+\hypertarget{class_serial_s_p_i_1_1_s_p_i_controller}{}\doxysection{Serial\+SPI\+::SPIController Class Reference}
+\label{class_serial_s_p_i_1_1_s_p_i_controller}\index{SerialSPI::SPIController@{SerialSPI::SPIController}}
+
+
+SPI serial communication controller object  
+
+
+
+
+{\ttfamily \#include $<$serial\+\_\+spi.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a47bb2a527721438538b117fe96d8cf99}{SPIController}} (void)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a2411774170cdb8758f206af77aae5c73}{$\sim$\+SPIController}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aac613474c61cbcf0cf8268bb3f7b492e}{Init}} (\mbox{\hyperlink{struct_s_p_i_h_a_l_1_1_peripheral}{SPIHAL\+::\+Peripheral}} $\ast$p\+\_\+config, char $\ast$mosi\+\_\+buf, uint32\+\_\+t mosi\+\_\+size, char $\ast$miso\+\_\+buf, uint32\+\_\+t miso\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Initializes SPI serial communication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aad4d083ef9093fe0462e124072757fb6}{Deinit}} (void)
+\begin{DoxyCompactList}\small\item\em Disables and resets SPI serial communication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a20a5ea3cc3245409ca33962a37bfc41b}{Reset\+MOSIBuffer}} (char $\ast$mosi\+\_\+buf, uint32\+\_\+t mosi\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Resets MOSI/transmit buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a53d317407bfb1b94cb69b37eb9934c7a}{Reset\+MISOBuffer}} (char $\ast$miso\+\_\+buf, uint32\+\_\+t miso\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Resets MISO/receive buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aea49d25ca4796de870226f49e05892db}{Clear\+Buffers}} (bool clear\+\_\+mosi=true, bool clear\+\_\+miso=true)
+\begin{DoxyCompactList}\small\item\em Clears MOSI and/or MISO buffers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a982acee8e5b16d9a4f99dd25257ce4be}{ISR}} (void)
+\begin{DoxyCompactList}\small\item\em Interrupt Service Routine. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a627377a7434d11ac09f96c036e63b649}{SPIHost\+Procedure}} (uint32\+\_\+t num\+\_\+bytes, const char $\ast$bytes, uint32\+\_\+t num\+\_\+read=0)
+\begin{DoxyCompactList}\small\item\em Simple SPI Procedure which performs a transaction between host and client. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_af32c1b958d7f206d14c260f3bf9a7d41}{Transmit}} (char input)
+\begin{DoxyCompactList}\small\item\em Transmit character into logic layer transmit buffer to be sent to SPI data buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a3a1ba24ba52726fe3800b9ec81438a8a}{Receive}} (char $\ast$output=nullptr)
+\begin{DoxyCompactList}\small\item\em Receive character from logic layer MISO buffer and free buffer space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_a777a2d4ab37f0f3791484016d4905e55}\label{class_serial_s_p_i_1_1_s_p_i_controller_a777a2d4ab37f0f3791484016d4905e55}} 
+uint32\+\_\+t {\bfseries Get\+MISOAvailable} (void) const
+\begin{DoxyCompactList}\small\item\em Getter for number of unread characters available in MISO/receive buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_a7b01038eda75612f433a016cab9b7878}\label{class_serial_s_p_i_1_1_s_p_i_controller_a7b01038eda75612f433a016cab9b7878}} 
+uint32\+\_\+t {\bfseries Get\+MOSIEmpty} (void) const
+\begin{DoxyCompactList}\small\item\em Getter for number of empty slots available in MOSI/transmit buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_ac0c643045b84a84301522894a807d756}\label{class_serial_s_p_i_1_1_s_p_i_controller_ac0c643045b84a84301522894a807d756}} 
+\mbox{\hyperlink{struct_serial_s_p_i_1_1_buffer_states}{Buffer\+States}} {\bfseries Get\+Buffer\+States} (void) const
+\begin{DoxyCompactList}\small\item\em Get MISO and MOSI buffer states. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_serial_s_p_i_1_1_status}{Status}} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_ae61e13e1124ba8fa06cbcd9570f478bf}{Get\+Status}} (void) const
+\begin{DoxyCompactList}\small\item\em Getter for errors, interrupts, and power state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_acb1506e78efd728e84f2e221a63787e5}\label{class_serial_s_p_i_1_1_s_p_i_controller_acb1506e78efd728e84f2e221a63787e5}} 
+void {\bfseries Clear\+MOSIInterrupt} (void)
+\begin{DoxyCompactList}\small\item\em Clears MOSI Interrupt \mbox{\hyperlink{struct_serial_s_p_i_1_1_status}{Status}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_a5f03b1356b67fcee8c89eecde8d875f4}\label{class_serial_s_p_i_1_1_s_p_i_controller_a5f03b1356b67fcee8c89eecde8d875f4}} 
+void {\bfseries Clear\+MISOInterrupt} (void)
+\begin{DoxyCompactList}\small\item\em Clears MISO Interrupt \mbox{\hyperlink{struct_serial_s_p_i_1_1_status}{Status}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_ac4ccfe6239374a7923f6bc32022c0cac}\label{class_serial_s_p_i_1_1_s_p_i_controller_ac4ccfe6239374a7923f6bc32022c0cac}} 
+void {\bfseries Clear\+Errors} (void)
+\begin{DoxyCompactList}\small\item\em Clears Error \mbox{\hyperlink{struct_serial_s_p_i_1_1_status}{Status}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_a8a734767c555f5bad5cf8104d0d5c467}\label{class_serial_s_p_i_1_1_s_p_i_controller_a8a734767c555f5bad5cf8104d0d5c467}} 
+void {\bfseries Enable\+Error\+IRQ} (bool enable=true)
+\begin{DoxyCompactList}\small\item\em Enabler for Error interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_a725cb585c59f8bd9aa57418b25df14c4}\label{class_serial_s_p_i_1_1_s_p_i_controller_a725cb585c59f8bd9aa57418b25df14c4}} 
+void {\bfseries SSHigh} (void)
+\begin{DoxyCompactList}\small\item\em Sets Slave Select Line to High (indicates end of transmission to slave device) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_a6fc4ad0d39e775a14becf473a979263c}\label{class_serial_s_p_i_1_1_s_p_i_controller_a6fc4ad0d39e775a14becf473a979263c}} 
+void {\bfseries SSLow} (void)
+\begin{DoxyCompactList}\small\item\em Sets Slave Select Line to Low (indicates start of transmission to slave device) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_a84f78bb2865e1f36b0dfe2f0567c01cd}\label{class_serial_s_p_i_1_1_s_p_i_controller_a84f78bb2865e1f36b0dfe2f0567c01cd}} 
+void {\bfseries Change\+SSL} (\mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout}{SERCOMHAL\+::\+Pinout}} ssl\+\_\+pinout)
+\begin{DoxyCompactList}\small\item\em Change Slave Select Line pin (if using multiple clients) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SPI serial communication controller object 
+
+This is a SPI serial communication controller which manages a single peripheral. It creates two FIFO queues for transmission and reception of data over SPI and some simple parsing capabilities. This controller is interrupt driven, so \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a982acee8e5b16d9a4f99dd25257ce4be}{ISR()}} must be implemented in the SPI interrupt handler (pay attention to which SERCOM\# you are using). The ISR provides interrupt and error flags and can be read using \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_ae61e13e1124ba8fa06cbcd9570f478bf}{Get\+Status()}} to implement your own error and interrupt handling outside of basic data transmission/reception. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_a47bb2a527721438538b117fe96d8cf99}\label{class_serial_s_p_i_1_1_s_p_i_controller_a47bb2a527721438538b117fe96d8cf99}} 
+\index{SerialSPI::SPIController@{SerialSPI::SPIController}!SPIController@{SPIController}}
+\index{SPIController@{SPIController}!SerialSPI::SPIController@{SerialSPI::SPIController}}
+\doxysubsubsection{\texorpdfstring{SPIController()}{SPIController()}}
+{\footnotesize\ttfamily Serial\+SPI\+::\+SPIController\+::\+SPIController (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Instantiates controller object for SPI serial communication.~\newline
+ This will not initialize the hardware, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aac613474c61cbcf0cf8268bb3f7b492e}{Init()}} must be called before transmission and reception will do anything.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a2411774170cdb8758f206af77aae5c73}{$\sim$\+SPIController()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aac613474c61cbcf0cf8268bb3f7b492e}{Init()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aad4d083ef9093fe0462e124072757fb6}{Deinit()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_a2411774170cdb8758f206af77aae5c73}\label{class_serial_s_p_i_1_1_s_p_i_controller_a2411774170cdb8758f206af77aae5c73}} 
+\index{SerialSPI::SPIController@{SerialSPI::SPIController}!````~SPIController@{$\sim$SPIController}}
+\index{````~SPIController@{$\sim$SPIController}!SerialSPI::SPIController@{SerialSPI::SPIController}}
+\doxysubsubsection{\texorpdfstring{$\sim$SPIController()}{~SPIController()}}
+{\footnotesize\ttfamily Serial\+SPI\+::\+SPIController\+::$\sim$\+SPIController (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Called when \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller}{SPIController}} object is destroyed. Immediately halts data transmission and resets peripheral hardware.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a47bb2a527721438538b117fe96d8cf99}{SPIController()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aac613474c61cbcf0cf8268bb3f7b492e}{Init()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aad4d083ef9093fe0462e124072757fb6}{Deinit()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_aea49d25ca4796de870226f49e05892db}\label{class_serial_s_p_i_1_1_s_p_i_controller_aea49d25ca4796de870226f49e05892db}} 
+\index{SerialSPI::SPIController@{SerialSPI::SPIController}!ClearBuffers@{ClearBuffers}}
+\index{ClearBuffers@{ClearBuffers}!SerialSPI::SPIController@{SerialSPI::SPIController}}
+\doxysubsubsection{\texorpdfstring{ClearBuffers()}{ClearBuffers()}}
+{\footnotesize\ttfamily void Serial\+SPI\+::\+SPIController\+::\+Clear\+Buffers (\begin{DoxyParamCaption}\item[{bool}]{clear\+\_\+mosi = {\ttfamily true},  }\item[{bool}]{clear\+\_\+miso = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Clears MOSI and/or MISO buffers. 
+
+Clears out the MOSI and/or MISO buffers and resets status data and indices. Useful for quick handling of full buffers and errors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clear\+\_\+mosi} & clear MOSI/transmit buffer (default = true) \\
+\hline
+{\em clear\+\_\+miso} & clear MISO/receive buffer (default = true) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aad4d083ef9093fe0462e124072757fb6}{Deinit()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_serial_s_p_i_1_1_s_p_i_controller_aea49d25ca4796de870226f49e05892db_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_aad4d083ef9093fe0462e124072757fb6}\label{class_serial_s_p_i_1_1_s_p_i_controller_aad4d083ef9093fe0462e124072757fb6}} 
+\index{SerialSPI::SPIController@{SerialSPI::SPIController}!Deinit@{Deinit}}
+\index{Deinit@{Deinit}!SerialSPI::SPIController@{SerialSPI::SPIController}}
+\doxysubsubsection{\texorpdfstring{Deinit()}{Deinit()}}
+{\footnotesize\ttfamily void Serial\+SPI\+::\+SPIController\+::\+Deinit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Disables and resets SPI serial communication. 
+
+Disables SPI serial controller if active and resets peripheral hardware. SPI controller can be initialized again after calling this function without destroying entire object.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aac613474c61cbcf0cf8268bb3f7b492e}{Init()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aea49d25ca4796de870226f49e05892db}{Clear\+Buffers()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a2411774170cdb8758f206af77aae5c73}{$\sim$\+SPIController()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_serial_s_p_i_1_1_s_p_i_controller_aad4d083ef9093fe0462e124072757fb6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_ae61e13e1124ba8fa06cbcd9570f478bf}\label{class_serial_s_p_i_1_1_s_p_i_controller_ae61e13e1124ba8fa06cbcd9570f478bf}} 
+\index{SerialSPI::SPIController@{SerialSPI::SPIController}!GetStatus@{GetStatus}}
+\index{GetStatus@{GetStatus}!SerialSPI::SPIController@{SerialSPI::SPIController}}
+\doxysubsubsection{\texorpdfstring{GetStatus()}{GetStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_serial_s_p_i_1_1_status}{Serial\+SPI\+::\+Status}} Serial\+SPI\+::\+SPIController\+::\+Get\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Getter for errors, interrupts, and power state. 
+
+Useful for adding additional ISR responses in SERCOM handler.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a982acee8e5b16d9a4f99dd25257ce4be}{ISR()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_acb1506e78efd728e84f2e221a63787e5}{Clear\+MOSIInterrupt()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a5f03b1356b67fcee8c89eecde8d875f4}{Clear\+MISOInterrupt()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_ac4ccfe6239374a7923f6bc32022c0cac}{Clear\+Errors()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_aac613474c61cbcf0cf8268bb3f7b492e}\label{class_serial_s_p_i_1_1_s_p_i_controller_aac613474c61cbcf0cf8268bb3f7b492e}} 
+\index{SerialSPI::SPIController@{SerialSPI::SPIController}!Init@{Init}}
+\index{Init@{Init}!SerialSPI::SPIController@{SerialSPI::SPIController}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Serial\+SPI\+::\+SPIController\+::\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_p_i_h_a_l_1_1_peripheral}{SPIHAL\+::\+Peripheral}} $\ast$}]{p\+\_\+config,  }\item[{char $\ast$}]{mosi\+\_\+buf,  }\item[{uint32\+\_\+t}]{mosi\+\_\+size,  }\item[{char $\ast$}]{miso\+\_\+buf,  }\item[{uint32\+\_\+t}]{miso\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Initializes SPI serial communication. 
+
+Uses five parameters for peripheral config and buffer sizes to initialize peripheral hardware, buffers, and statuses if SPI hasn\textquotesingle{}t been initialized. This function will not do anything if SPI is currently enabled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+config} & pointer to peripheral config information \\
+\hline
+{\em mosi\+\_\+buf} & initialized character array used for receive/\+MOSI buffer \\
+\hline
+{\em mosi\+\_\+size} & MOSI buffer size \\
+\hline
+{\em miso\+\_\+buf} & initialized character array used for transmit/\+MISO buffer \\
+\hline
+{\em miso\+\_\+size} & MISO buffer size \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aad4d083ef9093fe0462e124072757fb6}{Deinit()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a20a5ea3cc3245409ca33962a37bfc41b}{Reset\+MOSIBuffer()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a53d317407bfb1b94cb69b37eb9934c7a}{Reset\+MISOBuffer()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a8a734767c555f5bad5cf8104d0d5c467}{Enable\+Error\+IRQ()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_serial_s_p_i_1_1_s_p_i_controller_aac613474c61cbcf0cf8268bb3f7b492e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_a982acee8e5b16d9a4f99dd25257ce4be}\label{class_serial_s_p_i_1_1_s_p_i_controller_a982acee8e5b16d9a4f99dd25257ce4be}} 
+\index{SerialSPI::SPIController@{SerialSPI::SPIController}!ISR@{ISR}}
+\index{ISR@{ISR}!SerialSPI::SPIController@{SerialSPI::SPIController}}
+\doxysubsubsection{\texorpdfstring{ISR()}{ISR()}}
+{\footnotesize\ttfamily void Serial\+SPI\+::\+SPIController\+::\+ISR (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Interrupt Service Routine. 
+
+Function to be called in corresponding SERCOM\# interrupt handler. Sets IRQ and error statuses, populates MISO buffer, and transmits data from the MOSI buffer.~\newline
+ Interrupts can be read with \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_ae61e13e1124ba8fa06cbcd9570f478bf}{Get\+Status()}} to handle synchronization of events, check and handle errors, and generally assist with debugging.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_ae61e13e1124ba8fa06cbcd9570f478bf}{Get\+Status()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a5f03b1356b67fcee8c89eecde8d875f4}{Clear\+MISOInterrupt()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_acb1506e78efd728e84f2e221a63787e5}{Clear\+MOSIInterrupt()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_ac4ccfe6239374a7923f6bc32022c0cac}{Clear\+Errors()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_serial_s_p_i_1_1_s_p_i_controller_a982acee8e5b16d9a4f99dd25257ce4be_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_a3a1ba24ba52726fe3800b9ec81438a8a}\label{class_serial_s_p_i_1_1_s_p_i_controller_a3a1ba24ba52726fe3800b9ec81438a8a}} 
+\index{SerialSPI::SPIController@{SerialSPI::SPIController}!Receive@{Receive}}
+\index{Receive@{Receive}!SerialSPI::SPIController@{SerialSPI::SPIController}}
+\doxysubsubsection{\texorpdfstring{Receive()}{Receive()}}
+{\footnotesize\ttfamily bool Serial\+SPI\+::\+SPIController\+::\+Receive (\begin{DoxyParamCaption}\item[{char $\ast$}]{output = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Receive character from logic layer MISO buffer and free buffer space. 
+
+Receives character from logic layer MISO buffer, updates MISO reader pointer, status, number of available MISO buffer slots.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & pointer to received char (default = nullptr) ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success of reception 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_af32c1b958d7f206d14c260f3bf9a7d41}{Transmit()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a627377a7434d11ac09f96c036e63b649}{SPIHost\+Procedure()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_serial_s_p_i_1_1_s_p_i_controller_a3a1ba24ba52726fe3800b9ec81438a8a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_a53d317407bfb1b94cb69b37eb9934c7a}\label{class_serial_s_p_i_1_1_s_p_i_controller_a53d317407bfb1b94cb69b37eb9934c7a}} 
+\index{SerialSPI::SPIController@{SerialSPI::SPIController}!ResetMISOBuffer@{ResetMISOBuffer}}
+\index{ResetMISOBuffer@{ResetMISOBuffer}!SerialSPI::SPIController@{SerialSPI::SPIController}}
+\doxysubsubsection{\texorpdfstring{ResetMISOBuffer()}{ResetMISOBuffer()}}
+{\footnotesize\ttfamily void Serial\+SPI\+::\+SPIController\+::\+Reset\+MISOBuffer (\begin{DoxyParamCaption}\item[{char $\ast$}]{miso\+\_\+buf,  }\item[{uint32\+\_\+t}]{miso\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Resets MISO/receive buffer. 
+
+Resets SPI controller MISO buffer to use a new input array and buffer size. Resets RXIRQ status and error status.
+
+
+\begin{DoxyParams}{Parameters}
+{\em miso\+\_\+buf} & initialized character array used for receive buffer \\
+\hline
+{\em miso\+\_\+size} & receive buffer size \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a20a5ea3cc3245409ca33962a37bfc41b}{Reset\+MOSIBuffer()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aac613474c61cbcf0cf8268bb3f7b492e}{Init()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_serial_s_p_i_1_1_s_p_i_controller_a53d317407bfb1b94cb69b37eb9934c7a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_a20a5ea3cc3245409ca33962a37bfc41b}\label{class_serial_s_p_i_1_1_s_p_i_controller_a20a5ea3cc3245409ca33962a37bfc41b}} 
+\index{SerialSPI::SPIController@{SerialSPI::SPIController}!ResetMOSIBuffer@{ResetMOSIBuffer}}
+\index{ResetMOSIBuffer@{ResetMOSIBuffer}!SerialSPI::SPIController@{SerialSPI::SPIController}}
+\doxysubsubsection{\texorpdfstring{ResetMOSIBuffer()}{ResetMOSIBuffer()}}
+{\footnotesize\ttfamily void Serial\+SPI\+::\+SPIController\+::\+Reset\+MOSIBuffer (\begin{DoxyParamCaption}\item[{char $\ast$}]{mosi\+\_\+buf,  }\item[{uint32\+\_\+t}]{mosi\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Resets MOSI/transmit buffer. 
+
+Resets SPI controller MOSI buffer to use a new input array and buffer size. Resets TXIRQ status.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mosi\+\_\+buf} & initialized character array used for transmit buffer \\
+\hline
+{\em mosi\+\_\+size} & transmit buffer size \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a53d317407bfb1b94cb69b37eb9934c7a}{Reset\+MISOBuffer()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aac613474c61cbcf0cf8268bb3f7b492e}{Init()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_serial_s_p_i_1_1_s_p_i_controller_a20a5ea3cc3245409ca33962a37bfc41b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_a627377a7434d11ac09f96c036e63b649}\label{class_serial_s_p_i_1_1_s_p_i_controller_a627377a7434d11ac09f96c036e63b649}} 
+\index{SerialSPI::SPIController@{SerialSPI::SPIController}!SPIHostProcedure@{SPIHostProcedure}}
+\index{SPIHostProcedure@{SPIHostProcedure}!SerialSPI::SPIController@{SerialSPI::SPIController}}
+\doxysubsubsection{\texorpdfstring{SPIHostProcedure()}{SPIHostProcedure()}}
+{\footnotesize\ttfamily char Serial\+SPI\+::\+SPIController\+::\+SPIHost\+Procedure (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{num\+\_\+bytes,  }\item[{const char $\ast$}]{bytes,  }\item[{uint32\+\_\+t}]{num\+\_\+read = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Simple SPI Procedure which performs a transaction between host and client. 
+
+Performs a SPI Transaction compatible with nearly any SPI client. This transaction will pull down the SS line, send bytes, send \textbackslash{}0 characters to read data from client, and pull up SS line.~\newline
+ This will return a char coinciding with a status byte sent by most SPI clients.~\newline
+ Use \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a3a1ba24ba52726fe3800b9ec81438a8a}{Receive()}} to read data from the client.~\newline
+ Call \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a84f78bb2865e1f36b0dfe2f0567c01cd}{Change\+SSL()}} before this function if using multiple clients.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+bytes} & number of bytes to send to client \\
+\hline
+{\em bytes} & array of bytes to send \\
+\hline
+{\em num\+\_\+read} & number of bytes to read from client (default = 0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 or custom status byte defined by client 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_af32c1b958d7f206d14c260f3bf9a7d41}{Transmit()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a6fc4ad0d39e775a14becf473a979263c}{SSLow()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a725cb585c59f8bd9aa57418b25df14c4}{SSHigh()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a3a1ba24ba52726fe3800b9ec81438a8a}{Receive()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a84f78bb2865e1f36b0dfe2f0567c01cd}{Change\+SSL()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_s_p_i_1_1_s_p_i_controller_af32c1b958d7f206d14c260f3bf9a7d41}\label{class_serial_s_p_i_1_1_s_p_i_controller_af32c1b958d7f206d14c260f3bf9a7d41}} 
+\index{SerialSPI::SPIController@{SerialSPI::SPIController}!Transmit@{Transmit}}
+\index{Transmit@{Transmit}!SerialSPI::SPIController@{SerialSPI::SPIController}}
+\doxysubsubsection{\texorpdfstring{Transmit()}{Transmit()}}
+{\footnotesize\ttfamily bool Serial\+SPI\+::\+SPIController\+::\+Transmit (\begin{DoxyParamCaption}\item[{char}]{input }\end{DoxyParamCaption})}
+
+
+
+Transmit character into logic layer transmit buffer to be sent to SPI data buffer. 
+
+Transmits character into logic layer MOSI buffer, updates MOSI writer pointer, status, number of available MOSI buffer slots.~\newline
+ Returns a true/false based on success of transmission. Transmission will fail if logic layer MOSI buffer is full.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & character to be transmitted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success of transmission 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a3a1ba24ba52726fe3800b9ec81438a8a}{Receive()}}, \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a627377a7434d11ac09f96c036e63b649}{SPIHost\+Procedure()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_serial_s_p_i_1_1_s_p_i_controller_af32c1b958d7f206d14c260f3bf9a7d41_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Serial\+Library\+Example/serial\+\_\+controllers/serial\+\_\+spi/serial\+\_\+spi.\+h\item 
+Serial\+Library\+Example/serial\+\_\+controllers/serial\+\_\+spi/serial\+\_\+spi.\+cpp\end{DoxyCompactItemize}

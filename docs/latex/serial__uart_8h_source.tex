@@ -1,0 +1,101 @@
+\hypertarget{serial__uart_8h_source}{}\doxysection{serial\+\_\+uart.\+h}
+\label{serial__uart_8h_source}\index{SerialLibraryExample/serial\_controllers/serial\_uart/serial\_uart.h@{SerialLibraryExample/serial\_controllers/serial\_uart/serial\_uart.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* }}
+\DoxyCodeLine{2 \textcolor{comment}{ * Name         :   serial\_uart.h}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Created      :   6/8/2022 11:12:06 AM}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Author       :   Aaron Reilman}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Description  :   A UART serial communication driver.}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_\_SERIAL\_UART\_H\_\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_\_SERIAL\_UART\_H\_\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}serial\_uart/uart\_hal.h"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}serial\_buffer/serial\_buffer.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{20 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_serial_u_a_r_t}{SerialUART}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{25     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_serial_u_a_r_t_a5665c8a5f362b88aae24b97da47127a0}{TXIRQState}}}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         None,                   }
+\DoxyCodeLine{28         \mbox{\hyperlink{namespace_serial_u_a_r_t_a5665c8a5f362b88aae24b97da47127a0a017989d109c6f8c81153605ec5479c85}{TxComplete}},               }
+\DoxyCodeLine{29         \mbox{\hyperlink{namespace_serial_u_a_r_t_a5665c8a5f362b88aae24b97da47127a0af3e086807f385f72e6ad69100b6a9c15}{TxSuccess}}              }
+\DoxyCodeLine{30     \};}
+\DoxyCodeLine{34     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_serial_u_a_r_t_a70e0c84b7b296bf22033c9d474e1cca7}{RXIRQState}}}
+\DoxyCodeLine{35     \{}
+\DoxyCodeLine{36         None,                   }
+\DoxyCodeLine{37         \mbox{\hyperlink{namespace_serial_u_a_r_t_a70e0c84b7b296bf22033c9d474e1cca7a3caeb30bd510039313f9a0244c645466}{RxError}},             }
+\DoxyCodeLine{38         \mbox{\hyperlink{namespace_serial_u_a_r_t_a70e0c84b7b296bf22033c9d474e1cca7a13700f97fd2e87b4337f541f8d6d8943}{RxComplete}},               }
+\DoxyCodeLine{39         \mbox{\hyperlink{namespace_serial_u_a_r_t_a70e0c84b7b296bf22033c9d474e1cca7ad18eb0e11f39566b55c2155b94a73af0}{RxSuccess}}              }
+\DoxyCodeLine{40     \};}
+\DoxyCodeLine{44     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_serial_u_a_r_t_abefc78aed01b093d3ccf04209fc78377}{UARTError}}}
+\DoxyCodeLine{45     \{}
+\DoxyCodeLine{46         ENone,                  }
+\DoxyCodeLine{47         \mbox{\hyperlink{namespace_serial_u_a_r_t_abefc78aed01b093d3ccf04209fc78377a1629bad19536907684472c47c6a4eb60}{ESync}},                 }
+\DoxyCodeLine{48         EOverflow,              }
+\DoxyCodeLine{49         \mbox{\hyperlink{namespace_serial_u_a_r_t_abefc78aed01b093d3ccf04209fc78377a1fb39f14d852ccc088a0c407bd29316d}{EFrame}},                   }
+\DoxyCodeLine{50         \mbox{\hyperlink{namespace_serial_u_a_r_t_abefc78aed01b093d3ccf04209fc78377a1aed3df91fc9462d23f933801b3fe942}{EParity}}                  }
+\DoxyCodeLine{51     \};}
+\DoxyCodeLine{55     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_serial_u_a_r_t_1_1_status}{Status}} \{}
+\DoxyCodeLine{56         \mbox{\hyperlink{namespace_serial_u_a_r_t_a5665c8a5f362b88aae24b97da47127a0}{TXIRQState}} \mbox{\hyperlink{struct_serial_u_a_r_t_1_1_status_ab9484c63577788736f1b6d520fecad6b}{tx\_interrupt}};  }
+\DoxyCodeLine{57         \mbox{\hyperlink{namespace_serial_u_a_r_t_a70e0c84b7b296bf22033c9d474e1cca7}{RXIRQState}} \mbox{\hyperlink{struct_serial_u_a_r_t_1_1_status_a9243d53e311c00bdabac9f0d554b44a2}{rx\_interrupt}};  }
+\DoxyCodeLine{58         \mbox{\hyperlink{namespace_serial_u_a_r_t_abefc78aed01b093d3ccf04209fc78377}{UARTError}} \mbox{\hyperlink{struct_serial_u_a_r_t_1_1_status_ae5b4e6d6889585836162dc5d049aed66}{error\_state}};      }
+\DoxyCodeLine{59         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_serial_u_a_r_t_1_1_status_a6c731cbe53a83612641f73a0d8903194}{uart\_on}};                }
+\DoxyCodeLine{60     \};}
+\DoxyCodeLine{64     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_serial_u_a_r_t_1_1_buffer_states}{BufferStates}} \{}
+\DoxyCodeLine{65         \mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82}{GenericBuffer::BufferState}} \mbox{\hyperlink{struct_serial_u_a_r_t_1_1_buffer_states_a5b6e5137c9b0708a274156fbf7f20484}{tx\_buffer\_state}};    }
+\DoxyCodeLine{66         \mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82}{GenericBuffer::BufferState}} \mbox{\hyperlink{struct_serial_u_a_r_t_1_1_buffer_states_a39493f1a4aee8c0170cc922bf2cc4abb}{rx\_buffer\_state}};    }
+\DoxyCodeLine{67     \};}
+\DoxyCodeLine{75     \textcolor{keyword}{class }\mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller}{UARTController}}}
+\DoxyCodeLine{76     \{}
+\DoxyCodeLine{77         \textcolor{comment}{//functions}}
+\DoxyCodeLine{78         \textcolor{keyword}{public}:}
+\DoxyCodeLine{87         \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_af85abfd70eb695772bb00fbf3e794b70}{UARTController}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{95         \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_a6af0ef220033acccc163141be0223200}{\string~UARTController}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{109         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_a70cc27f9c5e3920954e4b2dea8e5d7b8}{Init}}(\mbox{\hyperlink{struct_u_a_r_t_h_a_l_1_1_peripheral}{UARTHAL::Peripheral}} * p\_config, \textcolor{keywordtype}{char} * tx\_buf, uint32\_t tx\_size, \textcolor{keywordtype}{char} * rx\_buf, uint32\_t rx\_size);}
+\DoxyCodeLine{117         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_ab90c37bccfd58212dc13c32338859007}{Deinit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{127         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_ab23205f9716835204b376bd6326a0aae}{ResetTXBuffer}}(\textcolor{keywordtype}{char} * tx\_buf, uint32\_t tx\_size);}
+\DoxyCodeLine{137         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_a7fc563163f811d74b8f901a1d0c3d302}{ResetRXBuffer}}(\textcolor{keywordtype}{char} * rx\_buf, uint32\_t rx\_size);}
+\DoxyCodeLine{148         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_a6e154b891bf847e222fd3509910a1acb}{ClearBuffers}}(\textcolor{keywordtype}{bool} clear\_tx = \textcolor{keyword}{true}, \textcolor{keywordtype}{bool} clear\_rx = \textcolor{keyword}{true});}
+\DoxyCodeLine{157         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_a92e007bfb65edacf4a77e38c0d90c00a}{ISR}}(\textcolor{keywordtype}{void});  }
+\DoxyCodeLine{168         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_a6115ee08a68979d93ee22489937fa262}{Transmit}}(\textcolor{keywordtype}{char} input);}
+\DoxyCodeLine{178         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_af7f47359ebd93eb963a25ddcf2f82e95}{Receive}}(\textcolor{keywordtype}{char} * output = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{189         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_acc003e020b56fc1c8a6c4a9433ebe2d9}{TransmitPacket}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * input, uint32\_t num\_bytes);}
+\DoxyCodeLine{201         uint32\_t \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_a63d71a7be771a2c8d435af6853df1e84}{TransmitString}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *input);}
+\DoxyCodeLine{212         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_aa6127de65b6715caf5171630fc7c0b09}{EchoRx}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{230         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_a61f2d80e5a462f4312bec7be7fa70c89}{ReceiveString}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *input, uint32\_t shift = 0u, \textcolor{keywordtype}{bool} move\_pointer = \textcolor{keyword}{true});}
+\DoxyCodeLine{241         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_a97e30c5cec5953dad0167ba0e96c8923}{TransmitInt}}(uint32\_t input);}
+\DoxyCodeLine{251         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_ad7faff77724cdef304aba335cb8cf6be}{ReceiveInt}}(uint32\_t * output);}
+\DoxyCodeLine{272         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_af32a208d38efa9b6f59abe90007f8f14}{ReceiveParam}}(uint32\_t * output, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *input, \textcolor{keywordtype}{char} delimiter = \textcolor{charliteral}{'\(\backslash\)0'}, uint8\_t max\_digits = 8u);}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274         uint32\_t \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_ad02249a538a10900220e0c931539b522}{GetRXAvailable}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};      }
+\DoxyCodeLine{275         uint32\_t \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_a3cf25f02fb1caef9c7d9658f3291b229}{GetTXEmpty}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};          }
+\DoxyCodeLine{276         \mbox{\hyperlink{struct_serial_u_a_r_t_1_1_buffer_states}{BufferStates}} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_a24ef04344f178245dd830de10dc30877}{GetBufferStates}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};    }
+\DoxyCodeLine{284         \mbox{\hyperlink{struct_serial_u_a_r_t_1_1_status}{Status}} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_a0981486823056dda314018359b9159af}{GetStatus}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};                        }
+\DoxyCodeLine{285         }
+\DoxyCodeLine{286         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_a64dcc4207f50cbe72a0faf5085223a42}{ClearTXInterrupt}}(\textcolor{keywordtype}{void});                        }
+\DoxyCodeLine{287         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_ac3399e6c6eaed563b8c474533e49f205}{ClearRXInterrupt}}(\textcolor{keywordtype}{void});                        }
+\DoxyCodeLine{288         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_a84312b3ecd69219152e3fdc239b1cfba}{ClearErrors}}(\textcolor{keywordtype}{void});                              }
+\DoxyCodeLine{289         }
+\DoxyCodeLine{290         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_u_a_r_t_1_1_u_a_r_t_controller_acbb058f8002a9bd9e3fdbcbd8ecdf88f}{EnableErrorIRQ}}(\textcolor{keywordtype}{bool} enable = \textcolor{keyword}{true});          }
+\DoxyCodeLine{291                 }
+\DoxyCodeLine{292         \textcolor{keyword}{private}:}
+\DoxyCodeLine{293         \textcolor{comment}{//private helper functions}}
+\DoxyCodeLine{294         \textcolor{keywordtype}{void} PutRXBuffer(\textcolor{keywordtype}{char} input);}
+\DoxyCodeLine{295         \textcolor{keywordtype}{char} GetTXBuffer(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{296         \textcolor{keywordtype}{void} HandleErrors(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{297         }
+\DoxyCodeLine{298         \textcolor{comment}{//private data members}}
+\DoxyCodeLine{299         \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{GenericBuffer::GENERIC\_BUFFER<char>}} tx\_buffer;}
+\DoxyCodeLine{300         \mbox{\hyperlink{class_serial_1_1_serial_buffer}{Serial::SerialBuffer}} rx\_buffer;}
+\DoxyCodeLine{301         \mbox{\hyperlink{struct_serial_u_a_r_t_1_1_status}{Status}} status;}
+\DoxyCodeLine{302         \textcolor{keywordtype}{bool} error\_on;}
+\DoxyCodeLine{303     \}; \textcolor{comment}{//UARTController}}
+\DoxyCodeLine{304 \}}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//\_\_SERIAL\_UART\_H\_\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,114 @@
+\hypertarget{namespace_serial_s_p_i}{}\doxysection{Serial\+SPI Namespace Reference}
+\label{namespace_serial_s_p_i}\index{SerialSPI@{SerialSPI}}
+
+
+SPI controller global namespace.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_serial_s_p_i_1_1_buffer_states}{Buffer\+States}}
+\begin{DoxyCompactList}\small\item\em A struct containing the buffer states of the MOSI and MISO buffers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller}{SPIController}}
+\begin{DoxyCompactList}\small\item\em SPI serial communication controller object \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_serial_s_p_i_1_1_status}{Status}}
+\begin{DoxyCompactList}\small\item\em A status struct containing interrupt and error statuses, and SPI power state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9}{TXIRQState}} \{ \mbox{\hyperlink{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9a6adf97f83acf6453d4a6a4b1070f3754}{None}}
+, \mbox{\hyperlink{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9aacc6c56827779bf2ce19c44c60076893}{TXComplete}}
+, \mbox{\hyperlink{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9abea7535b4e6a6ed069f06c8222e4d9a0}{TXSuccess}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum class for controller MOSI/client MISO Interrupt Request State. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683}{RXIRQState}} \{ \mbox{\hyperlink{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683a6adf97f83acf6453d4a6a4b1070f3754}{None}}
+, \mbox{\hyperlink{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683a89beb53af58c6420b2b838cf6eb308b3}{RXError}}
+, \mbox{\hyperlink{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683a2b55ed8b714c02b48570eea939daceae}{RXComplete}}
+, \mbox{\hyperlink{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683ac7f51b0857bf6c9b3ad7827f4cb0ffab}{RXSuccess}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum class for controller MISO/client MOSI Interrupt Request State. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespace_serial_s_p_i_aa7b38e8a39a8b78fa1ab1cc16a4e6f07}{SPIError}} \{ \mbox{\hyperlink{namespace_serial_s_p_i_aa7b38e8a39a8b78fa1ab1cc16a4e6f07a9902d58435e8208bf6fd67278632145e}{ENone}}
+, \mbox{\hyperlink{namespace_serial_s_p_i_aa7b38e8a39a8b78fa1ab1cc16a4e6f07a4cbbf7e70525cecf368c4fcf90457d4a}{EOverflow}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum class for SPI Errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SPI controller global namespace. 
+
+This namespace contains all global classes, functions and definitions needed to implement controller for SPI serial communication. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683}\label{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683}} 
+\index{SerialSPI@{SerialSPI}!RXIRQState@{RXIRQState}}
+\index{RXIRQState@{RXIRQState}!SerialSPI@{SerialSPI}}
+\doxysubsubsection{\texorpdfstring{RXIRQState}{RXIRQState}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683}{Serial\+SPI\+::\+RXIRQState}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+An enum class for controller MISO/client MOSI Interrupt Request State. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!SerialSPI@{SerialSPI}}\index{SerialSPI@{SerialSPI}!None@{None}}}\mbox{\Hypertarget{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683a6adf97f83acf6453d4a6a4b1070f3754}\label{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683a6adf97f83acf6453d4a6a4b1070f3754}} 
+None&No receive interrupts detected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RXError@{RXError}!SerialSPI@{SerialSPI}}\index{SerialSPI@{SerialSPI}!RXError@{RXError}}}\mbox{\Hypertarget{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683a89beb53af58c6420b2b838cf6eb308b3}\label{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683a89beb53af58c6420b2b838cf6eb308b3}} 
+RXError&An error occurred in reception. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RXComplete@{RXComplete}!SerialSPI@{SerialSPI}}\index{SerialSPI@{SerialSPI}!RXComplete@{RXComplete}}}\mbox{\Hypertarget{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683a2b55ed8b714c02b48570eea939daceae}\label{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683a2b55ed8b714c02b48570eea939daceae}} 
+RXComplete&A receive complete interrupt was detected and data was not read from SERCOM data buffer (MISO buffer is full) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RXSuccess@{RXSuccess}!SerialSPI@{SerialSPI}}\index{SerialSPI@{SerialSPI}!RXSuccess@{RXSuccess}}}\mbox{\Hypertarget{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683ac7f51b0857bf6c9b3ad7827f4cb0ffab}\label{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683ac7f51b0857bf6c9b3ad7827f4cb0ffab}} 
+RXSuccess&A receive complete interrupt was detected and the data successfully read from SERCOM data buffer. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_serial_s_p_i_aa7b38e8a39a8b78fa1ab1cc16a4e6f07}\label{namespace_serial_s_p_i_aa7b38e8a39a8b78fa1ab1cc16a4e6f07}} 
+\index{SerialSPI@{SerialSPI}!SPIError@{SPIError}}
+\index{SPIError@{SPIError}!SerialSPI@{SerialSPI}}
+\doxysubsubsection{\texorpdfstring{SPIError}{SPIError}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_serial_s_p_i_aa7b38e8a39a8b78fa1ab1cc16a4e6f07}{Serial\+SPI\+::\+SPIError}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+An enum class for SPI Errors. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENone@{ENone}!SerialSPI@{SerialSPI}}\index{SerialSPI@{SerialSPI}!ENone@{ENone}}}\mbox{\Hypertarget{namespace_serial_s_p_i_aa7b38e8a39a8b78fa1ab1cc16a4e6f07a9902d58435e8208bf6fd67278632145e}\label{namespace_serial_s_p_i_aa7b38e8a39a8b78fa1ab1cc16a4e6f07a9902d58435e8208bf6fd67278632145e}} 
+ENone&No errors detected, data successfully transmitted/received. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EOverflow@{EOverflow}!SerialSPI@{SerialSPI}}\index{SerialSPI@{SerialSPI}!EOverflow@{EOverflow}}}\mbox{\Hypertarget{namespace_serial_s_p_i_aa7b38e8a39a8b78fa1ab1cc16a4e6f07a4cbbf7e70525cecf368c4fcf90457d4a}\label{namespace_serial_s_p_i_aa7b38e8a39a8b78fa1ab1cc16a4e6f07a4cbbf7e70525cecf368c4fcf90457d4a}} 
+EOverflow&Overflow/overrun error in reception detected. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9}\label{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9}} 
+\index{SerialSPI@{SerialSPI}!TXIRQState@{TXIRQState}}
+\index{TXIRQState@{TXIRQState}!SerialSPI@{SerialSPI}}
+\doxysubsubsection{\texorpdfstring{TXIRQState}{TXIRQState}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9}{Serial\+SPI\+::\+TXIRQState}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+An enum class for controller MOSI/client MISO Interrupt Request State. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!SerialSPI@{SerialSPI}}\index{SerialSPI@{SerialSPI}!None@{None}}}\mbox{\Hypertarget{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9a6adf97f83acf6453d4a6a4b1070f3754}\label{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9a6adf97f83acf6453d4a6a4b1070f3754}} 
+None&No transmit interrupts detected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TXComplete@{TXComplete}!SerialSPI@{SerialSPI}}\index{SerialSPI@{SerialSPI}!TXComplete@{TXComplete}}}\mbox{\Hypertarget{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9aacc6c56827779bf2ce19c44c60076893}\label{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9aacc6c56827779bf2ce19c44c60076893}} 
+TXComplete&A data register empty interrupt was detected and no data wrote to SERCOM data buffer (transmission ended) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TXSuccess@{TXSuccess}!SerialSPI@{SerialSPI}}\index{SerialSPI@{SerialSPI}!TXSuccess@{TXSuccess}}}\mbox{\Hypertarget{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9abea7535b4e6a6ed069f06c8222e4d9a0}\label{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9abea7535b4e6a6ed069f06c8222e4d9a0}} 
+TXSuccess&A data register empty interrupt was detected and next data successfully wrote to SERCOM data buffer (transmission in progress) \\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,98 @@
+\hypertarget{serial__spi_8h_source}{}\doxysection{serial\+\_\+spi.\+h}
+\label{serial__spi_8h_source}\index{SerialLibraryExample/serial\_controllers/serial\_spi/serial\_spi.h@{SerialLibraryExample/serial\_controllers/serial\_spi/serial\_spi.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* }}
+\DoxyCodeLine{2 \textcolor{comment}{ * Name         :   serial\_spi.h}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Created      :   10/13/2022 4:59:36 PM}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Author       :   Aaron Reilman}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Description  :   A SPI serial communication driver.}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_\_SERIAL\_SPI\_H\_\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_\_SERIAL\_SPI\_H\_\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}serial\_spi/spi\_hal.h"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}serial\_buffer/serial\_buffer.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{20 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_serial_s_p_i}{SerialSPI}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{25     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9}{TXIRQState}}}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         \mbox{\hyperlink{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9a6adf97f83acf6453d4a6a4b1070f3754}{None}},                           }
+\DoxyCodeLine{28         \mbox{\hyperlink{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9aacc6c56827779bf2ce19c44c60076893}{TXComplete}},                       }
+\DoxyCodeLine{29         \mbox{\hyperlink{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9abea7535b4e6a6ed069f06c8222e4d9a0}{TXSuccess}}                      }
+\DoxyCodeLine{30     \};}
+\DoxyCodeLine{34     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683}{RXIRQState}}}
+\DoxyCodeLine{35     \{}
+\DoxyCodeLine{36         \mbox{\hyperlink{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9a6adf97f83acf6453d4a6a4b1070f3754}{None}},                           }
+\DoxyCodeLine{37         \mbox{\hyperlink{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683a89beb53af58c6420b2b838cf6eb308b3}{RXError}},                     }
+\DoxyCodeLine{38         \mbox{\hyperlink{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683a2b55ed8b714c02b48570eea939daceae}{RXComplete}},                       }
+\DoxyCodeLine{39         \mbox{\hyperlink{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683ac7f51b0857bf6c9b3ad7827f4cb0ffab}{RXSuccess}}                      }
+\DoxyCodeLine{40     \};}
+\DoxyCodeLine{44     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_serial_s_p_i_aa7b38e8a39a8b78fa1ab1cc16a4e6f07}{SPIError}}}
+\DoxyCodeLine{45     \{}
+\DoxyCodeLine{46         \mbox{\hyperlink{namespace_serial_s_p_i_aa7b38e8a39a8b78fa1ab1cc16a4e6f07a9902d58435e8208bf6fd67278632145e}{ENone}},                         }
+\DoxyCodeLine{47         \mbox{\hyperlink{namespace_serial_s_p_i_aa7b38e8a39a8b78fa1ab1cc16a4e6f07a4cbbf7e70525cecf368c4fcf90457d4a}{EOverflow}}                      }
+\DoxyCodeLine{48     \};}
+\DoxyCodeLine{52     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_serial_s_p_i_1_1_status}{Status}} \{}
+\DoxyCodeLine{53         \mbox{\hyperlink{namespace_serial_s_p_i_abe0bfdd7d9d1dd54d7ca64e6f10c2cc9}{TXIRQState}} \mbox{\hyperlink{struct_serial_s_p_i_1_1_status_a4cae36daa4b19ce521a38aef8a7bb2e0}{tx\_interrupt}};      }
+\DoxyCodeLine{54         \mbox{\hyperlink{namespace_serial_s_p_i_a7c61ece8b67c7e21e09193a050162683}{RXIRQState}} \mbox{\hyperlink{struct_serial_s_p_i_1_1_status_a9b99cb9e9349b453e7e4462e474f42ed}{rx\_interrupt}};      }
+\DoxyCodeLine{55         \mbox{\hyperlink{namespace_serial_s_p_i_aa7b38e8a39a8b78fa1ab1cc16a4e6f07}{SPIError}} \mbox{\hyperlink{struct_serial_s_p_i_1_1_status_aa6b9caaebdd092a9473bdfc9359c6ed5}{error\_state}};            }
+\DoxyCodeLine{56         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_serial_s_p_i_1_1_status_a2de5107df7c4131f81984516fd7fc9f1}{spi\_on}};                  }
+\DoxyCodeLine{57     \};}
+\DoxyCodeLine{61     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_serial_s_p_i_1_1_buffer_states}{BufferStates}} \{}
+\DoxyCodeLine{62         \mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82}{GenericBuffer::BufferState}} \mbox{\hyperlink{struct_serial_s_p_i_1_1_buffer_states_a5c9412de692531aa3e707ad505e4c694}{mosi\_buffer\_state}};    }
+\DoxyCodeLine{63         \mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82}{GenericBuffer::BufferState}} \mbox{\hyperlink{struct_serial_s_p_i_1_1_buffer_states_a4dd2ad1e59b05b0694e15e14d5259d56}{miso\_buffer\_state}};    }
+\DoxyCodeLine{64     \};}
+\DoxyCodeLine{72     \textcolor{keyword}{class }\mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller}{SPIController}}}
+\DoxyCodeLine{73     \{}
+\DoxyCodeLine{74         \textcolor{comment}{//functions}}
+\DoxyCodeLine{75         \textcolor{keyword}{public}:}
+\DoxyCodeLine{84         \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a47bb2a527721438538b117fe96d8cf99}{SPIController}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{92         \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a2411774170cdb8758f206af77aae5c73}{\string~SPIController}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{106         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aac613474c61cbcf0cf8268bb3f7b492e}{Init}}(\mbox{\hyperlink{struct_s_p_i_h_a_l_1_1_peripheral}{SPIHAL::Peripheral}} * p\_config, \textcolor{keywordtype}{char} * mosi\_buf, uint32\_t mosi\_size, \textcolor{keywordtype}{char} * miso\_buf, uint32\_t miso\_size);}
+\DoxyCodeLine{114         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aad4d083ef9093fe0462e124072757fb6}{Deinit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{124         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a20a5ea3cc3245409ca33962a37bfc41b}{ResetMOSIBuffer}}(\textcolor{keywordtype}{char} * mosi\_buf, uint32\_t mosi\_size);}
+\DoxyCodeLine{134         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a53d317407bfb1b94cb69b37eb9934c7a}{ResetMISOBuffer}}(\textcolor{keywordtype}{char} * miso\_buf, uint32\_t miso\_size);}
+\DoxyCodeLine{145         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_aea49d25ca4796de870226f49e05892db}{ClearBuffers}}(\textcolor{keywordtype}{bool} clear\_mosi = \textcolor{keyword}{true}, \textcolor{keywordtype}{bool} clear\_miso = \textcolor{keyword}{true});}
+\DoxyCodeLine{154         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a982acee8e5b16d9a4f99dd25257ce4be}{ISR}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{169         \textcolor{keywordtype}{char} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a627377a7434d11ac09f96c036e63b649}{SPIHostProcedure}}(uint32\_t num\_bytes, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * bytes, uint32\_t num\_read = 0);}
+\DoxyCodeLine{180         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_af32c1b958d7f206d14c260f3bf9a7d41}{Transmit}}(\textcolor{keywordtype}{char} input);}
+\DoxyCodeLine{190         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a3a1ba24ba52726fe3800b9ec81438a8a}{Receive}}(\textcolor{keywordtype}{char} * output = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192         uint32\_t \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a777a2d4ab37f0f3791484016d4905e55}{GetMISOAvailable}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};      }
+\DoxyCodeLine{193         uint32\_t \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a7b01038eda75612f433a016cab9b7878}{GetMOSIEmpty}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};          }
+\DoxyCodeLine{194         \mbox{\hyperlink{struct_serial_s_p_i_1_1_buffer_states}{BufferStates}} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_ac0c643045b84a84301522894a807d756}{GetBufferStates}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};    }
+\DoxyCodeLine{202         \mbox{\hyperlink{struct_serial_s_p_i_1_1_status}{Status}} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_ae61e13e1124ba8fa06cbcd9570f478bf}{GetStatus}}(\textcolor{keywordtype}{void}) \textcolor{keyword}{const};                        }
+\DoxyCodeLine{203         }
+\DoxyCodeLine{204         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_acb1506e78efd728e84f2e221a63787e5}{ClearMOSIInterrupt}}(\textcolor{keywordtype}{void});                        }
+\DoxyCodeLine{205         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a5f03b1356b67fcee8c89eecde8d875f4}{ClearMISOInterrupt}}(\textcolor{keywordtype}{void});                        }
+\DoxyCodeLine{206         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_ac4ccfe6239374a7923f6bc32022c0cac}{ClearErrors}}(\textcolor{keywordtype}{void});                              }
+\DoxyCodeLine{207             }
+\DoxyCodeLine{208         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a8a734767c555f5bad5cf8104d0d5c467}{EnableErrorIRQ}}(\textcolor{keywordtype}{bool} enable = \textcolor{keyword}{true});          }
+\DoxyCodeLine{209         }
+\DoxyCodeLine{210         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a725cb585c59f8bd9aa57418b25df14c4}{SSHigh}}(\textcolor{keywordtype}{void});                                    }
+\DoxyCodeLine{211         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a6fc4ad0d39e775a14becf473a979263c}{SSLow}}(\textcolor{keywordtype}{void});                                  }
+\DoxyCodeLine{212         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_serial_s_p_i_1_1_s_p_i_controller_a84f78bb2865e1f36b0dfe2f0567c01cd}{ChangeSSL}}(\mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout}{SERCOMHAL::Pinout}} ssl\_pinout);     }
+\DoxyCodeLine{213         }
+\DoxyCodeLine{214         \textcolor{keyword}{private}:}
+\DoxyCodeLine{215         \textcolor{comment}{//private helper functions}}
+\DoxyCodeLine{216         \textcolor{keywordtype}{void} PutMISOBuffer(\textcolor{keywordtype}{char} input);}
+\DoxyCodeLine{217         \textcolor{keywordtype}{char} GetMOSIBuffer(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{218         \textcolor{keywordtype}{void} HandleErrors(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{219         }
+\DoxyCodeLine{220         \textcolor{comment}{//private data members}}
+\DoxyCodeLine{221         \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{GenericBuffer::GENERIC\_BUFFER<char>}} mosi\_buffer;}
+\DoxyCodeLine{222         \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{GenericBuffer::GENERIC\_BUFFER<char>}} miso\_buffer;}
+\DoxyCodeLine{223         \mbox{\hyperlink{namespace_s_e_r_c_o_m_h_a_l_aef085a7571bb4d9cae9821be7982e559}{SERCOMHAL::SercomID}} sercom\_id;}
+\DoxyCodeLine{224         \mbox{\hyperlink{struct_serial_s_p_i_1_1_status}{Status}} status;}
+\DoxyCodeLine{225         \mbox{\hyperlink{struct_s_e_r_c_o_m_h_a_l_1_1_pinout}{SERCOMHAL::Pinout}} ssl\_pin;}
+\DoxyCodeLine{226         \textcolor{keywordtype}{bool} error\_on;}
+\DoxyCodeLine{227     \};  \textcolor{comment}{//SPIController}}
+\DoxyCodeLine{228 \}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//\_\_SERIAL\_SPI\_H\_\_}}
+
+\end{DoxyCode}

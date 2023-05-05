@@ -1,0 +1,292 @@
+\hypertarget{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{}\doxysection{Generic\+Buffer\+::GENERIC\+\_\+\+BUFFER\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}\index{GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}}
+
+
+Generic ring buffer template.  
+
+
+
+
+{\ttfamily \#include $<$generic\+\_\+buffer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ad11c80de1f1fe99110cc7d51ae82f5bc}{GENERIC\+\_\+\+BUFFER}} (T $\ast$arr=nullptr, uint32\+\_\+t arr\+\_\+size=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a6514264a0807de98df96470c4bb32593}{$\sim$\+GENERIC\+\_\+\+BUFFER}} (void)
+\item 
+void \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ac94fdc99ed188c1b1814ed94e5f4656b}{Reset\+Buffer}} (T $\ast$arr, uint32\+\_\+t arr\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Resets the buffer with new array and size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a994f81bcb17dbaa64a061f0e20283b70}{Clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clears ring buffer. \end{DoxyCompactList}\item 
+T $\ast$ \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a114a111046044cecda7aea2ccdf44fc6}{Get\+Raw\+Elements}} (uint32\+\_\+t $\ast$read\+\_\+index=nullptr, uint32\+\_\+t $\ast$write\+\_\+index=nullptr)
+\begin{DoxyCompactList}\small\item\em Retrieves raw elements of ring buffer for direct manipulation of array elements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a6883b6cfb9349e3d5e4c0d6ab8ecf55f}{Shift\+Read\+Pointer}} (uint32\+\_\+t shift\+\_\+size, bool increase)
+\begin{DoxyCompactList}\small\item\em Shifts the read pointer forwards or backwards. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ad0ae5d89e13c7a2cedd76aeb0a153ae9}{Put}} (T element)
+\begin{DoxyCompactList}\small\item\em Adds an element to buffer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_afd24afea2870290f233b746f1bcdb66d}{Get}} (T $\ast$output=nullptr)
+\begin{DoxyCompactList}\small\item\em Gets element at the front of buffer. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ab937cc937d565b543b1d90ba990c0a27}{Peek}} (void)
+\begin{DoxyCompactList}\small\item\em Looks at first element in buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a106ffc24d315e06c6260d12a904663ab}\label{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a106ffc24d315e06c6260d12a904663ab}} 
+uint32\+\_\+t {\bfseries Get\+Size} (void) const
+\begin{DoxyCompactList}\small\item\em Getter for size of array. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a03a729a135271004d8db3cdd35f5a8f7}{Get\+Buffer\+Available}} (void) const
+\item 
+\mbox{\Hypertarget{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_aa270d82f254ba5cbddc3b44635a6ff30}\label{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_aa270d82f254ba5cbddc3b44635a6ff30}} 
+\mbox{\hyperlink{namespace_generic_buffer_aa4e41a5537b17cbebf523e1445eaee82}{Buffer\+State}} {\bfseries Get\+Buffer\+State} (void) const
+\begin{DoxyCompactList}\small\item\em Getter for buffer state (Empty, Full, Not\+Empty\+Not\+Full) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Generic\+Buffer\+::\+GENERIC\+\_\+\+BUFFER$<$ T $>$}
+Generic ring buffer template. 
+
+Template class for a generic FIFO ring buffer. Offers very basic put and get functionality, with the ability to access raw elements to directly access and alter elements. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ad11c80de1f1fe99110cc7d51ae82f5bc}\label{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ad11c80de1f1fe99110cc7d51ae82f5bc}} 
+\index{GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}!GENERIC\_BUFFER@{GENERIC\_BUFFER}}
+\index{GENERIC\_BUFFER@{GENERIC\_BUFFER}!GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GENERIC\_BUFFER()}{GENERIC\_BUFFER()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{Generic\+Buffer\+::\+GENERIC\+\_\+\+BUFFER}}$<$ T $>$\+::\+GENERIC\+\_\+\+BUFFER (\begin{DoxyParamCaption}\item[{T $\ast$}]{arr = {\ttfamily nullptr},  }\item[{uint32\+\_\+t}]{arr\+\_\+size = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Instantiates Generic Buffer object. You must call \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ac94fdc99ed188c1b1814ed94e5f4656b}{Reset\+Buffer()}} before usage if no parameters are passed so character array can be initialized.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & array to use as ring buffer (default = nullptr) \\
+\hline
+{\em arr\+\_\+size} & size of the array or number of elements in array to use as ring buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ac94fdc99ed188c1b1814ed94e5f4656b}{Reset\+Buffer()}}, \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a6514264a0807de98df96470c4bb32593}{$\sim$\+GENERIC\+\_\+\+BUFFER()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ad11c80de1f1fe99110cc7d51ae82f5bc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a6514264a0807de98df96470c4bb32593}\label{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a6514264a0807de98df96470c4bb32593}} 
+\index{GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}!````~GENERIC\_BUFFER@{$\sim$GENERIC\_BUFFER}}
+\index{````~GENERIC\_BUFFER@{$\sim$GENERIC\_BUFFER}!GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$GENERIC\_BUFFER()}{~GENERIC\_BUFFER()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{Generic\+Buffer\+::\+GENERIC\+\_\+\+BUFFER}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{GENERIC\+\_\+\+BUFFER}} (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textbackslash{}\+Destructor
+
+Destroys Generic Buffer object instance. Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a6514264a0807de98df96470c4bb32593_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a994f81bcb17dbaa64a061f0e20283b70}\label{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a994f81bcb17dbaa64a061f0e20283b70}} 
+\index{GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}!Clear@{Clear}}
+\index{Clear@{Clear}!GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{Generic\+Buffer\+::\+GENERIC\+\_\+\+BUFFER}}$<$ T $>$\+::\+Clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clears ring buffer. 
+
+Essentially resets the buffer while preserving the current array and size. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ac94fdc99ed188c1b1814ed94e5f4656b}{Reset\+Buffer()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a994f81bcb17dbaa64a061f0e20283b70_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a994f81bcb17dbaa64a061f0e20283b70_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_afd24afea2870290f233b746f1bcdb66d}\label{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_afd24afea2870290f233b746f1bcdb66d}} 
+\index{GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}!Get@{Get}}
+\index{Get@{Get}!GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{Generic\+Buffer\+::\+GENERIC\+\_\+\+BUFFER}}$<$ T $>$\+::\+Get (\begin{DoxyParamCaption}\item[{T $\ast$}]{output = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets element at the front of buffer. 
+
+Gets the first element in the buffer in FIFO queue style. Updates length/number of available elements and read index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & pointer to received element (default = nullptr) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success of retrieval (returns false if buffer is empty) 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ad0ae5d89e13c7a2cedd76aeb0a153ae9}{Put()}}, \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ab937cc937d565b543b1d90ba990c0a27}{Peek()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a03a729a135271004d8db3cdd35f5a8f7}\label{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a03a729a135271004d8db3cdd35f5a8f7}} 
+\index{GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}!GetBufferAvailable@{GetBufferAvailable}}
+\index{GetBufferAvailable@{GetBufferAvailable}!GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetBufferAvailable()}{GetBufferAvailable()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+uint32\+\_\+t \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{Generic\+Buffer\+::\+GENERIC\+\_\+\+BUFFER}}$<$ T $>$\+::\+Get\+Buffer\+Available (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Getter for length/number of elements available in buffer. \mbox{\Hypertarget{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a114a111046044cecda7aea2ccdf44fc6}\label{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a114a111046044cecda7aea2ccdf44fc6}} 
+\index{GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}!GetRawElements@{GetRawElements}}
+\index{GetRawElements@{GetRawElements}!GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetRawElements()}{GetRawElements()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{Generic\+Buffer\+::\+GENERIC\+\_\+\+BUFFER}}$<$ T $>$\+::\+Get\+Raw\+Elements (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{read\+\_\+index = {\ttfamily nullptr},  }\item[{uint32\+\_\+t $\ast$}]{write\+\_\+index = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves raw elements of ring buffer for direct manipulation of array elements. 
+
+Retrieves the read index, write index, and returns the array pointer that comprises the ring buffer.~\newline
+ This is useful for direct manipulation of array elements for more complex functionality.
+
+
+\begin{DoxyParams}{Parameters}
+{\em read\+\_\+index} & pointer to current read index (default = nullptr) \\
+\hline
+{\em write\+\_\+index} & pointer to current write index (default = nullptr) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the beginning of the array used for the ring buffer 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a6883b6cfb9349e3d5e4c0d6ab8ecf55f}{Shift\+Read\+Pointer()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ab937cc937d565b543b1d90ba990c0a27}\label{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ab937cc937d565b543b1d90ba990c0a27}} 
+\index{GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}!Peek@{Peek}}
+\index{Peek@{Peek}!GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Peek()}{Peek()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{Generic\+Buffer\+::\+GENERIC\+\_\+\+BUFFER}}$<$ T $>$\+::\+Peek (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Looks at first element in buffer. 
+
+Returns the first element in the buffer in FIFO queue style without updating length or read index.
+
+\begin{DoxyReturn}{Returns}
+first element in buffer, or 0 if buffer is empty. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_afd24afea2870290f233b746f1bcdb66d}{Get()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ad0ae5d89e13c7a2cedd76aeb0a153ae9}\label{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ad0ae5d89e13c7a2cedd76aeb0a153ae9}} 
+\index{GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}!Put@{Put}}
+\index{Put@{Put}!GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Put()}{Put()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{Generic\+Buffer\+::\+GENERIC\+\_\+\+BUFFER}}$<$ T $>$\+::\+Put (\begin{DoxyParamCaption}\item[{T}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds an element to buffer. 
+
+Adds an element to the end of the buffer in FIFO queue style. Updates length/number of available elements and write index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & element to add to end of buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success of adding element (returns false if buffer is full) 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_afd24afea2870290f233b746f1bcdb66d}{Get()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ac94fdc99ed188c1b1814ed94e5f4656b}\label{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ac94fdc99ed188c1b1814ed94e5f4656b}} 
+\index{GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}!ResetBuffer@{ResetBuffer}}
+\index{ResetBuffer@{ResetBuffer}!GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ResetBuffer()}{ResetBuffer()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{Generic\+Buffer\+::\+GENERIC\+\_\+\+BUFFER}}$<$ T $>$\+::\+Reset\+Buffer (\begin{DoxyParamCaption}\item[{T $\ast$}]{arr,  }\item[{uint32\+\_\+t}]{arr\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets the buffer with new array and size. 
+
+This function allows the ring buffer to use a new array and/or a new size. It is also called before use when no arguments are passed into constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & new array to use as ring buffer \\
+\hline
+{\em arr\+\_\+size} & size of the array or number of elements in array to use as ring buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+You must call this before use if constructed without parameters. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ad11c80de1f1fe99110cc7d51ae82f5bc}{GENERIC\+\_\+\+BUFFER()}}, \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a994f81bcb17dbaa64a061f0e20283b70}{Clear()}} 
+\end{DoxySeeAlso}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_ac94fdc99ed188c1b1814ed94e5f4656b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a6883b6cfb9349e3d5e4c0d6ab8ecf55f}\label{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a6883b6cfb9349e3d5e4c0d6ab8ecf55f}} 
+\index{GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}!ShiftReadPointer@{ShiftReadPointer}}
+\index{ShiftReadPointer@{ShiftReadPointer}!GenericBuffer::GENERIC\_BUFFER$<$ T $>$@{GenericBuffer::GENERIC\_BUFFER$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{ShiftReadPointer()}{ShiftReadPointer()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r}{Generic\+Buffer\+::\+GENERIC\+\_\+\+BUFFER}}$<$ T $>$\+::\+Shift\+Read\+Pointer (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{shift\+\_\+size,  }\item[{bool}]{increase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Shifts the read pointer forwards or backwards. 
+
+Allows for direct manipulation of where the read pointer is, handling all calculations for capping shift amount and updating the current length of the buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em shift\+\_\+size} & size of the shift based on number of elements (ie shift\+\_\+size = 1 shifts the read index 1 element forwards/backwards) \\
+\hline
+{\em increase} & true = shifts forwards, false = shifts backwards \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Function will cap shift amount if it increases by more than the current length or decreases by more than the size of the array. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r_a114a111046044cecda7aea2ccdf44fc6}{Get\+Raw\+Elements()}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Serial\+Library\+Example/serial\+\_\+controllers/serial\+\_\+buffer/generic\+\_\+buffer.\+h\end{DoxyCompactItemize}

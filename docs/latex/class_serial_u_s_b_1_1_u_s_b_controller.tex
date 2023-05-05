@@ -1,0 +1,491 @@
+\hypertarget{class_serial_u_s_b_1_1_u_s_b_controller}{}\doxysection{Serial\+USB\+::USBController Class Reference}
+\label{class_serial_u_s_b_1_1_u_s_b_controller}\index{SerialUSB::USBController@{SerialUSB::USBController}}
+
+
+USB serial communication controller object  
+
+
+
+
+{\ttfamily \#include $<$serial\+\_\+usb.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_afe81951c2ec599df97a3e02a077c8b7d}{USBController}} (void)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a818f91a71f7cac12cee2a8e9cb69634c}{$\sim$\+USBController}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a14b3b3f5b75c8409ac7c31ae99a9c86b}{Init}} (char $\ast$buf, uint32\+\_\+t buf\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Initializes USB serial communication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_afa4b8c8717abfbd6d92fcb72e11b093a}{Deinit}} (void)
+\begin{DoxyCompactList}\small\item\em Disables and resets USB serial communication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_aae7e36dd99bc47027609623f39ec467a}{Reset\+Buffer}} (char $\ast$buf, uint32\+\_\+t buf\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Resets FIFO receive buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a4c1cf32ce7de220c579415e496370bb9}{Clear\+Buffers}} (bool clear\+\_\+tx=true, bool clear\+\_\+rx=true)
+\begin{DoxyCompactList}\small\item\em Clears Rx and/or Tx buffers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_af3721932b0112fe15c43a969a06d1144}{ISR}} (void)
+\begin{DoxyCompactList}\small\item\em USB Interrupt Service Routine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a5802a3f2aebbf57800b613339a66f84b}{Task}} (bool echo=false)
+\begin{DoxyCompactList}\small\item\em USB Task Routine. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a016f4dfe9a3fd5185d1eb38330a3d950}{Transmit}} (char input)
+\begin{DoxyCompactList}\small\item\em Transmit character across USB. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_afa7345066fbeeecdfc6320af05c95838}{Receive}} (char $\ast$output=nullptr)
+\begin{DoxyCompactList}\small\item\em Receive character across USB from host. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a808ce3f51a820009b04e46cba483de4e}{Transmit\+Packet}} (const char $\ast$input, uint32\+\_\+t num\+\_\+bytes)
+\begin{DoxyCompactList}\small\item\em Transmits a packet of bytes, which do not need to be null-\/terminated. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_aea4ae218bf10826e4943b542d782695c}{Transmit\+String}} (const char $\ast$input)
+\begin{DoxyCompactList}\small\item\em Transmit string across USB. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a8e3331f2f23514b6980ef07623f3674b}{Receive\+String}} (const char $\ast$input, uint32\+\_\+t shift=0u, bool move\+\_\+pointer=true)
+\begin{DoxyCompactList}\small\item\em Checks if input string has been received over USB from host. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a41534109837d3f7557049e6d67fdfac0}{Transmit\+Int}} (uint32\+\_\+t input)
+\begin{DoxyCompactList}\small\item\em Transmits unsigned int as ASCII string over USB. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_ab3e39a9bf73b5134ff0eb72b36b218f8}{Receive\+Int}} (uint32\+\_\+t $\ast$output)
+\begin{DoxyCompactList}\small\item\em Receives ASCII number across USB from host and returns unsigned int. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a1f742c399f9ad7bcc5719b9aa8a24ff0}{Receive\+Param}} (uint32\+\_\+t $\ast$output, const char $\ast$input, char delimiter=\textquotesingle{}\textbackslash{}0\textquotesingle{}, uint8\+\_\+t max\+\_\+digits=8u)
+\begin{DoxyCompactList}\small\item\em Checks if input string followed by an ASCII parameter has been received across USB from host and returns the ASCII parameter as unsigned int. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_a9f58aebc93cd2f34a581b2b9aaa34caf}\label{class_serial_u_s_b_1_1_u_s_b_controller_a9f58aebc93cd2f34a581b2b9aaa34caf}} 
+uint32\+\_\+t {\bfseries Get\+Buffer\+Available} (void) const
+\begin{DoxyCompactList}\small\item\em Getter for number of unread characters available in FIFO receive buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_a7af52968c68586221f74d293b2cf5669}\label{class_serial_u_s_b_1_1_u_s_b_controller_a7af52968c68586221f74d293b2cf5669}} 
+bool {\bfseries Is\+Connected} (void) const
+\begin{DoxyCompactList}\small\item\em Retrieves state of connection (true = connected) ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_ace06a48c2154c6692f42630d2b35df4a}\label{class_serial_u_s_b_1_1_u_s_b_controller_ace06a48c2154c6692f42630d2b35df4a}} 
+void {\bfseries Detach} (void)
+\begin{DoxyCompactList}\small\item\em Suspends USB device to go into low power mode ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_a4c2bad9d6fe85f10aa9288c9735ee68b}\label{class_serial_u_s_b_1_1_u_s_b_controller_a4c2bad9d6fe85f10aa9288c9735ee68b}} 
+void {\bfseries Reattach} (void)
+\begin{DoxyCompactList}\small\item\em Reattaches suspended USB device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+USB serial communication controller object 
+
+This is a USB serial communication controller which manages a single peripheral. It creates a Serial\+Buffer for reception of data over USB and some simple parsing capabilities. This controller is interrupt and task driven, so \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a5802a3f2aebbf57800b613339a66f84b}{Task()}} must be implemented before or after all application code in the main while loop, and \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_af3721932b0112fe15c43a969a06d1144}{ISR()}} must be implemented in the USB interrupt Handler. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_afe81951c2ec599df97a3e02a077c8b7d}\label{class_serial_u_s_b_1_1_u_s_b_controller_afe81951c2ec599df97a3e02a077c8b7d}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!USBController@{USBController}}
+\index{USBController@{USBController}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{USBController()}{USBController()}}
+{\footnotesize\ttfamily Serial\+USB\+::\+USBController\+::\+USBController (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Instantiates controller object for USB serial communication. This will use the Tiny\+USB stack to perform the necessary tasks. The object instance must be initialized using \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a14b3b3f5b75c8409ac7c31ae99a9c86b}{Init()}} to begin using it.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a818f91a71f7cac12cee2a8e9cb69634c}{$\sim$\+USBController()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a14b3b3f5b75c8409ac7c31ae99a9c86b}{Init()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_afa4b8c8717abfbd6d92fcb72e11b093a}{Deinit()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_a818f91a71f7cac12cee2a8e9cb69634c}\label{class_serial_u_s_b_1_1_u_s_b_controller_a818f91a71f7cac12cee2a8e9cb69634c}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!````~USBController@{$\sim$USBController}}
+\index{````~USBController@{$\sim$USBController}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{$\sim$USBController()}{~USBController()}}
+{\footnotesize\ttfamily Serial\+USB\+::\+USBController\+::$\sim$\+USBController (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Called when UARTController object is destroyed. Immediately halts data transmission.
+
+\begin{DoxyNote}{Note}
+The hardware teardown for Tiny\+USB is currently unimplemented. It is not recommended to call the destructor manually. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_afe81951c2ec599df97a3e02a077c8b7d}{USBController()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a14b3b3f5b75c8409ac7c31ae99a9c86b}{Init()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_afa4b8c8717abfbd6d92fcb72e11b093a}{Deinit()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_a4c1cf32ce7de220c579415e496370bb9}\label{class_serial_u_s_b_1_1_u_s_b_controller_a4c1cf32ce7de220c579415e496370bb9}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!ClearBuffers@{ClearBuffers}}
+\index{ClearBuffers@{ClearBuffers}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{ClearBuffers()}{ClearBuffers()}}
+{\footnotesize\ttfamily void Serial\+USB\+::\+USBController\+::\+Clear\+Buffers (\begin{DoxyParamCaption}\item[{bool}]{clear\+\_\+tx = {\ttfamily true},  }\item[{bool}]{clear\+\_\+rx = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Clears Rx and/or Tx buffers. 
+
+Clears out the receive and/or transmit buffers and resets status data and indices.~\newline
+ Useful for quick handling of full buffers and errors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em clear\+\_\+tx} & clear transmit buffer (default = true) \\
+\hline
+{\em clear\+\_\+rx} & clear receive buffer (default = true) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_afa4b8c8717abfbd6d92fcb72e11b093a}{Deinit()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_afa4b8c8717abfbd6d92fcb72e11b093a}\label{class_serial_u_s_b_1_1_u_s_b_controller_afa4b8c8717abfbd6d92fcb72e11b093a}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!Deinit@{Deinit}}
+\index{Deinit@{Deinit}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{Deinit()}{Deinit()}}
+{\footnotesize\ttfamily void Serial\+USB\+::\+USBController\+::\+Deinit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Disables and resets USB serial communication. 
+
+Disables USB serial controller if active.
+
+\begin{DoxyNote}{Note}
+The hardware teardown for Tiny\+USB is currently unimplemented. It is not recommended to call this. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a14b3b3f5b75c8409ac7c31ae99a9c86b}{Init()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a4c1cf32ce7de220c579415e496370bb9}{Clear\+Buffers()}}, $\sim$\+UARTController() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_a14b3b3f5b75c8409ac7c31ae99a9c86b}\label{class_serial_u_s_b_1_1_u_s_b_controller_a14b3b3f5b75c8409ac7c31ae99a9c86b}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!Init@{Init}}
+\index{Init@{Init}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Serial\+USB\+::\+USBController\+::\+Init (\begin{DoxyParamCaption}\item[{char $\ast$}]{buf,  }\item[{uint32\+\_\+t}]{buf\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Initializes USB serial communication. 
+
+Initializes peripheral hardware and uses optional parameter for FIFO buffer size if USB hasn\textquotesingle{}t been initialized.~\newline
+ This function will not do anything if USB is currently enabled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & initialized character array used for FIFO receive buffer \\
+\hline
+{\em buf\+\_\+size} & buffer size \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_afa4b8c8717abfbd6d92fcb72e11b093a}{Deinit()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_aae7e36dd99bc47027609623f39ec467a}{Reset\+Buffer()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_serial_u_s_b_1_1_u_s_b_controller_a14b3b3f5b75c8409ac7c31ae99a9c86b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_af3721932b0112fe15c43a969a06d1144}\label{class_serial_u_s_b_1_1_u_s_b_controller_af3721932b0112fe15c43a969a06d1144}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!ISR@{ISR}}
+\index{ISR@{ISR}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{ISR()}{ISR()}}
+{\footnotesize\ttfamily void Serial\+USB\+::\+USBController\+::\+ISR (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+USB Interrupt Service Routine. 
+
+Function to be called in USB interrupt handler. This calls the tusb ISR function and lets the USB stack handle interrupts.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a5802a3f2aebbf57800b613339a66f84b}{Task()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_afa7345066fbeeecdfc6320af05c95838}\label{class_serial_u_s_b_1_1_u_s_b_controller_afa7345066fbeeecdfc6320af05c95838}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!Receive@{Receive}}
+\index{Receive@{Receive}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{Receive()}{Receive()}}
+{\footnotesize\ttfamily bool Serial\+USB\+::\+USBController\+::\+Receive (\begin{DoxyParamCaption}\item[{char $\ast$}]{output = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Receive character across USB from host. 
+
+Uses controller FIFO receive buffer to get the next unread character from the received data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & pointer to received char (default = nullptr) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success of reception 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a8e3331f2f23514b6980ef07623f3674b}{Receive\+String()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_ab3e39a9bf73b5134ff0eb72b36b218f8}{Receive\+Int()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a1f742c399f9ad7bcc5719b9aa8a24ff0}{Receive\+Param()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a5802a3f2aebbf57800b613339a66f84b}{Task()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_serial_u_s_b_1_1_u_s_b_controller_afa7345066fbeeecdfc6320af05c95838_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_ab3e39a9bf73b5134ff0eb72b36b218f8}\label{class_serial_u_s_b_1_1_u_s_b_controller_ab3e39a9bf73b5134ff0eb72b36b218f8}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!ReceiveInt@{ReceiveInt}}
+\index{ReceiveInt@{ReceiveInt}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{ReceiveInt()}{ReceiveInt()}}
+{\footnotesize\ttfamily bool Serial\+USB\+::\+USBController\+::\+Receive\+Int (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{output }\end{DoxyParamCaption})}
+
+
+
+Receives ASCII number across USB from host and returns unsigned int. 
+
+Reads FIFO receive buffer until empty or non-\/numeric ASCII character received, and converts to unsigned int.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & pointer to received int value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success of reception (returns false if no integer was detected) 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_afa7345066fbeeecdfc6320af05c95838}{Receive()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a1f742c399f9ad7bcc5719b9aa8a24ff0}{Receive\+Param()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a8e3331f2f23514b6980ef07623f3674b}{Receive\+String()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a5802a3f2aebbf57800b613339a66f84b}{Task()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_serial_u_s_b_1_1_u_s_b_controller_ab3e39a9bf73b5134ff0eb72b36b218f8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_a1f742c399f9ad7bcc5719b9aa8a24ff0}\label{class_serial_u_s_b_1_1_u_s_b_controller_a1f742c399f9ad7bcc5719b9aa8a24ff0}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!ReceiveParam@{ReceiveParam}}
+\index{ReceiveParam@{ReceiveParam}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{ReceiveParam()}{ReceiveParam()}}
+{\footnotesize\ttfamily bool Serial\+USB\+::\+USBController\+::\+Receive\+Param (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{output,  }\item[{const char $\ast$}]{input,  }\item[{char}]{delimiter = {\ttfamily \textquotesingle{}\textbackslash{}0\textquotesingle{}},  }\item[{uint8\+\_\+t}]{max\+\_\+digits = {\ttfamily 8u} }\end{DoxyParamCaption})}
+
+
+
+Checks if input string followed by an ASCII parameter has been received across USB from host and returns the ASCII parameter as unsigned int. 
+
+Checks input string with front of receive buffer with offset \mbox{[}1, max\+\_\+digits\mbox{]}, and then returns the following ASCII number characters as unsigned int.~\newline
+ Call Has\+Received\+Param() immediately after call to ensure string has been received.~\newline
+ Example\+: Receive\+Param(\char`\"{}c\+\_\+\char`\"{}) will output unsigned int 12u if \char`\"{}c\+\_\+12\char`\"{} is sent via USB.~\newline
+ Can also be used multiple times for different strings with parameters and in conjunction with \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a8e3331f2f23514b6980ef07623f3674b}{Receive\+String()}} calls.~\newline
+ Iterates rx read index.~\newline
+If a string is detected, all calls will be disabled until a new character is received.~\newline
+ delimiter parameter will detect an end-\/character if set to nonzero to allow for more secure message reading.~\newline
+ max\+\_\+digits parameter will set a bound for the max amount of digits in the parameter. If max\+\_\+digits \texorpdfstring{$>$}{>} 9, the return value may not be what is expected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & pointer to received int value \\
+\hline
+{\em input} & input character array to be detected \\
+\hline
+{\em delimiter} & optional delimiting character after int parameter (default = \textquotesingle{}\textbackslash{}0\textquotesingle{}) \\
+\hline
+{\em max\+\_\+digits} & maximum number of digits in parameter, must not exceed 9 (default = 8) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success of reception (will return false if string value not detected, no integer detected, or no delimiter detected if set) 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Input array must be null-\/character terminated. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_afa7345066fbeeecdfc6320af05c95838}{Receive()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a8e3331f2f23514b6980ef07623f3674b}{Receive\+String()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_ab3e39a9bf73b5134ff0eb72b36b218f8}{Receive\+Int()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a5802a3f2aebbf57800b613339a66f84b}{Task()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_serial_u_s_b_1_1_u_s_b_controller_a1f742c399f9ad7bcc5719b9aa8a24ff0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_a8e3331f2f23514b6980ef07623f3674b}\label{class_serial_u_s_b_1_1_u_s_b_controller_a8e3331f2f23514b6980ef07623f3674b}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!ReceiveString@{ReceiveString}}
+\index{ReceiveString@{ReceiveString}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{ReceiveString()}{ReceiveString()}}
+{\footnotesize\ttfamily bool Serial\+USB\+::\+USBController\+::\+Receive\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{input,  }\item[{uint32\+\_\+t}]{shift = {\ttfamily 0u},  }\item[{bool}]{move\+\_\+pointer = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Checks if input string has been received over USB from host. 
+
+Checks input string with front of FIFO receive buffer, returning true if the input string has been detected.~\newline
+ Can be used multiple times for different strings.~\newline
+ Iterates read index.~\newline
+ If a string is detected, all calls will be disabled until a new character is received.~\newline
+ ~\newline
+ Shift parameter detects substring offset by shift places. Useful for detecting a command with parameter (i.\+e. \char`\"{}c\+\_\+25\char`\"{}).~\newline
+ Moves the receive buffer pointer back to the end of the substring if move\+\_\+pointer is set to true.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & char array to be detected \\
+\hline
+{\em shift} & offset of string from end of receive buffer (default = 0) \\
+\hline
+{\em move\+\_\+pointer} & moves rd\+\_\+index to end of detected string if shift is on (default = true) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if string has been received 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Input array must be null-\/character terminated. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_afa7345066fbeeecdfc6320af05c95838}{Receive()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a1f742c399f9ad7bcc5719b9aa8a24ff0}{Receive\+Param()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_ab3e39a9bf73b5134ff0eb72b36b218f8}{Receive\+Int()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a5802a3f2aebbf57800b613339a66f84b}{Task()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_serial_u_s_b_1_1_u_s_b_controller_a8e3331f2f23514b6980ef07623f3674b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_aae7e36dd99bc47027609623f39ec467a}\label{class_serial_u_s_b_1_1_u_s_b_controller_aae7e36dd99bc47027609623f39ec467a}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!ResetBuffer@{ResetBuffer}}
+\index{ResetBuffer@{ResetBuffer}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{ResetBuffer()}{ResetBuffer()}}
+{\footnotesize\ttfamily void Serial\+USB\+::\+USBController\+::\+Reset\+Buffer (\begin{DoxyParamCaption}\item[{char $\ast$}]{buf,  }\item[{uint32\+\_\+t}]{buf\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Resets FIFO receive buffer. 
+
+Resets USB controller buffer using parameters for initialized arrays.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & initialized character array used for FIFO receive buffer \\
+\hline
+{\em buf\+\_\+size} & buffer size \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a14b3b3f5b75c8409ac7c31ae99a9c86b}{Init()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_a5802a3f2aebbf57800b613339a66f84b}\label{class_serial_u_s_b_1_1_u_s_b_controller_a5802a3f2aebbf57800b613339a66f84b}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!Task@{Task}}
+\index{Task@{Task}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{Task()}{Task()}}
+{\footnotesize\ttfamily void Serial\+USB\+::\+USBController\+::\+Task (\begin{DoxyParamCaption}\item[{bool}]{echo = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+USB Task Routine. 
+
+Function to be called in main while loop before or after application code. This will read all incoming data into the FIFO receive buffer and echo read data if desired using optional parameters. This also performs the main tusb task. There is also an option to disable the FIFO receive buffer which will not allow any read data to fill the FIFO receive buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em echo} & sends all received data back to the host device allowing it to be read on a terminal (default = false) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_af3721932b0112fe15c43a969a06d1144}{ISR()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_a016f4dfe9a3fd5185d1eb38330a3d950}\label{class_serial_u_s_b_1_1_u_s_b_controller_a016f4dfe9a3fd5185d1eb38330a3d950}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!Transmit@{Transmit}}
+\index{Transmit@{Transmit}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{Transmit()}{Transmit()}}
+{\footnotesize\ttfamily bool Serial\+USB\+::\+USBController\+::\+Transmit (\begin{DoxyParamCaption}\item[{char}]{input }\end{DoxyParamCaption})}
+
+
+
+Transmit character across USB. 
+
+Uses tusb FIFO queue to transmit a character.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & char to be transmitted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success of transmission 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a808ce3f51a820009b04e46cba483de4e}{Transmit\+Packet()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_aea4ae218bf10826e4943b542d782695c}{Transmit\+String()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a41534109837d3f7557049e6d67fdfac0}{Transmit\+Int()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a5802a3f2aebbf57800b613339a66f84b}{Task()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_a41534109837d3f7557049e6d67fdfac0}\label{class_serial_u_s_b_1_1_u_s_b_controller_a41534109837d3f7557049e6d67fdfac0}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!TransmitInt@{TransmitInt}}
+\index{TransmitInt@{TransmitInt}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{TransmitInt()}{TransmitInt()}}
+{\footnotesize\ttfamily bool Serial\+USB\+::\+USBController\+::\+Transmit\+Int (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{input }\end{DoxyParamCaption})}
+
+
+
+Transmits unsigned int as ASCII string over USB. 
+
+Transmits each digit as an ASCII string using tusb FIFO queue.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & raw value of integer to be transmitted as ASCII characters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success of transmission 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a016f4dfe9a3fd5185d1eb38330a3d950}{Transmit()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a808ce3f51a820009b04e46cba483de4e}{Transmit\+Packet()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_aea4ae218bf10826e4943b542d782695c}{Transmit\+String()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a5802a3f2aebbf57800b613339a66f84b}{Task()}} 
+\end{DoxySeeAlso}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_serial_u_s_b_1_1_u_s_b_controller_a41534109837d3f7557049e6d67fdfac0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_a808ce3f51a820009b04e46cba483de4e}\label{class_serial_u_s_b_1_1_u_s_b_controller_a808ce3f51a820009b04e46cba483de4e}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!TransmitPacket@{TransmitPacket}}
+\index{TransmitPacket@{TransmitPacket}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{TransmitPacket()}{TransmitPacket()}}
+{\footnotesize\ttfamily bool Serial\+USB\+::\+USBController\+::\+Transmit\+Packet (\begin{DoxyParamCaption}\item[{const char $\ast$}]{input,  }\item[{uint32\+\_\+t}]{num\+\_\+bytes }\end{DoxyParamCaption})}
+
+
+
+Transmits a packet of bytes, which do not need to be null-\/terminated. 
+
+Transmits an array of characters given the number of characters to transmit. Good for sending raw bytes rather than ASCII characters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & char array to be sent to host \\
+\hline
+{\em num\+\_\+bytes} & number of bytes to be sent to host \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+success of transmission 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a016f4dfe9a3fd5185d1eb38330a3d950}{Transmit()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_aea4ae218bf10826e4943b542d782695c}{Transmit\+String()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a41534109837d3f7557049e6d67fdfac0}{Transmit\+Int()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a5802a3f2aebbf57800b613339a66f84b}{Task()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_serial_u_s_b_1_1_u_s_b_controller_aea4ae218bf10826e4943b542d782695c}\label{class_serial_u_s_b_1_1_u_s_b_controller_aea4ae218bf10826e4943b542d782695c}} 
+\index{SerialUSB::USBController@{SerialUSB::USBController}!TransmitString@{TransmitString}}
+\index{TransmitString@{TransmitString}!SerialUSB::USBController@{SerialUSB::USBController}}
+\doxysubsubsection{\texorpdfstring{TransmitString()}{TransmitString()}}
+{\footnotesize\ttfamily uint32\+\_\+t Serial\+USB\+::\+USBController\+::\+Transmit\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{input }\end{DoxyParamCaption})}
+
+
+
+Transmit string across USB. 
+
+Uses tusb FIFO queue to transmit an entire array of characters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & char array to be sent to host \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of bytes sent in transmission 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Input array must be null-\/terminated. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a016f4dfe9a3fd5185d1eb38330a3d950}{Transmit()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a808ce3f51a820009b04e46cba483de4e}{Transmit\+Packet()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a41534109837d3f7557049e6d67fdfac0}{Transmit\+Int()}}, \mbox{\hyperlink{class_serial_u_s_b_1_1_u_s_b_controller_a5802a3f2aebbf57800b613339a66f84b}{Task()}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Serial\+Library\+Example/serial\+\_\+controllers/serial\+\_\+usb/serial\+\_\+usb.\+h\item 
+Serial\+Library\+Example/serial\+\_\+controllers/serial\+\_\+usb/serial\+\_\+usb.\+cpp\end{DoxyCompactItemize}

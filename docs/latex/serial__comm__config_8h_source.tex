@@ -1,0 +1,29 @@
+\hypertarget{serial__comm__config_8h_source}{}\doxysection{serial\+\_\+comm\+\_\+config.\+h}
+\label{serial__comm__config_8h_source}\index{SerialLibraryExample/serial\_controllers/serial\_comm\_config.h@{SerialLibraryExample/serial\_controllers/serial\_comm\_config.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Name         :   serial\_comm\_config.h}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Created      :   1/20/2023 10:37:50 AM}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Author       :   Aaron Reilman}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Description  :   Config file for serial communication library. Configure hardware and modules to use here.}}
+\DoxyCodeLine{6 \textcolor{comment}{ */} }
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef \_\_SERIAL\_COMM\_CONFIG\_H\_\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define \_\_SERIAL\_COMM\_CONFIG\_H\_\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}serial\_comm\_options.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{//define here}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifndef SERCOM\_MCU\_OPT}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define SERCOM\_MCU\_OPT      OPT\_SERCOM\_SAMD21}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef SERCOM\_MODULE\_OPT}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define SERCOM\_MODULE\_OPT   (OPT\_SERCOM\_UART | OPT\_SERCOM\_SPI | OPT\_SERCOM\_USB)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//\_\_SERIAL\_COMM\_CONFIG\_H\_\_}}
+
+\end{DoxyCode}
