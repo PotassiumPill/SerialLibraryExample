@@ -5,6 +5,7 @@
  * Description	:	Common generic hardware functionality for implementing serial controllers.
  */ 
 
+
 #ifndef __COMMON_HAL_H__
 #define __COMMON_HAL_H__
 
