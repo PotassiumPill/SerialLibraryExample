@@ -2,15 +2,15 @@
 
 Library for serial communication in C++ using various APIs and hardware for use in Microchip Studio projects.
 
-## Current APIs:
+## Current APIs
 1) %Serial UART\n 
 2) %Serial USB (CDC) using tinyUSB\n 
 3) %Serial SPI\n 
 
-## Current Hardware:
+## Current Hardware
 1) SAMD21 Series ARM Microcontroller
 
-## How To Use:
+## How To Use
 1) Setup project for desired hardware.\n 
 2) In your C and C++ compilers, add ../serial_controllers to the include path.\n 
 3) Open serial_comm_config.h, and define the SERCOM_MCU_OPT macro to your desired hardware (refer to serial_comm_options.h for all defined hardware).\n 
@@ -19,7 +19,7 @@ Library for serial communication in C++ using various APIs and hardware for use 
 6) Initialize hardware clocks.\n 
 7) Initialize and implement all ISRs to ensure proper functionality!\n 
 
-## Serial USB Code Setup Example:
+## Serial USB Code Setup Example
 ```
 #include "serial_communication.h"
 ...
@@ -37,13 +37,13 @@ void USB_Handler()						//use the proper ISR Handler according to your hardware!
 
 *NOTE: Call USBController.Task() in every loop in your main program so USB communication works. USBController.Task() can also be used to flash received data onto serial terminal by passing true into Task parameters.*
 
-### USB Descriptors for compatibility in host applications:
+### USB Descriptors for compatibility in host applications
 * VID: 0xCafe
 * PID: 0x4001
 * BCD: 0x0200
 
 
-## Serial UART Code Setup Example: 
+## Serial UART Code Setup Example
 ```
 #include "serial_communication.h"
 ...
@@ -63,7 +63,7 @@ void SERCOM0_Handler()													//use the proper ISR Handler according to you
 }
 ```
 
-## Serial SPI Code Setup Example: 
+## Serial SPI Code Setup Example
 ```
 #include "serial_communication.h"
 ...
