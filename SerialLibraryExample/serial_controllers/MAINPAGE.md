@@ -8,7 +8,7 @@ Library for serial communication in C++ using various APIs and hardware for use 
 3) SerialSPI\n 
 
 ## Additional Utilities
-1) GENERIC_BUFFER (a C++ ring buffer template)\n
+1) GenericBuffer (a C++ ring buffer template)\n
 2) Serial (integer to ASCII function and char buffer with advanced parsing features)
 
 ## Current Hardware
