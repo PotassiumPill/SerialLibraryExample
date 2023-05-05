@@ -692,6 +692,12 @@
     <Compile Include="serial_controllers\serial_uart\uart_hal.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="serial_controllers\serial_usb\hardware\usb_none.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="serial_controllers\serial_usb\hardware\usb_samd21.cpp">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="serial_controllers\serial_usb\serial_usb.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -802,6 +808,7 @@
     <Folder Include="serial_controllers\serial_uart\" />
     <Folder Include="serial_controllers\serial_uart\hardware\" />
     <Folder Include="serial_controllers\serial_usb\" />
+    <Folder Include="serial_controllers\serial_usb\hardware" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Device_Startup\samd21g18a_flash.ld">
@@ -811,9 +818,6 @@
       <SubType>compile</SubType>
     </None>
     <None Include="serial_controllers\portable\synopsys\dwc2\hwcfg_list.md">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="serial_controllers\README.txt">
       <SubType>compile</SubType>
     </None>
   </ItemGroup>

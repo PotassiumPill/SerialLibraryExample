@@ -4,7 +4,7 @@ Library for serial communication in C++ using various APIs and hardware for use 
 
 ## Current APIs:
 1) %Serial UART\n 
-2) %Serial USB (CDC) using tinyusb\n 
+2) %Serial USB (CDC) using tinyUSB\n 
 3) %Serial SPI\n 
 
 ## Current Hardware:

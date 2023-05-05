@@ -54,41 +54,19 @@ Example project to showcase custom C++ serial communication library, configured 
 	#define CFG_TUSB_MCU        OPT_MCU_CHIP_NAME
 ```
 where `OPT_SERCOM_CHIP_NAME` is the macro you defined in [serial_comm_options.h](/SerialLibraryExample/serial_controllers/serial_comm_options.h) and `OPT_MCU_CHIP_NAME` is the tinyUSB macro definition for your chip as found in [tusb_option.h](/SerialLibraryExample/serial_controllers/tusb_option.h). Refer to [tinyUSB repository](https://github.com/hathach/tinyusb/tree/master/src) or skip this step and do not use USB functionality for this chip.
-4) Navigate to [serial_usb.cpp](/SerialLibraryExample/serial_controllers/serial_usb/serial_usb.cpp) and find the code block which looks similar to this:
+4) Navigate to the [hardware](/SerialLibraryExample/serial_controllers/serial_usb/hardware) directory under the [serial_usb](/SerialLibraryExample/serial_controllers/serial_usb) directory.
+5) Add a new cpp file to this directory for your chip, ie `usb_chipname.cpp`.
+6) At the top, include this code block:
 ```
-#if CFG_TUSB_MCU == OPT_MCU_SAMD21
-#include "sam.h"
+#include "serial_usb/serial_usb.h"
 
-void SerialUSB::USBFeedIOClocks(void)
-{
-	...
-}
-
-void SerialUSB::ResetUSB(void)
-{
-	...
-}
-#else
-void SerialUSB::USBFeedIOClocks(void) {}
-void SerialUSB::ResetUSB(void) {}
-#endif
-```
-5) Before the line `#else` and after the `}`, add the following code for your new chip:
-```
-#elif CFG_TUSB_MCU == OPT_MCU_CHIP_NAME
+#if (CFG_TUSB_MCU == OPT_MCU_CHIP_NAME)
 #include "chip.h"
-
-void SerialUSB::USBFeedIOClocks(void)
-{
-}
-
-void SerialUSB::ResetUSB(void)
-{
-}
 ```
-where `"chip.h"` is the header file for your chip as noted earlier.
+where `"chip.h"` is the header file for your chip and `OPT_MCU_CHIP_NAME' is the tinyUSB macro definition for your chip, as noted earlier.
 
-6) Implement code to initialize the USB clock and the reset the USB registers in the respective functions.
+7) Here, you will define all functions in [serial_usb.h](/SerialLibraryExample/serial_controllers/serial_usb/serial_usb.h), which includes just `void SerialUSB::USBFeedIOClocks(void)` and `void SerialUSB::ResetUSB(void)`.
+8) Make sure that the last line in this file is `#endif`!
 
 ### Add General Functionality for SPI and UART Stacks
 1) SPI and UART stacks require some common functions to run. 
