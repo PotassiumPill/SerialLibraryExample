@@ -25,7 +25,7 @@ Example project to showcase custom C++ serial communication library, configured 
    - On the SAMD21 Feather M0, you should connect to the TX and RX pins. 
    - The default baud rate is 115200. To change this, navigate to [example_state_machine.h](/SerialLibraryExample/example_state_machine.h)
  and change the line `#define BAUD_RATE		115200` to the desired baud rate. 
-10) To try this project out a different chip, refer below to learn how add new chips to the library. You will also need to navigate to [example_state_machine.cpp](/SerialLibraryExample/example_state_machine.cpp) and change the code in the `ExampleStateMachine::InitializingStateAction(void)` function definition between the `Util::enterCriticalSection();` and `Util::exitCriticalSection();` calls to configure the clocks on your chip.
+10) To try this project out a different chip, you will need to create a new C++ project in Microchip Studio based on your chip, add all files under the [SerialLibraryExample](/SerialLibraryExample) subdirectory to it, then refer below to learn how add new chips to the library. You will also need to navigate to [example_state_machine.cpp](/SerialLibraryExample/example_state_machine.cpp) and change the code in the `ExampleStateMachine::InitializingStateAction(void)` function definition between the `Util::enterCriticalSection();` and `Util::exitCriticalSection();` calls to configure the clocks on your chip.
 
 ## Adding New Hardware
 1) Create a new c++ project in Microchip Studio configured for your new chip.
