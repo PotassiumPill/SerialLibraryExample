@@ -5,6 +5,7 @@
  * Description	:	A UART serial communication low level driver for samd21.
  */ 
 
+
 #ifndef __UART_SAMD21_H__
 #define __UART_SAMD21_H__
 
