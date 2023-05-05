@@ -3,9 +3,13 @@
 Library for serial communication in C++ using various APIs and hardware for use in Microchip Studio projects.
 
 ## Current APIs
-1) %Serial UART\n 
-2) %Serial USB (CDC) using tinyUSB\n 
-3) %Serial SPI\n 
+1) SerialUART\n 
+2) SerialUSB (CDC) using tinyUSB\n 
+3) SerialSPI\n 
+
+## Additional Utilities
+1) GENERIC_BUFFER (a C++ ring buffer template)\n
+2) Serial (integer to ASCII function and char buffer with advanced parsing features)
 
 ## Current Hardware
 1) SAMD21 Series ARM Microcontroller

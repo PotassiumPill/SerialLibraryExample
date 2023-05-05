@@ -5,7 +5,7 @@ Example project to showcase custom C++ serial communication library, configured 
 1) [Serial UART](/SerialLibraryExample/serial_controllers/serial_uart) library.
 2) [Serial SPI](/SerialLibraryExample/serial_controllers/serial_spi) library.
 3) [Serial USB](/SerialLibraryExample/serial_controllers/serial_usb) library using [tinyUSB](https://github.com/hathach/tinyusb/tree/master/src) stack. 
-4) Python scripts for generating finite state machine code, which is very useful for streamlining code and maximizing functionality. Refer to [README](/state_machine_generator/README.txt) for more information on how to use.
+4) Python scripts for generating finite state machine code, which is very useful for streamlining code and maximizing functionality. Refer to [README](/state_machine_generator/README.md) for more information on how to use.
 5) Generic ring buffer template and higher level serial buffer class which can be used directly for data storage or other serial functionality. 
 6) Refer to [README](/SerialLibraryExample/serial_controllers/README.md) for more information about configuring and using the library.
 7) Refer to [documentation page](https://potassiumpill.github.io/SerialLibraryExample/) for documentation on serial library.

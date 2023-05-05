@@ -25,7 +25,7 @@ namespace Serial
 	 * This function emulates an unimplemented/unneeded interrupt enabling function for passing into serial buffer functions when parameters do not need to be enabled or disabled.
 	 *
 	 * \note This function doesn't do anything but is necessary for passing as a parameter.
-	 * \sa SerialBuffer.Put(), SerialBuffer.Get(), SerialBuffer.PutString(), SerialBuffer.GetString(), SerialBuffer.PutIntAsASCII(), SerialBuffer.GetASCIIAsInt(), SerialBuffer.GetIntParam()
+	 * \sa SerialBuffer.Put(), SerialBuffer.Get(), SerialBuffer.GetString(), SerialBuffer.GetASCIIAsInt(), SerialBuffer.GetIntParam()
 	 */
 	void NoIntEnable(SERCOMHAL::SercomID peripheral_id = 0u, bool enable = false);
 	/*!
@@ -37,7 +37,7 @@ namespace Serial
 	 * \param result pointer to output ASCII array (must be 11 long)
 	 * \return number of ASCII characters in buffer
 	 * \note Use in conjunction with SerialBuffer.TransmitString() to create a simple %TransmitInt() function.
-	 * \sa SerialBuffer.TransmitString(), SerialBuffer.ReceiveASCIIAsInt()
+	 * \sa SerialBuffer.GetASCIIAsInt()
 	 */
 	uint32_t Int2ASCII(uint32_t num, char (*result)[10]);
 	/*!
@@ -97,7 +97,7 @@ namespace Serial
 		 * \param input char to be added to end of buffer
 		 * \param int_func interrupt function pointer to be invoked
 		 * \return true unless buffer is full and char was attempted to be added
-		 * \sa Get(), PutString(), PutIntAsASCII()
+		 * \sa Get()
 		 */ 
 		bool Put(char input, void (* int_func)(uint8_t, bool));
 		/*!

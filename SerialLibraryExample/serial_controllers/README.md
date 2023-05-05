@@ -5,9 +5,14 @@ Library for serial communication in C++ using various APIs and hardware for use 
 Refer to [documentation page](https://potassiumpill.github.io/SerialLibraryExample/) to see functional documentation.
 
 ## Current APIs
-1) Serial UART
-2) Serial USB (CDC) using tinyUSB
-3) Serial SPI
+1) [Serial UART](https://potassiumpill.github.io/SerialLibraryExample/class_serial_u_a_r_t_1_1_u_a_r_t_controller.html)
+2) [Serial USB](https://potassiumpill.github.io/SerialLibraryExample/class_serial_u_s_b_1_1_u_s_b_controller.html) (CDC) using tinyUSB
+3) [Serial SPI](https://potassiumpill.github.io/SerialLibraryExample/class_serial_s_p_i_1_1_s_p_i_controller.html)
+
+## Additional Utilities
+1) [Generic Ring Buffer Template](https://potassiumpill.github.io/SerialLibraryExample/class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html)
+2) [Serial Buffer](https://potassiumpill.github.io/SerialLibraryExample/class_serial_1_1_serial_buffer.html) (char buffer with advanced parsing features)
+3) [Integer to ASCII function](https://potassiumpill.github.io/SerialLibraryExample/namespace_serial.html#af0ab7fa07a594bbdcd2ae081e4b1229e)
 
 ## Current Hardware
 1) SAMD21 Series ARM Microcontroller
