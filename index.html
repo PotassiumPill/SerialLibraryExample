@@ -70,14 +70,18 @@ $(function() {
 <div class="textblock"><p><a class="anchor" id="md_SerialLibraryExample_serial_controllers_MAINPAGE"></a> Library for serial communication in C++ using various APIs and hardware for use in Microchip Studio projects.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Current APIs</h1>
-<p>1) Serial UART<br  />
- 2) Serial USB (CDC) using tinyUSB<br  />
- 3) Serial SPI<br  />
+<p>1) <a class="el" href="namespace_serial_u_a_r_t.html" title="UART controller global namespace.">SerialUART</a><br  />
+ 2) <a class="el" href="namespace_serial_u_s_b.html" title="USB Controller global namespace.">SerialUSB</a> (CDC) using tinyUSB<br  />
+ 3) <a class="el" href="namespace_serial_s_p_i.html" title="SPI controller global namespace.">SerialSPI</a><br  />
 </p>
 <h1><a class="anchor" id="autotoc_md2"></a>
+Additional Utilities</h1>
+<p>1) GENERIC_BUFFER (a C++ ring buffer template)<br  />
+2) <a class="el" href="namespace_serial.html" title="Serial Buffer global namespace.">Serial</a> (integer to ASCII function and char buffer with advanced parsing features)</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Current Hardware</h1>
 <p>1) SAMD21 Series ARM Microcontroller</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 How To Use</h1>
 <p>1) Setup project for desired hardware.<br  />
  2) In your C and C++ compilers, add ../serial_controllers to the include path.<br  />
@@ -87,7 +91,7 @@ How To Use</h1>
  6) Initialize hardware clocks.<br  />
  7) Initialize and implement all ISRs to ensure proper functionality!<br  />
 </p>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Serial USB Code Setup Example</h1>
 <div class="fragment"><div class="line">#include &quot;serial_communication.h&quot;</div>
 <div class="line">...</div>
@@ -102,14 +106,14 @@ Serial USB Code Setup Example</h1>
 <div class="line">    usb_controller.ISR();   </div>
 <div class="line">}</div>
 </div><!-- fragment --><p><em>NOTE: Call USBController.Task() in every loop in your main program so USB communication works. USBController.Task() can also be used to flash received data onto serial terminal by passing true into Task parameters.</em></p>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 USB Descriptors for compatibility in host applications</h2>
 <ul>
 <li>VID: 0xCafe</li>
 <li>PID: 0x4001</li>
 <li>BCD: 0x0200</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 Serial UART Code Setup Example</h1>
 <div class="fragment"><div class="line">#include &quot;serial_communication.h&quot;</div>
 <div class="line">...</div>
@@ -127,7 +131,7 @@ Serial UART Code Setup Example</h1>
 <div class="line">    uart_controller.ISR();</div>
 <div class="line">    //uart_controller.EchoRx();                                         //call EchoRx() to debug by flashing all received characters onto terminal, exclude for actual use</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
 Serial SPI Code Setup Example</h1>
 <div class="fragment"><div class="line">#include &quot;serial_communication.h&quot;</div>
 <div class="line">...</div>
