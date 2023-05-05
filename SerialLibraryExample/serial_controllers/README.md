@@ -2,6 +2,8 @@
 
 Library for serial communication in C++ using various APIs and hardware for use in Microchip Studio projects.
 
+Refer to [documentation page](https://potassiumpill.github.io/SerialLibraryExample/) to see functional documentation.
+
 ## Current APIs:
 1)Serial UART
 2) Serial USB (CDC) using tinyUSB
