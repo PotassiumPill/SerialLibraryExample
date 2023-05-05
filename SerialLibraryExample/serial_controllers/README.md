@@ -5,7 +5,7 @@ Library for serial communication in C++ using various APIs and hardware for use 
 Refer to [documentation page](https://potassiumpill.github.io/SerialLibraryExample/) to see functional documentation.
 
 ## Current APIs:
-1)Serial UART
+1) Serial UART
 2) Serial USB (CDC) using tinyUSB
 3) Serial SPI
 
