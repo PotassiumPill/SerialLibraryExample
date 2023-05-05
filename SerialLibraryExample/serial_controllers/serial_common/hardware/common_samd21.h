@@ -11,6 +11,11 @@
 
 #include "sam.h"
 
+/*!
+ * \brief %SERCOM SAMD21 low level driver global namespace
+ *
+ * This namespace contains all constants and helper functions for implementing the low level drivers and peripherals on the SAMD21 chip. 
+ */
 namespace SERCOMSAMD21
 {
 	/*!
