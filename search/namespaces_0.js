@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['genericbuffer_228',['GenericBuffer',['../namespace_generic_buffer.html',1,'']]]
+  ['genericbuffer_232',['GenericBuffer',['../namespace_generic_buffer.html',1,'']]]
 ];

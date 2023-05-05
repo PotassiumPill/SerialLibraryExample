@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['txirqstate_382',['TXIRQState',['../namespace_serial_s_p_i.html#abe0bfdd7d9d1dd54d7ca64e6f10c2cc9',1,'SerialSPI::TXIRQState()'],['../namespace_serial_u_a_r_t.html#a5665c8a5f362b88aae24b97da47127a0',1,'SerialUART::TXIRQState()']]]
+  ['sampleadjustment_387',['SampleAdjustment',['../namespace_u_a_r_t_s_a_m_d21.html#aeabc7f1e47cfc203df30e0e608842eb0',1,'UARTSAMD21']]],
+  ['sercomid_388',['SercomID',['../namespace_s_e_r_c_o_m_s_a_m_d21.html#a2b9cb729701cf61d530895b5f0e1c25d',1,'SERCOMSAMD21']]],
+  ['spierror_389',['SPIError',['../namespace_serial_s_p_i.html#aa7b38e8a39a8b78fa1ab1cc16a4e6f07',1,'SerialSPI']]],
+  ['stopbits_390',['StopBits',['../namespace_u_a_r_t_h_a_l.html#a6d4b972f6f8a9a33b5f2554cb678f09d',1,'UARTHAL']]]
 ];
