@@ -69,16 +69,16 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_SerialLibraryExample_serial_controllers_MAINPAGE"></a> Library for serial communication in C++ using various APIs and hardware for use in Microchip Studio projects.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Current APIs:</h1>
+Current APIs</h1>
 <p>1) Serial UART<br  />
  2) Serial USB (CDC) using tinyUSB<br  />
  3) Serial SPI<br  />
 </p>
 <h1><a class="anchor" id="autotoc_md2"></a>
-Current Hardware:</h1>
+Current Hardware</h1>
 <p>1) SAMD21 Series ARM Microcontroller</p>
 <h1><a class="anchor" id="autotoc_md3"></a>
-How To Use:</h1>
+How To Use</h1>
 <p>1) Setup project for desired hardware.<br  />
  2) In your C and C++ compilers, add ../serial_controllers to the include path.<br  />
  3) Open <a class="el" href="serial__comm__config_8h_source.html">serial_comm_config.h</a>, and define the SERCOM_MCU_OPT macro to your desired hardware (refer to <a class="el" href="serial__comm__options_8h_source.html">serial_comm_options.h</a> for all defined hardware).<br  />
@@ -88,7 +88,7 @@ How To Use:</h1>
  7) Initialize and implement all ISRs to ensure proper functionality!<br  />
 </p>
 <h1><a class="anchor" id="autotoc_md4"></a>
-Serial USB Code Setup Example:</h1>
+Serial USB Code Setup Example</h1>
 <div class="fragment"><div class="line">#include &quot;serial_communication.h&quot;</div>
 <div class="line">...</div>
 <div class="line">char usb_buf[USB_DEFAULT_FIFO_SIZE];            //call outside of function calls so variable stays active</div>
@@ -103,14 +103,14 @@ Serial USB Code Setup Example:</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p><em>NOTE: Call USBController.Task() in every loop in your main program so USB communication works. USBController.Task() can also be used to flash received data onto serial terminal by passing true into Task parameters.</em></p>
 <h2><a class="anchor" id="autotoc_md5"></a>
-USB Descriptors for compatibility in host applications:</h2>
+USB Descriptors for compatibility in host applications</h2>
 <ul>
 <li>VID: 0xCafe</li>
 <li>PID: 0x4001</li>
 <li>BCD: 0x0200</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md6"></a>
-Serial UART Code Setup Example:</h1>
+Serial UART Code Setup Example</h1>
 <div class="fragment"><div class="line">#include &quot;serial_communication.h&quot;</div>
 <div class="line">...</div>
 <div class="line">char rx_buf[DEFAULT_RX_BUFFER_SIZE];</div>
@@ -128,7 +128,7 @@ Serial UART Code Setup Example:</h1>
 <div class="line">    //uart_controller.EchoRx();                                         //call EchoRx() to debug by flashing all received characters onto terminal, exclude for actual use</div>
 <div class="line">}</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
-Serial SPI Code Setup Example:</h1>
+Serial SPI Code Setup Example</h1>
 <div class="fragment"><div class="line">#include &quot;serial_communication.h&quot;</div>
 <div class="line">...</div>
 <div class="line">char miso_buf[DEFAULT_MISO_BUFFER_SIZE];</div>

@@ -70,16 +70,16 @@ $(function() {
 <div class="textblock"><p>Library for serial communication in C++ using various APIs and hardware for use in Microchip Studio projects.</p>
 <p>Refer to <a href="https://potassiumpill.github.io/SerialLibraryExample/">documentation page</a> to see functional documentation.</p>
 <h1><a class="anchor" id="autotoc_md9"></a>
-Current APIs:</h1>
+Current APIs</h1>
 <p>1) <a class="el" href="namespace_serial.html" title="Serial Buffer global namespace.">Serial</a> UART 2) <a class="el" href="namespace_serial.html" title="Serial Buffer global namespace.">Serial</a> USB (CDC) using tinyUSB 3) <a class="el" href="namespace_serial.html" title="Serial Buffer global namespace.">Serial</a> SPI</p>
 <h1><a class="anchor" id="autotoc_md10"></a>
-Current Hardware:</h1>
+Current Hardware</h1>
 <p>1) SAMD21 Series ARM Microcontroller</p>
 <h1><a class="anchor" id="autotoc_md11"></a>
-How To Use:</h1>
+How To Use</h1>
 <p>1) Setup project for desired hardware. 2) In your C and C++ compilers, add ../serial_controllers to the include path. 3) Open <a class="el" href="serial__comm__config_8h_source.html">serial_comm_config.h</a>, and define the SERCOM_MCU_OPT macro to your desired hardware (refer to <a class="el" href="serial__comm__options_8h_source.html">serial_comm_options.h</a> for all defined hardware). 4) Define the SERCOM_MODULE_OPT as all desired protocols for your project (OPT_SERCOM_UART | OPT_SERCOM_SPI | OPT_SERCOM_USB defines all protocols). 5) include <a class="el" href="serial__communication_8h_source.html">serial_communication.h</a> in your project to use serial protocols. 6) Initialize hardware clocks. 7) Initialize and implement all ISRs to ensure proper functionality!</p>
 <h1><a class="anchor" id="autotoc_md12"></a>
-Serial USB Code Setup Example:</h1>
+Serial USB Code Setup Example</h1>
 <div class="fragment"><div class="line">#include &quot;serial_communication.h&quot;</div>
 <div class="line">...</div>
 <div class="line">char usb_buf[USB_DEFAULT_FIFO_SIZE];            //call outside of function calls so variable stays active</div>
@@ -94,7 +94,7 @@ Serial USB Code Setup Example:</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p><em>NOTE: Call USBController.Task() in every loop in your main program so USB communication works. USBController.Task() can also be used to flash received data onto serial terminal by passing true into Task parameters.</em></p>
 <h2><a class="anchor" id="autotoc_md13"></a>
-USB Descriptors for compatibility in host applications:</h2>
+USB Descriptors for compatibility in host applications</h2>
 <ul>
 <li>VID: 0xCafe</li>
 <li>PID: 0x4001</li>
@@ -119,7 +119,7 @@ Serial UART Code Setup Example:</h1>
 <div class="line">    //uart_controller.EchoRx();                                         //call EchoRx() to debug by flashing all received characters onto terminal, exclude for actual use</div>
 <div class="line">}</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md15"></a>
-Serial SPI Code Setup Example:</h1>
+Serial SPI Code Setup Example</h1>
 <div class="fragment"><div class="line">#include &quot;serial_communication.h&quot;</div>
 <div class="line">...</div>
 <div class="line">char miso_buf[DEFAULT_MISO_BUFFER_SIZE];</div>
