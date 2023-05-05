@@ -1,0 +1,4 @@
+<map id="SPIHAL::EnableSercomErrors" name="SPIHAL::EnableSercomErrors">
+<area shape="rect" id="node1" title="Enables or disables SERCOM error interrupt." alt="" coords="224,13,431,39"/>
+<area shape="rect" id="node2" href="$class_serial_s_p_i_1_1_s_p_i_controller.html#a8a734767c555f5bad5cf8104d0d5c467" title="Enabler for Error interrupt." alt="" coords="5,5,176,47"/>
+</map>

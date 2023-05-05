@@ -1,0 +1,6 @@
+<map id="SerialSPI::SPIController::Deinit" name="SerialSPI::SPIController::Deinit">
+<area shape="rect" id="node1" title="Disables and resets SPI serial communication." alt="" coords="5,49,176,90"/>
+<area shape="rect" id="node2" href="$namespace_s_p_i_h_a_l.html#aa4cf3cc25f024a7be45f2835f91cfc04" title="Tear down function for SPI serial communication low level drivers." alt="" coords="231,5,395,32"/>
+<area shape="rect" id="node3" href="$namespace_s_p_i_h_a_l.html#a6d0f0f6ce58c081097768d0eafe596f4" title="Enables or disables SERCOM receive complete interrupt." alt="" coords="233,56,393,83"/>
+<area shape="rect" id="node4" href="$namespace_s_p_i_h_a_l.html#a6e3a8d74a37871a188d276b85c0b6ce8" title="Enables or disables SERCOM data register empty interrupt." alt="" coords="224,107,403,133"/>
+</map>

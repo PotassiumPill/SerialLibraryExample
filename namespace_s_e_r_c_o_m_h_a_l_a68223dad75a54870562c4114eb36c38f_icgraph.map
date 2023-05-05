@@ -1,0 +1,4 @@
+<map id="SERCOMHAL::OutputLow" name="SERCOMHAL::OutputLow">
+<area shape="rect" id="node1" title="Sets output pin to low." alt="" coords="224,13,407,39"/>
+<area shape="rect" id="node2" href="$class_serial_s_p_i_1_1_s_p_i_controller.html#a6fc4ad0d39e775a14becf473a979263c" title="Sets Slave Select Line to Low (indicates start of transmission to slave device)" alt="" coords="5,5,176,47"/>
+</map>

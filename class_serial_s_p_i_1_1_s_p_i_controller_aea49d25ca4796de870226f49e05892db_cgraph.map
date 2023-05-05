@@ -1,0 +1,5 @@
+<map id="SerialSPI::SPIController::ClearBuffers" name="SerialSPI::SPIController::ClearBuffers">
+<area shape="rect" id="node1" title="Clears MOSI and/or MISO buffers." alt="" coords="5,23,176,65"/>
+<area shape="rect" id="node2" href="$namespace_s_p_i_h_a_l.html#a6d0f0f6ce58c081097768d0eafe596f4" title="Enables or disables SERCOM receive complete interrupt." alt="" coords="233,5,393,32"/>
+<area shape="rect" id="node3" href="$namespace_s_p_i_h_a_l.html#a6e3a8d74a37871a188d276b85c0b6ce8" title="Enables or disables SERCOM data register empty interrupt." alt="" coords="224,56,403,83"/>
+</map>

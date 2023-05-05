@@ -1,0 +1,4 @@
+<map id="SPIHAL::ReadyToTransmit" name="SPIHAL::ReadyToTransmit">
+<area shape="rect" id="node1" title="Checks if SERCOM data register is empty and therefore ready for transmission." alt="" coords="253,5,440,32"/>
+<area shape="rect" id="node2" href="$class_serial_s_p_i_1_1_s_p_i_controller.html#a982acee8e5b16d9a4f99dd25257ce4be" title="Interrupt Service Routine." alt="" coords="5,5,205,32"/>
+</map>

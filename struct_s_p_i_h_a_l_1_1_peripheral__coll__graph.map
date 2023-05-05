@@ -1,0 +1,4 @@
+<map id="SPIHAL::Peripheral" name="SPIHAL::Peripheral">
+<area shape="rect" id="node1" title="A peripheral struct containing peripheral setup information." alt="" coords="11,139,153,165"/>
+<area shape="rect" id="node2" href="$struct_s_e_r_c_o_m_h_a_l_1_1_pinout.html" title="A pinout struct to configure I/O pins with or without multiplexing." alt="" coords="5,5,159,32"/>
+</map>

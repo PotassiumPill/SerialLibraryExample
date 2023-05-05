@@ -1,0 +1,6 @@
+<map id="SerialUART::UARTController::Deinit" name="SerialUART::UARTController::Deinit">
+<area shape="rect" id="node1" title="Disables and resets UART serial communication." alt="" coords="5,49,204,90"/>
+<area shape="rect" id="node2" href="$namespace_u_a_r_t_h_a_l.html#a26a9718fd4cecd06328d01f22de4f094" title="Tear down function for UART serial communication low level drivers." alt="" coords="259,5,438,32"/>
+<area shape="rect" id="node3" href="$namespace_u_a_r_t_h_a_l.html#a2f85c38019e9b31dbca6aa7f32fb991d" title="Enables or disables SERCOM receive complete interrupt." alt="" coords="261,56,436,83"/>
+<area shape="rect" id="node4" href="$namespace_u_a_r_t_h_a_l.html#a907220a1973382de08130b2822677ec0" title="Enables or disables SERCOM data register empty interrupt." alt="" coords="252,107,445,133"/>
+</map>

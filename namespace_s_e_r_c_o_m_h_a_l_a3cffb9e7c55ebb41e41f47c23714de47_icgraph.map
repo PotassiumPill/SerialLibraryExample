@@ -1,0 +1,5 @@
+<map id="SERCOMHAL::OutputHigh" name="SERCOMHAL::OutputHigh">
+<area shape="rect" id="node1" title="Sets output pin to high." alt="" coords="224,46,411,73"/>
+<area shape="rect" id="node2" href="$class_serial_s_p_i_1_1_s_p_i_controller.html#a84f78bb2865e1f36b0dfe2f0567c01cd" title="Change Slave Select Line pin (if using multiple clients)" alt="" coords="5,5,176,47"/>
+<area shape="rect" id="node3" href="$class_serial_s_p_i_1_1_s_p_i_controller.html#a725cb585c59f8bd9aa57418b25df14c4" title="Sets Slave Select Line to High (indicates end of transmission to slave device)" alt="" coords="5,71,176,112"/>
+</map>

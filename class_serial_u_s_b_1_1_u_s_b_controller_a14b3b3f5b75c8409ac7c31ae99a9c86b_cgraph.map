@@ -1,0 +1,4 @@
+<map id="SerialUSB::USBController::Init" name="SerialUSB::USBController::Init">
+<area shape="rect" id="node1" title="Initializes USB serial communication." alt="" coords="5,5,191,47"/>
+<area shape="rect" id="node2" href="$namespace_serial_u_s_b.html#ae740bbae65f8f49b75efde592bb3a049" title="A helper function for initializing clocks and I/O pins on specific chip." alt="" coords="239,13,448,39"/>
+</map>

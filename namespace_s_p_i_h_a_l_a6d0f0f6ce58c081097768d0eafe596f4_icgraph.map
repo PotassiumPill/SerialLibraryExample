@@ -1,0 +1,8 @@
+<map id="SPIHAL::EnableRxFull" name="SPIHAL::EnableRxFull">
+<area shape="rect" id="node1" title="Enables or disables SERCOM receive complete interrupt." alt="" coords="253,137,413,163"/>
+<area shape="rect" id="node2" href="$class_serial_s_p_i_1_1_s_p_i_controller.html#aea49d25ca4796de870226f49e05892db" title="Clears MOSI and/or MISO buffers." alt="" coords="20,5,191,47"/>
+<area shape="rect" id="node3" href="$class_serial_s_p_i_1_1_s_p_i_controller.html#aad4d083ef9093fe0462e124072757fb6" title="Disables and resets SPI serial communication." alt="" coords="20,71,191,112"/>
+<area shape="rect" id="node4" href="$class_serial_s_p_i_1_1_s_p_i_controller.html#a982acee8e5b16d9a4f99dd25257ce4be" title="Interrupt Service Routine." alt="" coords="5,137,205,163"/>
+<area shape="rect" id="node5" href="$class_serial_s_p_i_1_1_s_p_i_controller.html#a3a1ba24ba52726fe3800b9ec81438a8a" title="Receive character from logic layer MISO buffer and free buffer space." alt="" coords="20,188,191,229"/>
+<area shape="rect" id="node6" href="$class_serial_s_p_i_1_1_s_p_i_controller.html#a53d317407bfb1b94cb69b37eb9934c7a" title="Resets MISO/receive buffer." alt="" coords="20,253,191,295"/>
+</map>

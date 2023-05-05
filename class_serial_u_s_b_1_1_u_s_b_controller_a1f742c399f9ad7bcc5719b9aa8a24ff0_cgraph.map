@@ -1,0 +1,4 @@
+<map id="SerialUSB::USBController::ReceiveParam" name="SerialUSB::USBController::ReceiveParam">
+<area shape="rect" id="node1" title="Checks if input string followed by an ASCII parameter has been received across USB from host and retu..." alt="" coords="5,5,191,47"/>
+<area shape="rect" id="node2" href="$namespace_serial.html#a765e3d30c8e412dd3eb1627312b3d4de" title="Blank Interrupt Enable function to be used as blank parameter for implementing serial buffer." alt="" coords="239,13,385,39"/>
+</map>

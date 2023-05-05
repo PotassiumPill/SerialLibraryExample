@@ -1,0 +1,4 @@
+<map id="SPIHAL::InitSercom" name="SPIHAL::InitSercom">
+<area shape="rect" id="node1" title="Initializing function for SPI serial communication low level drivers." alt="" coords="224,13,371,39"/>
+<area shape="rect" id="node2" href="$class_serial_s_p_i_1_1_s_p_i_controller.html#aac613474c61cbcf0cf8268bb3f7b492e" title="Initializes SPI serial communication." alt="" coords="5,5,176,47"/>
+</map>

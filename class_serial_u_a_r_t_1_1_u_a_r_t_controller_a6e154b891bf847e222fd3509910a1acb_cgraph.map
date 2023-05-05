@@ -1,0 +1,5 @@
+<map id="SerialUART::UARTController::ClearBuffers" name="SerialUART::UARTController::ClearBuffers">
+<area shape="rect" id="node1" title="Clears Rx and/or Tx buffers." alt="" coords="5,23,204,65"/>
+<area shape="rect" id="node2" href="$namespace_u_a_r_t_h_a_l.html#a2f85c38019e9b31dbca6aa7f32fb991d" title="Enables or disables SERCOM receive complete interrupt." alt="" coords="261,5,436,32"/>
+<area shape="rect" id="node3" href="$namespace_u_a_r_t_h_a_l.html#a907220a1973382de08130b2822677ec0" title="Enables or disables SERCOM data register empty interrupt." alt="" coords="252,56,445,83"/>
+</map>

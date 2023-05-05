@@ -1,0 +1,4 @@
+<map id="UARTHAL::SetSercomTX" name="UARTHAL::SetSercomTX">
+<area shape="rect" id="node1" title="Writes to SERCOM data register." alt="" coords="281,5,460,32"/>
+<area shape="rect" id="node2" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#a92e007bfb65edacf4a77e38c0d90c00a" title="Interrupt Service Routine." alt="" coords="5,5,233,32"/>
+</map>

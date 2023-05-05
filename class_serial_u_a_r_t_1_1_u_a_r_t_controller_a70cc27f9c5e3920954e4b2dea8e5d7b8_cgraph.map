@@ -1,0 +1,4 @@
+<map id="SerialUART::UARTController::Init" name="SerialUART::UARTController::Init">
+<area shape="rect" id="node1" title="Initializes UART serial communication." alt="" coords="5,5,204,47"/>
+<area shape="rect" id="node2" href="$namespace_u_a_r_t_h_a_l.html#a9369c09504a106908be4726abcfd09d9" title="Initializing function for UART serial communication low level drivers." alt="" coords="252,13,413,39"/>
+</map>

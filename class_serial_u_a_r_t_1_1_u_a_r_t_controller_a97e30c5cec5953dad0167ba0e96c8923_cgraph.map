@@ -1,0 +1,4 @@
+<map id="SerialUART::UARTController::TransmitInt" name="SerialUART::UARTController::TransmitInt">
+<area shape="rect" id="node1" title="Transmits unsigned int as ASCII string." alt="" coords="5,5,204,47"/>
+<area shape="rect" id="node2" href="$namespace_serial.html#af0ab7fa07a594bbdcd2ae081e4b1229e" title="Integer to ASCII helper function." alt="" coords="252,13,379,39"/>
+</map>

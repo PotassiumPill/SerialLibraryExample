@@ -1,0 +1,11 @@
+<map id="UARTHAL::EnableRxFull" name="UARTHAL::EnableRxFull">
+<area shape="rect" id="node1" title="Enables or disables SERCOM receive complete interrupt." alt="" coords="281,229,456,255"/>
+<area shape="rect" id="node2" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#a6e154b891bf847e222fd3509910a1acb" title="Clears Rx and/or Tx buffers." alt="" coords="20,5,219,47"/>
+<area shape="rect" id="node3" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#ab90c37bccfd58212dc13c32338859007" title="Disables and resets UART serial communication." alt="" coords="20,71,219,112"/>
+<area shape="rect" id="node4" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#a92e007bfb65edacf4a77e38c0d90c00a" title="Interrupt Service Routine." alt="" coords="5,137,233,163"/>
+<area shape="rect" id="node5" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#af7f47359ebd93eb963a25ddcf2f82e95" title="Receive character from logic layer receive buffer and free buffer space." alt="" coords="20,188,219,229"/>
+<area shape="rect" id="node6" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#ad7faff77724cdef304aba335cb8cf6be" title="Receives ASCII number and outputs unsigned int." alt="" coords="20,253,219,295"/>
+<area shape="rect" id="node7" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#af32a208d38efa9b6f59abe90007f8f14" title="Checks if input string followed by an ASCII parameter has been received from USART and returns the AS..." alt="" coords="20,319,219,360"/>
+<area shape="rect" id="node8" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#a61f2d80e5a462f4312bec7be7fa70c89" title="Checks if input string has been received from USART." alt="" coords="20,384,219,425"/>
+<area shape="rect" id="node9" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#a7fc563163f811d74b8f901a1d0c3d302" title="Resets receive buffer." alt="" coords="20,449,219,491"/>
+</map>

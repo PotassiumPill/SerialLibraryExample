@@ -1,0 +1,4 @@
+<map id="UARTHAL::ReadyToTransmit" name="UARTHAL::ReadyToTransmit">
+<area shape="rect" id="node1" title="Checks if SERCOM data register is empty and therefore ready for transmission." alt="" coords="281,5,484,32"/>
+<area shape="rect" id="node2" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#a92e007bfb65edacf4a77e38c0d90c00a" title="Interrupt Service Routine." alt="" coords="5,5,233,32"/>
+</map>

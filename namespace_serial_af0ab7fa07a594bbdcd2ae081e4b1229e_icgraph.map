@@ -1,0 +1,5 @@
+<map id="Serial::Int2ASCII" name="Serial::Int2ASCII">
+<area shape="rect" id="node1" title="Integer to ASCII helper function." alt="" coords="252,46,379,73"/>
+<area shape="rect" id="node2" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#a97e30c5cec5953dad0167ba0e96c8923" title="Transmits unsigned int as ASCII string." alt="" coords="5,5,204,47"/>
+<area shape="rect" id="node3" href="$class_serial_u_s_b_1_1_u_s_b_controller.html#a41534109837d3f7557049e6d67fdfac0" title="Transmits unsigned int as ASCII string over USB." alt="" coords="12,71,197,112"/>
+</map>

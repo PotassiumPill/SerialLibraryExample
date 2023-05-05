@@ -1,0 +1,10 @@
+<map id="SerialUART::UARTController::ISR" name="SerialUART::UARTController::ISR">
+<area shape="rect" id="node1" title="Interrupt Service Routine." alt="" coords="5,157,233,184"/>
+<area shape="rect" id="node2" href="$namespace_u_a_r_t_h_a_l.html#a2f85c38019e9b31dbca6aa7f32fb991d" title="Enables or disables SERCOM receive complete interrupt." alt="" coords="295,5,470,32"/>
+<area shape="rect" id="node3" href="$namespace_u_a_r_t_h_a_l.html#a907220a1973382de08130b2822677ec0" title="Enables or disables SERCOM data register empty interrupt." alt="" coords="286,56,479,83"/>
+<area shape="rect" id="node4" href="$namespace_u_a_r_t_h_a_l.html#a6b9f4a6284ebb0336eb74f9aa19d83bd" title="Reads SERCOM data register." alt="" coords="292,107,473,133"/>
+<area shape="rect" id="node5" href="$namespace_u_a_r_t_h_a_l.html#a558c9aed77d7cbf80436471f4e7f654a" title="Checks if receive has completed and therefore SERCOM data register is ready to be read." alt="" coords="283,157,482,184"/>
+<area shape="rect" id="node6" href="$namespace_u_a_r_t_h_a_l.html#a933955f97cdcf01b2121c7bcd83abc43" title="Checks if SERCOM data register is empty and therefore ready for transmission." alt="" coords="281,208,484,235"/>
+<area shape="rect" id="node7" href="$namespace_u_a_r_t_h_a_l.html#a37ef71c9c580fb0c07b863fa2da0f2b3" title="Checks if error occurred." alt="" coords="281,259,484,285"/>
+<area shape="rect" id="node8" href="$namespace_u_a_r_t_h_a_l.html#a22f60b0a7746c84335efd11d68129416" title="Writes to SERCOM data register." alt="" coords="293,309,472,336"/>
+</map>

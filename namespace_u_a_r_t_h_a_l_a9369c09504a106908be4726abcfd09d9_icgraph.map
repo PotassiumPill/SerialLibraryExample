@@ -1,0 +1,4 @@
+<map id="UARTHAL::InitSercom" name="UARTHAL::InitSercom">
+<area shape="rect" id="node1" title="Initializing function for UART serial communication low level drivers." alt="" coords="252,13,413,39"/>
+<area shape="rect" id="node2" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#a70cc27f9c5e3920954e4b2dea8e5d7b8" title="Initializes UART serial communication." alt="" coords="5,5,204,47"/>
+</map>

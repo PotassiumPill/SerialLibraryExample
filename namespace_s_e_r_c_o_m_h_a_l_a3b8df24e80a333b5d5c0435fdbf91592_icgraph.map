@@ -1,0 +1,4 @@
+<map id="SERCOMHAL::ConfigPin" name="SERCOMHAL::ConfigPin">
+<area shape="rect" id="node1" title="Configures a pin based on location, input/output, and multiplexing." alt="" coords="224,13,397,39"/>
+<area shape="rect" id="node2" href="$class_serial_s_p_i_1_1_s_p_i_controller.html#a84f78bb2865e1f36b0dfe2f0567c01cd" title="Change Slave Select Line pin (if using multiple clients)" alt="" coords="5,5,176,47"/>
+</map>

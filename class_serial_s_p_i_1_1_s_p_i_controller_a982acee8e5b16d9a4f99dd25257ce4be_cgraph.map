@@ -1,0 +1,10 @@
+<map id="SerialSPI::SPIController::ISR" name="SerialSPI::SPIController::ISR">
+<area shape="rect" id="node1" title="Interrupt Service Routine." alt="" coords="5,157,205,184"/>
+<area shape="rect" id="node2" href="$namespace_s_p_i_h_a_l.html#a6d0f0f6ce58c081097768d0eafe596f4" title="Enables or disables SERCOM receive complete interrupt." alt="" coords="267,5,427,32"/>
+<area shape="rect" id="node3" href="$namespace_s_p_i_h_a_l.html#a6e3a8d74a37871a188d276b85c0b6ce8" title="Enables or disables SERCOM data register empty interrupt." alt="" coords="258,56,437,83"/>
+<area shape="rect" id="node4" href="$namespace_s_p_i_h_a_l.html#a092cde904e797f83ab0f5b37778376cb" title="Reads SERCOM data register." alt="" coords="264,107,431,133"/>
+<area shape="rect" id="node5" href="$namespace_s_p_i_h_a_l.html#a38569666cf554783be9abec61a47808b" title="Checks if receive has completed and therefore SERCOM data register is ready to be read." alt="" coords="256,157,439,184"/>
+<area shape="rect" id="node6" href="$namespace_s_p_i_h_a_l.html#a192258cfd0f723976825b81d3035cf90" title="Checks if SERCOM data register is empty and therefore ready for transmission." alt="" coords="254,208,441,235"/>
+<area shape="rect" id="node7" href="$namespace_s_p_i_h_a_l.html#ad8572ed565717b20cfc53cbf5534e67a" title="Checks if error occurred." alt="" coords="253,259,441,285"/>
+<area shape="rect" id="node8" href="$namespace_s_p_i_h_a_l.html#abf381ac57852166c1ba9b2c22910639a" title="Writes to SERCOM data register." alt="" coords="266,309,429,336"/>
+</map>

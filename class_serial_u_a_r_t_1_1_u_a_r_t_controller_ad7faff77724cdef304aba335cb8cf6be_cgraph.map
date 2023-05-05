@@ -1,0 +1,4 @@
+<map id="SerialUART::UARTController::ReceiveInt" name="SerialUART::UARTController::ReceiveInt">
+<area shape="rect" id="node1" title="Receives ASCII number and outputs unsigned int." alt="" coords="5,5,204,47"/>
+<area shape="rect" id="node2" href="$namespace_u_a_r_t_h_a_l.html#a2f85c38019e9b31dbca6aa7f32fb991d" title="Enables or disables SERCOM receive complete interrupt." alt="" coords="252,13,427,39"/>
+</map>

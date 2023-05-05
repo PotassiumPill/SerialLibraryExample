@@ -1,0 +1,4 @@
+<map id="UARTHAL::EnableSercomErrors" name="UARTHAL::EnableSercomErrors">
+<area shape="rect" id="node1" title="Enables or disables SERCOM error interrupt." alt="" coords="252,13,475,39"/>
+<area shape="rect" id="node2" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#acbb058f8002a9bd9e3fdbcbd8ecdf88f" title="Enabler for Error interrupt." alt="" coords="5,5,204,47"/>
+</map>

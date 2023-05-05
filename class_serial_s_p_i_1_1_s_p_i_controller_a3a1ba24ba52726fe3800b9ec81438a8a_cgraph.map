@@ -1,0 +1,4 @@
+<map id="SerialSPI::SPIController::Receive" name="SerialSPI::SPIController::Receive">
+<area shape="rect" id="node1" title="Receive character from logic layer MISO buffer and free buffer space." alt="" coords="5,5,176,47"/>
+<area shape="rect" id="node2" href="$namespace_s_p_i_h_a_l.html#a6d0f0f6ce58c081097768d0eafe596f4" title="Enables or disables SERCOM receive complete interrupt." alt="" coords="224,13,384,39"/>
+</map>

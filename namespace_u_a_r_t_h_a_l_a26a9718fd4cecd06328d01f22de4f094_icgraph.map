@@ -1,0 +1,4 @@
+<map id="UARTHAL::DeinitSercom" name="UARTHAL::DeinitSercom">
+<area shape="rect" id="node1" title="Tear down function for UART serial communication low level drivers." alt="" coords="252,13,431,39"/>
+<area shape="rect" id="node2" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#ab90c37bccfd58212dc13c32338859007" title="Disables and resets UART serial communication." alt="" coords="5,5,204,47"/>
+</map>

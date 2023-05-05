@@ -1,0 +1,8 @@
+<map id="UARTHAL::EnableTxEmpty" name="UARTHAL::EnableTxEmpty">
+<area shape="rect" id="node1" title="Enables or disables SERCOM data register empty interrupt." alt="" coords="281,137,475,163"/>
+<area shape="rect" id="node2" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#a6e154b891bf847e222fd3509910a1acb" title="Clears Rx and/or Tx buffers." alt="" coords="20,5,219,47"/>
+<area shape="rect" id="node3" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#ab90c37bccfd58212dc13c32338859007" title="Disables and resets UART serial communication." alt="" coords="20,71,219,112"/>
+<area shape="rect" id="node4" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#a92e007bfb65edacf4a77e38c0d90c00a" title="Interrupt Service Routine." alt="" coords="5,137,233,163"/>
+<area shape="rect" id="node5" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#ab23205f9716835204b376bd6326a0aae" title="Resets transmit buffer." alt="" coords="20,188,219,229"/>
+<area shape="rect" id="node6" href="$class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#a6115ee08a68979d93ee22489937fa262" title="Transmit character into logic layer transmit buffer to be sent to USART data buffer." alt="" coords="20,253,219,295"/>
+</map>

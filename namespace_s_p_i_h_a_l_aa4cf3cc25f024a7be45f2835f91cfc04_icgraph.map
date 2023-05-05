@@ -1,0 +1,4 @@
+<map id="SPIHAL::DeinitSercom" name="SPIHAL::DeinitSercom">
+<area shape="rect" id="node1" title="Tear down function for SPI serial communication low level drivers." alt="" coords="224,13,388,39"/>
+<area shape="rect" id="node2" href="$class_serial_s_p_i_1_1_s_p_i_controller.html#aad4d083ef9093fe0462e124072757fb6" title="Disables and resets SPI serial communication." alt="" coords="5,5,176,47"/>
+</map>

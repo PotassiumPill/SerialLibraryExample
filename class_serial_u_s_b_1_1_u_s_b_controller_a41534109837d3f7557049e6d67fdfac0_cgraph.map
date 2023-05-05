@@ -1,0 +1,4 @@
+<map id="SerialUSB::USBController::TransmitInt" name="SerialUSB::USBController::TransmitInt">
+<area shape="rect" id="node1" title="Transmits unsigned int as ASCII string over USB." alt="" coords="5,5,191,47"/>
+<area shape="rect" id="node2" href="$namespace_serial.html#af0ab7fa07a594bbdcd2ae081e4b1229e" title="Integer to ASCII helper function." alt="" coords="239,13,365,39"/>
+</map>

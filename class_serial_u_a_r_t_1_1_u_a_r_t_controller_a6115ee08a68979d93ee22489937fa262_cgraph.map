@@ -1,0 +1,4 @@
+<map id="SerialUART::UARTController::Transmit" name="SerialUART::UARTController::Transmit">
+<area shape="rect" id="node1" title="Transmit character into logic layer transmit buffer to be sent to USART data buffer." alt="" coords="5,5,204,47"/>
+<area shape="rect" id="node2" href="$namespace_u_a_r_t_h_a_l.html#a907220a1973382de08130b2822677ec0" title="Enables or disables SERCOM data register empty interrupt." alt="" coords="252,13,445,39"/>
+</map>
