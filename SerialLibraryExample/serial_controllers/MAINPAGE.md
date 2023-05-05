@@ -1,23 +1,23 @@
-# Embedded Serial Communicaton Library for C++
+# Embedded %Serial Communicaton Library for C++
 
 Library for serial communication in C++ using various APIs and hardware for use in Microchip Studio projects.
 
 ## Current APIs:
-1)Serial UART
-2) Serial USB (CDC) using tinyUSB
-3) Serial SPI
+1) %Serial UART\n 
+2) %Serial USB (CDC) using tinyusb\n 
+3) %Serial SPI\n 
 
 ## Current Hardware:
 1) SAMD21 Series ARM Microcontroller
 
 ## How To Use:
-1) Setup project for desired hardware.
-2) In your C and C++ compilers, add ../serial_controllers to the include path.
-3) Open serial_comm_config.h, and define the SERCOM_MCU_OPT macro to your desired hardware (refer to serial_comm_options.h for all defined hardware).
-4) Define the SERCOM_MODULE_OPT as all desired protocols for your project (OPT_SERCOM_UART | OPT_SERCOM_SPI | OPT_SERCOM_USB defines all protocols).
-5) include serial_communication.h in your project to use serial protocols.
-6) Initialize harware clocks.
-7) Initialize and implement all ISRs to ensure proper functionality!
+1) Setup project for desired hardware.\n 
+2) In your C and C++ compilers, add ../serial_controllers to the include path.\n 
+3) Open serial_comm_config.h, and define the SERCOM_MCU_OPT macro to your desired hardware (refer to serial_comm_options.h for all defined hardware).\n 
+4) Define the SERCOM_MODULE_OPT as all desired protocols for your project (OPT_SERCOM_UART | OPT_SERCOM_SPI | OPT_SERCOM_USB defines all protocols).\n 
+5) include serial_communication.h in your project to use serial protocols.\n 
+6) Initialize harware clocks.\n 
+7) Initialize and implement all ISRs to ensure proper functionality!\n 
 
 ## Serial USB Code Setup Example:
 ```
