@@ -54,6 +54,7 @@ Example project to showcase custom C++ serial communication library, configured 
 	#define CFG_TUSB_MCU        OPT_MCU_CHIP_NAME
 ```
 where `OPT_SERCOM_CHIP_NAME` is the macro you defined in [serial_comm_options.h](/SerialLibraryExample/serial_controllers/serial_comm_options.h) and `OPT_MCU_CHIP_NAME` is the tinyUSB macro definition for your chip as found in [tusb_option.h](/SerialLibraryExample/serial_controllers/tusb_option.h). Refer to [tinyUSB repository](https://github.com/hathach/tinyusb/tree/master/src) or skip this step and do not use USB functionality for this chip.
+
 4) Navigate to the [hardware](/SerialLibraryExample/serial_controllers/serial_usb/hardware) directory under the [serial_usb](/SerialLibraryExample/serial_controllers/serial_usb) directory.
 5) Add a new cpp file to this directory for your chip, ie `usb_chipname.cpp`.
 6) At the top, include this code block:
