@@ -254,5 +254,5 @@ namespace SPICHIPNAME
 12) Before the last `#endif` line and before the last `#include` line, add the following code for your new chip:
 ```
 #elif (SPI_MCU_OPT == OPT_SERCOM_CHIP_NAME)
-#include "serial_spi/hardware/uart_spi.h"
+#include "serial_spi/hardware/spi_chipname.h"
 ```
