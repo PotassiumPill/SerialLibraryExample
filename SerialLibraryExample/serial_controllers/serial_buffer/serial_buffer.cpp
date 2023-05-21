@@ -27,13 +27,11 @@ uint32_t Serial::Int2ASCII(uint32_t num, char (*result)[10])
 		numel++;
 	}
 	//convert each digit to ASCII and add to buffer
-	uint8_t i = 0u;
-	while(i < numel)
+	for(uint8_t i = 0; i < numel; i++)
 	{
 		(*result)[i] = temp / multiplier + 48u;
 		temp %= multiplier;
 		multiplier /= 10u;
-		i++;
 	}
 	return numel;
 }
@@ -89,18 +87,17 @@ bool Serial::SerialBuffer::GetString(const char *input, uint32_t shift, bool mov
 		uint32_t numel = 0;
 		//finds size of input string by detecting null character
 		while(input[numel] != '\0') numel++;
-		uint32_t i = 0;
 		uint32_t rd_index;
 		uint32_t bsize = buffer.GetSize();
 		char * arr_ref = buffer.GetRawElements(&rd_index);
 		uint32_t reader = rd_index + ((shift > rd_index) * bsize) - shift;
-		while(has_string && i < numel)
+		for(uint32_t i = 0; i < numel; i++)
 		{
 			//iterates backwards in buffer and input string and checks if each element is equal to each other
 			if(reader == 0u) reader = bsize - 1;
 			else reader--;
-			i++;
 			has_string = (input[numel - i] == arr_ref[reader]);
+			if(!has_string) break;
 		}
 		if(has_string)
 		{
