@@ -50,7 +50,7 @@ namespace GenericBuffer {
 			ResetBuffer(arr, arr_size);
 		}
 		/*!
-		 * \Destructor
+		 * \brief Destructor
 		 *
 		 * Destroys Generic Buffer object instance.
 		 */
