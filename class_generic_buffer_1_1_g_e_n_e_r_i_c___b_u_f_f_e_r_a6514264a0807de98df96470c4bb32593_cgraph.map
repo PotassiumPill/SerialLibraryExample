@@ -1,5 +1,5 @@
 <map id="GenericBuffer::GENERIC_BUFFER::~GENERIC_BUFFER" name="GenericBuffer::GENERIC_BUFFER::~GENERIC_BUFFER">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,223,47"/>
+<area shape="rect" id="node1" title="Destructor." alt="" coords="5,5,223,47"/>
 <area shape="rect" id="node2" href="$class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html#a994f81bcb17dbaa64a061f0e20283b70" title="Clears ring buffer." alt="" coords="271,5,448,47"/>
 <area shape="rect" id="node3" href="$class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html#ac94fdc99ed188c1b1814ed94e5f4656b" title="Resets the buffer with new array and size." alt="" coords="496,5,673,47"/>
 </map>
