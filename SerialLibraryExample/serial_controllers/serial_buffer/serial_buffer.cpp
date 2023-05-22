@@ -96,7 +96,7 @@ bool Serial::SerialBuffer::GetString(const char *input, uint32_t shift, bool mov
 			//iterates backwards in buffer and input string and checks if each element is equal to each other
 			if(reader == 0u) reader = bsize - 1;
 			else reader--;
-			has_string = (input[numel - i] == arr_ref[reader]);
+			has_string = (input[numel - 1 - i] == arr_ref[reader]);
 			if(!has_string) break;
 		}
 		if(has_string)
