@@ -97,6 +97,8 @@ void SERCOMHAL::ConfigPin(SERCOMHAL::Pinout pin, bool output, bool multiplexed, 
 			PORT->Group[pin.port].PINCFG[pin.pin].bit.PULLEN = 0x1;
 			if(pull == PullResistor::PinPullUp)
 				PORT->Group[pin.port].OUTSET.reg = 0x1u << pin.pin;
+			else
+				PORT->Group[pin.port].OUTCLR.reg = 0x1u << pin.pin;	
 		}
 	}
 	if(multiplexed)

@@ -16,8 +16,9 @@ void UARTSAMD21::GetPeripheralDefaults(UARTHAL::Peripheral * peripheral, SERCOMH
 	peripheral->parity = UARTHAL::Parity::PNone;
 	peripheral->endianness = UARTHAL::Endian::LSB;
 	peripheral->num_stop_bits = UARTHAL::StopBits::OneStopBit;
-	peripheral->extra_uart_params[ExtraParams::GEN_CLK] = SERCOMSAMD21::GEN_CLK_1;
-	peripheral->extra_uart_params[ExtraParams::GEN_CLK_DIVISOR] = 0;
+	peripheral->extra_uart_params[ExtraParams::GEN_CLK] = SERCOMSAMD21::GenericClock::GEN_CLK_1;
+	peripheral->extra_uart_params[ExtraParams::GEN_CLK_DIVISOR_BITS_1_8] = 0;
+	peripheral->extra_uart_params[ExtraParams::GEN_CLK_DIVISOR_BITS_9_16] = 0;
 	peripheral->extra_uart_params[ExtraParams::GEN_CLK_RUN_STANDY] = false;
 	peripheral->extra_uart_params[ExtraParams::PAD_CONFIG] = PadConfig::Tx2_Rx3;
 	peripheral->extra_uart_params[ExtraParams::SAMPLE_ADJUSTMENT] = SampleAdjustment::Over16x_7_8_9;
@@ -59,13 +60,40 @@ void UARTHAL::GetPeripheralDefaults(UARTHAL::Peripheral * peripheral)
 	UARTSAMD21::GetPeripheralDefaults(peripheral, SERCOMSAMD21::SercomID::Sercom0);
 }
 
+void UARTSAMD21::SetGenClkParam(UARTHAL::Peripheral * peripheral, SERCOMSAMD21::GenericClock generic_clock)
+{
+	peripheral->extra_uart_params[ExtraParams::GEN_CLK] = generic_clock;
+}
+
+void UARTSAMD21::SetGenClkDivisorParam(UARTHAL::Peripheral * peripheral, uint16_t divisor)
+{
+	peripheral->extra_uart_params[ExtraParams::GEN_CLK_DIVISOR_BITS_9_16] = (uint8_t)((divisor >> 8) & 0xFF);
+	peripheral->extra_uart_params[ExtraParams::GEN_CLK_DIVISOR_BITS_1_8] = (uint8_t)(divisor & 0xFF);
+}
+
+void UARTSAMD21::SetGenClkRunStandbyParam(UARTHAL::Peripheral * peripheral, bool run_standy)
+{
+	peripheral->extra_uart_params[ExtraParams::GEN_CLK_RUN_STANDY] = (uint8_t)run_standy;
+}
+
+void UARTSAMD21::SetPadConfigParam(UARTHAL::Peripheral * peripheral, UARTSAMD21::PadConfig pad_config)
+{
+	peripheral->extra_uart_params[ExtraParams::PAD_CONFIG] = pad_config;
+}
+
+void UARTSAMD21::SetSampleAdjustmentParam(UARTHAL::Peripheral * peripheral, UARTSAMD21::SampleAdjustment sample_adjustment)
+{
+	peripheral->extra_uart_params[ExtraParams::SAMPLE_ADJUSTMENT] = sample_adjustment;
+}
+
 void UARTHAL::InitSercom(UARTHAL::Peripheral * peripheral)
 {
 	//preset: 8MHz osc set and enabled, fed into clock generator 0
 	SERCOMHAL::ConfigPin(peripheral->rx_pin, false, true);
 	SERCOMHAL::ConfigPin(peripheral->tx_pin, true, true);
 	Sercom *sercom_ptr = SERCOMSAMD21::GetSercom(peripheral->sercom_id);
-	SERCOMSAMD21::EnableSercomClock(peripheral->sercom_id, (SERCOMSAMD21::GenericClock)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK], (uint16_t)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK_DIVISOR], (bool)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK_RUN_STANDY]);
+	uint16_t gen_clk_divisor = (((uint16_t)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK_DIVISOR_BITS_9_16] << 8) & 0xFF00) | ((uint16_t)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK_DIVISOR_BITS_1_8] & 0xFF);
+	SERCOMSAMD21::EnableSercomClock(peripheral->sercom_id, (SERCOMSAMD21::GenericClock)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK], gen_clk_divisor, (bool)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK_RUN_STANDY]);
 	uint8_t tx = 0;
 	uint8_t rx = 0;
 	switch(peripheral->extra_uart_params[UARTSAMD21::ExtraParams::PAD_CONFIG])

@@ -19,10 +19,11 @@
 namespace SPISAMD21
 {
 	enum ExtraParams : uint8_t {
-		GEN_CLK,					//!< ID of generic clock used for %SPI
-		GEN_CLK_DIVISOR,			//!< Clock speed divisor
-		GEN_CLK_RUN_STANDY,			//!< Clock on/off while in standby
-		PAD_CONFIG					//!< Pad configuration for pins
+		GEN_CLK,							//!< ID of generic clock used for %SPI
+		GEN_CLK_DIVISOR_BITS_9_16,			//!< Clock speed divisor (bit 9:16)
+		GEN_CLK_DIVISOR_BITS_1_8,			//!< Clock speed divisor (bit 1:8)
+		GEN_CLK_RUN_STANDY,					//!< Clock on/off while in standby
+		PAD_CONFIG							//!< Pad configuration for pins
 	};
 	/*!
 	 * \brief An enum type for for I/O Pad Configuration of MISO, MOSI, and SCK pins
@@ -46,6 +47,11 @@ namespace SPISAMD21
 	 * \param sercom_id SERCOM# to be configured as %SPI (default = Sercom4)
 	 */
 	void GetPeripheralDefaults(SPIHAL::Peripheral * peripheral, SERCOMHAL::SercomID sercom_id = SERCOMSAMD21::SercomID::Sercom4);
+	
+	void SetGenClkParam(SPIHAL::Peripheral * peripheral, SERCOMSAMD21::GenericClock generic_clock = SERCOMSAMD21::GenericClock::GEN_CLK_2);		//!< Setter for generic clock peripheral parameter
+	void SetGenClkDivisorParam(SPIHAL::Peripheral * peripheral, uint16_t divisor = 0);															//!< Setter for generic clock divisor peripheral parameter
+	void SetGenClkRunStandbyParam(SPIHAL::Peripheral * peripheral, bool run_standy = false);													//!< Setter for generic clock run in standby peripheral parameter
+	void SetPadConfigParam(SPIHAL::Peripheral * peripheral, PadConfig pad_config = PadConfig::DO2_DI0_SCK3_CSS1);								//!< Setter for pad config peripheral parameter
 }
 
 #endif //__SPI_SAMD21_H__

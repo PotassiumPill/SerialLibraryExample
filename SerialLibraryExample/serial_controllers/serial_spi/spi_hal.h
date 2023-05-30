@@ -13,7 +13,7 @@
 #include "serial_common/common_hal.h"
 
 #if (SPI_MCU_OPT == OPT_SERCOM_SAMD21)
-#define NUM_EXTRA_SPI_PARAMS 4
+#define NUM_EXTRA_SPI_PARAMS 5
 #else
 #define NUM_EXTRA_SPI_PARAMS 1
 #endif
@@ -59,7 +59,7 @@ namespace SPIHAL
 		uint32_t baud_value;									//!< Baud rate of %SPI transmission
 		ClockMode clock_mode;									//!< Clock mode of %SPI transmission
 		Endian endianess;										//!< Order of data bit shifting
-		uint32_t extra_spi_params[NUM_EXTRA_SPI_PARAMS];		//!< Extra parameters for hardware specific configurations (such as oversampling, clock parameters, etc.)
+		uint8_t extra_spi_params[NUM_EXTRA_SPI_PARAMS];		//!< Extra parameters for hardware specific configurations (such as oversampling, clock parameters, etc.)
 	};
 	/*!
 	 * \brief Populates a peripheral struct with default values

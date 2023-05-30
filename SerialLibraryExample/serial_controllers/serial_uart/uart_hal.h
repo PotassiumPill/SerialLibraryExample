@@ -13,7 +13,7 @@
 #include "serial_common/common_hal.h"
 
 #if (UART_MCU_OPT == OPT_SERCOM_SAMD21)
-#define NUM_EXTRA_UART_PARAMS 5
+#define NUM_EXTRA_UART_PARAMS 6
 #else
 #define NUM_EXTRA_UART_PARAMS 1
 #endif
@@ -60,7 +60,7 @@ namespace UARTHAL
 		Parity parity;											//!< Parity type in UART transmission
 		Endian endianness;										//!< Order of data bit shifting
 		StopBits num_stop_bits;									//!< Number of stop bits in data transmission
-		uint32_t extra_uart_params[NUM_EXTRA_UART_PARAMS];		//!< Extra parameters for hardware specific configurations (such as oversampling, clock parameters, etc.)
+		uint8_t extra_uart_params[NUM_EXTRA_UART_PARAMS];		//!< Extra parameters for hardware specific configurations (such as oversampling, clock parameters, etc.)
 	};
 	/*!
 	 * \brief Populates a peripheral struct with default values

@@ -24,11 +24,12 @@ namespace UARTSAMD21
 	 * Extra parameter labels used in extra_spi_params peripheral array for SAMD21-specific configuration 
 	 */
 	enum ExtraParams : uint8_t {
-		GEN_CLK,					//!< ID of generic clock used for %UART
-		GEN_CLK_DIVISOR,			//!< Clock speed divisor
-		GEN_CLK_RUN_STANDY,			//!< Clock on/off while in standby
-		PAD_CONFIG,					//!< Pad configuration for pins
-		SAMPLE_ADJUSTMENT			//!< Over-sampling rate and sampling adjustment
+		GEN_CLK,						//!< ID of generic clock used for %UART
+		GEN_CLK_DIVISOR_BITS_9_16,		//!< Clock speed divisor (bit 9:16)
+		GEN_CLK_DIVISOR_BITS_1_8,		//!< Clock speed divisor (bit 1:8)
+		GEN_CLK_RUN_STANDY,				//!< Clock on/off while in standby
+		PAD_CONFIG,						//!< Pad configuration for pins
+		SAMPLE_ADJUSTMENT				//!< Over-sampling rate and sampling adjustment
 	};
 	/*!
 	 * \brief An enum type for over-sampling rate and sampling adjustment
@@ -63,6 +64,12 @@ namespace UARTSAMD21
 	 * \param sercom_id SERCOM# to be configured as %UART (default = Sercom0)
 	 */
 	void GetPeripheralDefaults(UARTHAL::Peripheral * peripheral, SERCOMHAL::SercomID sercom_id = SERCOMSAMD21::SercomID::Sercom0);
+	
+	void SetGenClkParam(UARTHAL::Peripheral * peripheral, SERCOMSAMD21::GenericClock generic_clock = SERCOMSAMD21::GenericClock::GEN_CLK_1);		//!< Setter for generic clock peripheral parameter
+	void SetGenClkDivisorParam(UARTHAL::Peripheral * peripheral, uint16_t divisor = 0);																//!< Setter for generic clock divisor peripheral parameter
+	void SetGenClkRunStandbyParam(UARTHAL::Peripheral * peripheral, bool run_standy = false);														//!< Setter for generic clock run in standby peripheral parameter
+	void SetPadConfigParam(UARTHAL::Peripheral * peripheral, PadConfig pad_config = PadConfig::Tx2_Rx3);											//!< Setter for pad config peripheral parameter
+	void SetSampleAdjustmentParam(UARTHAL::Peripheral * peripheral, SampleAdjustment sample_adjustment = SampleAdjustment::Over16x_7_8_9);			//!< Setter for sample adjustment peripheral parameter
 }
 
 #endif //__UART_SAMD21_H__
