@@ -1,8 +1,8 @@
 /*
- * Name			:	serial_communication.h
- * Created		:	1/20/2023 12:05:36 PM
- * Author		:	Aaron Reilman
- * Description	:	Header for serial communication library. 
+ * Name				:	serial_communication.h
+ * Created			:	1/20/2023 12:05:36 PM
+ * Author			:	Aaron Reilman
+ * Description		:	Header for serial communication library. 
  */ 
 
 #ifndef __SERIAL_COMMUNICATION_H__

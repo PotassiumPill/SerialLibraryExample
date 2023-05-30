@@ -1,8 +1,8 @@
 /* 
- * Name			:	serial_spi.h
- * Created		:	10/13/2022 4:59:36 PM
- * Author		:	Aaron Reilman
- * Description	:	A SPI serial communication driver.
+ * Name				:	serial_spi.h
+ * Created			:	10/13/2022 4:59:36 PM
+ * Author			:	Aaron Reilman
+ * Description		:	A SPI serial communication driver.
  */
 
 
@@ -59,8 +59,8 @@ namespace SerialSPI
 	 * \brief A struct containing the buffer states of the MOSI and MISO buffers
 	 */
 	struct BufferStates {
-		GenericBuffer::BufferState mosi_buffer_state;	//!< MOSI buffer state
-		GenericBuffer::BufferState miso_buffer_state;	//!< MISO buffer state
+		GenericBuffer::BufferState mosi_buffer_state;		//!< MOSI buffer state
+		GenericBuffer::BufferState miso_buffer_state;		//!< MISO buffer state
 	};
 	/*!
 	 * \brief %SPI serial communication controller object
@@ -189,9 +189,9 @@ namespace SerialSPI
 		 */
 		bool Receive(char * output = nullptr);
 
-		uint32_t GetMISOAvailable(void) const;		//!< Getter for number of unread characters available in MISO/receive buffer
-		uint32_t GetMOSIEmpty(void) const;			//!< Getter for number of empty slots available in MOSI/transmit buffer
-		BufferStates GetBufferStates(void) const;	//!< Get MISO and MOSI buffer states
+		uint32_t GetMISOAvailable(void) const;			//!< Getter for number of unread characters available in MISO/receive buffer
+		uint32_t GetMOSIEmpty(void) const;				//!< Getter for number of empty slots available in MOSI/transmit buffer
+		BufferStates GetBufferStates(void) const;		//!< Get MISO and MOSI buffer states
 		/*!
 		 * \brief Getter for errors, interrupts, and power state.
 		 *

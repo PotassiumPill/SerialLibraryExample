@@ -1,8 +1,8 @@
 /* 
- * Name			:	serial_buffer.h
- * Created		:	8/18/2022 12:49:40 PM
- * Author		:	Aaron Reilman
- * Description	:	A generic FIFO-like buffer for high level serial communication.
+ * Name				:	serial_buffer.h
+ * Created			:	8/18/2022 12:49:40 PM
+ * Author			:	Aaron Reilman
+ * Description		:	A generic FIFO-like buffer for high level serial communication.
  */
 
 
@@ -162,11 +162,11 @@ namespace Serial
 		 */
 		bool GetIntParam(uint32_t * output, const char *input, char delimiter, uint8_t max_digits, void (* int_func)(uint8_t, bool));
 		
-		void SetSercomID(SERCOMHAL::SercomID peripheral_id);	//!< Setter for SERCOM ID used on hardware.
-		SERCOMHAL::SercomID GetSercomID(void) const;			//!< Getter for SERCOM ID used on hardware.
-		uint32_t GetBufferEmpty(void) const;					//!< Getter for number of empty slots available in buffer
-		uint32_t GetBufferAvailable(void) const;				//!< Getter for number of chars available in buffer	
-		GenericBuffer::BufferState GetBufferState(void) const;	//!< Getter for buffer state (empty, full, neither)
+		void SetSercomID(SERCOMHAL::SercomID peripheral_id);		//!< Setter for SERCOM ID used on hardware.
+		SERCOMHAL::SercomID GetSercomID(void) const;				//!< Getter for SERCOM ID used on hardware.
+		uint32_t GetBufferEmpty(void) const;						//!< Getter for number of empty slots available in buffer
+		uint32_t GetBufferAvailable(void) const;					//!< Getter for number of chars available in buffer	
+		GenericBuffer::BufferState GetBufferState(void) const;		//!< Getter for buffer state (empty, full, neither)
 		
 		private:
 		//private data members

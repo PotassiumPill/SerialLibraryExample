@@ -1,8 +1,8 @@
 /* 
- * Name			:	uart_config.h
- * Created		:	8/10/2022 12:39:16 PM
- * Author		:	Aaron Reilman
- * Description	:	A UART serial communication configuration file.
+ * Name				:	uart_config.h
+ * Created			:	8/10/2022 12:39:16 PM
+ * Author			:	Aaron Reilman
+ * Description		:	A UART serial communication configuration file.
  */
 
 

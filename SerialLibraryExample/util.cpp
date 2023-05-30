@@ -1,8 +1,8 @@
 ﻿/*
- * Name        : util.cpp
- * Created     : 5/25/2022 3:15:43 PM
- * Author      : Andrew Bennett
- * Description : A utility library containing various functions for the ATSAMD21 microcontroller family.
+ * Name				:	util.cpp
+ * Created			:	5/25/2022 3:15:43 PM
+ * Author			:	Andrew Bennett
+ * Description		:	A utility library containing various functions for the ATSAMD21 microcontroller family.
  */
 
 #include "util.h"

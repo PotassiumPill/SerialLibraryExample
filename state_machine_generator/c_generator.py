@@ -120,11 +120,11 @@ def populate_state_machine(input, state_machine):
 
 def write_header_on_file(file, filename, description):
         file.write("/*\n")
-        file.write(f" * Name\t\t\t:\t{filename}\n")
+        file.write(f" * Name\t\t\t\t:\t{filename}\n")
         print_date = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
-        file.write(f" * Created\t\t:\t{print_date}\n")
-        file.write(f" * Author\t\t:\t{os.getlogin()}\n")
-        file.write(f" * Description\t:\t{description}\n")
+        file.write(f" * Created\t\t\t:\t{print_date}\n")
+        file.write(f" * Author\t\t\t:\t{os.getlogin()}\n")
+        file.write(f" * Description\t\t:\t{description}\n")
         file.write(" */\n\n\n")
 
 def generate_string(raw_string, style="CamelCase"):

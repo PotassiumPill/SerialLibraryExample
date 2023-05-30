@@ -1,8 +1,8 @@
 /*
- * Name			:	common_none.cpp
- * Created		:	1/23/2023 12:32:02 PM
- * Author		:	Aaron Reilman
- * Description	:	Blank template for hardware implementations of serial communication interfaces.
+ * Name				:	common_none.cpp
+ * Created			:	1/23/2023 12:32:02 PM
+ * Author			:	Aaron Reilman
+ * Description		:	Blank template for hardware implementations of serial communication interfaces.
  */
 
 #include "serial_common/common_hal.h"

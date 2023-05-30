@@ -1,8 +1,8 @@
 /* 
- * Name			:	spi_samd21.h
- * Created		:	10/13/2022 5:39:06 PM
- * Author		:	Aaron Reilman
- * Description	:	A SPI serial communication low level driver for samd21.
+ * Name				:	spi_samd21.h
+ * Created			:	10/13/2022 5:39:06 PM
+ * Author			:	Aaron Reilman
+ * Description		:	A SPI serial communication low level driver for samd21.
  */
 
 
@@ -18,6 +18,12 @@
  */
 namespace SPISAMD21
 {
+	enum ExtraParams : uint8_t {
+		GEN_CLK,					//!< ID of generic clock used for %SPI
+		GEN_CLK_DIVISOR,			//!< Clock speed divisor
+		GEN_CLK_RUN_STANDY,			//!< Clock on/off while in standby
+		PAD_CONFIG					//!< Pad configuration for pins
+	};
 	/*!
 	 * \brief An enum type for for I/O Pad Configuration of MISO, MOSI, and SCK pins
 	 */
@@ -40,16 +46,6 @@ namespace SPISAMD21
 	 * \param sercom_id SERCOM# to be configured as %SPI (default = Sercom4)
 	 */
 	void GetPeripheralDefaults(SPIHAL::Peripheral * peripheral, SERCOMHAL::SercomID sercom_id = SERCOMSAMD21::SercomID::Sercom4);
-	/*!
-	 * \brief Sets values to configure the generic clock generator before enabling %SPI
-	 *
-	 * Sets values to configure the generic clock generator used to feed into peripheral.
-	 *
-	 * \param gen_clk_id generic clock ID (default = GEN_CLK_3)
-	 * \param clock_divisor division factor to decrease frequency of clock (default = 0)
-	 * \param run_standby run clock while in standby mode (default = false)
-	 */
-	void SetGenClk(SERCOMSAMD21::GenericClock gen_clk_id = SERCOMSAMD21::GenericClock::GEN_CLK_2, uint16_t clock_divisor = 0, bool run_standby = false);
 }
 
 #endif //__SPI_SAMD21_H__

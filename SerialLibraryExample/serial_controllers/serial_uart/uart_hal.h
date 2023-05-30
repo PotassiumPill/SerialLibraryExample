@@ -1,8 +1,8 @@
 /* 
- * Name			:	uart_hal.h
- * Created		:	6/23/2022 11:08:30 AM
- * Author		:	Aaron Reilman
- * Description	:	A UART serial communication Hardware Abstraction Layer.
+ * Name				:	uart_hal.h
+ * Created			:	6/23/2022 11:08:30 AM
+ * Author			:	Aaron Reilman
+ * Description		:	A UART serial communication Hardware Abstraction Layer.
  */
 
 
@@ -11,6 +11,12 @@
 
 #include "serial_uart/uart_config.h"
 #include "serial_common/common_hal.h"
+
+#if (UART_MCU_OPT == OPT_SERCOM_SAMD21)
+#define NUM_EXTRA_UART_PARAMS 5
+#else
+#define NUM_EXTRA_UART_PARAMS 1
+#endif
 
 /*!
  * \brief %UART HAL global namespace.
@@ -26,14 +32,6 @@ namespace UARTHAL
 		MSB,							//!< Most significant bit is shifted out first
 		LSB								//!< Least significant bit is shifted out first
 	};
-	/*!
-	 * \brief Type definition for over-sampling rate and sampling adjustment
-	 */
-	typedef uint8_t SampleAdjustment;
-	/*!
-	 * \brief Type definition for I/O pad configuration of TX and RX pins
-	 */
-	typedef uint8_t PadConfig;
 	/*!
 	 * \brief An enum type for the number of stop bits in data transmission
 	 */
@@ -55,15 +53,14 @@ namespace UARTHAL
 	 * This struct contains all basic information needed to configure hardware for UART serial communication.
 	 */
 	struct Peripheral {	
-		SERCOMHAL::SercomID sercom_id;			//!< SERCOM# used in communication
-		PadConfig pad_config;					//!< I/O pad configuration for TX and RX pins
-		SERCOMHAL::Pinout tx_pin;				//!< TX (Transmit Data) I/O Pinout
-		SERCOMHAL::Pinout rx_pin;				//!< RX (Receive Data) I/O Pinout
-		uint32_t baud_value;					//!< Baud rate of UART transmission
-		SampleAdjustment sample_adjustment;		//!< Sampling rate and sample adjustment
-		Parity parity;							//!< Parity type in UART transmission
-		Endian endianness;						//!< Order of data bit shifting
-		StopBits num_stop_bits;					//!< Number of stop bits in data transmission
+		SERCOMHAL::SercomID sercom_id;							//!< SERCOM# used in communication
+		SERCOMHAL::Pinout tx_pin;								//!< TX (Transmit Data) I/O Pinout
+		SERCOMHAL::Pinout rx_pin;								//!< RX (Receive Data) I/O Pinout
+		uint32_t baud_value;									//!< Baud rate of UART transmission
+		Parity parity;											//!< Parity type in UART transmission
+		Endian endianness;										//!< Order of data bit shifting
+		StopBits num_stop_bits;									//!< Number of stop bits in data transmission
+		uint32_t extra_uart_params[NUM_EXTRA_UART_PARAMS];		//!< Extra parameters for hardware specific configurations (such as oversampling, clock parameters, etc.)
 	};
 	/*!
 	 * \brief Populates a peripheral struct with default values

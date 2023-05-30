@@ -1,8 +1,8 @@
 /* 
- * Name			:	serial_uart.h
- * Created		:	6/8/2022 11:12:06 AM
- * Author		:	Aaron Reilman
- * Description	:	A UART serial communication driver.
+ * Name				:	serial_uart.h
+ * Created			:	6/8/2022 11:12:06 AM
+ * Author			:	Aaron Reilman
+ * Description		:	A UART serial communication driver.
  */
 
 
@@ -53,17 +53,17 @@ namespace SerialUART
 	 * \brief A status struct containing interrupt and error statuses, and UART power state
 	 */
 	struct Status {
-		TXIRQState tx_interrupt;	//!< Last transmit interrupt detected
-		RXIRQState rx_interrupt;	//!< Last receive interrupt detected
-		UARTError error_state;		//!< Last error detected
-		bool uart_on;				//!< Power state
+		TXIRQState tx_interrupt;		//!< Last transmit interrupt detected
+		RXIRQState rx_interrupt;		//!< Last receive interrupt detected
+		UARTError error_state;			//!< Last error detected
+		bool uart_on;					//!< Power state
 	};
 	/*!
 	 * \brief A struct containing the buffer states of the transmit and receive buffers
 	 */
 	struct BufferStates {
-		GenericBuffer::BufferState tx_buffer_state;	//!< Transmit buffer state
-		GenericBuffer::BufferState rx_buffer_state;	//!< Receive buffer state
+		GenericBuffer::BufferState tx_buffer_state;		//!< Transmit buffer state
+		GenericBuffer::BufferState rx_buffer_state;		//!< Receive buffer state
 	};
 	/*!
 	 * \brief %UART serial communication controller object
@@ -271,9 +271,9 @@ namespace SerialUART
 		 */
 		bool ReceiveParam(uint32_t * output, const char *input, char delimiter = '\0', uint8_t max_digits = 8u);
 
-		uint32_t GetRXAvailable(void) const;		//!< Getter for number of unread characters available in receive buffer
-		uint32_t GetTXEmpty(void) const;			//!< Getter for number of empty slots available in transmit buffer
-		BufferStates GetBufferStates(void) const;	//!< Get receive and transmit buffer states
+		uint32_t GetRXAvailable(void) const;			//!< Getter for number of unread characters available in receive buffer
+		uint32_t GetTXEmpty(void) const;				//!< Getter for number of empty slots available in transmit buffer
+		BufferStates GetBufferStates(void) const;		//!< Get receive and transmit buffer states
 		/*!
 		 * \brief Getter for errors, interrupts, and power state.
 		 *

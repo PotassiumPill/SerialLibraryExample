@@ -1,8 +1,8 @@
 /*
- * Name			:	common_hal.h
- * Created		:	1/18/2023 4:24:03 PM
- * Author		:	Aaron Reilman
- * Description	:	Common generic hardware functionality for implementing serial controllers.
+ * Name				:	common_hal.h
+ * Created			:	1/18/2023 4:24:03 PM
+ * Author			:	Aaron Reilman
+ * Description		:	Common generic hardware functionality for implementing serial controllers.
  */ 
 
 
@@ -32,14 +32,22 @@ namespace SERCOMHAL
 	 */
 	typedef uint8_t SercomID;
 	/*!
+	 * \brief Type definition for Peripheral Function, used as an ID for a multiplexed pin's hardware function.
+	 */
+	typedef uint8_t PeripheralFunction;
+	/*!
+	 * \brief Type definition for PinPort, used as an ID for a pin's port.
+	 */
+	typedef uint8_t PinPort;
+	/*!
 	 * \brief A pinout struct to configure I/O pins with or without multiplexing.
 	 *
 	 * This struct contains all of the pinout information needed to configure I/O pins for serial communication or other uses.
 	 */
 	struct Pinout {
-		uint8_t peripheral_function;	//!< Numeric ID of the specific peripheral function to use.
-		uint8_t port;					//!< Numeric ID of the specific port (usually A/B) to use.
-		uint8_t pin;					//!< Numeric ID of the specific pin number to use.
+		PeripheralFunction peripheral_function;		//!< ID of the specific peripheral function (if feature exists) to use.
+		PinPort port;									//!< ID of the specific port to use.
+		uint8_t pin;								//!< Specific pin number to use.
 	};
 	/*!
 	 * \brief Configures a pin based on location, input/output, and multiplexing
