@@ -1,8 +1,8 @@
 /*
- * Name			:	uart_none.cpp
- * Created		:	1/23/2023 11:42:59 AM
- * Author		:	Aaron Reilman
- * Description	:	Blank template for hardware implementations of UART.
+ * Name				:	uart_none.cpp
+ * Created			:	1/23/2023 11:42:59 AM
+ * Author			:	Aaron Reilman
+ * Description		:	Blank template for hardware implementations of UART.
  */
 
 #include "serial_uart/uart_hal.h"

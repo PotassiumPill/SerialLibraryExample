@@ -1,8 +1,8 @@
 /* 
- * Name			:	spi_samd21.cpp
- * Created		:	10/13/2022 5:39:06 PM
- * Author		:	Aaron Reilman
- * Description	:	A SPI serial communication low level driver for samd21.
+ * Name				:	spi_samd21.cpp
+ * Created			:	10/13/2022 5:39:06 PM
+ * Author			:	Aaron Reilman
+ * Description		:	A SPI serial communication low level driver for samd21.
  */
 
 
@@ -10,66 +10,58 @@
 
 #if (SPI_MCU_OPT == OPT_SERCOM_SAMD21)
 
-SERCOMSAMD21::GenericClock spi_genclk = SERCOMSAMD21::GEN_CLK_2;
-uint16_t spi_genclk_divisor = 0;
-bool spi_genclk_run_stdby = false;
-
 void SPISAMD21::GetPeripheralDefaults(SPIHAL::Peripheral * peripheral, SERCOMHAL::SercomID sercom_id)
 {
-	peripheral->pad_config = PadConfig::DO2_DI0_SCK3_CSS1;
+	peripheral->extra_spi_params[ExtraParams::PAD_CONFIG] = PadConfig::DO2_DI0_SCK3_CSS1;
 	peripheral->baud_value =  50000;
 	peripheral->clock_mode =  SPIHAL::ClockMode::Mode0;
 	peripheral->endianess = SPIHAL::Endian::MSB;
 	peripheral->sercom_id = sercom_id;
+	peripheral->extra_spi_params[ExtraParams::GEN_CLK] = SERCOMSAMD21::GEN_CLK_2;
+	peripheral->extra_spi_params[ExtraParams::GEN_CLK_DIVISOR] = 0;
+	peripheral->extra_spi_params[ExtraParams::GEN_CLK_RUN_STANDY] = false;
 	switch(sercom_id)
 	{
 		case SERCOMSAMD21::SercomID::Sercom0:
-			peripheral->mosi_pin = (SERCOMHAL::Pinout){3, 0, 6};
-			peripheral->miso_pin = (SERCOMHAL::Pinout){3, 0, 4};
-			peripheral->sck_pin = (SERCOMHAL::Pinout){3, 0, 7};
-			peripheral->ssl_pin = (SERCOMHAL::Pinout){3, 0, 5};
+			peripheral->mosi_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 6};
+			peripheral->miso_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 4};
+			peripheral->sck_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 7};
+			peripheral->ssl_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 5};
 			break;
 		case SERCOMSAMD21::SercomID::Sercom1:
-			peripheral->mosi_pin = (SERCOMHAL::Pinout){2, 0, 18};
-			peripheral->miso_pin = (SERCOMHAL::Pinout){2, 0, 16};
-			peripheral->sck_pin = (SERCOMHAL::Pinout){2, 0, 19};
-			peripheral->ssl_pin = (SERCOMHAL::Pinout){2, 0, 17};
+			peripheral->mosi_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_C, SERCOMSAMD21::Port::PORT_A, 18};
+			peripheral->miso_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_C, SERCOMSAMD21::Port::PORT_A, 16};
+			peripheral->sck_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_C, SERCOMSAMD21::Port::PORT_A, 19};
+			peripheral->ssl_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_C, SERCOMSAMD21::Port::PORT_A, 17};
 			break;	
 		case SERCOMSAMD21::SercomID::Sercom2:
-			peripheral->mosi_pin = (SERCOMHAL::Pinout){3, 0, 10};
-			peripheral->miso_pin = (SERCOMHAL::Pinout){3, 0, 8};
-			peripheral->sck_pin = (SERCOMHAL::Pinout){3, 0, 11};
-			peripheral->ssl_pin = (SERCOMHAL::Pinout){3, 0, 9};
+			peripheral->mosi_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 10};
+			peripheral->miso_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 8};
+			peripheral->sck_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 11};
+			peripheral->ssl_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 9};
 			break;
 		case SERCOMSAMD21::SercomID::Sercom3:
-			peripheral->mosi_pin = (SERCOMHAL::Pinout){3, 0, 18};
-			peripheral->miso_pin = (SERCOMHAL::Pinout){3, 0, 16};
-			peripheral->sck_pin = (SERCOMHAL::Pinout){3, 0, 19};
-			peripheral->ssl_pin = (SERCOMHAL::Pinout){3, 0, 17};
+			peripheral->mosi_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 18};
+			peripheral->miso_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 16};
+			peripheral->sck_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 19};
+			peripheral->ssl_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 17};
 			break;
 		case SERCOMSAMD21::SercomID::Sercom4:
-			peripheral->mosi_pin = (SERCOMHAL::Pinout){3, 1, 10};
-			peripheral->miso_pin = (SERCOMHAL::Pinout){3, 0, 12};
-			peripheral->sck_pin = (SERCOMHAL::Pinout){3, 1, 11};
-			peripheral->ssl_pin = (SERCOMHAL::Pinout){3, 1, 9};
+			peripheral->mosi_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_B, 10};
+			peripheral->miso_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 12};
+			peripheral->sck_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_B, 11};
+			peripheral->ssl_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_B, 9};
 			break;
 		case SERCOMSAMD21::SercomID::Sercom5:
-			peripheral->mosi_pin = (SERCOMHAL::Pinout){3, 1, 22};
-			peripheral->miso_pin = (SERCOMHAL::Pinout){3, 0, 22};
-			peripheral->sck_pin = (SERCOMHAL::Pinout){3, 1, 23};
-			peripheral->ssl_pin = (SERCOMHAL::Pinout){3, 0, 23};
+			peripheral->mosi_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_B, 22};
+			peripheral->miso_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 22};
+			peripheral->sck_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_B, 23};
+			peripheral->ssl_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 23};
 			break;
 		default:
 			//do nothing
 			break;
 	}
-}
-
-void SPISAMD21::SetGenClk(SERCOMSAMD21::GenericClock gen_clk_id, uint16_t clock_divisor, bool run_standby)
-{
-	spi_genclk = gen_clk_id;
-	spi_genclk_divisor = clock_divisor;
-	spi_genclk_run_stdby = run_standby;
 }
 
 void SPIHAL::GetPeripheralDefaults(SPIHAL::Peripheral * peripheral)
@@ -102,10 +94,10 @@ void SPIHAL::InitSercom(SPIHAL::Peripheral * peripheral, bool is_client)
 		SERCOMHAL::OutputHigh(peripheral->ssl_pin);
 	}
 	Sercom *sercom_ptr = SERCOMSAMD21::GetSercom(peripheral->sercom_id);
-	SERCOMSAMD21::EnableSercomClock(peripheral->sercom_id, spi_genclk, spi_genclk_divisor, spi_genclk_run_stdby);
+	SERCOMSAMD21::EnableSercomClock(peripheral->sercom_id, (SERCOMSAMD21::GenericClock)peripheral->extra_spi_params[SPISAMD21::ExtraParams::GEN_CLK], (uint16_t)peripheral->extra_spi_params[SPISAMD21::ExtraParams::GEN_CLK_DIVISOR], (bool)peripheral->extra_spi_params[SPISAMD21::ExtraParams::GEN_CLK_RUN_STANDY]);
 	uint8_t mosi = 0;
 	uint8_t miso = 0;
-	switch(peripheral->pad_config)
+	switch(peripheral->extra_spi_params[SPISAMD21::ExtraParams::PAD_CONFIG])
 	{
 		case SPISAMD21::PadConfig::DO0_DI2_SCK1_CSS2:
 			miso = 0x2u;

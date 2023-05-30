@@ -1,8 +1,8 @@
 /* 
- * Name			:	serial_buffer.cpp
- * Created		:	8/18/2022 12:49:40 PM
- * Author		:	Aaron Reilman
- * Description	:	A generic FIFO-like buffer for high level serial communication.
+ * Name				:	serial_buffer.cpp
+ * Created			:	8/18/2022 12:49:40 PM
+ * Author			:	Aaron Reilman
+ * Description		:	A generic FIFO-like buffer for high level serial communication.
  */
 
 

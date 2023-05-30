@@ -1,8 +1,8 @@
 /* 
- * Name			:	serial_usb.h
- * Created		:	8/12/2022 10:53:43 AM
- * Author		:	Aaron Reilman
- * Description	:	A USB serial communication driver.
+ * Name				:	serial_usb.h
+ * Created			:	8/12/2022 10:53:43 AM
+ * Author			:	Aaron Reilman
+ * Description		:	A USB serial communication driver.
  */
 
 
@@ -223,12 +223,12 @@
 		 */
 		bool ReceiveParam(uint32_t * output, const char *input, char delimiter = '\0', uint8_t max_digits = 8u);
 		
-		uint32_t GetBufferAvailable(void) const;	//!< Getter for number of unread characters available in FIFO receive buffer
+		uint32_t GetBufferAvailable(void) const;		//!< Getter for number of unread characters available in FIFO receive buffer
 		
-		bool IsConnected(void) const;	//!< Retrieves state of connection (true = connected)	
+		bool IsConnected(void) const;					//!< Retrieves state of connection (true = connected)	
 		
-		void Detach(void);				//!< Suspends USB device to go into low power mode	
-		void Reattach(void);			//!< Reattaches suspended USB device
+		void Detach(void);								//!< Suspends USB device to go into low power mode	
+		void Reattach(void);							//!< Reattaches suspended USB device
 		
 		
 		private:

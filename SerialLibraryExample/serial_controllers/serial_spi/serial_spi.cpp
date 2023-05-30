@@ -1,8 +1,8 @@
 /* 
- * Name			:	serial_spi.cpp
- * Created		:	10/13/2022 4:59:36 PM
- * Author		:	Aaron Reilman
- * Description	:	A SPI serial communication driver.
+ * Name				:	serial_spi.cpp
+ * Created			:	10/13/2022 4:59:36 PM
+ * Author			:	Aaron Reilman
+ * Description		:	A SPI serial communication driver.
  */
 
 

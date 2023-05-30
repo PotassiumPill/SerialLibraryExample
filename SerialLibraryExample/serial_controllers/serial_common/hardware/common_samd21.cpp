@@ -1,8 +1,8 @@
 /* 
- * Name			:	common_samd21.cpp
- * Created		:	1/18/2023 4:40:56 PM
- * Author		:	Aaron Reilman
- * Description	:	Common generic hardware functionality for SAMD21.
+ * Name				:	common_samd21.cpp
+ * Created			:	1/18/2023 4:40:56 PM
+ * Author			:	Aaron Reilman
+ * Description		:	Common generic hardware functionality for SAMD21.
  */
 
 

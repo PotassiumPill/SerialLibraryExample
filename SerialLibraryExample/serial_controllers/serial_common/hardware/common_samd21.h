@@ -1,8 +1,8 @@
 /* 
- * Name			:	common_samd21.h
- * Created		:	1/18/2023 4:40:56 PM
- * Author		:	Aaron Reilman
- * Description	:	Common generic hardware functionality for SAMD21.
+ * Name				:	common_samd21.h
+ * Created			:	1/18/2023 4:40:56 PM
+ * Author			:	Aaron Reilman
+ * Description		:	Common generic hardware functionality for SAMD21.
  */
 
 
@@ -42,6 +42,18 @@ namespace SERCOMSAMD21
 		Sercom3,
 		Sercom4,
 		Sercom5
+	};
+	/*!
+	 * \brief An enum type for pin peripheral function on multiplexed pins on SAMD21.
+	 */
+	enum PeripheralFunction : uint8_t {
+		PF_A, PF_B, PF_C, PF_D, PF_E, PF_F, PF_G, PF_H
+	};
+	/*!
+	 * \brief An enum type for a pin's port on SAMD21.
+	 */	
+	enum Port : uint8_t {
+		PORT_A, PORT_B
 	};
 	/*!
 	 * \brief Helper function for getting the Sercom struct address on the SAMD21 from the peripheral SERCOM ID

@@ -1,8 +1,8 @@
 /*
- * Name			:	uart_samd21.h
- * Created		:	7/1/2022 10:16:02 AM
- * Author		:	Aaron Reilman
- * Description	:	A UART serial communication low level driver for samd21.
+ * Name				:	uart_samd21.h
+ * Created			:	7/1/2022 10:16:02 AM
+ * Author			:	Aaron Reilman
+ * Description		:	A UART serial communication low level driver for samd21.
  */ 
 
 
@@ -18,6 +18,18 @@
  */
 namespace UARTSAMD21
 {
+	/*!
+	 * \brief Extra parameters for hardware specific configuration
+	 * 
+	 * Extra parameter labels used in extra_spi_params peripheral array for SAMD21-specific configuration 
+	 */
+	enum ExtraParams : uint8_t {
+		GEN_CLK,					//!< ID of generic clock used for %UART
+		GEN_CLK_DIVISOR,			//!< Clock speed divisor
+		GEN_CLK_RUN_STANDY,			//!< Clock on/off while in standby
+		PAD_CONFIG,					//!< Pad configuration for pins
+		SAMPLE_ADJUSTMENT			//!< Over-sampling rate and sampling adjustment
+	};
 	/*!
 	 * \brief An enum type for over-sampling rate and sampling adjustment
 	 */
@@ -51,16 +63,6 @@ namespace UARTSAMD21
 	 * \param sercom_id SERCOM# to be configured as %UART (default = Sercom0)
 	 */
 	void GetPeripheralDefaults(UARTHAL::Peripheral * peripheral, SERCOMHAL::SercomID sercom_id = SERCOMSAMD21::SercomID::Sercom0);
-	/*!
-	 * \brief Sets values to configure the generic clock generator before enabling %UART
-	 *
-	 * Sets values to configure the generic clock generator used to feed into peripheral.
-	 *
-	 * \param gen_clk_id generic clock ID (default = GEN_CLK_1)
-	 * \param clock_divisor division factor to decrease frequency of clock (default = 0)
-	 * \param run_standby run clock while in standby mode (default = false)
-	 */
-	void SetGenClk(SERCOMSAMD21::GenericClock gen_clk_id = SERCOMSAMD21::GenericClock::GEN_CLK_1, uint16_t clock_divisor = 0, bool run_standby = false);
 }
 
 #endif //__UART_SAMD21_H__

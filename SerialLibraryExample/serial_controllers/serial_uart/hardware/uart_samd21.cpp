@@ -1,66 +1,57 @@
 /* 
- * Name			:	uart_samd21.cpp
- * Created		:	6/23/2022 11:08:29 AM
- * Author		:	Aaron Reilman
- * Description	:	A UART serial communication low level driver for samd21.
+ * Name				:	uart_samd21.cpp
+ * Created			:	6/23/2022 11:08:29 AM
+ * Author			:	Aaron Reilman
+ * Description		:	A UART serial communication low level driver for samd21.
  */
 
 #include "serial_uart/uart_hal.h"
 
 #if (UART_MCU_OPT == OPT_SERCOM_SAMD21)
 
-SERCOMSAMD21::GenericClock uart_genclk = SERCOMSAMD21::GEN_CLK_1;
-uint16_t uart_genclk_divisor = 0;
-bool uart_genclk_run_stdby = false;
-
-
 void UARTSAMD21::GetPeripheralDefaults(UARTHAL::Peripheral * peripheral, SERCOMHAL::SercomID sercom_id)
 {
-	peripheral->pad_config = PadConfig::Tx2_Rx3;
+	peripheral->sercom_id = sercom_id;
 	peripheral->baud_value =  115200;
-	peripheral->sample_adjustment = SampleAdjustment::Over16x_7_8_9;
 	peripheral->parity = UARTHAL::Parity::PNone;
 	peripheral->endianness = UARTHAL::Endian::LSB;
 	peripheral->num_stop_bits = UARTHAL::StopBits::OneStopBit;
-	peripheral->sercom_id = sercom_id;
+	peripheral->extra_uart_params[ExtraParams::GEN_CLK] = SERCOMSAMD21::GEN_CLK_1;
+	peripheral->extra_uart_params[ExtraParams::GEN_CLK_DIVISOR] = 0;
+	peripheral->extra_uart_params[ExtraParams::GEN_CLK_RUN_STANDY] = false;
+	peripheral->extra_uart_params[ExtraParams::PAD_CONFIG] = PadConfig::Tx2_Rx3;
+	peripheral->extra_uart_params[ExtraParams::SAMPLE_ADJUSTMENT] = SampleAdjustment::Over16x_7_8_9;
 	switch(sercom_id)
 	{
 		case SERCOMSAMD21::SercomID::Sercom0:
-			peripheral->tx_pin = (SERCOMHAL::Pinout){2, 0, 10};
-			peripheral->rx_pin = (SERCOMHAL::Pinout){2, 0, 11};
+			peripheral->tx_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_C, SERCOMSAMD21::Port::PORT_A, 10};
+			peripheral->rx_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_C, SERCOMSAMD21::Port::PORT_A, 11};
 			break;
 		case SERCOMSAMD21::SercomID::Sercom1:
-			peripheral->tx_pin = (SERCOMHAL::Pinout){2, 0, 18};
-			peripheral->rx_pin = (SERCOMHAL::Pinout){2, 0, 19};
+			peripheral->tx_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_C, SERCOMSAMD21::Port::PORT_A, 18};
+			peripheral->rx_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_C, SERCOMSAMD21::Port::PORT_A, 19};
 			break;
 		case SERCOMSAMD21::SercomID::Sercom2:
-			peripheral->tx_pin = (SERCOMHAL::Pinout){3, 0, 10};
-			peripheral->rx_pin = (SERCOMHAL::Pinout){3, 0, 11};
+			peripheral->tx_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 10};
+			peripheral->rx_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 11};
 			break;
 		case SERCOMSAMD21::SercomID::Sercom3:
-			peripheral->tx_pin = (SERCOMHAL::Pinout){3, 0, 18};
-			peripheral->rx_pin = (SERCOMHAL::Pinout){3, 0, 19};
+			peripheral->tx_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 18};
+			peripheral->rx_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 19};
 			break;
 		case SERCOMSAMD21::SercomID::Sercom4:
-			peripheral->tx_pin = (SERCOMHAL::Pinout){3, 1, 10};
-			peripheral->rx_pin = (SERCOMHAL::Pinout){3, 1, 11};
+			peripheral->tx_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_B, 10};
+			peripheral->rx_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_B, 11};
 			break;
 		case SERCOMSAMD21::SercomID::Sercom5:
-			peripheral->pad_config = PadConfig::Tx0_Rx1;
-			peripheral->tx_pin = (SERCOMHAL::Pinout){3, 0, 22};
-			peripheral->rx_pin = (SERCOMHAL::Pinout){3, 0, 23};
+			peripheral->extra_uart_params[ExtraParams::PAD_CONFIG] = PadConfig::Tx0_Rx1;
+			peripheral->tx_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 22};
+			peripheral->rx_pin = (SERCOMHAL::Pinout){SERCOMSAMD21::PeripheralFunction::PF_D, SERCOMSAMD21::Port::PORT_A, 23};
 			break;
 		default:
 			//do nothing
 			break;
 	}
-}
-
-void UARTSAMD21::SetGenClk(SERCOMSAMD21::GenericClock gen_clk_id, uint16_t clock_divisor, bool run_standby)
-{
-	uart_genclk = gen_clk_id;
-	uart_genclk_divisor = clock_divisor;
-	uart_genclk_run_stdby = run_standby;
 }
 
 void UARTHAL::GetPeripheralDefaults(UARTHAL::Peripheral * peripheral)
@@ -74,10 +65,10 @@ void UARTHAL::InitSercom(UARTHAL::Peripheral * peripheral)
 	SERCOMHAL::ConfigPin(peripheral->rx_pin, false, true);
 	SERCOMHAL::ConfigPin(peripheral->tx_pin, true, true);
 	Sercom *sercom_ptr = SERCOMSAMD21::GetSercom(peripheral->sercom_id);
-	SERCOMSAMD21::EnableSercomClock(peripheral->sercom_id, uart_genclk, uart_genclk_divisor, uart_genclk_run_stdby);
+	SERCOMSAMD21::EnableSercomClock(peripheral->sercom_id, (SERCOMSAMD21::GenericClock)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK], (uint16_t)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK_DIVISOR], (bool)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK_RUN_STANDY]);
 	uint8_t tx = 0;
 	uint8_t rx = 0;
-	switch(peripheral->pad_config)
+	switch(peripheral->extra_uart_params[UARTSAMD21::ExtraParams::PAD_CONFIG])
 	{
 		case UARTSAMD21::PadConfig::Tx0_Rx1:
 			tx=0;
@@ -112,7 +103,7 @@ void UARTHAL::InitSercom(UARTHAL::Peripheral * peripheral)
 	sercom_ptr->USART.CTRLA.bit.DORD = (peripheral->endianness == Endian::LSB);
 	uint8_t sampr = 0;
 	uint8_t sampa = 0;
-	switch(peripheral->sample_adjustment)
+	switch(peripheral->extra_uart_params[UARTSAMD21::ExtraParams::SAMPLE_ADJUSTMENT])
 	{
 		case UARTSAMD21::SampleAdjustment::Over16x_7_8_9:
 			sampa = 0;

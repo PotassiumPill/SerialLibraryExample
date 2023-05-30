@@ -1,8 +1,8 @@
 /*
- * Name			:	serial_comm_config.h
- * Created		:	1/20/2023 10:37:50 AM
- * Author		:	Aaron Reilman
- * Description	:	Config file for serial communication library. Configure hardware and modules to use here.
+ * Name				:	serial_comm_config.h
+ * Created			:	1/20/2023 10:37:50 AM
+ * Author			:	Aaron Reilman
+ * Description		:	Config file for serial communication library. Configure hardware and modules to use here.
  */ 
 
 #ifndef __SERIAL_COMM_CONFIG_H__

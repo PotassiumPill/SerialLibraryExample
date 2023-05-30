@@ -1,8 +1,8 @@
 /*
- * Name			:	spi_none.cpp
- * Created		:	1/23/2023 12:08:04 PM
- * Author		:	Aaron Reilman
- * Description	:	Blank template for hardware implementations of SPI.
+ * Name				:	spi_none.cpp
+ * Created			:	1/23/2023 12:08:04 PM
+ * Author			:	Aaron Reilman
+ * Description		:	Blank template for hardware implementations of SPI.
  */
 
 #include "serial_spi/spi_hal.h"

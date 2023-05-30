@@ -1,8 +1,8 @@
 /*
- * Name			:	example_state_machine.cpp
- * Created		:	05/03/2023 15:47:53
- * Author		:	Aaron Reilman
- * Description	:	State, event, action, and function definitions for your state machine.
+ * Name				:	example_state_machine.cpp
+ * Created			:	05/03/2023 15:47:53
+ * Author			:	Aaron Reilman
+ * Description		:	State, event, action, and function definitions for your state machine.
  */
 
 

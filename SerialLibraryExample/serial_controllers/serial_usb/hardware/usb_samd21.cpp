@@ -1,8 +1,8 @@
 /*
- * Name			:	usb_samd21.cpp
- * Created		:	5/5/2023 2:01:39 PM
- * Author		:	Aaron Reilman
- * Description	:	SAMD21 hardware implementation of clock drivers for USB. 
+ * Name				:	usb_samd21.cpp
+ * Created			:	5/5/2023 2:01:39 PM
+ * Author			:	Aaron Reilman
+ * Description		:	SAMD21 hardware implementation of clock drivers for USB. 
  */
 
 

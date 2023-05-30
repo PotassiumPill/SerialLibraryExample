@@ -1,8 +1,8 @@
 /* 
- * Name			:	spi_hal.h
- * Created		:	10/13/2022 4:59:17 PM
- * Author		:	Aaron Reilman
- * Description	:	A SPI Serial Communication Hardware Abstraction Layer.
+ * Name				:	spi_hal.h
+ * Created			:	10/13/2022 4:59:17 PM
+ * Author			:	Aaron Reilman
+ * Description		:	A SPI Serial Communication Hardware Abstraction Layer.
  */
 
 
@@ -11,6 +11,12 @@
 
 #include "serial_spi/spi_config.h"
 #include "serial_common/common_hal.h"
+
+#if (SPI_MCU_OPT == OPT_SERCOM_SAMD21)
+#define NUM_EXTRA_SPI_PARAMS 4
+#else
+#define NUM_EXTRA_SPI_PARAMS 1
+#endif
 
 /*!
  * \brief %SPI HAL global namespace.
@@ -45,15 +51,15 @@ namespace SPIHAL
 	 * This struct contains all basic information needed to configure hardware for %SPI serial communication.
 	 */
 	struct Peripheral {
-		SERCOMHAL::SercomID sercom_id;		//!< SERCOM# used in communication
-		PadConfig pad_config;				//!< pad_config: I/O pad configuration for MISO, MOSI, and SCK pins
-		SERCOMHAL::Pinout mosi_pin;			//!< MOSI (Master Out Slave In) I/O Pinout
-		SERCOMHAL::Pinout miso_pin;			//!< MISO (Master In Slave Out) I/O Pinout
-		SERCOMHAL::Pinout sck_pin;			//!< SCK (Serial Clock) I/O Pinout
-		SERCOMHAL::Pinout ssl_pin;			//!< SSL (Slave Select Line) I/O Pinout
-		uint32_t baud_value;				//!< Baud rate of %SPI transmission
-		ClockMode clock_mode;				//!< Clock mode of %SPI transmission
-		Endian endianess;					//!< Order of data bit shifting
+		SERCOMHAL::SercomID sercom_id;							//!< SERCOM# used in communication
+		SERCOMHAL::Pinout mosi_pin;								//!< MOSI (Master Out Slave In) I/O Pinout
+		SERCOMHAL::Pinout miso_pin;								//!< MISO (Master In Slave Out) I/O Pinout
+		SERCOMHAL::Pinout sck_pin;								//!< SCK (Serial Clock) I/O Pinout
+		SERCOMHAL::Pinout ssl_pin;								//!< SSL (Slave Select Line) I/O Pinout
+		uint32_t baud_value;									//!< Baud rate of %SPI transmission
+		ClockMode clock_mode;									//!< Clock mode of %SPI transmission
+		Endian endianess;										//!< Order of data bit shifting
+		uint32_t extra_spi_params[NUM_EXTRA_SPI_PARAMS];		//!< Extra parameters for hardware specific configurations (such as oversampling, clock parameters, etc.)
 	};
 	/*!
 	 * \brief Populates a peripheral struct with default values

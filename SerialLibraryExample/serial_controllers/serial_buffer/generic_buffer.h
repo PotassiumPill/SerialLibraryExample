@@ -1,8 +1,8 @@
 /*
- * Name			:	generic_buffer.h
- * Created		:	3/12/2023 3:35:16 PM
- * Author		:	Aaron Reilman
- * Description	:	A generic ring buffer with basic queue functionality.	
+ * Name				:	generic_buffer.h
+ * Created			:	3/12/2023 3:35:16 PM
+ * Author			:	Aaron Reilman
+ * Description		:	A generic ring buffer with basic queue functionality.	
  */ 
 
 
@@ -23,9 +23,9 @@ namespace GenericBuffer {
 	 */
 	enum class BufferState
 	{
-		Empty,			//!< Buffer is empty
-		Full,			//!< Buffer is full
-		NotEmptyNotFull	//!< Buffer has data but isn't full
+		Empty,				//!< Buffer is empty
+		Full,				//!< Buffer is full
+		NotEmptyNotFull		//!< Buffer has data but isn't full
 	};
 	/*!
 	 * \brief Generic ring buffer template.
@@ -185,8 +185,8 @@ namespace GenericBuffer {
 			if(buffer_avail) output = fifo_buffer[rd_index];
 			return output;
 		}
-		uint32_t GetSize(void) const { return buffer_size; }				//!< Getter for size of array.
-		uint32_t GetBufferAvailable(void) const { return buffer_avail; }	//!< Getter for length/number of elements available in buffer.
+		uint32_t GetSize(void) const { return buffer_size; }					//!< Getter for size of array.
+		uint32_t GetBufferAvailable(void) const { return buffer_avail; }		//!< Getter for length/number of elements available in buffer.
 		//! Getter for buffer state (Empty, Full, NotEmptyNotFull)
 		BufferState GetBufferState(void) const								
 		{

@@ -1,8 +1,8 @@
 /* 
- * Name			:	spi_config.h
- * Created		:	10/13/2022 4:58:47 PM
- * Author		:	Aaron Reilman
- * Description	:	A SPI serial communication configuration file.
+ * Name				:	spi_config.h
+ * Created			:	10/13/2022 4:58:47 PM
+ * Author			:	Aaron Reilman
+ * Description		:	A SPI serial communication configuration file.
  */
 
 

@@ -1,8 +1,8 @@
 /*
- * Name			:	state_machine.cpp
- * Created		:	05/03/2023 15:41:45
- * Author		:	Aaron Reilman
- * Description	:	Simple process manager for creating streamlined code with multiple states, events, and actions.
+ * Name				:	state_machine.cpp
+ * Created			:	05/03/2023 15:41:45
+ * Author			:	Aaron Reilman
+ * Description		:	Simple process manager for creating streamlined code with multiple states, events, and actions.
  */
 
 
