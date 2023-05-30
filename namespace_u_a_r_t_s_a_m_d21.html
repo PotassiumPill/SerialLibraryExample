@@ -78,11 +78,12 @@ $(function() {
 Enumerations</h2></td></tr>
 <tr class="memitem:a5ed408ef3038e367a053959a5f27a142"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142">ExtraParams</a> : uint8_t { <br />
 &#160;&#160;<a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142a281f8f03ea336df6f3a0675eae58ec1f">GEN_CLK</a>
-, <a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142a186f45220245cb21894e567b0b924b3a">GEN_CLK_DIVISOR</a>
+, <a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142aa25364ef3b31814e8b07510355554ce0">GEN_CLK_DIVISOR_BITS_9_16</a>
+, <a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142a48c09e92cce144513f3e0a1554e9c153">GEN_CLK_DIVISOR_BITS_1_8</a>
 , <a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142af3d81fc59ed1f00b779cdb86d761c9df">GEN_CLK_RUN_STANDY</a>
-, <a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142ae32875e1bcb9bbfb1e71179bc23aa9c6">PAD_CONFIG</a>
 , <br />
-&#160;&#160;<a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142a2f4ee945109aa5966cbb79fe6eaa1a20">SAMPLE_ADJUSTMENT</a>
+&#160;&#160;<a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142ae32875e1bcb9bbfb1e71179bc23aa9c6">PAD_CONFIG</a>
+, <a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142a2f4ee945109aa5966cbb79fe6eaa1a20">SAMPLE_ADJUSTMENT</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a5ed408ef3038e367a053959a5f27a142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extra parameters for hardware specific configuration.  <a href="namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142">More...</a><br /></td></tr>
@@ -119,6 +120,26 @@ Functions</h2></td></tr>
 <tr class="memitem:aac5c4f8d9c8de8162a5b81a7aae8a4b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#aac5c4f8d9c8de8162a5b81a7aae8a4b0">GetPeripheralDefaults</a> (<a class="el" href="struct_u_a_r_t_h_a_l_1_1_peripheral.html">UARTHAL::Peripheral</a> *peripheral, <a class="el" href="namespace_s_e_r_c_o_m_h_a_l.html#aef085a7571bb4d9cae9821be7982e559">SERCOMHAL::SercomID</a> sercom_id=SERCOMSAMD21::SercomID::Sercom0)</td></tr>
 <tr class="memdesc:aac5c4f8d9c8de8162a5b81a7aae8a4b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populates a peripheral struct with default values.  <a href="namespace_u_a_r_t_s_a_m_d21.html#aac5c4f8d9c8de8162a5b81a7aae8a4b0">More...</a><br /></td></tr>
 <tr class="separator:aac5c4f8d9c8de8162a5b81a7aae8a4b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8387d5f328f5606f08329f675c4f8b65"><td class="memItemLeft" align="right" valign="top"><a id="a8387d5f328f5606f08329f675c4f8b65"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#a8387d5f328f5606f08329f675c4f8b65">SetGenClkParam</a> (<a class="el" href="struct_u_a_r_t_h_a_l_1_1_peripheral.html">UARTHAL::Peripheral</a> *peripheral, <a class="el" href="namespace_s_e_r_c_o_m_s_a_m_d21.html#aea27e6a5755e74144596a96a543a18f6">SERCOMSAMD21::GenericClock</a> generic_clock=SERCOMSAMD21::GenericClock::GEN_CLK_1)</td></tr>
+<tr class="memdesc:a8387d5f328f5606f08329f675c4f8b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for generic clock peripheral parameter. <br /></td></tr>
+<tr class="separator:a8387d5f328f5606f08329f675c4f8b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75809380d51a93d4620b21e780a75eb3"><td class="memItemLeft" align="right" valign="top"><a id="a75809380d51a93d4620b21e780a75eb3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#a75809380d51a93d4620b21e780a75eb3">SetGenClkDivisorParam</a> (<a class="el" href="struct_u_a_r_t_h_a_l_1_1_peripheral.html">UARTHAL::Peripheral</a> *peripheral, uint16_t divisor=0)</td></tr>
+<tr class="memdesc:a75809380d51a93d4620b21e780a75eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for generic clock divisor peripheral parameter. <br /></td></tr>
+<tr class="separator:a75809380d51a93d4620b21e780a75eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac34d4c0b04452c4d22c12a99e8d9c8be"><td class="memItemLeft" align="right" valign="top"><a id="ac34d4c0b04452c4d22c12a99e8d9c8be"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#ac34d4c0b04452c4d22c12a99e8d9c8be">SetGenClkRunStandbyParam</a> (<a class="el" href="struct_u_a_r_t_h_a_l_1_1_peripheral.html">UARTHAL::Peripheral</a> *peripheral, bool run_standy=false)</td></tr>
+<tr class="memdesc:ac34d4c0b04452c4d22c12a99e8d9c8be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for generic clock run in standby peripheral parameter. <br /></td></tr>
+<tr class="separator:ac34d4c0b04452c4d22c12a99e8d9c8be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeba15322c29c483c5bea320ea27e1ecf"><td class="memItemLeft" align="right" valign="top"><a id="aeba15322c29c483c5bea320ea27e1ecf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#aeba15322c29c483c5bea320ea27e1ecf">SetPadConfigParam</a> (<a class="el" href="struct_u_a_r_t_h_a_l_1_1_peripheral.html">UARTHAL::Peripheral</a> *peripheral, <a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#a192fd7655627e0eb3f0a91f11a7294a3">PadConfig</a> pad_config=PadConfig::Tx2_Rx3)</td></tr>
+<tr class="memdesc:aeba15322c29c483c5bea320ea27e1ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for pad config peripheral parameter. <br /></td></tr>
+<tr class="separator:aeba15322c29c483c5bea320ea27e1ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0fe2ca6f8430d3b6707e0946bb9dbe"><td class="memItemLeft" align="right" valign="top"><a id="a2b0fe2ca6f8430d3b6707e0946bb9dbe"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#a2b0fe2ca6f8430d3b6707e0946bb9dbe">SetSampleAdjustmentParam</a> (<a class="el" href="struct_u_a_r_t_h_a_l_1_1_peripheral.html">UARTHAL::Peripheral</a> *peripheral, <a class="el" href="namespace_u_a_r_t_s_a_m_d21.html#aeabc7f1e47cfc203df30e0e608842eb0">SampleAdjustment</a> sample_adjustment=SampleAdjustment::Over16x_7_8_9)</td></tr>
+<tr class="memdesc:a2b0fe2ca6f8430d3b6707e0946bb9dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for sample adjustment peripheral parameter. <br /></td></tr>
+<tr class="separator:a2b0fe2ca6f8430d3b6707e0946bb9dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>UART SAMD21 low level driver global namespace </p>
@@ -141,7 +162,9 @@ Functions</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5ed408ef3038e367a053959a5f27a142a281f8f03ea336df6f3a0675eae58ec1f"></a>GEN_CLK&#160;</td><td class="fielddoc"><p>ID of generic clock used for UART. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a5ed408ef3038e367a053959a5f27a142a186f45220245cb21894e567b0b924b3a"></a>GEN_CLK_DIVISOR&#160;</td><td class="fielddoc"><p>Clock speed divisor. </p>
+<tr><td class="fieldname"><a id="a5ed408ef3038e367a053959a5f27a142aa25364ef3b31814e8b07510355554ce0"></a>GEN_CLK_DIVISOR_BITS_9_16&#160;</td><td class="fielddoc"><p>Clock speed divisor (bit 9:16) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a5ed408ef3038e367a053959a5f27a142a48c09e92cce144513f3e0a1554e9c153"></a>GEN_CLK_DIVISOR_BITS_1_8&#160;</td><td class="fielddoc"><p>Clock speed divisor (bit 1:8) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a5ed408ef3038e367a053959a5f27a142af3d81fc59ed1f00b779cdb86d761c9df"></a>GEN_CLK_RUN_STANDY&#160;</td><td class="fielddoc"><p>Clock on/off while in standby. </p>
 </td></tr>

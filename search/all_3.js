@@ -23,7 +23,7 @@ var searchData=
   ['error_5fstate_52',['error_state',['../struct_serial_s_p_i_1_1_status.html#aa6b9caaebdd092a9473bdfc9359c6ed5',1,'SerialSPI::Status::error_state()'],['../struct_serial_u_a_r_t_1_1_status.html#ae5b4e6d6889585836162dc5d049aed66',1,'SerialUART::Status::error_state()']]],
   ['esync_53',['ESync',['../namespace_serial_u_a_r_t.html#abefc78aed01b093d3ccf04209fc78377a1629bad19536907684472c47c6a4eb60',1,'SerialUART']]],
   ['executeaction_54',['ExecuteAction',['../namespace_state_machine.html#ad07e38b551d396f767f3f6ae245df441',1,'StateMachine']]],
-  ['extra_5fspi_5fparams_55',['extra_spi_params',['../struct_s_p_i_h_a_l_1_1_peripheral.html#aeaf72f0ca84ef7569fcc70f9180d7946',1,'SPIHAL::Peripheral']]],
-  ['extra_5fuart_5fparams_56',['extra_uart_params',['../struct_u_a_r_t_h_a_l_1_1_peripheral.html#a1bc069393f8aab5ea4fb69b19e113392',1,'UARTHAL::Peripheral']]],
+  ['extra_5fspi_5fparams_55',['extra_spi_params',['../struct_s_p_i_h_a_l_1_1_peripheral.html#a292458d0452316c9ee5bbfd46a64216d',1,'SPIHAL::Peripheral']]],
+  ['extra_5fuart_5fparams_56',['extra_uart_params',['../struct_u_a_r_t_h_a_l_1_1_peripheral.html#a3383a418be9371562654e2e578a5f8b1',1,'UARTHAL::Peripheral']]],
   ['extraparams_57',['ExtraParams',['../namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5',1,'SPISAMD21::ExtraParams()'],['../namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142',1,'UARTSAMD21::ExtraParams()']]]
 ];
