@@ -72,10 +72,10 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Name         :   generic_buffer.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Created      :   3/12/2023 3:35:16 PM</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author       :   Aaron Reilman</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Description  :   A generic ring buffer with basic queue functionality.   </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Name             :   generic_buffer.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Created          :   3/12/2023 3:35:16 PM</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author           :   Aaron Reilman</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Description      :   A generic ring buffer with basic queue functionality.   </span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span> </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
@@ -88,9 +88,9 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespace_generic_buffer.html#aa4e41a5537b17cbebf523e1445eaee82">   24</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="namespace_generic_buffer.html#aa4e41a5537b17cbebf523e1445eaee82">BufferState</a></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="namespace_generic_buffer.html#aa4e41a5537b17cbebf523e1445eaee82ace2c8aed9c2fa0cfbed56cbda4d8bf07">Empty</a>,          </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="namespace_generic_buffer.html#aa4e41a5537b17cbebf523e1445eaee82abbd47109890259c0127154db1af26c75">Full</a>,           </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="namespace_generic_buffer.html#aa4e41a5537b17cbebf523e1445eaee82a75dfaefbbfaf6c0918ee30c97fb76f8b">NotEmptyNotFull</a> </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="namespace_generic_buffer.html#aa4e41a5537b17cbebf523e1445eaee82ace2c8aed9c2fa0cfbed56cbda4d8bf07">Empty</a>,              </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="namespace_generic_buffer.html#aa4e41a5537b17cbebf523e1445eaee82abbd47109890259c0127154db1af26c75">Full</a>,               </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="namespace_generic_buffer.html#aa4e41a5537b17cbebf523e1445eaee82a75dfaefbbfaf6c0918ee30c97fb76f8b">NotEmptyNotFull</a>     </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    };</div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html">   35</a></span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keyword">class </span><a class="code" href="class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html">GENERIC_BUFFER</a></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
@@ -168,8 +168,8 @@ $(function() {
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keywordflow">if</span>(buffer_avail) output = fifo_buffer[rd_index];</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">return</span> output;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        }</div>
-<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html#a106ffc24d315e06c6260d12a904663ab">  188</a></span>&#160;        uint32_t <a class="code" href="class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html#a106ffc24d315e06c6260d12a904663ab">GetSize</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> buffer_size; }                </div>
-<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html#a03a729a135271004d8db3cdd35f5a8f7">  189</a></span>&#160;        uint32_t <a class="code" href="class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html#a03a729a135271004d8db3cdd35f5a8f7">GetBufferAvailable</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> buffer_avail; }    </div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html#a106ffc24d315e06c6260d12a904663ab">  188</a></span>&#160;        uint32_t <a class="code" href="class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html#a106ffc24d315e06c6260d12a904663ab">GetSize</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> buffer_size; }                    </div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html#a03a729a135271004d8db3cdd35f5a8f7">  189</a></span>&#160;        uint32_t <a class="code" href="class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html#a03a729a135271004d8db3cdd35f5a8f7">GetBufferAvailable</a>(<span class="keywordtype">void</span>)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> buffer_avail; }        </div>
 <div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html#aa270d82f254ba5cbddc3b44635a6ff30">  191</a></span>&#160;        <a class="code" href="namespace_generic_buffer.html#aa4e41a5537b17cbebf523e1445eaee82">BufferState</a> <a class="code" href="class_generic_buffer_1_1_g_e_n_e_r_i_c___b_u_f_f_e_r.html#aa270d82f254ba5cbddc3b44635a6ff30">GetBufferState</a>(<span class="keywordtype">void</span>)<span class="keyword"> const                              </span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keyword">        </span>{</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keywordflow">if</span>(!buffer_avail)</div>

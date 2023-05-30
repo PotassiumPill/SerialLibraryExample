@@ -76,6 +76,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:ad6309e0324548e9acc894a52eb1a10c5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5">ExtraParams</a> : uint8_t { <a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5a1f15aaf3da85755b30f45334bc8694be">GEN_CLK</a>
+, <a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5a466b5d4c3949d10a94335a290edddc48">GEN_CLK_DIVISOR</a>
+, <a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5abeaddf4cf51713ad65724f4040a227d6">GEN_CLK_RUN_STANDY</a>
+, <a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5a8bc285ec0032e0c7e6f910713269999f">PAD_CONFIG</a>
+ }</td></tr>
+<tr class="separator:ad6309e0324548e9acc894a52eb1a10c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed974c119cd7c2cdb295d3cfd02e3c32"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_p_i_s_a_m_d21.html#aed974c119cd7c2cdb295d3cfd02e3c32">PadConfig</a> : uint8_t { <br />
 &#160;&#160;<a class="el" href="namespace_s_p_i_s_a_m_d21.html#aed974c119cd7c2cdb295d3cfd02e3c32a5361b7f3b012a1b1c048a6be979deee3">DO0_DI2_SCK1_CSS2</a>
 , <a class="el" href="namespace_s_p_i_s_a_m_d21.html#aed974c119cd7c2cdb295d3cfd02e3c32ac7e66677abee63d5a040c3965074eaf2">DO0_DI3_SCK1_CSS2</a>
@@ -96,14 +102,35 @@ Functions</h2></td></tr>
 <tr class="memitem:aab08b88e38f10d7c45aa5a5acba94343"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_p_i_s_a_m_d21.html#aab08b88e38f10d7c45aa5a5acba94343">GetPeripheralDefaults</a> (<a class="el" href="struct_s_p_i_h_a_l_1_1_peripheral.html">SPIHAL::Peripheral</a> *peripheral, <a class="el" href="namespace_s_e_r_c_o_m_h_a_l.html#aef085a7571bb4d9cae9821be7982e559">SERCOMHAL::SercomID</a> sercom_id=SERCOMSAMD21::SercomID::Sercom4)</td></tr>
 <tr class="memdesc:aab08b88e38f10d7c45aa5a5acba94343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populates a peripheral struct with default values.  <a href="namespace_s_p_i_s_a_m_d21.html#aab08b88e38f10d7c45aa5a5acba94343">More...</a><br /></td></tr>
 <tr class="separator:aab08b88e38f10d7c45aa5a5acba94343"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fd80124ba6bfcda3306ee682c9d3afc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_p_i_s_a_m_d21.html#a8fd80124ba6bfcda3306ee682c9d3afc">SetGenClk</a> (<a class="el" href="namespace_s_e_r_c_o_m_s_a_m_d21.html#aea27e6a5755e74144596a96a543a18f6">SERCOMSAMD21::GenericClock</a> gen_clk_id=SERCOMSAMD21::GenericClock::GEN_CLK_2, uint16_t clock_divisor=0, bool run_standby=false)</td></tr>
-<tr class="memdesc:a8fd80124ba6bfcda3306ee682c9d3afc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets values to configure the generic clock generator before enabling SPI.  <a href="namespace_s_p_i_s_a_m_d21.html#a8fd80124ba6bfcda3306ee682c9d3afc">More...</a><br /></td></tr>
-<tr class="separator:a8fd80124ba6bfcda3306ee682c9d3afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>SPI SAMD21 low level driver global namespace </p>
 <p>This namespace contains all constants and helper functions for implementing the low level drivers and peripherals on the SAMD21 chip. </p>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ad6309e0324548e9acc894a52eb1a10c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6309e0324548e9acc894a52eb1a10c5">&#9670;&nbsp;</a></span>ExtraParams</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5">SPISAMD21::ExtraParams</a> : uint8_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad6309e0324548e9acc894a52eb1a10c5a1f15aaf3da85755b30f45334bc8694be"></a>GEN_CLK&#160;</td><td class="fielddoc"><p>ID of generic clock used for SPI. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad6309e0324548e9acc894a52eb1a10c5a466b5d4c3949d10a94335a290edddc48"></a>GEN_CLK_DIVISOR&#160;</td><td class="fielddoc"><p>Clock speed divisor. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad6309e0324548e9acc894a52eb1a10c5abeaddf4cf51713ad65724f4040a227d6"></a>GEN_CLK_RUN_STANDY&#160;</td><td class="fielddoc"><p>Clock on/off while in standby. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad6309e0324548e9acc894a52eb1a10c5a8bc285ec0032e0c7e6f910713269999f"></a>PAD_CONFIG&#160;</td><td class="fielddoc"><p>Pad configuration for pins. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="aed974c119cd7c2cdb295d3cfd02e3c32"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed974c119cd7c2cdb295d3cfd02e3c32">&#9670;&nbsp;</a></span>PadConfig</h2>
 
@@ -171,51 +198,6 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">peripheral</td><td>pointer to peripheral struct to populate with default values </td></tr>
     <tr><td class="paramname">sercom_id</td><td>SERCOM# to be configured as SPI (default = Sercom4) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a8fd80124ba6bfcda3306ee682c9d3afc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fd80124ba6bfcda3306ee682c9d3afc">&#9670;&nbsp;</a></span>SetGenClk()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SPISAMD21::SetGenClk </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_s_e_r_c_o_m_s_a_m_d21.html#aea27e6a5755e74144596a96a543a18f6">SERCOMSAMD21::GenericClock</a>&#160;</td>
-          <td class="paramname"><em>gen_clk_id</em> = <code>SERCOMSAMD21::GenericClock::GEN_CLK_2</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>clock_divisor</em> = <code>0</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>run_standby</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets values to configure the generic clock generator before enabling SPI. </p>
-<p>Sets values to configure the generic clock generator used to feed into peripheral.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">gen_clk_id</td><td>generic clock ID (default = GEN_CLK_3) </td></tr>
-    <tr><td class="paramname">clock_divisor</td><td>division factor to decrease frequency of clock (default = 0) </td></tr>
-    <tr><td class="paramname">run_standby</td><td>run clock while in standby mode (default = false) </td></tr>
   </table>
   </dd>
 </dl>

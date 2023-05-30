@@ -57,7 +57,13 @@ var menudata={children:[
 {text:"u",url:"namespacemembers_func.html#index_u"}]},
 {text:"Typedefs",url:"namespacemembers_type.html"},
 {text:"Enumerations",url:"namespacemembers_enum.html"},
-{text:"Enumerator",url:"namespacemembers_eval.html"}]}]},
+{text:"Enumerator",url:"namespacemembers_eval.html",children:[
+{text:"d",url:"namespacemembers_eval.html#index_d"},
+{text:"g",url:"namespacemembers_eval.html#index_g"},
+{text:"o",url:"namespacemembers_eval.html#index_o"},
+{text:"p",url:"namespacemembers_eval.html#index_p"},
+{text:"s",url:"namespacemembers_eval.html#index_s"},
+{text:"t",url:"namespacemembers_eval.html#index_t"}]}]}]},
 {text:"Classes",url:"annotated.html",children:[
 {text:"Class List",url:"annotated.html"},
 {text:"Class Index",url:"classes.html"},

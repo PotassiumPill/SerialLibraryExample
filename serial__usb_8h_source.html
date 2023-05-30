@@ -72,10 +72,10 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Name         :   serial_usb.h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Created      :   8/12/2022 10:53:43 AM</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author       :   Aaron Reilman</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Description  :   A USB serial communication driver.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Name             :   serial_usb.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Created          :   8/12/2022 10:53:43 AM</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Author           :   Aaron Reilman</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Description      :   A USB serial communication driver.</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
@@ -112,12 +112,12 @@ $(function() {
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_serial_u_s_b_1_1_u_s_b_controller.html#ab3e39a9bf73b5134ff0eb72b36b218f8">ReceiveInt</a>(uint32_t * output);</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_serial_u_s_b_1_1_u_s_b_controller.html#a1f742c399f9ad7bcc5719b9aa8a24ff0">ReceiveParam</a>(uint32_t * output, <span class="keyword">const</span> <span class="keywordtype">char</span> *input, <span class="keywordtype">char</span> delimiter = <span class="charliteral">&#39;\0&#39;</span>, uint8_t max_digits = 8u);</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        uint32_t <a class="code" href="class_serial_u_s_b_1_1_u_s_b_controller.html#a9f58aebc93cd2f34a581b2b9aaa34caf">GetBufferAvailable</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;    </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        uint32_t <a class="code" href="class_serial_u_s_b_1_1_u_s_b_controller.html#a9f58aebc93cd2f34a581b2b9aaa34caf">GetBufferAvailable</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;        </div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_serial_u_s_b_1_1_u_s_b_controller.html#a7af52968c68586221f74d293b2cf5669">IsConnected</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;   </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_serial_u_s_b_1_1_u_s_b_controller.html#a7af52968c68586221f74d293b2cf5669">IsConnected</a>(<span class="keywordtype">void</span>) <span class="keyword">const</span>;                   </div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_serial_u_s_b_1_1_u_s_b_controller.html#ace06a48c2154c6692f42630d2b35df4a">Detach</a>(<span class="keywordtype">void</span>);              </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_serial_u_s_b_1_1_u_s_b_controller.html#a4c2bad9d6fe85f10aa9288c9735ee68b">Reattach</a>(<span class="keywordtype">void</span>);            </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_serial_u_s_b_1_1_u_s_b_controller.html#ace06a48c2154c6692f42630d2b35df4a">Detach</a>(<span class="keywordtype">void</span>);                              </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_serial_u_s_b_1_1_u_s_b_controller.html#a4c2bad9d6fe85f10aa9288c9735ee68b">Reattach</a>(<span class="keywordtype">void</span>);                            </div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        </div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        </div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keyword">private</span>:</div>

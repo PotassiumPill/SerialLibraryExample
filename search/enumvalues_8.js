@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['rxcomplete_431',['RxComplete',['../namespace_serial_u_a_r_t.html#a70e0c84b7b296bf22033c9d474e1cca7a13700f97fd2e87b4337f541f8d6d8943',1,'SerialUART']]],
-  ['rxcomplete_432',['RXComplete',['../namespace_serial_s_p_i.html#a7c61ece8b67c7e21e09193a050162683a2b55ed8b714c02b48570eea939daceae',1,'SerialSPI']]],
-  ['rxerror_433',['RxError',['../namespace_serial_u_a_r_t.html#a70e0c84b7b296bf22033c9d474e1cca7a3caeb30bd510039313f9a0244c645466',1,'SerialUART']]],
-  ['rxerror_434',['RXError',['../namespace_serial_s_p_i.html#a7c61ece8b67c7e21e09193a050162683a89beb53af58c6420b2b838cf6eb308b3',1,'SerialSPI']]],
-  ['rxsuccess_435',['RXSuccess',['../namespace_serial_s_p_i.html#a7c61ece8b67c7e21e09193a050162683ac7f51b0857bf6c9b3ad7827f4cb0ffab',1,'SerialSPI']]],
-  ['rxsuccess_436',['RxSuccess',['../namespace_serial_u_a_r_t.html#a70e0c84b7b296bf22033c9d474e1cca7ad18eb0e11f39566b55c2155b94a73af0',1,'SerialUART']]]
+  ['pad_5fconfig_440',['PAD_CONFIG',['../namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5a8bc285ec0032e0c7e6f910713269999f',1,'SPISAMD21::PAD_CONFIG()'],['../namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142ae32875e1bcb9bbfb1e71179bc23aa9c6',1,'UARTSAMD21::PAD_CONFIG()']]],
+  ['peven_441',['PEven',['../namespace_u_a_r_t_h_a_l.html#a83034d7a886b27a74b9a5c1100404779a91a5d30e6ebaddadac92fb018cbbde26',1,'UARTHAL']]],
+  ['pinpulldown_442',['PinPullDown',['../namespace_s_e_r_c_o_m_h_a_l.html#a94b005001590518e520ce60d407bf9daaac9d40a86eaef0b573d120362ac75fa2',1,'SERCOMHAL']]],
+  ['pinpullup_443',['PinPullUp',['../namespace_s_e_r_c_o_m_h_a_l.html#a94b005001590518e520ce60d407bf9daabed47520978d78c53321706efec205af',1,'SERCOMHAL']]],
+  ['pnone_444',['PNone',['../namespace_u_a_r_t_h_a_l.html#a83034d7a886b27a74b9a5c1100404779a56d39fcf8af134deb3cb18c8db2e28b8',1,'UARTHAL']]],
+  ['podd_445',['POdd',['../namespace_u_a_r_t_h_a_l.html#a83034d7a886b27a74b9a5c1100404779a47ec4770772028dbf61e1d9e75d958de',1,'UARTHAL']]]
 ];
