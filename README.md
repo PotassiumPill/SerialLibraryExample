@@ -73,7 +73,7 @@ where `"chip.h"` is the header file for your chip and `OPT_MCU_CHIP_NAME' is the
 1) SPI and UART stacks require some common functions to run. 
 2) Navigate to the [hardware](/SerialLibraryExample/serial_controllers/serial_common/hardware) directory under the [serial_common](/SerialLibraryExample/serial_controllers/serial_common) directory.
 3) Add a new header to this directory for your chip, ie `common_chipname.h`.
-4) Define a namespace for your hardware specific functions, any hardware specific enums, and an enum of type uint8_t `SercomID`, if applicable. For example:
+4) Define a namespace for your hardware specific functions, any hardware specific enums, and enums of type uint8_t `SercomID`, `PinPort`, and `PeripheralFunction`, if applicable. For example:
 ```
 #ifndef __COMMON_CHIPNAME_H__
 #define __COMMON_CHIPNAME_H__
@@ -89,6 +89,12 @@ namespace SERCOMCHIPNAME
 		Sercom3,
 		Sercom4,
 		Sercom5
+	};
+	enum PeripheralFunction : uint8_t {
+		PF_A, PF_B, PF_C
+	};
+	enum PinPort : uint8_t {
+		PORT_A, PORT_B
 	};
 	void ExampleFunction(void);
 	void AnotherExampleFunction(SERCOMHAL::SercomID sercom_id);
@@ -120,7 +126,7 @@ namespace SERCOMCHIPNAME
 ### Add Functionality to UART Stack
 1) Navigate to the [hardware](/SerialLibraryExample/serial_controllers/serial_uart/hardware) directory under the [serial_uart](/SerialLibraryExample/serial_controllers/serial_uart) directory.
 2) Add a new header to this directory for your chip, ie `uart_chipname.h`.
-3) Define a namespace for your hardware specific functions, any hardware specific enums, and enums of type uint8_t `SampleAdjustment` and `PadConfig`. For example:
+3) Define a namespace for your hardware specific functions, any hardware specific enums, and an enum for naming the extra parameters. For example:
 ```
 #ifndef __UART_CHIPNAME_H__
 #define __UART_CHIPNAME_H__
@@ -129,25 +135,12 @@ namespace SERCOMCHIPNAME
 
 namespace UARTCHIPNAME
 {
-	enum SampleAdjustment : uint8_t {
-		Over16x_7_8_9,
-		Over16x_9_10_11,
-		Over16x_11_12_13,
-		Over16x_13_14_15,
-		Over8x_3_4_5,
-		Over8x_4_5_6,
-		Over8x_5_6_7,
-		Over8x_6_7_8
+	enum ExtraParameters : uint8_t {
+		GEN_CLK,
+		CLK_DIVISOR,
+		PAD_CONFIG,
+		SAMPLE_ADJUSTMENT
 	};
-	enum PadConfig : uint8_t {
-		Tx0_Rx1,
-		Tx0_Rx2,
-		Tx0_Rx3,
-		Tx2_Rx0,
-		Tx2_Rx1,
-		Tx2_Rx3
-	};
-	
 	void ExampleGetPeripheralDefaults(UARTHAL::Peripheral * peripheral, SERCOMHAL::SercomID sercom_id = SERCOMCHIPNAME::SercomID::Sercom0);
 	void AnotherExampleFunction(void);
 }
@@ -182,10 +175,25 @@ namespace UARTCHIPNAME
 11) Navigate to [uart_hal.h](/SerialLibraryExample/serial_controllers/serial_uart/uart_hal.h) and find the code block which looks similar to this:
 ```
 #if (UART_MCU_OPT == OPT_SERCOM_SAMD21)
+#define NUM_EXTRA_UART_PARAMS 5
+#else
+#define NUM_EXTRA_UART_PARAMS 1
+#endif
+```
+12) Before the line which says `#else`, add the following code for your new chip:
+```
+#elif (UART_MCU_OPT == OPT_SERCOM_CHIP_NAME)
+#define NUM_EXTRA_UART_PARAMS #
+```
+where # is the number of extra hardware specific parameters defined in your hardware-specific UART code.
+
+13) Next, find the code block which looks similar to this:
+```
+#if (UART_MCU_OPT == OPT_SERCOM_SAMD21)
 #include "serial_uart/hardware/uart_samd21.h"
 #endif
 ```
-12) Before the last `#endif` line and before the last `#include` line, add the following code for your new chip:
+14) Before the last `#endif` line and before the last `#include` line, add the following code for your new chip:
 ```
 #elif (UART_MCU_OPT == OPT_SERCOM_CHIP_NAME)
 #include "serial_uart/hardware/uart_chipname.h"
@@ -194,7 +202,7 @@ namespace UARTCHIPNAME
 ### Add Functionality to SPI Stack
 1) Navigate to the [hardware](/SerialLibraryExample/serial_controllers/serial_spi/hardware) directory under the [serial_spi](/SerialLibraryExample/serial_controllers/serial_spi) directory.
 2) Add a new header to this directory for your chip, ie `spi_chipname.h`.
-3) Define a namespace for your hardware specific functions, any hardware specific enums, and enum of type uint8_t `PadConfig`. For example:
+3) Define a namespace for your hardware specific functions, any hardware specific enums, and an enum for naming the extra parameters. For example:
 ```
 #ifndef __SPI_CHIPNAME_H__
 #define __SPI_CHIPNAME_H__
@@ -203,17 +211,11 @@ namespace UARTCHIPNAME
 
 namespace SPICHIPNAME
 {
-	enum PadConfig : uint8_t {
-		DO0_DI2_SCK1_CSS2,
-		DO0_DI3_SCK1_CSS2,
-		DO0_DI1_SCK3_CSS1,
-		DO0_DI2_SCK3_CSS1,
-		DO2_DI0_SCK3_CSS1,
-		DO2_DI1_SCK3_CSS1,
-		DO3_DI0_SCK1_CSS2,
-		DO3_DI2_SCK1_CSS2
+	enum ExtraParameters : uint8_t {
+		GEN_CLK,
+		CLK_DIVISOR,
+		PAD_CONFIG
 	};
-	
 	void ExampleGetPeripheralDefaults(SPIHAL::Peripheral * peripheral, SERCOMHAL::SercomID sercom_id = SERCOMCHIPNAME::SercomID::Sercom3);
 	void AnotherExampleFunction(void);
 }
@@ -246,6 +248,21 @@ namespace SPICHIPNAME
 	#define SPI_MCU_OPT		OPT_SERCOM_CHIP_NAME
 ```
 11) Navigate to [spi_hal.h](/SerialLibraryExample/serial_controllers/serial_spi/spi_hal.h) and find the code block which looks similar to this:
+```
+#if (SPI_MCU_OPT == OPT_SERCOM_SAMD21)
+#define NUM_EXTRA_SPI_PARAMS 5
+#else
+#define NUM_EXTRA_SPI_PARAMS 1
+#endif
+```
+12) Before the line which says `#else`, add the following code for your new chip:
+```
+#elif (SPI_MCU_OPT == OPT_SERCOM_CHIP_NAME)
+#define NUM_EXTRA_SPI_PARAMS #
+```
+where # is the number of extra hardware specific parameters defined in your hardware-specific SPI code.
+
+13) Next, find the code block which looks similar to this:
 ```
 #if (SPI_MCU_OPT == OPT_SERCOM_SAMD21)
 #include "serial_spi/hardware/spi_samd21.h"
