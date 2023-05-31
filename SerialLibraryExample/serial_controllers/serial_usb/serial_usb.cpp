@@ -93,9 +93,7 @@ bool SerialUSB::USBController::Transmit(char input)
 
 bool SerialUSB::USBController::Receive(char * output)
 {
-	bool received = false;
-	if(usb_on) received = usb_buffer.Get(&(Serial::NoIntEnable), output);
-	return received;
+	return usb_buffer.Get(&(Serial::NoIntEnable), output);
 }
 
 bool SerialUSB::USBController::TransmitPacket(const char * input, uint32_t num_bytes)

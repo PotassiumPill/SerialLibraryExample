@@ -59,7 +59,7 @@ namespace SPIHAL
 		uint32_t baud_value;									//!< Baud rate of %SPI transmission
 		ClockMode clock_mode;									//!< Clock mode of %SPI transmission
 		Endian endianess;										//!< Order of data bit shifting
-		uint8_t extra_spi_params[NUM_EXTRA_SPI_PARAMS];		//!< Extra parameters for hardware specific configurations (such as oversampling, clock parameters, etc.)
+		uint8_t extra_spi_params[NUM_EXTRA_SPI_PARAMS];			//!< Extra parameters for hardware specific configurations (such as oversampling, clock parameters, etc.)
 	};
 	/*!
 	 * \brief Populates a peripheral struct with default values

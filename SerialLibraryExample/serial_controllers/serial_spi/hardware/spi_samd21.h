@@ -18,6 +18,11 @@
  */
 namespace SPISAMD21
 {
+	/*!
+	 * \brief Extra parameters for hardware specific configuration
+	 * 
+	 * Extra parameter labels used in extra_spi_params peripheral array for SAMD21-specific configuration 
+	 */
 	enum ExtraParams : uint8_t {
 		GEN_CLK,							//!< ID of generic clock used for %SPI
 		GEN_CLK_DIVISOR_BITS_9_16,			//!< Clock speed divisor (bit 9:16)
