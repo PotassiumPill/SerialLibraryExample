@@ -94,8 +94,7 @@ bool Serial::SerialBuffer::GetString(const char *input, uint32_t shift, bool mov
 		for(uint32_t i = 0; i < numel; i++)
 		{
 			//iterates backwards in buffer and input string and checks if each element is equal to each other
-			if(reader == 0u) reader = bsize - 1;
-			else reader--;
+			reader = (!reader) ? bsize - 1 : reader - 1;
 			has_string = (input[numel - 1 - i] == arr_ref[reader]);
 			if(!has_string) break;
 		}
@@ -142,8 +141,7 @@ bool Serial::SerialBuffer::GetIntParam(uint32_t * output, const char *input, cha
 		uint32_t rd_index;
 		uint32_t bsize = buffer.GetSize();
 		char * arr_ref = buffer.GetRawElements(&rd_index);
-		if(rd_index == 0u) temp_index = bsize - 1;
-		else temp_index = rd_index - 1u;
+		temp_index = (!rd_index) ? bsize - 1 : rd_index - 1;
 		if(GetASCIIAsInt(output, int_func))
 		{
 			char read_delimiter;
