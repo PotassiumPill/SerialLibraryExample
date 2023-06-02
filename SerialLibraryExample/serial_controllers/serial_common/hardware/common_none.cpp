@@ -5,9 +5,11 @@
  * Description		:	Blank template for hardware implementations of serial communication interfaces.
  */
 
-#include "serial_common/common_hal.h"
+#include "serial_comm_config.h"
 
 #if (SERCOM_MCU_OPT == OPT_SERCOM_NONE)
+
+#include "serial_common/common_hal.h"
 
 void SERCOMHAL::ConfigPin(SERCOMHAL::Pinout pin, bool output, bool multiplexed, SERCOMHAL::PullResistor pull)
 {

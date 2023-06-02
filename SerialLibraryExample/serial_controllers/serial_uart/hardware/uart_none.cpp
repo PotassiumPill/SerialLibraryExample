@@ -5,9 +5,11 @@
  * Description		:	Blank template for hardware implementations of UART.
  */
 
-#include "serial_uart/uart_hal.h"
+#include "serial_uart/uart_config.h"
 
 #if (UART_MCU_OPT == OPT_SERCOM_NONE)
+
+#include "serial_uart/uart_hal.h"
 
 void UARTHAL::GetPeripheralDefaults(UARTHAL::Peripheral * peripheral)
 {

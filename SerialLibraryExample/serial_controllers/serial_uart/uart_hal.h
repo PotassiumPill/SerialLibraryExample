@@ -9,12 +9,9 @@
 #ifndef __UART_HAL_H__
 #define __UART_HAL_H__
 
-#include "serial_uart/uart_config.h"
 #include "serial_common/common_hal.h"
 
-#if (UART_MCU_OPT == OPT_SERCOM_SAMD21)
-#define NUM_EXTRA_UART_PARAMS 6
-#else
+#ifndef NUM_EXTRA_UART_PARAMS
 #define NUM_EXTRA_UART_PARAMS 1
 #endif
 
@@ -220,10 +217,5 @@ namespace UARTHAL
 	 */
 	bool CheckParityError(SERCOMHAL::SercomID sercom_id);
 }
-
-//chooses specific hardware low level driver based on uart_config.h
-#if (UART_MCU_OPT == OPT_SERCOM_SAMD21)
-#include "serial_uart/hardware/uart_samd21.h"
-#endif
 
 #endif //__UART_HAL_H__

@@ -6,9 +6,11 @@
  */
 
 
-#include "serial_common/common_hal.h"
+#include "serial_comm_config.h"
 
 #if (SERCOM_MCU_OPT == OPT_SERCOM_SAMD21)
+
+#include "serial_common/hardware/common_samd21.h"
 
 Sercom * SERCOMSAMD21::GetSercom(SERCOMHAL::SercomID sercom_id)
 {

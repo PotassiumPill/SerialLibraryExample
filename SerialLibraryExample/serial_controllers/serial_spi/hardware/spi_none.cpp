@@ -5,9 +5,11 @@
  * Description		:	Blank template for hardware implementations of SPI.
  */
 
-#include "serial_spi/spi_hal.h"
+#include "serial_spi/spi_config.h"
 
 #if (SPI_MCU_OPT == OPT_SERCOM_NONE)
+
+#include "serial_spi/spi_hal.h"
 
 void SPIHAL::GetPeripheralDefaults(SPIHAL::Peripheral * peripheral)
 {

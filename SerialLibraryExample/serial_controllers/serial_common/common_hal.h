@@ -87,8 +87,4 @@ namespace SERCOMHAL
 	void OutputLow(Pinout output_pin);
 }
 
-#if (SERCOM_MCU_OPT == OPT_SERCOM_SAMD21)
-#include "serial_common/hardware/common_samd21.h"
-#endif
-
 #endif //__COMMON_HAL_H__

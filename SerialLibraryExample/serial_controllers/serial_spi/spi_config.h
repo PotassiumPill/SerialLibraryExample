@@ -24,4 +24,12 @@
 #endif
 //-----------------------
 
+#if (SPI_MCU_OPT == OPT_SERCOM_SAMD21)
+	#define NUM_EXTRA_SPI_PARAMS 5
+	#include "serial_spi/hardware/spi_samd21.h"
+#else
+	#define NUM_EXTRA_SPI_PARAMS 1
+	#include "serial_spi/spi_hal.h"
+#endif
+
 #endif //__SPI_CONFIG_H__

@@ -10,6 +10,9 @@
 #define __UART_SAMD21_H__
 
 #include "sam.h"
+#include "serial_uart/uart_hal.h"
+
+#include "serial_common/hardware/common_samd21.h"
 
 /*!
  * \brief %UART SAMD21 low level driver global namespace

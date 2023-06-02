@@ -9,12 +9,9 @@
 #ifndef __SPI_HAL_H__
 #define __SPI_HAL_H__
 
-#include "serial_spi/spi_config.h"
 #include "serial_common/common_hal.h"
 
-#if (SPI_MCU_OPT == OPT_SERCOM_SAMD21)
-#define NUM_EXTRA_SPI_PARAMS 5
-#else
+#ifndef NUM_EXTRA_SPI_PARAMS
 #define NUM_EXTRA_SPI_PARAMS 1
 #endif
 
@@ -179,10 +176,5 @@ namespace SPIHAL
 	 */
 	bool CheckOverflowError(SERCOMHAL::SercomID sercom_id);
 }
-
-//chooses specific hardware low level driver based on spi_config.h
-#if (SPI_MCU_OPT == OPT_SERCOM_SAMD21)
-#include "serial_spi/hardware/spi_samd21.h"
-#endif
 
 #endif //__SPI_HAL_H__

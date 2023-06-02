@@ -9,6 +9,8 @@
 #ifndef __COMMON_SAMD21_H__
 #define __COMMON_SAMD21_H__
 
+#include "serial_common/common_hal.h"
+
 #include "sam.h"
 
 /*!

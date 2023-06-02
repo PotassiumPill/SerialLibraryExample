@@ -9,7 +9,12 @@
 #ifndef __SPI_SAMD21_H__
 #define __SPI_SAMD21_H__
 
+
 #include "sam.h"
+#include "serial_spi/spi_hal.h"
+
+#include "serial_common/hardware/common_samd21.h"
+
 
 /*!
  * \brief %SPI SAMD21 low level driver global namespace

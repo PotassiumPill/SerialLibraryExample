@@ -5,9 +5,11 @@
  * Description		:	A UART serial communication low level driver for samd21.
  */
 
-#include "serial_uart/uart_hal.h"
+#include "serial_uart/uart_config.h"
 
 #if (UART_MCU_OPT == OPT_SERCOM_SAMD21)
+
+#include "serial_uart/hardware/uart_samd21.h"
 
 void UARTSAMD21::GetPeripheralDefaults(UARTHAL::Peripheral * peripheral, SERCOMHAL::SercomID sercom_id)
 {
