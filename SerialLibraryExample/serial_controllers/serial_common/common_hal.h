@@ -9,7 +9,6 @@
 #ifndef __COMMON_HAL_H__
 #define __COMMON_HAL_H__
 
-#include "serial_comm_config.h"
 #include <stdint.h>
 
 /*!
