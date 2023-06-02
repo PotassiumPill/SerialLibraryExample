@@ -14,9 +14,11 @@
 	#warning "No MCU defined. Please define an MCU."
 #endif
 #if (SERCOM_MODULE_OPT & OPT_SERCOM_UART)
+	#include "serial_uart/uart_config.h"
 	#include "serial_uart/serial_uart.h"
 #endif
 #if (SERCOM_MODULE_OPT & OPT_SERCOM_SPI)
+	#include "serial_spi/spi_config.h"
 	#include "serial_spi/serial_spi.h"
 #endif
 #if (SERCOM_MODULE_OPT & OPT_SERCOM_USB)
