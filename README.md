@@ -78,6 +78,8 @@ where `"chip.h"` is the header file for your chip and `OPT_MCU_CHIP_NAME' is the
 #ifndef __COMMON_CHIPNAME_H__
 #define __COMMON_CHIPNAME_H__
 
+#include "serial_common/common_hal.h"
+
 #include "chip.h"
 
 namespace SERCOMCHIPNAME
@@ -105,23 +107,14 @@ namespace SERCOMCHIPNAME
 5) Add a new cpp file to this directory for your chip, ie `common_chipname.cpp`.
 6) At the top, include this code block:
 ```
-#include "serial_common/common_hal.h"
+#include "serial_comm_config.h"
 
 #if (SERCOM_MCU_OPT == OPT_SERCOM_CHIP_NAME)
+
+#include "serial_common/hardware/common_chipname.h"
 ```
 7) Here, you will define all functions in [common_hal.h](/SerialLibraryExample/serial_controllers/serial_common/common_hal.h) and any functions you defined in `common_chipname.h`.
 8) Make sure that the last line in this file is `#endif`!
-9) Navigate to [common_hal.h](/SerialLibraryExample/serial_controllers/serial_common/common_hal.h) and find the code block which looks similar to this:
-```
-#if (SERCOM_MCU_OPT == OPT_SERCOM_SAMD21)
-#include "serial_common/hardware/common_samd21.h"
-#endif
-```
-10) Before the last `#endif` line and before the last `#include` line, add the following code for your new chip:
-```
-#elif (SERCOM_MCU_OPT == OPT_SERCOM_CHIP_NAME)
-#include "serial_common/hardware/common_chipname.h"
-```
 
 ### Add Functionality to UART Stack
 1) Navigate to the [hardware](/SerialLibraryExample/serial_controllers/serial_uart/hardware) directory under the [serial_uart](/SerialLibraryExample/serial_controllers/serial_uart) directory.
@@ -132,6 +125,9 @@ namespace SERCOMCHIPNAME
 #define __UART_CHIPNAME_H__
 
 #include "chip.h"
+#include "serial_uart/uart_hal.h"
+
+#include "serial_common/hardware/common_chipname.h"
 
 namespace UARTCHIPNAME
 {
@@ -150,9 +146,11 @@ namespace UARTCHIPNAME
 4) Add a new cpp file to this directory for your chip, ie `uart_chipname.cpp`.
 5) At the top, include this code block:
 ```
-#include "serial_uart/uart_hal.h"
+#include "serial_uart/uart_config.h"
 
 #if (UART_MCU_OPT == OPT_SERCOM_CHIP_NAME)
+
+#include "serial_uart/hardware/uart_chipname.h"
 ```
 6) Here, you will define all functions in [uart_hal.h](/SerialLibraryExample/serial_controllers/serial_uart/uart_hal.h) and any functions you defined in `uart_chipname.h`.
 7) Make sure that the last line in this file is `#endif`!
@@ -172,32 +170,20 @@ namespace UARTCHIPNAME
 #elif (SERCOM_MCU_OPT == OPT_SERCOM_CHIP_NAME)
 	#define UART_MCU_OPT		OPT_SERCOM_CHIP_NAME
 ```
-11) Navigate to [uart_hal.h](/SerialLibraryExample/serial_controllers/serial_uart/uart_hal.h) and find the code block which looks similar to this:
+11) Next, find the code block which looks similar to this:
 ```
 #if (UART_MCU_OPT == OPT_SERCOM_SAMD21)
-#define NUM_EXTRA_UART_PARAMS 5
-#else
-#define NUM_EXTRA_UART_PARAMS 1
+	#define NUM_EXTRA_UART_PARAMS 6
+	#include "serial_uart/hardware/uart_samd21.h"
 #endif
 ```
-12) Before the line which says `#else`, add the following code for your new chip:
+12) Before the `#endif` line and after the last `#include` statement, add the following code for your new chip:
 ```
-#elif (UART_MCU_OPT == OPT_SERCOM_CHIP_NAME)
-#define NUM_EXTRA_UART_PARAMS #
+#elif (UART_MCU_OPT == OPT_SERCOM_CHIPNAME)
+	#define NUM_EXTRA_UART_PARAMS #
+	#include "serial_uart/hardware/uart_chipname.h"
 ```
-where # is the number of extra hardware specific parameters defined in your hardware-specific UART code.
-
-13) Next, find the code block which looks similar to this:
-```
-#if (UART_MCU_OPT == OPT_SERCOM_SAMD21)
-#include "serial_uart/hardware/uart_samd21.h"
-#endif
-```
-14) Before the last `#endif` line and before the last `#include` line, add the following code for your new chip:
-```
-#elif (UART_MCU_OPT == OPT_SERCOM_CHIP_NAME)
-#include "serial_uart/hardware/uart_chipname.h"
-```
+where # is the number of extra parameters you defined/need for your new hardware (this should line up with the number of elements defined in your ExtraParameters enum).
 
 ### Add Functionality to SPI Stack
 1) Navigate to the [hardware](/SerialLibraryExample/serial_controllers/serial_spi/hardware) directory under the [serial_spi](/SerialLibraryExample/serial_controllers/serial_spi) directory.
@@ -208,6 +194,9 @@ where # is the number of extra hardware specific parameters defined in your hard
 #define __SPI_CHIPNAME_H__
 
 #include "chip.h"
+#include "serial_spi/spi_hal.h"
+
+#include "serial_common/hardware/common_chipname.h"
 
 namespace SPICHIPNAME
 {
@@ -225,9 +214,11 @@ namespace SPICHIPNAME
 4) Add a new cpp file to this directory for your chip, ie `spi_chipname.cpp`.
 5) At the top, include this code block:
 ```
-#include "serial_spi/spi_hal.h"
+#include "serial_spi/spi_config.h"
 
 #if (SPI_MCU_OPT == OPT_SERCOM_CHIP_NAME)
+
+#include "serial_spi/hardware/spi_chipname.h"
 ```
 6) Here, you will define all functions in [spi_hal.h](/SerialLibraryExample/serial_controllers/serial_spi/spi_hal.h) and any functions you defined in `spi_chipname.h`.
 7) Make sure that the last line in this file is `#endif`!
@@ -247,29 +238,17 @@ namespace SPICHIPNAME
 #elif (SERCOM_MCU_OPT == OPT_SERCOM_CHIP_NAME)
 	#define SPI_MCU_OPT		OPT_SERCOM_CHIP_NAME
 ```
-11) Navigate to [spi_hal.h](/SerialLibraryExample/serial_controllers/serial_spi/spi_hal.h) and find the code block which looks similar to this:
+11) Next, find the code block which looks similar to this:
 ```
 #if (SPI_MCU_OPT == OPT_SERCOM_SAMD21)
-#define NUM_EXTRA_SPI_PARAMS 5
-#else
-#define NUM_EXTRA_SPI_PARAMS 1
+	#define NUM_EXTRA_SPI_PARAMS 5
+	#include "serial_spi/hardware/spi_samd21.h"
 #endif
 ```
-12) Before the line which says `#else`, add the following code for your new chip:
+12) Before the `#endif` line and after the last `#include` statement, add the following code for your new chip: 
 ```
-#elif (SPI_MCU_OPT == OPT_SERCOM_CHIP_NAME)
-#define NUM_EXTRA_SPI_PARAMS #
+#elif (SPI_MCU_OPT == OPT_SERCOM_CHIPNAME)
+	#define NUM_EXTRA_UART_PARAMS #
+	#include "serial_spi/hardware/spi_chipname.h"
 ```
-where # is the number of extra hardware specific parameters defined in your hardware-specific SPI code.
-
-13) Next, find the code block which looks similar to this:
-```
-#if (SPI_MCU_OPT == OPT_SERCOM_SAMD21)
-#include "serial_spi/hardware/spi_samd21.h"
-#endif
-```
-12) Before the last `#endif` line and before the last `#include` line, add the following code for your new chip:
-```
-#elif (SPI_MCU_OPT == OPT_SERCOM_CHIP_NAME)
-#include "serial_spi/hardware/spi_chipname.h"
-```
+where # is the number of extra parameters you defined/need for your new hardware (this should line up with the number of elements defined in your ExtraParameters enum).
