@@ -9,6 +9,8 @@
 #ifndef __SERIAL_SPI_H__
 #define __SERIAL_SPI_H__
 
+#include "serial_spi/spi_config.h"
+
 #include "serial_spi/spi_hal.h"
 #include "serial_buffer/serial_buffer.h"
 

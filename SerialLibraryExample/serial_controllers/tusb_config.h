@@ -58,6 +58,7 @@
 		#define CFG_TUSB_MCU        OPT_MCU_SAMD21
 	#else
 		#define CFG_TUSB_MCU		OPT_MCU_NONE
+		#warning "USB not defined for this MCU!"
 	#endif	
 #endif
 

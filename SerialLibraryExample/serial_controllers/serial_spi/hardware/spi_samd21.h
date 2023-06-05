@@ -9,6 +9,7 @@
 #ifndef __SPI_SAMD21_H__
 #define __SPI_SAMD21_H__
 
+#define NUM_EXTRA_SPI_PARAMS 5
 
 #include "sam.h"
 #include "serial_spi/spi_hal.h"

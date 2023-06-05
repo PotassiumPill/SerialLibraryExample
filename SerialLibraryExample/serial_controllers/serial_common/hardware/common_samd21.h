@@ -49,7 +49,7 @@ namespace SERCOMSAMD21
 	 * \brief An enum type for pin peripheral function on multiplexed pins on SAMD21.
 	 */
 	enum PeripheralFunction : uint8_t {
-		PF_A, PF_B, PF_C, PF_D, PF_E, PF_F, PF_G, PF_H
+		PF_NONE = 0, PF_A = 0, PF_B, PF_C, PF_D, PF_E, PF_F, PF_G, PF_H
 	};
 	/*!
 	 * \brief An enum type for a pin's port on SAMD21.

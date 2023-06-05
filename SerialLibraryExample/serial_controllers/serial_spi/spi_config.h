@@ -25,8 +25,9 @@
 //-----------------------
 
 #if (SPI_MCU_OPT == OPT_SERCOM_SAMD21)
-	#define NUM_EXTRA_SPI_PARAMS 5
 	#include "serial_spi/hardware/spi_samd21.h"
+#else 
+	#warning "SPI not defined for this MCU!"
 #endif
 
 #endif //__SPI_CONFIG_H__

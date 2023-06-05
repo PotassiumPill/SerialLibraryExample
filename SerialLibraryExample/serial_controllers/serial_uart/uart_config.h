@@ -25,8 +25,9 @@
 //-----------------------
 
 #if (UART_MCU_OPT == OPT_SERCOM_SAMD21)
-	#define NUM_EXTRA_UART_PARAMS 6
 	#include "serial_uart/hardware/uart_samd21.h"
+#else
+	#warning "UART not defined for this MCU!"
 #endif
 
 #endif //__UART_CONFIG_H__

@@ -9,6 +9,8 @@
 #ifndef __UART_SAMD21_H__
 #define __UART_SAMD21_H__
 
+#define NUM_EXTRA_UART_PARAMS 6
+
 #include "sam.h"
 #include "serial_uart/uart_hal.h"
 

@@ -45,6 +45,7 @@ Example project to showcase custom C++ serial communication library, configured 
 		#define CFG_TUSB_MCU		OPT_MCU_SAMD21
 	#else
 		#define CFG_TUSB_MCU		OPT_MCU_NONE
+		#warning "USB not defined for this MCU!"
 	#endif	
 #endif
 ```
@@ -119,10 +120,12 @@ namespace SERCOMCHIPNAME
 ### Add Functionality to UART Stack
 1) Navigate to the [hardware](/SerialLibraryExample/serial_controllers/serial_uart/hardware) directory under the [serial_uart](/SerialLibraryExample/serial_controllers/serial_uart) directory.
 2) Add a new header to this directory for your chip, ie `uart_chipname.h`.
-3) Define a namespace for your hardware specific functions, any hardware specific enums, and an enum for naming the extra parameters. For example:
+3) Define a namespace for your hardware specific functions, define `NUM_EXTRA_UART_PARAMS` with the number of hardware-specific parameters you want to include, any hardware specific enums, and an enum for naming the extra parameters. For example:
 ```
 #ifndef __UART_CHIPNAME_H__
 #define __UART_CHIPNAME_H__
+
+#define NUM_EXTRA_UART_PARAMS 4
 
 #include "chip.h"
 #include "serial_uart/uart_hal.h"
@@ -143,6 +146,8 @@ namespace UARTCHIPNAME
 
 #endif //__UART_CHIPNAME_H__
 ```
+NOTE: make sure to define `NUM_EXTRA_UART_PARAMS` before including `uart_hal.h`.
+
 4) Add a new cpp file to this directory for your chip, ie `uart_chipname.cpp`.
 5) At the top, include this code block:
 ```
@@ -173,25 +178,26 @@ namespace UARTCHIPNAME
 11) Next, find the code block which looks similar to this:
 ```
 #if (UART_MCU_OPT == OPT_SERCOM_SAMD21)
-	#define NUM_EXTRA_UART_PARAMS 6
 	#include "serial_uart/hardware/uart_samd21.h"
+#else
+	#warning "UART not defined for this MCU!"
 #endif
 ```
-12) Before the `#endif` line and after the last `#include` statement, add the following code for your new chip:
+12) Before the `#else` line and after the last `#include` statement, add the following code for your new chip:
 ```
 #elif (UART_MCU_OPT == OPT_SERCOM_CHIPNAME)
-	#define NUM_EXTRA_UART_PARAMS #
 	#include "serial_uart/hardware/uart_chipname.h"
 ```
-where # is the number of extra parameters you defined/need for your new hardware (this should line up with the number of elements defined in your ExtraParameters enum).
 
 ### Add Functionality to SPI Stack
 1) Navigate to the [hardware](/SerialLibraryExample/serial_controllers/serial_spi/hardware) directory under the [serial_spi](/SerialLibraryExample/serial_controllers/serial_spi) directory.
 2) Add a new header to this directory for your chip, ie `spi_chipname.h`.
-3) Define a namespace for your hardware specific functions, any hardware specific enums, and an enum for naming the extra parameters. For example:
+3) Define a namespace for your hardware specific functions, define `NUM_EXTRA_SPI_PARAMS` with the number of hardware-specific parameters you want to include, any hardware specific enums, and an enum for naming the extra parameters. For example:
 ```
 #ifndef __SPI_CHIPNAME_H__
 #define __SPI_CHIPNAME_H__
+
+#define NUM_EXTRA_SPI_PARAMS 3
 
 #include "chip.h"
 #include "serial_spi/spi_hal.h"
@@ -211,6 +217,8 @@ namespace SPICHIPNAME
 
 #endif //__SPI_CHIPNAME_H__
 ```
+NOTE: make sure to define `NUM_EXTRA_SPI_PARAMS` before including `spi_hal.h`.
+
 4) Add a new cpp file to this directory for your chip, ie `spi_chipname.cpp`.
 5) At the top, include this code block:
 ```
@@ -241,14 +249,13 @@ namespace SPICHIPNAME
 11) Next, find the code block which looks similar to this:
 ```
 #if (SPI_MCU_OPT == OPT_SERCOM_SAMD21)
-	#define NUM_EXTRA_SPI_PARAMS 5
 	#include "serial_spi/hardware/spi_samd21.h"
+#else 
+	#warning "SPI not defined for this MCU!"
 #endif
 ```
-12) Before the `#endif` line and after the last `#include` statement, add the following code for your new chip: 
+12) Before the `#else` line and after the last `#include` statement, add the following code for your new chip: 
 ```
 #elif (SPI_MCU_OPT == OPT_SERCOM_CHIPNAME)
-	#define NUM_EXTRA_UART_PARAMS #
 	#include "serial_spi/hardware/spi_chipname.h"
 ```
-where # is the number of extra parameters you defined/need for your new hardware (this should line up with the number of elements defined in your ExtraParameters enum).

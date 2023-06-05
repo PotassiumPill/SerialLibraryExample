@@ -9,6 +9,8 @@
 #ifndef __SERIAL_UART_H__
 #define __SERIAL_UART_H__
 
+#include "serial_uart/uart_config.h"
+
 #include "serial_uart/uart_hal.h"
 #include "serial_buffer/serial_buffer.h"
 
