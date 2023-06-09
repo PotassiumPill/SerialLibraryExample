@@ -1,6 +1,9 @@
 # SerialLibraryExample
 Example project to showcase custom C++ serial communication library, configured for an example on the SAMD21 using Microchip Studio. 
 
+## Important Compilation Note
+This project uses C++11 features such as nullptr and scoped enums. If you see compilation errors related to this problem, add `-std=c++11` as a flag to your C++ compiler.
+
 ## Features
 1) [Serial UART](/SerialLibraryExample/serial_controllers/serial_uart) library.
 2) [Serial SPI](/SerialLibraryExample/serial_controllers/serial_spi) library.
