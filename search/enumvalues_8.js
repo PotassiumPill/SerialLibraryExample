@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['pad_5fconfig_452',['PAD_CONFIG',['../namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5a8bc285ec0032e0c7e6f910713269999f',1,'SPISAMD21::PAD_CONFIG()'],['../namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142ae32875e1bcb9bbfb1e71179bc23aa9c6',1,'UARTSAMD21::PAD_CONFIG()']]],
-  ['peven_453',['PEven',['../namespace_u_a_r_t_h_a_l.html#a83034d7a886b27a74b9a5c1100404779a91a5d30e6ebaddadac92fb018cbbde26',1,'UARTHAL']]],
-  ['pinpulldown_454',['PinPullDown',['../namespace_s_e_r_c_o_m_h_a_l.html#a94b005001590518e520ce60d407bf9daaac9d40a86eaef0b573d120362ac75fa2',1,'SERCOMHAL']]],
-  ['pinpullup_455',['PinPullUp',['../namespace_s_e_r_c_o_m_h_a_l.html#a94b005001590518e520ce60d407bf9daabed47520978d78c53321706efec205af',1,'SERCOMHAL']]],
-  ['pnone_456',['PNone',['../namespace_u_a_r_t_h_a_l.html#a83034d7a886b27a74b9a5c1100404779a56d39fcf8af134deb3cb18c8db2e28b8',1,'UARTHAL']]],
-  ['podd_457',['POdd',['../namespace_u_a_r_t_h_a_l.html#a83034d7a886b27a74b9a5c1100404779a47ec4770772028dbf61e1d9e75d958de',1,'UARTHAL']]]
+  ['onestopbit_449',['OneStopBit',['../namespace_u_a_r_t_h_a_l.html#a6d4b972f6f8a9a33b5f2554cb678f09daa6fc1aaf677dc9efca83842ce75f16cd',1,'UARTHAL']]],
+  ['over16x_5f11_5f12_5f13_450',['Over16x_11_12_13',['../namespace_u_a_r_t_s_a_m_d21.html#aeabc7f1e47cfc203df30e0e608842eb0a06ecd40d7859073b1cb590d0a1141dee',1,'UARTSAMD21']]],
+  ['over16x_5f13_5f14_5f15_451',['Over16x_13_14_15',['../namespace_u_a_r_t_s_a_m_d21.html#aeabc7f1e47cfc203df30e0e608842eb0afabe5676a2a84d92a92edfc93c8f5771',1,'UARTSAMD21']]],
+  ['over16x_5f7_5f8_5f9_452',['Over16x_7_8_9',['../namespace_u_a_r_t_s_a_m_d21.html#aeabc7f1e47cfc203df30e0e608842eb0a2c51e228cbd2d74ae3301c34e2e8f4aa',1,'UARTSAMD21']]],
+  ['over16x_5f9_5f10_5f11_453',['Over16x_9_10_11',['../namespace_u_a_r_t_s_a_m_d21.html#aeabc7f1e47cfc203df30e0e608842eb0a5df3ca6bf83eec5cb858bf4d732a055c',1,'UARTSAMD21']]],
+  ['over8x_5f3_5f4_5f5_454',['Over8x_3_4_5',['../namespace_u_a_r_t_s_a_m_d21.html#aeabc7f1e47cfc203df30e0e608842eb0a80151bf72c9f99cec50f84221e851901',1,'UARTSAMD21']]],
+  ['over8x_5f4_5f5_5f6_455',['Over8x_4_5_6',['../namespace_u_a_r_t_s_a_m_d21.html#aeabc7f1e47cfc203df30e0e608842eb0a67557b5a23b1d3e9a9b91d485aa0ef39',1,'UARTSAMD21']]],
+  ['over8x_5f5_5f6_5f7_456',['Over8x_5_6_7',['../namespace_u_a_r_t_s_a_m_d21.html#aeabc7f1e47cfc203df30e0e608842eb0a0b57a73aa6e4883f13332d13c4cd1f09',1,'UARTSAMD21']]],
+  ['over8x_5f6_5f7_5f8_457',['Over8x_6_7_8',['../namespace_u_a_r_t_s_a_m_d21.html#aeabc7f1e47cfc203df30e0e608842eb0af1822388b7d921c80cc354e1a794f075',1,'UARTSAMD21']]]
 ];

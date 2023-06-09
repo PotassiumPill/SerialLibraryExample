@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['none_440',['None',['../namespace_serial_s_p_i.html#abe0bfdd7d9d1dd54d7ca64e6f10c2cc9a6adf97f83acf6453d4a6a4b1070f3754',1,'SerialSPI::None()'],['../namespace_serial_s_p_i.html#a7c61ece8b67c7e21e09193a050162683a6adf97f83acf6453d4a6a4b1070f3754',1,'SerialSPI::None()'],['../namespace_serial_u_a_r_t.html#a5665c8a5f362b88aae24b97da47127a0a6adf97f83acf6453d4a6a4b1070f3754',1,'SerialUART::None()'],['../namespace_serial_u_a_r_t.html#a70e0c84b7b296bf22033c9d474e1cca7a6adf97f83acf6453d4a6a4b1070f3754',1,'SerialUART::None()']]],
-  ['nopull_441',['NoPull',['../namespace_s_e_r_c_o_m_h_a_l.html#a94b005001590518e520ce60d407bf9daa844e4187d1280b65b8bdbe291c02b18f',1,'SERCOMHAL']]],
-  ['notemptynotfull_442',['NotEmptyNotFull',['../namespace_generic_buffer.html#aa4e41a5537b17cbebf523e1445eaee82a75dfaefbbfaf6c0918ee30c97fb76f8b',1,'GenericBuffer']]]
+  ['mode0_441',['Mode0',['../namespace_s_p_i_h_a_l.html#a82ef6c9dcbd474db1011b2d952655315a315436bae0e85636381fc939db06aee5',1,'SPIHAL']]],
+  ['mode1_442',['Mode1',['../namespace_s_p_i_h_a_l.html#a82ef6c9dcbd474db1011b2d952655315a7a2ea225a084605104f8c39b3ae9657c',1,'SPIHAL']]],
+  ['mode2_443',['Mode2',['../namespace_s_p_i_h_a_l.html#a82ef6c9dcbd474db1011b2d952655315a04c542f260d16590ec60c594f67a30e7',1,'SPIHAL']]],
+  ['mode3_444',['Mode3',['../namespace_s_p_i_h_a_l.html#a82ef6c9dcbd474db1011b2d952655315ab68fa4884da8d22e83f37b4f209295f1',1,'SPIHAL']]],
+  ['msb_445',['MSB',['../namespace_s_p_i_h_a_l.html#a185a0957426b6ab25fe41ed3f8eb2ab8ae86b28b55eaf8feb03e24730be892314',1,'SPIHAL::MSB()'],['../namespace_u_a_r_t_h_a_l.html#a87a1ac79843020df2a7767ad2b2658b1ae86b28b55eaf8feb03e24730be892314',1,'UARTHAL::MSB()']]]
 ];

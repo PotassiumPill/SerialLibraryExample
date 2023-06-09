@@ -14,8 +14,10 @@ var searchData=
   ['clearrxinterrupt_14',['ClearRXInterrupt',['../class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#ac3399e6c6eaed563b8c474533e49f205',1,'SerialUART::UARTController']]],
   ['cleartosend_15',['ClearToSend',['../namespace_u_a_r_t_h_a_l.html#a258117f5b0637556b38495e304a46c95',1,'UARTHAL']]],
   ['cleartxinterrupt_16',['ClearTXInterrupt',['../class_serial_u_a_r_t_1_1_u_a_r_t_controller.html#a64dcc4207f50cbe72a0faf5085223a42',1,'SerialUART::UARTController']]],
-  ['clock_5fmode_17',['clock_mode',['../struct_s_p_i_h_a_l_1_1_peripheral.html#ad4e1086164ea196ac4997e37175b826b',1,'SPIHAL::Peripheral']]],
-  ['clockmode_18',['ClockMode',['../namespace_s_p_i_h_a_l.html#a82ef6c9dcbd474db1011b2d952655315',1,'SPIHAL']]],
-  ['configpin_19',['ConfigPin',['../namespace_s_e_r_c_o_m_h_a_l.html#a3b8df24e80a333b5d5c0435fdbf91592',1,'SERCOMHAL']]],
-  ['current_5fstate_20',['current_state',['../struct_state_machine_1_1_s_t_t___m_a_c_h_i_n_e.html#a3c3c1b772c30832328f37694f35e2268',1,'StateMachine::STT_MACHINE']]]
+  ['clk_5fsrc_17',['CLK_SRC',['../namespace_u_a_r_t_s_a_m_d21.html#a5ed408ef3038e367a053959a5f27a142ab3e70777f3b3ff26ae479da1412fd2e9',1,'UARTSAMD21::CLK_SRC()'],['../namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5ac79ce4eb0dd4339069fb0469af873fce',1,'SPISAMD21::CLK_SRC()']]],
+  ['clock_5fmode_18',['clock_mode',['../struct_s_p_i_h_a_l_1_1_peripheral.html#ad4e1086164ea196ac4997e37175b826b',1,'SPIHAL::Peripheral']]],
+  ['clockmode_19',['ClockMode',['../namespace_s_p_i_h_a_l.html#a82ef6c9dcbd474db1011b2d952655315',1,'SPIHAL']]],
+  ['clocksource_20',['ClockSource',['../namespace_s_e_r_c_o_m_s_a_m_d21.html#aff5923ab31a18b353447982f3f1d89cc',1,'SERCOMSAMD21']]],
+  ['configpin_21',['ConfigPin',['../namespace_s_e_r_c_o_m_h_a_l.html#a3b8df24e80a333b5d5c0435fdbf91592',1,'SERCOMHAL']]],
+  ['current_5fstate_22',['current_state',['../struct_state_machine_1_1_s_t_t___m_a_c_h_i_n_e.html#a3c3c1b772c30832328f37694f35e2268',1,'StateMachine::STT_MACHINE']]]
 ];

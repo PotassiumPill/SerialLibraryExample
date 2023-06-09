@@ -58,6 +58,7 @@ var menudata={children:[
 {text:"Typedefs",url:"namespacemembers_type.html"},
 {text:"Enumerations",url:"namespacemembers_enum.html"},
 {text:"Enumerator",url:"namespacemembers_eval.html",children:[
+{text:"c",url:"namespacemembers_eval.html#index_c"},
 {text:"d",url:"namespacemembers_eval.html#index_d"},
 {text:"g",url:"namespacemembers_eval.html#index_g"},
 {text:"o",url:"namespacemembers_eval.html#index_o"},

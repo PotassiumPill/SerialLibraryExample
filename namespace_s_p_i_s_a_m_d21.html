@@ -77,12 +77,13 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ad6309e0324548e9acc894a52eb1a10c5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5">ExtraParams</a> : uint8_t { <br />
-&#160;&#160;<a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5a1f15aaf3da85755b30f45334bc8694be">GEN_CLK</a>
+&#160;&#160;<a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5ac79ce4eb0dd4339069fb0469af873fce">CLK_SRC</a>
+, <a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5a1f15aaf3da85755b30f45334bc8694be">GEN_CLK</a>
 , <a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5a44e940e793452f378894feeda77c4b7f">GEN_CLK_DIVISOR_BITS_9_16</a>
 , <a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5a355a484076fb22a9c295b17d7439cf1a">GEN_CLK_DIVISOR_BITS_1_8</a>
-, <a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5abeaddf4cf51713ad65724f4040a227d6">GEN_CLK_RUN_STANDY</a>
 , <br />
-&#160;&#160;<a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5a8bc285ec0032e0c7e6f910713269999f">PAD_CONFIG</a>
+&#160;&#160;<a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5abeaddf4cf51713ad65724f4040a227d6">GEN_CLK_RUN_STANDY</a>
+, <a class="el" href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5a8bc285ec0032e0c7e6f910713269999f">PAD_CONFIG</a>
 <br />
  }</td></tr>
 <tr class="memdesc:ad6309e0324548e9acc894a52eb1a10c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extra parameters for hardware specific configuration.  <a href="namespace_s_p_i_s_a_m_d21.html#ad6309e0324548e9acc894a52eb1a10c5">More...</a><br /></td></tr>
@@ -107,6 +108,10 @@ Functions</h2></td></tr>
 <tr class="memitem:aab08b88e38f10d7c45aa5a5acba94343"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_p_i_s_a_m_d21.html#aab08b88e38f10d7c45aa5a5acba94343">GetPeripheralDefaults</a> (<a class="el" href="struct_s_p_i_h_a_l_1_1_peripheral.html">SPIHAL::Peripheral</a> *peripheral, <a class="el" href="namespace_s_e_r_c_o_m_h_a_l.html#aef085a7571bb4d9cae9821be7982e559">SERCOMHAL::SercomID</a> sercom_id=SERCOMSAMD21::SercomID::Sercom4)</td></tr>
 <tr class="memdesc:aab08b88e38f10d7c45aa5a5acba94343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populates a peripheral struct with default values.  <a href="namespace_s_p_i_s_a_m_d21.html#aab08b88e38f10d7c45aa5a5acba94343">More...</a><br /></td></tr>
 <tr class="separator:aab08b88e38f10d7c45aa5a5acba94343"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dee780670bfc861edee4bb78e513dbc"><td class="memItemLeft" align="right" valign="top"><a id="a6dee780670bfc861edee4bb78e513dbc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_p_i_s_a_m_d21.html#a6dee780670bfc861edee4bb78e513dbc">SetClkSrcParam</a> (<a class="el" href="struct_s_p_i_h_a_l_1_1_peripheral.html">SPIHAL::Peripheral</a> *peripheral, <a class="el" href="namespace_s_e_r_c_o_m_s_a_m_d21.html#aff5923ab31a18b353447982f3f1d89cc">SERCOMSAMD21::ClockSource</a> clock_source=SERCOMSAMD21::ClockSource::CS_OSC8M)</td></tr>
+<tr class="memdesc:a6dee780670bfc861edee4bb78e513dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for clock source peripheral parameter. <br /></td></tr>
+<tr class="separator:a6dee780670bfc861edee4bb78e513dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab53092d94255871518a2451e552eb82c"><td class="memItemLeft" align="right" valign="top"><a id="ab53092d94255871518a2451e552eb82c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_p_i_s_a_m_d21.html#ab53092d94255871518a2451e552eb82c">SetGenClkParam</a> (<a class="el" href="struct_s_p_i_h_a_l_1_1_peripheral.html">SPIHAL::Peripheral</a> *peripheral, <a class="el" href="namespace_s_e_r_c_o_m_s_a_m_d21.html#aea27e6a5755e74144596a96a543a18f6">SERCOMSAMD21::GenericClock</a> generic_clock=SERCOMSAMD21::GenericClock::GEN_CLK_2)</td></tr>
 <tr class="memdesc:ab53092d94255871518a2451e552eb82c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for generic clock peripheral parameter. <br /></td></tr>
@@ -143,7 +148,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="name
 <p>Extra parameters for hardware specific configuration. </p>
 <p>Extra parameter labels used in extra_spi_params peripheral array for SAMD21-specific configuration </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad6309e0324548e9acc894a52eb1a10c5a1f15aaf3da85755b30f45334bc8694be"></a>GEN_CLK&#160;</td><td class="fielddoc"><p>ID of generic clock used for SPI. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad6309e0324548e9acc894a52eb1a10c5ac79ce4eb0dd4339069fb0469af873fce"></a>CLK_SRC&#160;</td><td class="fielddoc"><p>ID of clock source used in generic clock. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad6309e0324548e9acc894a52eb1a10c5a1f15aaf3da85755b30f45334bc8694be"></a>GEN_CLK&#160;</td><td class="fielddoc"><p>ID of generic clock used for SPI. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ad6309e0324548e9acc894a52eb1a10c5a44e940e793452f378894feeda77c4b7f"></a>GEN_CLK_DIVISOR_BITS_9_16&#160;</td><td class="fielddoc"><p>Clock speed divisor (bit 9:16) </p>
 </td></tr>

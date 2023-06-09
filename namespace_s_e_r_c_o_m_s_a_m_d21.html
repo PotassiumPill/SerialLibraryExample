@@ -76,6 +76,22 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:aff5923ab31a18b353447982f3f1d89cc"><td class="memItemLeft" align="right" valign="top"><a id="aff5923ab31a18b353447982f3f1d89cc"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_e_r_c_o_m_s_a_m_d21.html#aff5923ab31a18b353447982f3f1d89cc">ClockSource</a> : uint8_t { <br />
+&#160;&#160;<b>CS_XOSC</b>
+, <b>CS_GCKLIN</b>
+, <b>CS_GCLKGEN1</b>
+, <b>CS_OSCULP32K</b>
+, <br />
+&#160;&#160;<b>CS_OSC32K</b>
+, <b>CS_XOSC32K</b>
+, <b>CS_OSC8M</b>
+, <b>CS_DFLL48M</b>
+, <br />
+&#160;&#160;<b>CS_FDPLL96M</b>
+<br />
+ }</td></tr>
+<tr class="memdesc:aff5923ab31a18b353447982f3f1d89cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enum type for Generic Clock source on SAMD21. <br /></td></tr>
+<tr class="separator:aff5923ab31a18b353447982f3f1d89cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea27e6a5755e74144596a96a543a18f6"><td class="memItemLeft" align="right" valign="top"><a id="aea27e6a5755e74144596a96a543a18f6"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_e_r_c_o_m_s_a_m_d21.html#aea27e6a5755e74144596a96a543a18f6">GenericClock</a> : uint8_t { <br />
 &#160;&#160;<b>GEN_CLK_0</b>
 , <b>GEN_CLK_1</b>
@@ -131,16 +147,16 @@ Functions</h2></td></tr>
 <tr class="memitem:a7f9e65ffd7b938d205d6f065eb17473c"><td class="memItemLeft" align="right" valign="top">Sercom *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_e_r_c_o_m_s_a_m_d21.html#a7f9e65ffd7b938d205d6f065eb17473c">GetSercom</a> (<a class="el" href="namespace_s_e_r_c_o_m_h_a_l.html#aef085a7571bb4d9cae9821be7982e559">SERCOMHAL::SercomID</a> sercom_id)</td></tr>
 <tr class="memdesc:a7f9e65ffd7b938d205d6f065eb17473c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for getting the Sercom struct address on the SAMD21 from the peripheral SERCOM ID.  <a href="namespace_s_e_r_c_o_m_s_a_m_d21.html#a7f9e65ffd7b938d205d6f065eb17473c">More...</a><br /></td></tr>
 <tr class="separator:a7f9e65ffd7b938d205d6f065eb17473c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2c45bf9304fe03e2599d979d0f71c9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_e_r_c_o_m_s_a_m_d21.html#ae2c45bf9304fe03e2599d979d0f71c9e">EnableSercomClock</a> (<a class="el" href="namespace_s_e_r_c_o_m_h_a_l.html#aef085a7571bb4d9cae9821be7982e559">SERCOMHAL::SercomID</a> sercom_id, <a class="el" href="namespace_s_e_r_c_o_m_s_a_m_d21.html#aea27e6a5755e74144596a96a543a18f6">GenericClock</a> gen_clk_num, uint16_t clock_divisor=0, bool run_standby=false)</td></tr>
-<tr class="memdesc:ae2c45bf9304fe03e2599d979d0f71c9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sercom clock enabler.  <a href="namespace_s_e_r_c_o_m_s_a_m_d21.html#ae2c45bf9304fe03e2599d979d0f71c9e">More...</a><br /></td></tr>
-<tr class="separator:ae2c45bf9304fe03e2599d979d0f71c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09da926c256e0bdd3a1db939ac65d674"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_s_e_r_c_o_m_s_a_m_d21.html#a09da926c256e0bdd3a1db939ac65d674">EnableSercomClock</a> (<a class="el" href="namespace_s_e_r_c_o_m_h_a_l.html#aef085a7571bb4d9cae9821be7982e559">SERCOMHAL::SercomID</a> sercom_id, <a class="el" href="namespace_s_e_r_c_o_m_s_a_m_d21.html#aff5923ab31a18b353447982f3f1d89cc">ClockSource</a> clock_source, <a class="el" href="namespace_s_e_r_c_o_m_s_a_m_d21.html#aea27e6a5755e74144596a96a543a18f6">GenericClock</a> gen_clk_num, uint16_t clock_divisor=0, bool run_standby=false)</td></tr>
+<tr class="memdesc:a09da926c256e0bdd3a1db939ac65d674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sercom clock enabler.  <a href="namespace_s_e_r_c_o_m_s_a_m_d21.html#a09da926c256e0bdd3a1db939ac65d674">More...</a><br /></td></tr>
+<tr class="separator:a09da926c256e0bdd3a1db939ac65d674"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>SERCOM SAMD21 low level driver global namespace </p>
 <p>This namespace contains all constants and helper functions for implementing the low level drivers and peripherals on the SAMD21 chip. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ae2c45bf9304fe03e2599d979d0f71c9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2c45bf9304fe03e2599d979d0f71c9e">&#9670;&nbsp;</a></span>EnableSercomClock()</h2>
+<a id="a09da926c256e0bdd3a1db939ac65d674"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09da926c256e0bdd3a1db939ac65d674">&#9670;&nbsp;</a></span>EnableSercomClock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -150,6 +166,12 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespace_s_e_r_c_o_m_h_a_l.html#aef085a7571bb4d9cae9821be7982e559">SERCOMHAL::SercomID</a>&#160;</td>
           <td class="paramname"><em>sercom_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_s_e_r_c_o_m_s_a_m_d21.html#aff5923ab31a18b353447982f3f1d89cc">SERCOMSAMD21::ClockSource</a>&#160;</td>
+          <td class="paramname"><em>clock_source</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -182,6 +204,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sercom_id</td><td>SERCOM# to feed clock to </td></tr>
+    <tr><td class="paramname">clock_source</td><td>generic clock source (must be enabled) </td></tr>
     <tr><td class="paramname">gen_clk_num</td><td>generic clock generator to use </td></tr>
     <tr><td class="paramname">clock_divisor</td><td>clock divisor, refer to datasheet for restrictions and valid divisors to use (default = 0) </td></tr>
     <tr><td class="paramname">run_standby</td><td>run clock while in sleep standby mode (default = false) </td></tr>
