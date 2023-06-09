@@ -18,6 +18,7 @@ void UARTSAMD21::GetPeripheralDefaults(UARTHAL::Peripheral * peripheral, SERCOMH
 	peripheral->parity = UARTHAL::Parity::PNone;
 	peripheral->endianness = UARTHAL::Endian::LSB;
 	peripheral->num_stop_bits = UARTHAL::StopBits::OneStopBit;
+	peripheral->extra_uart_params[ExtraParams::CLK_SRC] = SERCOMSAMD21::ClockSource::CS_OSC8M;
 	peripheral->extra_uart_params[ExtraParams::GEN_CLK] = SERCOMSAMD21::GenericClock::GEN_CLK_1;
 	peripheral->extra_uart_params[ExtraParams::GEN_CLK_DIVISOR_BITS_1_8] = 0;
 	peripheral->extra_uart_params[ExtraParams::GEN_CLK_DIVISOR_BITS_9_16] = 0;
@@ -62,6 +63,11 @@ void UARTHAL::GetPeripheralDefaults(UARTHAL::Peripheral * peripheral)
 	UARTSAMD21::GetPeripheralDefaults(peripheral, SERCOMSAMD21::SercomID::Sercom0);
 }
 
+void UARTSAMD21::SetClkSrcParam(UARTHAL::Peripheral * peripheral, SERCOMSAMD21::ClockSource clock_source)
+{
+	peripheral->extra_uart_params[ExtraParams::CLK_SRC] = clock_source;
+}
+
 void UARTSAMD21::SetGenClkParam(UARTHAL::Peripheral * peripheral, SERCOMSAMD21::GenericClock generic_clock)
 {
 	peripheral->extra_uart_params[ExtraParams::GEN_CLK] = generic_clock;
@@ -95,7 +101,7 @@ void UARTHAL::InitSercom(UARTHAL::Peripheral * peripheral)
 	SERCOMHAL::ConfigPin(peripheral->tx_pin, true, true);
 	Sercom *sercom_ptr = SERCOMSAMD21::GetSercom(peripheral->sercom_id);
 	uint16_t gen_clk_divisor = (((uint16_t)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK_DIVISOR_BITS_9_16] << 8) & 0xFF00) | ((uint16_t)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK_DIVISOR_BITS_1_8] & 0xFF);
-	SERCOMSAMD21::EnableSercomClock(peripheral->sercom_id, (SERCOMSAMD21::GenericClock)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK], gen_clk_divisor, (bool)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK_RUN_STANDY]);
+	SERCOMSAMD21::EnableSercomClock(peripheral->sercom_id, (SERCOMSAMD21::ClockSource)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::CLK_SRC], (SERCOMSAMD21::GenericClock)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK], gen_clk_divisor, (bool)peripheral->extra_uart_params[UARTSAMD21::ExtraParams::GEN_CLK_RUN_STANDY]);
 	uint8_t tx = 0;
 	uint8_t rx = 0;
 	switch(peripheral->extra_uart_params[UARTSAMD21::ExtraParams::PAD_CONFIG])

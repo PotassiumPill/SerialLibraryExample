@@ -9,7 +9,7 @@
 #ifndef __UART_SAMD21_H__
 #define __UART_SAMD21_H__
 
-#define NUM_EXTRA_UART_PARAMS 6
+#define NUM_EXTRA_UART_PARAMS 7
 
 #include "sam.h"
 #include "serial_uart/uart_hal.h"
@@ -29,6 +29,7 @@ namespace UARTSAMD21
 	 * Extra parameter labels used in extra_uart_params peripheral array for SAMD21-specific configuration 
 	 */
 	enum ExtraParams : uint8_t {
+		CLK_SRC,						//!< ID of clock source used in generic clock
 		GEN_CLK,						//!< ID of generic clock used for %UART
 		GEN_CLK_DIVISOR_BITS_9_16,		//!< Clock speed divisor (bit 9:16)
 		GEN_CLK_DIVISOR_BITS_1_8,		//!< Clock speed divisor (bit 1:8)
@@ -70,6 +71,7 @@ namespace UARTSAMD21
 	 */
 	void GetPeripheralDefaults(UARTHAL::Peripheral * peripheral, SERCOMHAL::SercomID sercom_id = SERCOMSAMD21::SercomID::Sercom0);
 	
+	void SetClkSrcParam(UARTHAL::Peripheral * peripheral, SERCOMSAMD21::ClockSource clock_source = SERCOMSAMD21::ClockSource::CS_OSC8M);			//!< Setter for clock source peripheral parameter
 	void SetGenClkParam(UARTHAL::Peripheral * peripheral, SERCOMSAMD21::GenericClock generic_clock = SERCOMSAMD21::GenericClock::GEN_CLK_1);		//!< Setter for generic clock peripheral parameter
 	void SetGenClkDivisorParam(UARTHAL::Peripheral * peripheral, uint16_t divisor = 0);																//!< Setter for generic clock divisor peripheral parameter
 	void SetGenClkRunStandbyParam(UARTHAL::Peripheral * peripheral, bool run_standy = false);														//!< Setter for generic clock run in standby peripheral parameter

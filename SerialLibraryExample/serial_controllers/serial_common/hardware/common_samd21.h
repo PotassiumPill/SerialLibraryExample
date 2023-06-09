@@ -21,6 +21,12 @@
 namespace SERCOMSAMD21
 {
 	/*!
+	 * \brief An enum type for Generic Clock source on SAMD21.
+	 */
+	enum ClockSource : uint8_t {
+		CS_XOSC, CS_GCKLIN, CS_GCLKGEN1, CS_OSCULP32K, CS_OSC32K, CS_XOSC32K, CS_OSC8M, CS_DFLL48M, CS_FDPLL96M
+	};
+	/*!
 	 * \brief An enum type for Generic Clock Generator on SAMD21.
 	 */
 	enum GenericClock : uint8_t {
@@ -72,11 +78,12 @@ namespace SERCOMSAMD21
 	 * Sercom clock generator using 8 MHz oscillator on SAMD21. Includes ability to use clock divisor to decrease frequency.
 	 *
 	 * \param sercom_id SERCOM# to feed clock to
+	 * \param clock_source generic clock source (must be enabled)
 	 * \param gen_clk_num generic clock generator to use
 	 * \param clock_divisor clock divisor, refer to datasheet for restrictions and valid divisors to use (default = 0)
 	 * \param run_standby run clock while in sleep standby mode (default = false)
 	 */
-	void EnableSercomClock(SERCOMHAL::SercomID sercom_id, GenericClock gen_clk_num, uint16_t clock_divisor = 0, bool run_standby = false);
+	void EnableSercomClock(SERCOMHAL::SercomID sercom_id, ClockSource clock_source, GenericClock gen_clk_num, uint16_t clock_divisor = 0, bool run_standby = false);
 }; 
 
 #endif //__COMMON_SAMD21_H__

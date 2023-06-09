@@ -19,7 +19,8 @@ void SPISAMD21::GetPeripheralDefaults(SPIHAL::Peripheral * peripheral, SERCOMHAL
 	peripheral->clock_mode =  SPIHAL::ClockMode::Mode0;
 	peripheral->endianess = SPIHAL::Endian::MSB;
 	peripheral->sercom_id = sercom_id;
-	peripheral->extra_spi_params[ExtraParams::GEN_CLK] = SERCOMSAMD21::GEN_CLK_2;
+	peripheral->extra_spi_params[ExtraParams::CLK_SRC] = SERCOMSAMD21::ClockSource::CS_OSC8M;
+	peripheral->extra_spi_params[ExtraParams::GEN_CLK] = SERCOMSAMD21::GenericClock::GEN_CLK_2;
 	peripheral->extra_spi_params[ExtraParams::GEN_CLK_DIVISOR_BITS_9_16] = 0;
 	peripheral->extra_spi_params[ExtraParams::GEN_CLK_DIVISOR_BITS_1_8] = 0;
 	peripheral->extra_spi_params[ExtraParams::GEN_CLK_RUN_STANDY] = false;
@@ -72,6 +73,11 @@ void SPIHAL::GetPeripheralDefaults(SPIHAL::Peripheral * peripheral)
 	SPISAMD21::GetPeripheralDefaults(peripheral, SERCOMSAMD21::SercomID::Sercom4);	
 }
 
+void SPISAMD21::SetClkSrcParam(SPIHAL::Peripheral * peripheral, SERCOMSAMD21::ClockSource clock_source)
+{
+	peripheral->extra_spi_params[ExtraParams::CLK_SRC] = clock_source;
+}
+
 void SPISAMD21::SetGenClkParam(SPIHAL::Peripheral * peripheral, SERCOMSAMD21::GenericClock generic_clock)
 {
 	peripheral->extra_spi_params[ExtraParams::GEN_CLK] = generic_clock;
@@ -119,7 +125,7 @@ void SPIHAL::InitSercom(SPIHAL::Peripheral * peripheral, bool is_client)
 	}
 	Sercom *sercom_ptr = SERCOMSAMD21::GetSercom(peripheral->sercom_id);
 	uint16_t gen_clk_divisor = (((uint16_t)peripheral->extra_spi_params[SPISAMD21::ExtraParams::GEN_CLK_DIVISOR_BITS_9_16] << 8) & 0xFF00) | ((uint16_t)peripheral->extra_spi_params[SPISAMD21::ExtraParams::GEN_CLK_DIVISOR_BITS_1_8] & 0xFF);
-	SERCOMSAMD21::EnableSercomClock(peripheral->sercom_id, (SERCOMSAMD21::GenericClock)peripheral->extra_spi_params[SPISAMD21::ExtraParams::GEN_CLK], gen_clk_divisor, (bool)peripheral->extra_spi_params[SPISAMD21::ExtraParams::GEN_CLK_RUN_STANDY]);
+	SERCOMSAMD21::EnableSercomClock(peripheral->sercom_id, (SERCOMSAMD21::ClockSource)peripheral->extra_spi_params[SPISAMD21::ExtraParams::CLK_SRC], (SERCOMSAMD21::GenericClock)peripheral->extra_spi_params[SPISAMD21::ExtraParams::GEN_CLK], gen_clk_divisor, (bool)peripheral->extra_spi_params[SPISAMD21::ExtraParams::GEN_CLK_RUN_STANDY]);
 	uint8_t mosi = 0;
 	uint8_t miso = 0;
 	switch(peripheral->extra_spi_params[SPISAMD21::ExtraParams::PAD_CONFIG])

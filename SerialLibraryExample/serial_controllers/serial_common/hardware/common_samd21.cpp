@@ -41,9 +41,9 @@ Sercom * SERCOMSAMD21::GetSercom(SERCOMHAL::SercomID sercom_id)
 	return sercom_ptr;
 }
 
-void SERCOMSAMD21::EnableSercomClock(SERCOMHAL::SercomID sercom_id, SERCOMSAMD21::GenericClock gen_clk_num, uint16_t clock_divisor, bool run_standby)
+void SERCOMSAMD21::EnableSercomClock(SERCOMHAL::SercomID sercom_id, SERCOMSAMD21::ClockSource clock_source, SERCOMSAMD21::GenericClock gen_clk_num, uint16_t clock_divisor, bool run_standby)
 {
-	GCLK->GENCTRL.reg = GCLK_GENCTRL_ID(gen_clk_num) | GCLK_GENCTRL_SRC(GCLK_SOURCE_OSC8M) | GCLK_GENCTRL_IDC;
+	GCLK->GENCTRL.reg = GCLK_GENCTRL_ID(gen_clk_num) | GCLK_GENCTRL_SRC(clock_source) | GCLK_GENCTRL_IDC;
 	GCLK->GENCTRL.bit.RUNSTDBY = run_standby;
 	GCLK->GENCTRL.bit.GENEN = 0x1;
 	GCLK->GENDIV.reg = GCLK_GENDIV_DIV(clock_divisor) | GCLK_GENDIV_ID(gen_clk_num);
