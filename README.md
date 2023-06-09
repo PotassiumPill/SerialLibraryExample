@@ -1,9 +1,6 @@
 # SerialLibraryExample
 Example project to showcase custom C++ serial communication library, configured for an example on the SAMD21 using Microchip Studio. 
 
-## Important Compilation Note
-This project uses C++11 features such as nullptr and scoped enums. If you see compilation errors related to this problem, add `-std=c++11` as a flag to your C++ compiler.
-
 ## Features
 1) [Serial UART](/SerialLibraryExample/serial_controllers/serial_uart) library.
 2) [Serial SPI](/SerialLibraryExample/serial_controllers/serial_spi) library.
@@ -12,6 +9,9 @@ This project uses C++11 features such as nullptr and scoped enums. If you see co
 5) Generic ring buffer template and higher level serial buffer class which can be used directly for data storage or other serial functionality. 
 6) Refer to [README](/SerialLibraryExample/serial_controllers/README.md) for more information about configuring and using the library.
 7) Refer to [documentation page](https://potassiumpill.github.io/SerialLibraryExample/) for documentation on serial library.
+
+## Important Compilation Note
+This project uses C++11 features such as nullptr and scoped enums. If you see compilation errors related to this problem, add `-std=c++11` as a flag to your C++ compiler.
 
 ## Running the Example Project (SAMD21G18A)
 1) Refer to the necessary datasheets to set up the SAMD21 and your debugger of choice. 
